@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gama-local SYSTEM "../../../gama-1.9.07/xml/gama-local.dtd" >
+<gama-local>
+	<network angles="left-handed" axes-xy="en">
+		<description>Correction testing network</description>		
+		<parameters conf-pr="0.95" sigma-act="apriori" sigma-apr="1.00"
+			update-constrained-coordinates="no" />
+		<points-observations>
+			<point id="0" x="0" y="0" z="0" fix="xyz" />
+			<point id="2" x="1000" y="1000" z="1000" adj="XY" />
+			<point id="4" x="-1000" y="1000" z="0" adj="XY" />
+			<point id="6" x="-1000" y="-1000" z="0" adj="XY" />
+			<point id="8" x="1000" y="-1000" z="0" adj="XY" />
+			<obs>
+				<distance from="0" to="2" val="1414.213562" />
+				<distance from="0" to="4" val="1414.213562" />
+				<distance from="0" to="6" val="1414.213562" />
+				<distance from="0" to="8" val="1414.213562" />
+				<distance from="2" to="4" val="2000" />
+				<distance from="4" to="6" val="2000" />
+				<distance from="6" to="8" val="2000" />
+				<distance from="8" to="2" val="2000" />
+			</obs>
+			<obs from="0">
+				<direction to="2" val="0" />
+				<direction to="4" val="100" />
+				<direction to="6" val="200" />
+				<direction to="8" val="300" />
+			</obs>
+			<obs from="2">
+				<direction to="8" val="0" />
+				<direction to="0" val="50" />
+				<direction to="4" val="100" />
+			</obs>
+			<obs from="4">
+				<direction to="2" val="0" />
+				<direction to="0" val="50" />
+				<direction to="6" val="100" />
+			</obs>
+			<obs from="6">
+				<direction to="4" val="0" />
+				<direction to="0" val="50" />
+				<direction to="8" val="100" />
+			</obs>
+			<obs from="8">
+				<direction to="6" val="0" />
+				<direction to="0" val="50" />
+				<direction to="2" val="100" />
+			</obs>
+		</points-observations>
+	</network>
+</gama-local>

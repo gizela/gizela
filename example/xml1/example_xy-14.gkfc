@@ -1,0 +1,231 @@
+<?xml version="1.0" ?>
+<!DOCTYPE gama-xml
+  SYSTEM 'http://www.gnu.org/software/gama/gama-xml.dtd'>
+<gama-local>
+<network axes-xy="sw" angles="right-handed">
+<!--
+axes-xy:
+S-JTSK x-ova souradnice smeruje k jihu (s) a
+y-ova smeruje k zapadu (w) 
+angles:
+smery se meri po smeru hodinovych rucicek
+
+Prikaz: gama-1.9.02/gama-local/gama-local out.xml 2-language cz 2-text adj.txt
+-->
+<description>
+Falkenstejn 2009
+Volna sit 2D S-JTSK
+od 8. 9. 2009
+do 11. 9. 2009
+</description>
+<parameters sigma-apr="1.00" conf-pr="0.95" sigma-act="aposteriori" update-constrained-coordinates="no"/>
+<points-observations direction-stdev="90">
+
+<point id="4013" y="732387.86" x="958409.44" fix="XY"/>
+<point id="214.3" y="732624.35" x="958202.35" fix="XY"/>
+
+<point id="4002" y="732173.106" x="958218.606" fix="XY"/>
+
+<coordinates>
+ <point id="4001" y="732179.690" x="958244.448"/>
+ 
+ <point id="4014" y="732508.316" x="958352.009"/>
+ <cov-mat dim="4" band="0">
+  3.72 3.72 4.73 4.73
+ </cov-mat>
+</coordinates>
+
+<point id="4003" adj="xy"/>
+<point id="4004" adj="xy"/>
+<point id="4005" adj="xy"/>
+<point id="4006" adj="xy"/>
+<point id="4007" adj="xy"/>
+<point id="5001" adj="xy"/>
+<point id="4008" adj="xy"/>
+<point id="4009" adj="xy"/>
+<point id="4010" adj="xy"/>
+<point id="4011" adj="xy"/>
+<point id="4012" adj="xy"/>
+<point id="5002" adj="xy"/>
+
+<obs from="4002">
+	<direction to="4001" val="43.9263"/>
+	<direction to="4003" val="124.6819"/>
+	<distance to="4001" val="26.67859" stdev="6.996"/>
+	<distance to="4003" val="44.39608" stdev="6.989"/>
+</obs>
+<obs from="4003">
+	<direction to="4002" val="8.1059"/>
+	<direction to="4004" val="177.1013"/>
+	<distance to="4002" val="44.40121" stdev="6.988"/>
+	<distance to="4004" val="24.44363" stdev="6.84"/>
+</obs>
+<obs from="4004">
+	<direction to="4003" val="151.3283"/>
+	<direction to="4005" val="340.4438"/>
+	<distance to="4003" val="24.4415" stdev="6.832"/>
+	<distance to="4005" val="24.84064" stdev="6.501"/>
+</obs>
+<obs from="4005">
+	<direction to="4004" val="17.8949"/>
+	<direction to="4006" val="237.9369"/>
+	<distance to="4004" val="24.84047" stdev="6.484"/>
+	<distance to="4006" val="53.55204" stdev="6.458"/>
+</obs>
+<obs from="4006">
+	<direction to="4005" val="55.1005"/>
+	<direction to="4007" val="220.2809"/>
+	<direction to="5001" val="51.0183"/>
+	<distance to="4005" val="53.55226" stdev="6.456"/>
+	<distance to="4007" val="30.60329" stdev="6.665"/>
+	<distance to="5001" val="31.38117" stdev="6.325"/>
+</obs>
+<obs from="5001">
+	<direction to="4006" val="3.6984"/>
+	<distance to="4006" val="31.38483" stdev="6.324"/>
+</obs>
+<obs from="4007">
+	<direction to="4006" val="102.7214"/>
+	<direction to="4008" val="345.3144"/>
+	<distance to="4006" val="30.60575" stdev="6.657"/>
+	<distance to="4008" val="21.79333" stdev="6.919"/>
+</obs>
+<obs from="4008">
+	<direction to="4007" val="131.8245"/>
+	<direction to="4009" val="358.9388"/>
+	<distance to="4007" val="21.80373" stdev="6.925"/>
+	<distance to="4009" val="25.8977" stdev="6.541"/>
+</obs>
+<obs from="4009">
+	<direction to="4008" val="131.1739"/>
+	<direction to="4010" val="294.4956"/>
+	<distance to="4008" val="25.90812" stdev="6.532"/>
+	<distance to="4010" val="33.96714" stdev="6.155"/>
+</obs>
+<obs from="4010">
+	<direction to="4009" val="398.3832"/>
+	<direction to="4011" val="191.1013"/>
+	<distance to="4009" val="33.9804" stdev="6.032"/>
+	<distance to="4011" val="38.31944" stdev="6.511"/>
+</obs>
+<obs from="4011">
+	<direction to="4010" val="374.8416"/>
+	<direction to="4012" val="173.1658"/>
+	<distance to="4010" val="38.32533" stdev="6.523"/>
+	<distance to="4012" val="48.70081" stdev="6.775"/>
+</obs>
+<obs from="4012">
+	<direction to="4011" val="224.722"/>
+	<direction to="4013" val="294.8954"/>
+	<distance to="4011" val="48.71546" stdev="6.778"/>
+	<distance to="4013" val="102.7698" stdev="6.998"/>
+</obs>
+<obs from="4012">
+	<direction to="4011" val="276.2475"/>
+	<direction to="4013" val="346.4169"/>
+	<distance to="4011" val="48.71276" stdev="6.775"/>
+	<distance to="4013" val="102.7656" stdev="6.998"/>
+</obs>
+<obs from="4011">
+	<direction to="4010" val="185.8386"/>
+	<direction to="4012" val="384.1646"/>
+	<distance to="4010" val="38.32223" stdev="6.529"/>
+	<distance to="4012" val="48.7179" stdev="6.767"/>
+</obs>
+<obs from="4010">
+	<direction to="4009" val="86.0696"/>
+	<direction to="4011" val="278.8138"/>
+	<distance to="4009" val="33.98017" stdev="6.035"/>
+	<distance to="4011" val="38.32565" stdev="6.509"/>
+</obs>
+<obs from="4009">
+	<direction to="4008" val="395.3806"/>
+	<direction to="4010" val="158.7089"/>
+	<distance to="4008" val="25.904" stdev="6.545"/>
+	<distance to="4010" val="33.97663" stdev="6.144"/>
+</obs>
+<obs from="4008">
+	<direction to="4007" val="85.134"/>
+	<direction to="4009" val="312.2203"/>
+	<distance to="4007" val="21.80082" stdev="6.923"/>
+	<distance to="4009" val="25.90056" stdev="6.571"/>
+</obs>
+<obs from="4007">
+	<direction to="4006" val="339.0689"/>
+	<direction to="4008" val="181.6441"/>
+	<distance to="4006" val="30.6043" stdev="6.66"/>
+	<distance to="4008" val="21.79473" stdev="6.921"/>
+</obs>
+<obs from="4006">
+	<direction to="4005" val="164.1284"/>
+	<direction to="4007" val="329.3138"/>
+	<direction to="5001" val="160.0431"/>
+	<direction to="5001" val="160.0351"/>
+	<distance to="4005" val="53.55359" stdev="6.455"/>
+	<distance to="4007" val="30.60656" stdev="6.673"/>
+	<distance to="5001" val="31.38105" stdev="6.314"/>
+	<distance to="5001" val="31.37986" stdev="6.314"/>
+</obs>
+<obs from="5001">
+	<direction to="4006" val="201.0007"/>
+	<distance to="4006" val="31.38085" stdev="6.341"/>
+</obs>
+<obs from="4005">
+	<direction to="4004" val="277.5394"/>
+	<direction to="4006" val="97.5784"/>
+	<distance to="4004" val="24.83752" stdev="6.5"/>
+	<distance to="4006" val="53.55801" stdev="6.459"/>
+</obs>
+<obs from="4004">
+	<direction to="4003" val="345.6256"/>
+	<direction to="4005" val="134.7274"/>
+	<distance to="4003" val="24.44071" stdev="6.821"/>
+	<distance to="4005" val="24.84212" stdev="6.517"/>
+</obs>
+<obs from="4003">
+	<direction to="4002" val="292.7379"/>
+	<direction to="4004" val="61.736"/>
+	<direction to="4005" val="56.2428"/>
+	<distance to="4002" val="44.39957" stdev="6.987"/>
+	<distance to="4004" val="24.44153" stdev="6.847"/>
+	<distance to="4005" val="49.10397" stdev="6.68"/>
+</obs>
+<obs from="4002">
+	<direction to="4001" val="14.1568"/>
+	<direction to="4003" val="94.9174"/>
+	<distance to="4001" val="26.67779" stdev="6.994"/>
+	<distance to="4003" val="44.3972" stdev="6.991"/>
+</obs>
+<obs from="4012">
+	<direction to="4011" val="81.0736"/>
+	<direction to="4013" val="151.2448"/>
+	<direction to="4014" val="326.6798"/>
+	<distance to="4011" val="48.71573" stdev="6.778"/>
+	<distance to="4013" val="102.7644" stdev="6.998"/>
+	<distance to="4014" val="32.51302" stdev="6.996"/>
+</obs>
+<obs from="4014">
+	<direction to="4012" val="376.8604"/>
+	<direction to="214.3" val="225.2689"/>
+	<direction to="4013" val="395.5847"/>
+	<distance to="4012" val="32.51012" stdev="6.998"/>
+	<distance to="4013" val="133.4443" stdev="6.998"/>
+</obs>
+<obs from="4008">
+	<direction to="4007" val="150.601"/>
+	<direction to="4009" val="377.6958"/>
+	<direction to="5002" val="220.6116"/>
+	<distance to="4007" val="21.80413" stdev="6.928"/>
+	<distance to="4009" val="25.90492" stdev="6.519"/>
+	<distance to="5002" val="19.89667" stdev="7"/>
+</obs>
+<obs from="5002">
+	<direction to="4007" val="152.6041"/>
+	<direction to="4008" val="82.8841"/>
+	<distance to="4007" val="21.84984" stdev="6.933"/>
+	<distance to="4008" val="19.89973" stdev="6.999"/>
+</obs>
+
+</points-observations>
+</network>
+</gama-local>

@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<!DOCTYPE gama-xml
+  SYSTEM 'http://www.gnu.org/software/gama/gama-xml.dtd'>
+<gama-local>
+<network angles="right-handed" axes-xy="ne">
+<parameters conf-pr="0.95" sigma-act="apriori" sigma-apr="1.00" update-constrained-coordinates="no"/>
+<description>
+[epoch]
+date: 2003.06.01
+description: epocha 3 - priklad pro testovani
+bez_bodu: ABC3 AB3 C3
+</description>
+<points-observations direction-stdev="10" distance-stdev="2 2" zenith-angle-stdev="10">
+  <obs from="ABC2">
+    <direction to="ABC1" val="0"/>
+    <direction to="ABC1" val="0.001"/>
+    <direction to="ABC3" val="200.00"/>
+    <direction to="ABC3" val="200.0002"/>
+    <direction to="AB1"  val="50.00"/>
+    <direction to="AB1"  val="50.0003"/>
+    <direction to="AB2"  val="100.00"/>
+    <direction to="AB2"  val="100.0004"/>
+    <direction to="AB3"  val="150.00"/>
+    <direction to="AB3"  val="150.0005"/>
+
+    <distance to="ABC1" val="500.010"/>
+    <distance to="ABC3" val="500.015"/>
+    <distance to="AB1"  val="500.020"/>
+    <distance to="AB2"  val="500.025"/>
+    <distance to="AB3"  val="500.030"/>
+    
+    <z-angle to="ABC1" val="100.011"/>
+    <z-angle to="ABC3" val=" 95.002"/>
+  </obs>
+  <height-differences>
+    <dh from="ABC1" to="C1" val="30.03" stdev="10"/>
+    <dh from="ABC2" to="C2" val="35.05" stdev="15"/>
+    <dh from="ABC3" to="C3" val="40.05" stdev="20"/>
+  </height-differences>
+  <point adj="XYZ" id="ABC1" x="1100100.04" y="680600.03" z="550.05"/>
+  <point fix="XYZ" id="ABC2" x="1100100.02" y="680100.01" z="550.02"/>
+  <!--point adj="xyz" id="ABC3"/-->
+  <point adj="xy" id="AB1"/>
+  <point adj="xy" id="AB2"/>
+  <!--point adj="xy" id="AB3"/-->
+  <point adj="z" id="C1"/>
+  <point adj="z" id="C2"/>
+  <!--point adj="z" id="C3"/-->
+</points-observations>
+</network>
+</gama-local>

@@ -1,0 +1,141 @@
+<?xml version="1.0" ?>
+<!DOCTYPE gama-xml
+  SYSTEM 'http://www.gnu.org/software/gama/gama-xml.dtd'>
+<gama-local>
+<network angles="right-handed" axes-xy="sw" epoch="1.1">
+<parameters conf-pr="0.95"
+	sigma-act="apriori"
+	sigma-apr="1.00"
+	tol-abs="1000.0"
+       	update-constrained-coordinates="no"/>
+<description>
+	ukazkovy soubor mereni
+</description>
+<points-observations direction-stdev="10" 
+	distance-stdev="2 2" 
+	angle-stdev="15"
+	zenith-angle-stdev="10">
+  <point fix="xyz" id="4001" x="0"   y="0"   z="0"/>
+  <point adj="XYZ" id="4002" x="0"   y="100" z="0"/>
+  <point adj="XYZ" id="102"  x="100" y="100" z="10"/>
+  <point adj="xyz" id="101"/>
+  <point adj="xyz" id="103"/>
+
+  <obs from="4001" from_dh="1.5">
+    <direction to="101" val="0" from_dh="2.5" to_dh="2.5" stdev="20"/>
+    <direction to="102" val="50" to_dh="2.5"/>
+    <direction to="4002" val="100" to_dh="2.5"/>
+    <distance from="101" to="4001" val="100" from_dh="2.5" to_dh="2.5" stdev="20"/>
+    <distance to="102" val="141.42" />
+    <distance to="4002" val="100"/>
+  </obs>
+
+  <obs from="4001" from_dh="1.5">
+    <direction to="101" val="0" from_dh="2.5" to_dh="2.5" stdev="20"/>
+    <direction to="102" val="50" to_dh="2.5"/>
+    <direction to="4002" val="100" to_dh="2.5"/>
+    <distance from="101" to="4001" val="100" from_dh="2.5" to_dh="2.5" stdev="20"/>
+    <distance to="102" val="141.42" />
+    <distance to="4002" val="100"/>
+	<cov-mat dim="6" band="2">
+		1 0.5 0.5
+		2 0.5 0.5
+		3 0.5 0.5
+		1 0.5 0.5
+		2 0.5
+		3
+	</cov-mat>
+</obs>
+
+  <obs from="4002" from_dh="1.5">
+    <direction to="4001"  val="0"/>
+    <direction to="101"  val="50"/>
+    <direction to="102" val="100"/>
+    <s-distance from="101" to="4002" val="141.77" stdev="10" to_dh="1.5"/>
+    <s-distance to="102" val="100.50" to_dh="1.5"/>
+    <s-distance to="4001" val="100" to_dh="1.5"/>
+    <z-angle from="101" to="4002" val="104.494" stdev="50" from_dh="2.0" to_dh="2.0"/>
+    <z-angle to="102" val="93.655"/>
+    <z-angle to="4001" val="100" to_dh="1.5"/>
+  </obs>
+
+  <obs from="4002" from_dh="1.5">
+    <direction to="4001"  val="0"/>
+    <direction to="101"  val="50"/>
+    <direction to="102" val="100"/>
+    <s-distance from="101" to="4002" val="141.77" stdev="10" to_dh="1.5"/>
+    <s-distance to="102" val="100.50" to_dh="1.5"/>
+    <s-distance to="4001" val="100" to_dh="1.5"/>
+    <z-angle from="101" to="4002" val="104.494" stdev="50" from_dh="2.0" to_dh="2.0"/>
+    <z-angle to="102" val="93.655"/>
+    <z-angle to="4001" val="100" to_dh="1.5"/>
+	<cov-mat dim="9" band="0">
+		1 2 3
+		1 2 3
+		1 2 3
+	</cov-mat>
+</obs>
+
+  <height-differences>
+    <dh from="4001" to="4002" val="0" stdev="2"/>
+    <dh from="4001" to="101" val="10" dist="1.5"/>
+    <dh from="4001" to="102" val="10" stdev="3"/>
+  </height-differences>
+
+  <height-differences>
+    <dh from="4001" to="4002" val="0" stdev="2"/>
+    <dh from="4001" to="101" val="10" dist="1.5"/>
+    <dh from="4001" to="102" val="10" stdev="3"/>
+	<cov-mat dim="3" band="2">
+		1 0.5 0.5
+		2 0.5
+		2
+	</cov-mat>
+</height-differences>
+
+  <vectors>
+	<vec from="4001" to="4002" dx="0" dy="100" dz="0"/>
+	<cov-mat dim="3" band="2">
+		1 0.5 0.5
+		2 0.5
+		2
+	</cov-mat>
+  </vectors>
+  <vectors>
+	<vec from="4002" to="102" dx="100" dy="0" dz="10" from_dh="1.8" to_dh="1.8"/>
+	<cov-mat dim="3" band="1">
+		1 0.5 
+		2 0.5
+		2
+	</cov-mat>
+  </vectors>
+  <vectors>
+	<vec from="4002" to="101" dx="100" dy="-100" dz="10"/>
+	<cov-mat dim="3" band="0">
+		1 
+		2 
+		2
+	</cov-mat>
+</vectors>
+ <vectors>
+	<vec from="4001" to="103" dx="354.799" dy="-465.803" dz="-164.077"/>
+	<cov-mat dim="3" band="0">
+		1 
+		2 
+		2
+	</cov-mat>
+</vectors>
+
+
+  <coordinates>
+	<point id="101" x="100" y="0"/>
+	<point id="102" z="10"/>
+	<cov-mat dim="3" band="2">
+		2 0.5 0.5
+		3 0.5
+		4
+	</cov-mat>
+  </coordinates>
+</points-observations>
+</network>
+</gama-local>

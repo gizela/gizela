@@ -1,0 +1,405 @@
+<?xml version="1.0" ?>
+<!DOCTYPE gama-xml SYSTEM "gama-xml.dtd">
+
+<gama-local version="2.0">
+<network axes-xy="sw" angles="right-handed">
+
+<description>
+Vyrovnani souradnic PRGE Chomutov
+</description>
+
+<parameters
+		sigma-apr="1"
+		sigma-act="apriori"
+		conf-pr="0.95"
+		tol-abs="1000"
+		update-constrained-coordinates="yes"/>
+
+<points-observations>
+	<point id="4001" y="808401.498" x="994986.838" fix="XY" />
+	<point id="4003" y="808119.946" x="995350.302" fix="XY" />
+	<point id="4005" y="807854.929" x="995684.923" fix="XY" />
+	<point id="4002" adj="xy" />
+	<point id="4004" adj="xy" />
+	<point id="1" adj="xy" />
+	<point id="2" adj="xy" />
+	<point id="3" adj="xy" />
+	<point id="4" adj="xy" />
+	<point id="5" adj="xy" />
+	<point id="6" adj="xy" />
+	<point id="7" adj="xy" />
+	<point id="8" adj="xy" />
+	<point id="9" adj="xy" />
+	<point id="10" adj="xy" />
+	<point id="11" adj="xy" />
+	<point id="12" adj="xy" />
+	<point id="13" adj="xy" />
+	<point id="14" adj="xy" />
+	<point id="15" adj="xy" />
+	<point id="16" adj="xy" />
+	<point id="17" adj="xy" />
+	<point id="18" adj="xy" />
+	<point id="19" adj="xy" />
+	<point id="20" adj="xy" />
+	<point id="21" adj="xy" />
+	<point id="22" adj="xy" />
+	<point id="23" adj="xy" />
+	<point id="24" adj="xy" />
+	<point id="25" adj="xy" />
+	<point id="26" adj="xy" />
+	<point id="27" adj="xy" />
+	<point id="28" adj="xy" />
+	<point id="29" adj="xy" />
+	<point id="30" adj="xy" />
+	<point id="31" adj="xy" />
+	<point id="32" adj="xy" />
+	<point id="33" adj="xy" />
+	<point id="34" adj="xy" />
+	<point id="35" adj="xy" />
+	<point id="36" adj="xy" />
+	<point id="37" adj="xy" />
+	<point id="38" adj="xy" />
+	<point id="39" adj="xy" />
+	<point id="40" adj="xy" />
+	<point id="41" adj="xy" />
+	<point id="42" adj="xy" />
+	<point id="43" adj="xy" />
+	<point id="44" adj="xy" />
+	<point id="45" adj="xy" />
+	<point id="46" adj="xy" />
+	<point id="47" adj="xy" />
+	<point id="48" adj="xy" />
+			
+	<obs from="4001">
+				<direction to="1" val="4.3812" stdev="20.00" />
+				<distance  to="1" val="4.0121" stdev="10.00" />
+				<direction to="2" val="399.6599" stdev="20.00" />
+				<distance  to="2" val="6.1511" stdev="10.00" />
+				<direction to="3" val="394.7332" stdev="20.00" />
+				<distance  to="3" val="8.8886" stdev="10.00" />
+				<direction to="4" val="393.9936" stdev="20.00" />
+				<distance  to="4" val="11.1591" stdev="10.00" />
+				<direction to="5" val="394.8622" stdev="20.00" />
+				<distance  to="5" val="14.3695" stdev="10.00" />
+				<direction to="6" val="394.1411" stdev="20.00" />
+				<distance  to="6" val="16.9270" stdev="10.00" />
+				<direction to="7" val="371.6835" stdev="20.00" />
+				<distance  to="7" val="15.6803" stdev="10.00" />
+				<direction to="8" val="372.2206" stdev="20.00" />
+				<distance  to="8" val="12.7938" stdev="10.00" />
+				<direction to="9" val="372.7744" stdev="20.00" />
+				<distance  to="9" val="10.2199" stdev="10.00" />
+				<direction to="10" val="373.1982" stdev="20.00" />
+				<distance  to="10" val="7.0322" stdev="10.00" />
+				<direction to="11" val="372.6469" stdev="20.00" />
+				<distance  to="11" val="4.3829" stdev="10.00" />
+				<direction to="12" val="344.1740" stdev="20.00" />
+				<distance  to="12" val="4.0245" stdev="10.00" />
+				<direction to="13" val="349.9749" stdev="20.00" />
+				<distance  to="13" val="7.0318" stdev="10.00" />
+				<direction to="14" val="349.7292" stdev="20.00" />
+				<distance  to="14" val="9.7894" stdev="10.00" />
+				<direction to="15" val="347.7341" stdev="20.00" />
+				<distance  to="15" val="14.5481" stdev="10.00" />
+				<direction to="16" val="323.8267" stdev="20.00" />
+				<distance  to="16" val="14.3520" stdev="10.00" />
+				<direction to="17" val="325.9412" stdev="20.00" />
+				<distance  to="17" val="11.4594" stdev="10.00" />
+				<direction to="18" val="325.4357" stdev="20.00" />
+				<distance  to="18" val="8.9463" stdev="10.00" />
+				<direction to="19" val="322.7739" stdev="20.00" />
+				<distance  to="19" val="5.4547" stdev="10.00" />
+				<direction to="20" val="314.0796" stdev="20.00" />
+				<distance  to="20" val="3.6156" stdev="10.00" />
+				<direction to="21" val="300.4813" stdev="20.00" />
+				<distance  to="21" val="5.3511" stdev="10.00" />
+				<direction to="22" val="291.9938" stdev="20.00" />
+				<distance  to="22" val="6.8082" stdev="10.00" />
+				<direction to="23" val="285.2313" stdev="20.00" />
+				<distance  to="23" val="8.7924" stdev="10.00" />
+				<direction to="24" val="203.1342" stdev="20.00" />
+				<distance  to="24" val="12.8927" stdev="10.00" />
+				<direction to="25" val="194.3528" stdev="20.00" />
+				<distance  to="25" val="11.5877" stdev="10.00" />
+				<direction to="26" val="184.6948" stdev="20.00" />
+				<distance  to="26" val="10.7639" stdev="10.00" />
+				<direction to="27" val="171.6027" stdev="20.00" />
+				<distance  to="27" val="10.0278" stdev="10.00" />
+				<direction to="28" val="166.2939" stdev="20.00" />
+				<distance  to="28" val="21.4204" stdev="10.00" />
+				<direction to="29" val="170.8967" stdev="20.00" />
+				<distance  to="29" val="21.4957" stdev="10.00" />
+				<direction to="30" val="175.7410" stdev="20.00" />
+				<distance  to="30" val="22.0071" stdev="10.00" />
+				<direction to="31" val="183.1502" stdev="20.00" />
+				<distance  to="31" val="23.0808" stdev="10.00" />
+				<direction to="32" val="176.8112" stdev="20.00" />
+				<distance  to="32" val="33.2955" stdev="10.00" />
+				<direction to="33" val="172.9155" stdev="20.00" />
+				<distance  to="33" val="32.7664" stdev="10.00" />
+				<direction to="34" val="169.3487" stdev="20.00" />
+				<distance  to="34" val="32.4841" stdev="10.00" />
+				<direction to="35" val="165.8411" stdev="20.00" />
+				<distance  to="35" val="32.2890" stdev="10.00" />
+				<direction to="36" val="166.4872" stdev="20.00" />
+				<distance  to="36" val="43.5852" stdev="10.00" />
+				<direction to="37" val="169.1315" stdev="20.00" />
+				<distance  to="37" val="43.5754" stdev="10.00" />
+				<direction to="38" val="171.6869" stdev="20.00" />
+				<distance  to="38" val="43.5880" stdev="10.00" />
+				<direction to="39" val="173.8201" stdev="20.00" />
+				<distance  to="39" val="43.7617" stdev="10.00" />
+				<direction to="40" val="174.8522" stdev="20.00" />
+				<distance  to="40" val="52.6788" stdev="10.00" />
+				<direction to="41" val="171.9564" stdev="20.00" />
+				<distance  to="41" val="52.8045" stdev="10.00" />
+				<direction to="42" val="170.2114" stdev="20.00" />
+				<distance  to="42" val="52.9416" stdev="10.00" />
+				<direction to="43" val="168.2521" stdev="20.00" />
+				<distance  to="43" val="53.1385" stdev="10.00" />
+				<direction to="44" val="171.0734" stdev="20.00" />
+				<distance  to="44" val="66.8118" stdev="10.00" />
+				<direction to="45" val="172.8801" stdev="20.00" />
+				<distance  to="45" val="66.5063" stdev="10.00" />
+				<direction to="46" val="174.4985" stdev="20.00" />
+				<distance  to="46" val="66.3901" stdev="10.00" />
+				<direction to="47" val="176.3501" stdev="20.00" />
+				<distance  to="47" val="66.3851" stdev="10.00" />
+				<direction to="48" val="178.2482" stdev="20.00" />
+				<distance  to="48" val="82.6730" stdev="10.00" />
+				<direction to="49" val="176.9692" stdev="20.00" />
+				<distance  to="49" val="82.8324" stdev="10.00" />
+				<direction to="50" val="175.5443" stdev="20.00" />
+				<distance  to="50" val="83.1086" stdev="10.00" />
+				<direction to="51" val="174.1168" stdev="20.00" />
+				<distance  to="51" val="83.2537" stdev="10.00" />
+				<direction to="52" val="175.4978" stdev="20.00" />
+				<distance  to="52" val="100.0491" stdev="10.00" />
+				<direction to="53" val="176.7855" stdev="20.00" />
+				<distance  to="53" val="99.8862" stdev="10.00" />
+				<direction to="54" val="177.9395" stdev="20.00" />
+				<distance  to="54" val="99.6828" stdev="10.00" />
+				<direction to="55" val="179.6002" stdev="20.00" />
+				<distance  to="55" val="99.6729" stdev="10.00" />
+				<direction to="56" val="180.1366" stdev="20.00" />
+				<distance  to="56" val="118.2044" stdev="10.00" />
+				<direction to="57" val="179.0051" stdev="20.00" />
+				<distance  to="57" val="118.4725" stdev="10.00" />
+				<direction to="58" val="178.2076" stdev="20.00" />
+				<distance  to="58" val="119.1141" stdev="10.00" />
+				<direction to="59" val="177.2976" stdev="20.00" />
+				<distance  to="59" val="119.1739" stdev="10.00" />
+				<direction to="60" val="180.7597" stdev="20.00" />
+				<distance  to="60" val="137.2043" stdev="10.00" />
+				<direction to="61" val="179.6901" stdev="20.00" />
+				<distance  to="61" val="137.4976" stdev="10.00" />
+				<direction to="62" val="178.1535" stdev="20.00" />
+				<distance  to="62" val="137.3834" stdev="10.00" />
+				<direction to="63" val="178.8943" stdev="20.00" />
+				<distance  to="63" val="137.8856" stdev="10.00" />
+				<direction to="64" val="181.1077" stdev="20.00" />
+				<distance  to="64" val="158.6520" stdev="10.00" />
+				<direction to="65" val="180.0922" stdev="20.00" />
+				<distance  to="65" val="158.6466" stdev="10.00" />
+				<direction to="66" val="178.5616" stdev="20.00" />
+				<distance  to="66" val="158.8287" stdev="10.00" />
+				<direction to="67" val="179.2852" stdev="20.00" />
+				<distance  to="67" val="159.4668" stdev="10.00" />
+				<direction to="68" val="181.3234" stdev="20.00" />
+				<distance  to="68" val="181.0251" stdev="10.00" />
+				<direction to="69" val="180.3704" stdev="20.00" />
+				<distance  to="69" val="181.1043" stdev="10.00" />
+				<direction to="70" val="179.1115" stdev="20.00" />
+				<distance  to="70" val="181.2112" stdev="10.00" />
+				<direction to="71" val="179.6947" stdev="20.00" />
+				<distance  to="71" val="181.3639" stdev="10.00" />
+				<direction to="72" val="181.5757" stdev="20.00" />
+				<distance  to="72" val="202.7181" stdev="10.00" />
+				<direction to="73" val="180.7640" stdev="20.00" />
+				<distance  to="73" val="202.8173" stdev="10.00" />
+				<direction to="74" val="179.6788" stdev="20.00" />
+				<distance  to="74" val="202.9271" stdev="10.00" />
+				<direction to="75" val="180.2107" stdev="20.00" />
+				<distance  to="75" val="203.2498" stdev="10.00" />
+				<direction to="76" val="181.8877" stdev="20.00" />
+				<distance  to="76" val="223.4942" stdev="10.00" />
+				<direction to="77" val="181.1760" stdev="20.00" />
+				<distance  to="77" val="223.7997" stdev="10.00" />
+				<direction to="78" val="179.9781" stdev="20.00" />
+				<distance  to="78" val="223.9265" stdev="10.00" />
+				<direction to="79" val="180.5356" stdev="20.00" />
+				<distance  to="79" val="224.0470" stdev="10.00" />
+				<direction to="80" val="181.9670" stdev="20.00" />
+				<distance  to="80" val="245.5115" stdev="10.00" />
+				<direction to="81" val="181.2727" stdev="20.00" />
+				<distance  to="81" val="245.3605" stdev="10.00" />
+				<direction to="82" val="180.2298" stdev="20.00" />
+				<distance  to="82" val="245.7483" stdev="10.00" />
+				<direction to="83" val="180.7177" stdev="20.00" />
+				<distance  to="83" val="245.5925" stdev="10.00" />
+				<direction to="84" val="181.8100" stdev="20.00" />
+				<distance  to="84" val="265.5377" stdev="10.00" />
+				<direction to="85" val="181.2637" stdev="20.00" />
+				<distance  to="85" val="265.2247" stdev="10.00" />
+				<direction to="86" val="180.4364" stdev="20.00" />
+				<distance  to="86" val="265.5738" stdev="10.00" />
+				<direction to="87" val="180.8493" stdev="20.00" />
+				<distance  to="87" val="265.9963" stdev="10.00" />
+				<direction to="88" val="182.0046" stdev="20.00" />
+				<distance  to="88" val="287.5940" stdev="10.00" />
+				<direction to="89" val="181.4498" stdev="20.00" />
+				<distance  to="89" val="287.6821" stdev="10.00" />
+				<direction to="90" val="180.6958" stdev="20.00" />
+				<distance  to="90" val="287.7428" stdev="10.00" />
+				<direction to="91" val="181.0877" stdev="20.00" />
+				<distance  to="91" val="287.9358" stdev="10.00" />
+				<direction to="92" val="19.5735" stdev="20.00" />
+				<distance  to="92" val="14.9065" stdev="10.00" />
+				<direction to="93" val="16.2694" stdev="20.00" />
+				<distance  to="93" val="11.9593" stdev="10.00" />
+				<direction to="94" val="9.9259" stdev="20.00" />
+				<distance  to="94" val="7.3750" stdev="10.00" />
+				<direction to="95" val="54.9879" stdev="20.00" />
+				<distance  to="95" val="11.9628" stdev="10.00" />
+				<direction to="96" val="51.0703" stdev="20.00" />
+				<distance  to="96" val="8.3175" stdev="10.00" />
+				<direction to="97" val="44.0583" stdev="20.00" />
+				<distance  to="97" val="5.7593" stdev="10.00" />
+				<direction to="98" val="42.6418" stdev="20.00" />
+				<distance  to="98" val="2.4880" stdev="10.00" />
+				<direction to="99" val="103.8275" stdev="20.00" />
+				<distance  to="99" val="14.5452" stdev="10.00" />
+				<direction to="100" val="112.8340" stdev="20.00" />
+				<distance  to="100" val="12.2368" stdev="10.00" />
+				<direction to="101" val="125.2550" stdev="20.00" />
+				<distance  to="101" val="10.3798" stdev="10.00" />
+				<direction to="102" val="140.8255" stdev="20.00" />
+				<distance  to="102" val="9.0835" stdev="10.00" />
+				<direction to="103" val="129.4471" stdev="20.00" />
+				<distance  to="103" val="24.0106" stdev="10.00" />
+				<direction to="104" val="137.8401" stdev="20.00" />
+				<distance  to="104" val="22.6364" stdev="10.00" />
+				<direction to="106" val="145.6446" stdev="20.00" />
+				<distance  to="106" val="21.6256" stdev="10.00" />
+				<direction to="107" val="152.4871" stdev="20.00" />
+				<distance  to="107" val="21.2490" stdev="10.00" />
+				<direction to="108" val="144.3650" stdev="20.00" />
+				<distance  to="108" val="38.0461" stdev="10.00" />
+				<direction to="109" val="149.9677" stdev="20.00" />
+				<distance  to="109" val="37.0791" stdev="10.00" />
+				<direction to="110" val="154.3057" stdev="20.00" />
+				<distance  to="110" val="36.0182" stdev="10.00" />
+				<direction to="111" val="158.7539" stdev="20.00" />
+				<distance  to="111" val="35.9260" stdev="10.00" />
+				<direction to="112" val="150.9194" stdev="20.00" />
+				<distance  to="112" val="51.1105" stdev="10.00" />
+				<direction to="113" val="155.3319" stdev="20.00" />
+				<distance  to="113" val="49.9553" stdev="10.00" />
+				<direction to="114" val="158.7241" stdev="20.00" />
+				<distance  to="114" val="48.9996" stdev="10.00" />
+				<direction to="115" val="161.7924" stdev="20.00" />
+				<distance  to="115" val="49.0573" stdev="10.00" />
+				<direction to="116" val="156.1783" stdev="20.00" />
+				<distance  to="116" val="63.5625" stdev="10.00" />
+				<direction to="117" val="159.6056" stdev="20.00" />
+				<distance  to="117" val="62.4138" stdev="10.00" />
+				<direction to="118" val="163.0113" stdev="20.00" />
+				<distance  to="118" val="61.1427" stdev="10.00" />
+				<direction to="119" val="165.6027" stdev="20.00" />
+				<distance  to="119" val="60.4950" stdev="10.00" />
+				<direction to="4002" val="180.4988" stdev="20.00" />
+				<distance  to="4002" val="287.3728" stdev="10.00" />
+
+		</obs>
+
+		<obs from="4002">
+				<direction to="4001" val="383.2325" stdev="20.00" />
+				<distance  to="4001" val="287.3751" stdev="10.00" />
+				<direction to="124" val="387.0577" stdev="20.00" />
+				<distance  to="124" val="196.8725" stdev="10.00" />
+				<direction to="125" val="388.0304" stdev="20.00" />
+				<distance  to="125" val="196.7295" stdev="10.00" />
+				<direction to="126" val="389.1255" stdev="20.00" />
+				<distance  to="126" val="196.7287" stdev="10.00" />
+				<direction to="127" val="390.3429" stdev="20.00" />
+				<distance  to="127" val="196.8916" stdev="10.00" />
+				<direction to="4003" val="185.9050" stdev="20.00" />
+				<distance  to="4003" val="172.4498" stdev="10.00" />
+
+		</obs>
+
+		<obs from="4003">
+				<!--direction to="4002" val="386.9860" stdev="20.00" /-->
+				<distance  to="4002" val="172.4514" stdev="10.00" />
+				<!--direction to="4004" val="187.2820" stdev="20.00" /-->
+				<distance  to="4004" val="281.9655" stdev="10.00" />
+
+		</obs>
+
+		<obs from="4004">
+				<direction to="4003" val="388.7376" stdev="20.00" />
+				<distance  to="4003" val="281.9659" stdev="10.00" />
+				<direction to="4005" val="180.9497" stdev="20.00" />
+				<distance  to="4005" val="145.6357" stdev="10.00" />
+				<direction to="2160" val="174.4534" stdev="20.00" />
+				<distance  to="2160" val="113.3529" stdev="10.00" />
+				<direction to="2161" val="176.5847" stdev="20.00" />
+				<distance  to="2161" val="112.9691" stdev="10.00" />
+				<direction to="2162" val="178.9091" stdev="20.00" />
+				<distance  to="2162" val="112.4300" stdev="10.00" />
+				<direction to="2163" val="180.6241" stdev="20.00" />
+				<distance  to="2163" val="112.3109" stdev="10.00" />
+				<direction to="2164" val="181.1080" stdev="20.00" />
+				<distance  to="2164" val="91.2530" stdev="10.00" />
+				<direction to="2165" val="179.0075" stdev="20.00" />
+				<distance  to="2165" val="91.0072" stdev="10.00" />
+				<direction to="2166" val="176.5102" stdev="20.00" />
+				<distance  to="2166" val="91.1873" stdev="10.00" />
+				<direction to="2167" val="173.8004" stdev="20.00" />
+				<distance  to="2167" val="91.5673" stdev="10.00" />
+				<direction to="2168" val="173.4104" stdev="20.00" />
+				<distance  to="2168" val="72.0098" stdev="10.00" />
+				<direction to="2169" val="177.2744" stdev="20.00" />
+				<distance  to="2169" val="71.5298" stdev="10.00" />
+				<direction to="2170" val="180.3576" stdev="20.00" />
+				<distance  to="2170" val="70.9983" stdev="10.00" />
+				<direction to="2171" val="183.0339" stdev="20.00" />
+				<distance  to="2171" val="70.9229" stdev="10.00" />
+				<direction to="2172" val="184.5163" stdev="20.00" />
+				<distance  to="2172" val="51.3107" stdev="10.00" />
+				<direction to="2173" val="181.0848" stdev="20.00" />
+				<distance  to="2173" val="51.1294" stdev="10.00" />
+				<direction to="2174" val="177.6056" stdev="20.00" />
+				<distance  to="2174" val="51.3196" stdev="10.00" />
+				<direction to="2175" val="172.2013" stdev="20.00" />
+				<distance  to="2175" val="51.8835" stdev="10.00" />
+				<direction to="2176" val="163.0933" stdev="20.00" />
+				<distance  to="2176" val="32.4362" stdev="10.00" />
+				<direction to="2177" val="170.5038" stdev="20.00" />
+				<distance  to="2177" val="31.0881" stdev="10.00" />
+				<direction to="2178" val="178.2753" stdev="20.00" />
+				<distance  to="2178" val="30.1777" stdev="10.00" />
+				<direction to="2179" val="185.3856" stdev="20.00" />
+				<distance  to="2179" val="29.8420" stdev="10.00" />
+				<direction to="2180" val="179.4791" stdev="20.00" />
+				<distance  to="2180" val="10.3922" stdev="10.00" />
+				<direction to="2181" val="160.9932" stdev="20.00" />
+				<distance  to="2181" val="11.4367" stdev="10.00" />
+				<direction to="2182" val="147.3056" stdev="20.00" />
+				<distance  to="2182" val="13.2441" stdev="10.00" />
+				<direction to="2183" val="135.9700" stdev="20.00" />
+				<distance  to="2183" val="16.0245" stdev="10.00" />
+
+		</obs>
+
+		<obs from="4005">
+				<direction to="4004" val="381.9953" stdev="20.00" />
+				<distance  to="4004" val="145.6378" stdev="10.00" />
+
+		</obs>
+
+</points-observations>
+
+</network>
+</gama-local>
+

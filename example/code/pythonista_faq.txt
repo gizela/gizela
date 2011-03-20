@@ -1,0 +1,62 @@
+Otazky okolo tvorby kodu a psani dokumentace
+VYRESIT
+##################
+
+Visitory
+==================
+- jak pouzivat a k cemu jsou ???
+- super() pri vice nasobne dedicnosti jak predam inicializacni parametr
+
+New style Python
+==================
+- psat v new style, ale co to znamena? Vytvorit v example/code ukazku kodu
+	- Class(object)
+	- Accesory ???
+	- Descriptory ???
+	- Visitory ???
+	- Slots ???
+	- potrzitka ala internal a private metody ???
+	- super ()
+	- property
+
+VYRESENO
+##################
+
+Inicializace instance
+======================
+Volani __init__() rodicovske tridy pomoci super()
+
+Atributes
+=============
+_private - privatni
+public - verejne
+pomoci property definovat ty kde ma byt navazana nejaka akce
+
+Jednotky v gizele
+==================
+- vychozi metry, gony s matematickym souradnicovym systemem
+
+Odsazovani kodu
+==================
+- tabelator
+	
+Adresar trunk
+==================
+- v adresari trunk umistit pouze python gizela balicek a co s tim primo souvisi
+	Ostatni umistit nad jeho uroven
+
+Soubory __init__.py
+==================
+- prazdne, importy deklarovat v souborech trid a samotnych modulech
+
+Import *
+==================
+- nepouzivat import *
+
+Dokumentace
+==================
+- bud epytext nebo reST (reST nutne definovat pomoci __docformat__)
+
+Error vyjimky
+==================
+- Error class se pouzije tam kde se ocekava problem. Individualni rozhodnuti

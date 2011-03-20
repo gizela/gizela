@@ -1,0 +1,191 @@
+<?xml version="1.0" ?>
+<!DOCTYPE gama-xml SYSTEM "gama-xml.dtd">
+
+<gama-local>
+<network axes-xy="sw" angles="right-handed">
+
+<description>
+
+</description>
+
+<parameters
+	 sigma-apr="1"
+	 conf-pr="0.95"
+	 tol-abs="1000"
+	 sigma-act="apriori"
+/>
+
+<points-observations
+	 direction-stdev="6"
+	 zenith-angle-stdev="6"
+	 distance-stdev="1" >
+
+<point id= "1003" adj="xyz" />
+<point id= "1005" adj="xyz" />
+<point id= "1011" adj="xyz" />
+<point id= "1012" adj="xyz" />
+<point id= "4004" adj="xyz" />
+<point id= "4012" adj="xyz" />
+<point id= "501" adj="xyz" />
+<point id= "502" adj="xyz" />
+<point id= "503" adj="xyz" />
+<point id= "504" adj="xyz" />
+<point id= "505" adj="xyz" />
+<point id= "506" adj="xyz" />
+<point id= "507" adj="xyz" />
+<point id= "512" adj="xyz" />
+<point id= "541" adj="xyz" />
+<point id= "552" adj="xyz" />
+<point id= "553" adj="xyz" />
+
+<obs from="1012">
+ <direction to="502" val="0.00069" />
+ <direction to="4012" val="162.81794" />
+
+ <z-angle to="502" val="101.44338" from_dh="0.00000" to_dh="0.00000" />
+ <z-angle to="4012" val="100.10201" from_dh="0.00000" to_dh="0.00000" />
+
+ <s-distance to="502" val="61.83953" from_dh="0.00000" to_dh="0.00000" />
+ <s-distance to="4012" val="15.45202" from_dh="0.00000" to_dh="0.00000" />
+</obs>
+
+<obs from="4012">
+ <direction to="1012" val="0.00323" />
+ <direction to="553" val="153.94230" />
+
+ <z-angle to="1012" val="99.89589" from_dh="0.00000" to_dh="0.00000" />
+ <z-angle to="553" val="109.46358" from_dh="0.00000" to_dh="0.00000" />
+
+ <s-distance to="1012" val="15.45166" from_dh="0.00000" to_dh="0.00000" />
+ <s-distance to="553" val="21.64431" from_dh="0.00000" to_dh="0.00000" />
+</obs>
+
+<obs from="553">
+ <direction to="4012" val="0.00170" />
+ <direction to="552" val="258.33631" />
+
+ <z-angle to="4012" val="90.53437" from_dh="0.00000" to_dh="0.00000" />
+ <z-angle to="552" val="95.77012" from_dh="0.00000" to_dh="0.17120" />
+
+ <s-distance to="4012" val="21.64379" from_dh="0.00000" to_dh="0.00000" />
+ <s-distance to="552" val="96.44313" from_dh="0.00000" to_dh="0.17120" />
+</obs>
+
+<obs from="552">
+ <direction to="553" val="0.00016" />
+ <direction to="512" val="102.16344" />
+ <direction to="501" val="305.87354" />
+
+ <z-angle to="553" val="104.23151" from_dh="0.17120" to_dh="0.15510" />
+ <z-angle to="512" val="98.22157" from_dh="0.17120" to_dh="0.00000" />
+ <z-angle to="501" val="101.79312" from_dh="0.17120" to_dh="0.00000" />
+
+ <s-distance to="553" val="96.44187" from_dh="0.17120" to_dh="0.15510" />
+ <s-distance to="512" val="281.99511" from_dh="0.17120" to_dh="0.00000" />
+ <s-distance to="501" val="43.90031" from_dh="0.17120" to_dh="0.00000" />
+</obs>
+
+<obs from="552">
+ <direction to="553" val="0.00020" />
+ <direction to="501" val="305.87372" />
+
+ <z-angle to="553" val="104.23156" from_dh="0.00000" to_dh="0.15510" />
+ <z-angle to="501" val="101.79334" from_dh="0.00000" to_dh="0.00000" />
+
+ <s-distance to="553" val="96.44197" from_dh="0.00000" to_dh="0.15510" />
+ <s-distance to="501" val="43.90025" from_dh="0.00000" to_dh="0.00000" />
+</obs>
+
+<obs from="501">
+ <direction to="552" val="399.99954" />
+ <direction to="1005" val="172.64220" />
+
+ <z-angle to="552" val="98.20872" from_dh="0.00000" to_dh="0.17120" />
+ <z-angle to="1005" val="100.09200" from_dh="0.00000" to_dh="0.00000" />
+
+ <s-distance to="552" val="43.90079" from_dh="0.00000" to_dh="0.17120" />
+ <s-distance to="1005" val="36.58531" from_dh="0.00000" to_dh="0.00000" />
+</obs>
+
+<obs from="1011">
+ <direction to="507" val="0.00044" />
+ <direction to="506" val="115.88227" />
+
+ <z-angle to="507" val="101.88844" from_dh="0.00000" to_dh="0.00000" />
+ <z-angle to="506" val="102.06195" from_dh="0.00000" to_dh="0.00000" />
+
+ <s-distance to="507" val="68.90913" from_dh="0.00000" to_dh="0.00000" />
+ <s-distance to="506" val="77.48114" from_dh="0.00000" to_dh="0.00000" />
+</obs>
+
+<obs from="506">
+ <direction to="1011" val="399.99957" />
+ <direction to="505" val="165.70123" />
+
+ <z-angle to="1011" val="97.93904" from_dh="0.00000" to_dh="0.00000" />
+ <z-angle to="505" val="105.27807" from_dh="0.00000" to_dh="0.00000" />
+
+ <s-distance to="1011" val="77.48197" from_dh="0.00000" to_dh="0.00000" />
+ <s-distance to="505" val="93.13198" from_dh="0.00000" to_dh="0.00000" />
+</obs>
+
+<obs from="505">
+ <direction to="506" val="399.99923" />
+ <direction to="4004" val="162.38637" />
+
+ <z-angle to="506" val="94.72401" from_dh="0.00000" to_dh="0.00000" />
+ <z-angle to="4004" val="102.27079" from_dh="0.00000" to_dh="0.00000" />
+
+ <s-distance to="506" val="93.13298" from_dh="0.00000" to_dh="0.00000" />
+ <s-distance to="4004" val="143.71322" from_dh="0.00000" to_dh="0.00000" />
+</obs>
+
+<obs from="4004">
+ <direction to="505" val="399.99993" />
+ <direction to="1003" val="136.80777" />
+ <direction to="503" val="204.25659" />
+ <direction to="541" val="354.98680" />
+ <direction to="505" val="399.99974" />
+ <direction to="504" val="197.50225" />
+
+ <z-angle to="505" val="97.73191" from_dh="0.00000" to_dh="0.00000" />
+ <z-angle to="1003" val="105.62625" from_dh="0.00000" to_dh="0.00000" />
+ <z-angle to="503" val="103.14347" from_dh="0.00000" to_dh="0.00000" />
+ <z-angle to="541" val="100.32332" from_dh="0.00000" to_dh="0.00000" />
+ <z-angle to="505" val="97.73193" from_dh="0.00000" to_dh="0.00000" />
+ <z-angle to="504" val="128.37364" from_dh="0.00000" to_dh="0.00000" />
+
+ <s-distance to="505" val="143.71373" from_dh="0.00000" to_dh="0.00000" />
+ <s-distance to="1003" val="17.10017" from_dh="0.00000" to_dh="0.00000" />
+ <s-distance to="503" val="127.31985" from_dh="0.00000" to_dh="0.00000" />
+ <s-distance to="541" val="26.18268" from_dh="0.00000" to_dh="0.00000" />
+ <s-distance to="505" val="143.71435" from_dh="0.00000" to_dh="0.00000" />
+ <s-distance to="504" val="4.18059" from_dh="0.00000" to_dh="0.00000" />
+</obs>
+
+<obs from="503">
+ <direction to="4004" val="399.99918" />
+ <direction to="502" val="199.58710" />
+
+ <z-angle to="4004" val="96.85897" from_dh="0.00000" to_dh="0.00000" />
+ <z-angle to="502" val="99.66785" from_dh="0.00000" to_dh="0.00000" />
+
+ <s-distance to="4004" val="127.32007" from_dh="0.00000" to_dh="0.00000" />
+ <s-distance to="502" val="183.72959" from_dh="0.00000" to_dh="0.00000" />
+</obs>
+
+<obs from="502">
+ <direction to="503" val="399.99966" />
+ <direction to="1012" val="136.70123" />
+
+ <z-angle to="503" val="100.33434" from_dh="0.00000" to_dh="0.00000" />
+ <z-angle to="1012" val="99.60621" from_dh="0.00000" to_dh="0.00000" />
+
+ <s-distance to="503" val="183.72876" from_dh="0.00000" to_dh="0.00000" />
+ <s-distance to="1012" val="61.82500" from_dh="0.00000" to_dh="0.00000" />
+</obs>
+
+
+</points-observations>
+</network>
+</gama-local>

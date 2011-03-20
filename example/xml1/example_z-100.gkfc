@@ -1,0 +1,612 @@
+<?xml version="1.0" ?>
+<!DOCTYPE gama-xml SYSTEM "gama-xml.dtd">
+
+<gama-local version="2.0">
+<network axes-xy="sw" angles="right-handed">
+
+<description>
+Vyrovnani geodeticke site - VOLNA
+</description>
+
+<parameters
+                sigma-apr="1"
+                sigma-act="apriori"
+                conf-pr="0.95"
+                tol-abs="1000"
+                update-constrained-coordinates="yes"
+/>
+
+<points-observations>
+		<point id="4001" y="808401.498" x="994986.838" z="330.124" adj="Z" />
+		<point id="4003" y="808119.946" x="995350.302" z="329.641" adj="Z" />
+		<point id="4005" y="807854.929" x="995684.923" z="332.856" adj="Z" />
+                <point id="4002" adj="z" />
+                <point id="4004" adj="z" />
+                <point id="1" adj="z" />
+                <point id="2" adj="z" />
+                <point id="3" adj="z" />
+                <point id="4" adj="z" />
+                <point id="5" adj="z" />
+                <point id="6" adj="z" />
+                <point id="7" adj="z" />
+                <point id="8" adj="z" />
+                <point id="9" adj="z" />
+                <point id="10" adj="z" />
+                <point id="11" adj="z" />
+                <point id="12" adj="z" />
+                <point id="13" adj="z" />
+                <point id="14" adj="z" />
+                <point id="15" adj="z" />
+                <point id="16" adj="z" />
+                <point id="17" adj="z" />
+                <point id="18" adj="z" />
+                <point id="19" adj="z" />
+                <point id="20" adj="z" />
+                <point id="21" adj="z" />
+                <point id="22" adj="z" />
+                <point id="23" adj="z" />
+                <point id="24" adj="z" />
+                <point id="25" adj="z" />
+                <point id="26" adj="z" />
+                <point id="27" adj="z" />
+                <point id="28" adj="z" />
+                <point id="29" adj="z" />
+                <point id="30" adj="z" />
+                <point id="31" adj="z" />
+                <point id="32" adj="z" />
+                <point id="33" adj="z" />
+                <point id="34" adj="z" />
+                <point id="35" adj="z" />
+                <point id="36" adj="z" />
+                <point id="37" adj="z" />
+                <point id="38" adj="z" />
+                <point id="39" adj="z" />
+                <point id="40" adj="z" />
+                <point id="41" adj="z" />
+                <point id="42" adj="z" />
+                <point id="43" adj="z" />
+                <point id="44" adj="z" />
+                <point id="45" adj="z" />
+                <point id="46" adj="z" />
+                <point id="47" adj="z" />
+                <point id="48" adj="z" />
+                <point id="49" adj="z" />
+                <point id="50" adj="z" />
+                <point id="51" adj="z" />
+                <point id="52" adj="z" />
+                <point id="53" adj="z" />
+                <point id="54" adj="z" />
+                <point id="55" adj="z" />
+                <point id="56" adj="z" />
+                <point id="57" adj="z" />
+                <point id="58" adj="z" />
+                <point id="59" adj="z" />
+                <point id="60" adj="z" />
+                <point id="61" adj="z" />
+                <point id="62" adj="z" />
+                <point id="63" adj="z" />
+                <point id="64" adj="z" />
+                <point id="65" adj="z" />
+                <point id="66" adj="z" />
+                <point id="67" adj="z" />
+                <point id="68" adj="z" />
+                <point id="69" adj="z" />
+                <point id="70" adj="z" />
+                <point id="71" adj="z" />
+                <point id="72" adj="z" />
+                <point id="73" adj="z" />
+                <point id="74" adj="z" />
+                <point id="75" adj="z" />
+                <point id="76" adj="z" />
+                <point id="77" adj="z" />
+                <point id="78" adj="z" />
+                <point id="79" adj="z" />
+                <point id="80" adj="z" />
+                <point id="81" adj="z" />
+                <point id="82" adj="z" />
+                <point id="83" adj="z" />
+                <point id="84" adj="z" />
+                <point id="85" adj="z" />
+                <point id="86" adj="z" />
+                <point id="87" adj="z" />
+                <point id="88" adj="z" />
+                <point id="89" adj="z" />
+                <point id="90" adj="z" />
+                <point id="91" adj="z" />
+                <point id="92" adj="z" />
+                <point id="93" adj="z" />
+                <point id="94" adj="z" />
+                <point id="95" adj="z" />
+                <point id="96" adj="z" />
+                <point id="97" adj="z" />
+                <point id="98" adj="z" />
+                
+                <obs from="4001">
+                                <direction to="1" val="4.3812" stdev="20.00" />
+                                <s-distance  to="1" val="4.0420" stdev="10.00" />
+                                <z-angle  to="1" val="107.6750" stdev="10.00" />
+                                <direction to="2" val="399.6599" stdev="20.00" />
+                                <s-distance  to="2" val="6.2390" stdev="10.00" />
+                                <z-angle  to="2" val="110.6455" stdev="10.00" />
+                                <direction to="3" val="394.7332" stdev="20.00" />
+                                <s-distance  to="3" val="9.0290" stdev="10.00" />
+                                <z-angle  to="3" val="111.1873" stdev="10.00" />
+                                <direction to="4" val="393.9936" stdev="20.00" />
+                                <s-distance  to="4" val="11.3760" stdev="10.00" />
+                                <z-angle  to="4" val="112.4020" stdev="10.00" />
+                                <direction to="5" val="394.8622" stdev="20.00" />
+                                <s-distance  to="5" val="14.6600" stdev="10.00" />
+                                <z-angle  to="5" val="112.6474" stdev="10.00" />
+                                <direction to="6" val="394.1411" stdev="20.00" />
+                                <s-distance  to="6" val="17.3060" stdev="10.00" />
+                                <z-angle  to="6" val="113.3038" stdev="10.00" />
+                                <direction to="7" val="371.6835" stdev="20.00" />
+                                <s-distance  to="7" val="15.9740" stdev="10.00" />
+                                <z-angle  to="7" val="112.1776" stdev="10.00" />
+                                <direction to="8" val="372.2206" stdev="20.00" />
+                                <s-distance  to="8" val="13.0590" stdev="10.00" />
+                                <z-angle  to="8" val="112.8047" stdev="10.00" />
+                                <direction to="9" val="372.7744" stdev="20.00" />
+                                <s-distance  to="9" val="10.4070" stdev="10.00" />
+                                <z-angle  to="9" val="112.0404" stdev="10.00" />
+                                <direction to="10" val="373.1861" stdev="20.00" />
+                                <s-distance  to="10" val="7.1200" stdev="10.00" />
+                                <z-angle  to="10" val="109.7168" stdev="10.00" />
+                                <direction to="10" val="373.1982" stdev="20.00" />
+                                <s-distance  to="10" val="7.1170" stdev="10.00" />
+                                <z-angle  to="10" val="109.7783" stdev="10.00" />
+                                <direction to="11" val="372.6469" stdev="20.00" />
+                                <s-distance  to="11" val="4.4120" stdev="10.00" />
+                                <z-angle  to="11" val="107.2280" stdev="10.00" />
+                                <direction to="12" val="344.1740" stdev="20.00" />
+                                <s-distance  to="12" val="4.0440" stdev="10.00" />
+                                <z-angle  to="12" val="106.1502" stdev="10.00" />
+                                <direction to="13" val="349.9749" stdev="20.00" />
+                                <s-distance  to="13" val="7.1030" stdev="10.00" />
+                                <z-angle  to="13" val="108.9570" stdev="10.00" />
+                                <direction to="14" val="349.7292" stdev="20.00" />
+                                <s-distance  to="14" val="9.9340" stdev="10.00" />
+                                <z-angle  to="14" val="110.8213" stdev="10.00" />
+                                <direction to="15" val="347.7341" stdev="20.00" />
+                                <s-distance  to="15" val="14.7710" stdev="10.00" />
+                                <z-angle  to="15" val="111.0191" stdev="10.00" />
+                                <direction to="16" val="323.8267" stdev="20.00" />
+                                <s-distance  to="16" val="14.5300" stdev="10.00" />
+                                <z-angle  to="16" val="109.9147" stdev="10.00" />
+                                <direction to="17" val="325.9412" stdev="20.00" />
+                                <s-distance  to="17" val="11.6370" stdev="10.00" />
+                                <z-angle  to="17" val="111.0836" stdev="10.00" />
+                                <direction to="18" val="325.4357" stdev="20.00" />
+                                <s-distance  to="18" val="9.0590" stdev="10.00" />
+                                <z-angle  to="18" val="109.9906" stdev="10.00" />
+                                <direction to="19" val="322.7739" stdev="20.00" />
+                                <s-distance  to="19" val="5.4800" stdev="10.00" />
+                                <z-angle  to="19" val="106.0190" stdev="10.00" />
+                                <direction to="20" val="314.0796" stdev="20.00" />
+                                <s-distance  to="20" val="3.6200" stdev="10.00" />
+                                <z-angle  to="20" val="102.9275" stdev="10.00" />
+                                <direction to="21" val="300.4813" stdev="20.00" />
+                                <s-distance  to="21" val="5.4500" stdev="10.00" />
+                                <z-angle  to="21" val="112.0960" stdev="10.00" />
+                                <direction to="22" val="291.9938" stdev="20.00" />
+                                <s-distance  to="22" val="7.0450" stdev="10.00" />
+                                <z-angle  to="22" val="116.5164" stdev="10.00" />
+                                <direction to="23" val="285.2313" stdev="20.00" />
+                                <s-distance  to="23" val="9.1320" stdev="10.00" />
+                                <z-angle  to="23" val="117.3813" stdev="10.00" />
+                                <direction to="24" val="203.1342" stdev="20.00" />
+                                <s-distance  to="24" val="13.2850" stdev="10.00" />
+                                <z-angle  to="24" val="115.4709" stdev="10.00" />
+                                <direction to="25" val="194.3528" stdev="20.00" />
+                                <s-distance  to="25" val="11.8520" stdev="10.00" />
+                                <z-angle  to="25" val="113.4242" stdev="10.00" />
+                                <direction to="26" val="184.6948" stdev="20.00" />
+                                <s-distance  to="26" val="10.8900" stdev="10.00" />
+                                <z-angle  to="26" val="109.6366" stdev="10.00" />
+                                <direction to="27" val="171.6027" stdev="20.00" />
+                                <s-distance  to="27" val="10.0380" stdev="10.00" />
+                                <z-angle  to="27" val="102.6522" stdev="10.00" />
+                                <direction to="28" val="166.2939" stdev="20.00" />
+                                <s-distance  to="28" val="21.4470" stdev="10.00" />
+                                <z-angle  to="28" val="102.9781" stdev="10.00" />
+                                <direction to="29" val="170.8967" stdev="20.00" />
+                                <s-distance  to="29" val="21.5820" stdev="10.00" />
+                                <z-angle  to="29" val="105.5874" stdev="10.00" />
+                                <direction to="30" val="175.7410" stdev="20.00" />
+                                <s-distance  to="30" val="22.1680" stdev="10.00" />
+                                <z-angle  to="30" val="107.5953" stdev="10.00" />
+                                <direction to="31" val="183.1502" stdev="20.00" />
+                                <s-distance  to="31" val="23.3700" stdev="10.00" />
+                                <z-angle  to="31" val="109.9661" stdev="10.00" />
+                                <direction to="32" val="176.8112" stdev="20.00" />
+                                <s-distance  to="32" val="33.5440" stdev="10.00" />
+                                <z-angle  to="32" val="107.6757" stdev="10.00" />
+                                <direction to="33" val="172.9155" stdev="20.00" />
+                                <s-distance  to="33" val="32.9370" stdev="10.00" />
+                                <z-angle  to="33" val="106.3893" stdev="10.00" />
+                                <direction to="34" val="169.3487" stdev="20.00" />
+                                <s-distance  to="34" val="32.5720" stdev="10.00" />
+                                <z-angle  to="34" val="104.5472" stdev="10.00" />
+                                <direction to="35" val="165.8411" stdev="20.00" />
+                                <s-distance  to="35" val="32.3210" stdev="10.00" />
+                                <z-angle  to="35" val="102.6096" stdev="10.00" />
+                                <direction to="36" val="166.4872" stdev="20.00" />
+                                <s-distance  to="36" val="43.6200" stdev="10.00" />
+                                <z-angle  to="36" val="102.2959" stdev="10.00" />
+                                <direction to="37" val="169.1315" stdev="20.00" />
+                                <s-distance  to="37" val="43.6590" stdev="10.00" />
+                                <z-angle  to="37" val="103.7847" stdev="10.00" />
+                                <direction to="38" val="171.6869" stdev="20.00" />
+                                <s-distance  to="38" val="43.7330" stdev="10.00" />
+                                <z-angle  to="38" val="105.0679" stdev="10.00" />
+                                <direction to="39" val="173.8201" stdev="20.00" />
+                                <s-distance  to="39" val="43.9450" stdev="10.00" />
+                                <z-angle  to="39" val="105.7128" stdev="10.00" />
+                                <direction to="40" val="174.8522" stdev="20.00" />
+                                <s-distance  to="40" val="52.8530" stdev="10.00" />
+                                <z-angle  to="40" val="105.0517" stdev="10.00" />
+                                <direction to="41" val="171.9564" stdev="20.00" />
+                                <s-distance  to="41" val="52.9160" stdev="10.00" />
+                                <z-angle  to="41" val="103.9850" stdev="10.00" />
+                                <direction to="42" val="170.2114" stdev="20.00" />
+                                <s-distance  to="42" val="53.0120" stdev="10.00" />
+                                <z-angle  to="42" val="103.0920" stdev="10.00" />
+                                <direction to="43" val="168.2521" stdev="20.00" />
+                                <s-distance  to="43" val="53.1730" stdev="10.00" />
+                                <z-angle  to="43" val="102.0126" stdev="10.00" />
+                                <direction to="44" val="171.0734" stdev="20.00" />
+                                <s-distance  to="44" val="66.8420" stdev="10.00" />
+                                <z-angle  to="44" val="101.5689" stdev="10.00" />
+                                <direction to="45" val="172.8801" stdev="20.00" />
+                                <s-distance  to="45" val="66.5660" stdev="10.00" />
+                                <z-angle  to="45" val="102.4619" stdev="10.00" />
+                                <direction to="46" val="174.4985" stdev="20.00" />
+                                <s-distance  to="46" val="66.4900" stdev="10.00" />
+                                <z-angle  to="46" val="103.3137" stdev="10.00" />
+                                <direction to="47" val="176.3501" stdev="20.00" />
+                                <s-distance  to="47" val="66.5240" stdev="10.00" />
+                                <z-angle  to="47" val="103.9657" stdev="10.00" />
+                                <direction to="48" val="178.2482" stdev="20.00" />
+                                <s-distance  to="48" val="82.8030" stdev="10.00" />
+                                <z-angle  to="48" val="103.3956" stdev="10.00" />
+                                <direction to="49" val="176.9692" stdev="20.00" />
+                                <s-distance  to="49" val="82.9370" stdev="10.00" />
+                                <z-angle  to="49" val="103.0035" stdev="10.00" />
+                                <direction to="50" val="175.5443" stdev="20.00" />
+                                <s-distance  to="50" val="83.1710" stdev="10.00" />
+                                <z-angle  to="50" val="102.2083" stdev="10.00" />
+                                <direction to="51" val="174.1168" stdev="20.00" />
+                                <s-distance  to="51" val="83.2870" stdev="10.00" />
+                                <z-angle  to="51" val="101.4269" stdev="10.00" />
+                                <direction to="52" val="175.4978" stdev="20.00" />
+                                <s-distance  to="52" val="100.0800" stdev="10.00" />
+                                <z-angle  to="52" val="101.1385" stdev="10.00" />
+                                <direction to="53" val="176.7855" stdev="20.00" />
+                                <s-distance  to="53" val="99.9390" stdev="10.00" />
+                                <z-angle  to="53" val="101.7552" stdev="10.00" />
+                                <direction to="54" val="177.9395" stdev="20.00" />
+                                <s-distance  to="54" val="99.7660" stdev="10.00" />
+                                <z-angle  to="54" val="102.3578" stdev="10.00" />
+                                <direction to="55" val="179.6002" stdev="20.00" />
+                                <s-distance  to="55" val="99.7950" stdev="10.00" />
+                                <z-angle  to="55" val="102.9522" stdev="10.00" />
+                                <direction to="56" val="180.1366" stdev="20.00" />
+                                <s-distance  to="56" val="118.2950" stdev="10.00" />
+                                <z-angle  to="56" val="102.2376" stdev="10.00" />
+                                <direction to="57" val="179.0051" stdev="20.00" />
+                                <s-distance  to="57" val="118.5430" stdev="10.00" />
+                                <z-angle  to="57" val="101.9012" stdev="10.00" />
+                                <direction to="58" val="178.2076" stdev="20.00" />
+                                <s-distance  to="58" val="119.1650" stdev="10.00" />
+                                <z-angle  to="58" val="101.5024" stdev="10.00" />
+                                <direction to="59" val="177.2976" stdev="20.00" />
+                                <s-distance  to="59" val="119.2030" stdev="10.00" />
+                                <z-angle  to="59" val="100.8817" stdev="10.00" />
+                                <direction to="60" val="180.7597" stdev="20.00" />
+                                <s-distance  to="60" val="137.2900" stdev="10.00" />
+                                <z-angle  to="60" val="101.9640" stdev="10.00" />
+                                <direction to="61" val="179.6901" stdev="20.00" />
+                                <s-distance  to="61" val="137.5620" stdev="10.00" />
+                                <z-angle  to="61" val="101.6087" stdev="10.00" />
+                                <direction to="62" val="178.1535" stdev="20.00" />
+                                <s-distance  to="62" val="137.4150" stdev="10.00" />
+                                <z-angle  to="62" val="100.8124" stdev="10.00" />
+                                <direction to="63" val="178.8943" stdev="20.00" />
+                                <s-distance  to="63" val="137.9330" stdev="10.00" />
+                                <z-angle  to="63" val="101.2584" stdev="10.00" />
+                                <direction to="64" val="181.1077" stdev="20.00" />
+                                <s-distance  to="64" val="158.7370" stdev="10.00" />
+                                <z-angle  to="64" val="101.7716" stdev="10.00" />
+                                <direction to="65" val="180.0922" stdev="20.00" />
+                                <s-distance  to="65" val="158.7080" stdev="10.00" />
+                                <z-angle  to="65" val="101.3893" stdev="10.00" />
+                                <direction to="66" val="178.5616" stdev="20.00" />
+                                <s-distance  to="66" val="158.8600" stdev="10.00" />
+                                <z-angle  to="66" val="100.6247" stdev="10.00" />
+                                <direction to="67" val="179.2852" stdev="20.00" />
+                                <s-distance  to="67" val="159.5130" stdev="10.00" />
+                                <z-angle  to="67" val="101.0687" stdev="10.00" />
+                                <direction to="68" val="181.3234" stdev="20.00" />
+                                <s-distance  to="68" val="181.1120" stdev="10.00" />
+                                <z-angle  to="68" val="101.6383" stdev="10.00" />
+                                <direction to="69" val="180.3704" stdev="20.00" />
+                                <s-distance  to="69" val="181.1700" stdev="10.00" />
+                                <z-angle  to="69" val="101.3174" stdev="10.00" />
+                                <direction to="70" val="179.1115" stdev="20.00" />
+                                <s-distance  to="70" val="181.2470" stdev="10.00" />
+                                <z-angle  to="70" val="100.6289" stdev="10.00" />
+                                <direction to="71" val="179.6947" stdev="20.00" />
+                                <s-distance  to="71" val="181.4130" stdev="10.00" />
+                                <z-angle  to="71" val="100.9941" stdev="10.00" />
+                                <direction to="72" val="181.5757" stdev="20.00" />
+                                <s-distance  to="72" val="202.7920" stdev="10.00" />
+                                <z-angle  to="72" val="101.3222" stdev="10.00" />
+                                <direction to="73" val="180.7640" stdev="20.00" />
+                                <s-distance  to="73" val="202.8730" stdev="10.00" />
+                                <z-angle  to="73" val="101.0108" stdev="10.00" />
+                                <direction to="74" val="179.6788" stdev="20.00" />
+                                <s-distance  to="74" val="202.9630" stdev="10.00" />
+                                <z-angle  to="74" val="100.4807" stdev="10.00" />
+                                <direction to="75" val="180.2107" stdev="20.00" />
+                                <s-distance  to="75" val="203.2940" stdev="10.00" />
+                                <z-angle  to="75" val="100.7483" stdev="10.00" />
+                                <direction to="76" val="181.8877" stdev="20.00" />
+                                <s-distance  to="76" val="223.5630" stdev="10.00" />
+                                <z-angle  to="76" val="101.1364" stdev="10.00" />
+                                <direction to="77" val="181.1760" stdev="20.00" />
+                                <s-distance  to="77" val="223.8560" stdev="10.00" />
+                                <z-angle  to="77" val="100.9143" stdev="10.00" />
+                                <direction to="78" val="179.9781" stdev="20.00" />
+                                <s-distance  to="78" val="223.9630" stdev="10.00" />
+                                <z-angle  to="78" val="100.3414" stdev="10.00" />
+                                <direction to="79" val="180.5356" stdev="20.00" />
+                                <s-distance  to="79" val="224.0910" stdev="10.00" />
+                                <z-angle  to="79" val="100.6225" stdev="10.00" />
+                                <direction to="80" val="181.9670" stdev="20.00" />
+                                <s-distance  to="80" val="245.5740" stdev="10.00" />
+                                <z-angle  to="80" val="100.9272" stdev="10.00" />
+                                <direction to="81" val="181.2727" stdev="20.00" />
+                                <s-distance  to="81" val="245.4130" stdev="10.00" />
+                                <z-angle  to="81" val="100.7269" stdev="10.00" />
+                                <direction to="82" val="180.2298" stdev="20.00" />
+                                <s-distance  to="82" val="245.7870" stdev="10.00" />
+                                <z-angle  to="82" val="100.2706" stdev="10.00" />
+                                <direction to="83" val="180.7177" stdev="20.00" />
+                                <s-distance  to="83" val="245.6370" stdev="10.00" />
+                                <z-angle  to="83" val="100.5133" stdev="10.00" />
+                                <direction to="84" val="181.8100" stdev="20.00" />
+                                <s-distance  to="84" val="265.5990" stdev="10.00" />
+                                <z-angle  to="84" val="100.8160" stdev="10.00" />
+                                <direction to="85" val="181.2637" stdev="20.00" />
+                                <s-distance  to="85" val="265.2780" stdev="10.00" />
+                                <z-angle  to="85" val="100.6519" stdev="10.00" />
+                                <direction to="86" val="180.4364" stdev="20.00" />
+                                <s-distance  to="86" val="265.6170" stdev="10.00" />
+                                <z-angle  to="86" val="100.3383" stdev="10.00" />
+                                <direction to="87" val="180.8493" stdev="20.00" />
+                                <s-distance  to="87" val="266.0450" stdev="10.00" />
+                                <z-angle  to="87" val="100.5295" stdev="10.00" />
+                                <direction to="88" val="182.0046" stdev="20.00" />
+                                <s-distance  to="88" val="287.6570" stdev="10.00" />
+                                <z-angle  to="88" val="100.7554" stdev="10.00" />
+                                <direction to="89" val="181.4498" stdev="20.00" />
+                                <s-distance  to="89" val="287.7380" stdev="10.00" />
+                                <z-angle  to="89" val="100.6082" stdev="10.00" />
+                                <direction to="90" val="180.6958" stdev="20.00" />
+                                <s-distance  to="90" val="287.7880" stdev="10.00" />
+                                <z-angle  to="90" val="100.2633" stdev="10.00" />
+                                <direction to="91" val="181.0877" stdev="20.00" />
+                                <s-distance  to="91" val="287.9860" stdev="10.00" />
+                                <z-angle  to="91" val="100.4564" stdev="10.00" />
+                                <direction to="92" val="19.5735" stdev="20.00" />
+                                <s-distance  to="92" val="15.4230" stdev="10.00" />
+                                <z-angle  to="92" val="116.4856" stdev="10.00" />
+                                <direction to="93" val="16.2694" stdev="20.00" />
+                                <s-distance  to="93" val="12.4160" stdev="10.00" />
+                                <z-angle  to="93" val="117.2853" stdev="10.00" />
+                                <direction to="94" val="9.9259" stdev="20.00" />
+                                <s-distance  to="94" val="7.6010" stdev="10.00" />
+                                <z-angle  to="94" val="115.5252" stdev="10.00" />
+                                <direction to="95" val="54.9879" stdev="20.00" />
+                                <s-distance  to="95" val="12.6690" stdev="10.00" />
+                                <z-angle  to="95" val="121.3286" stdev="10.00" />
+                                <direction to="96" val="51.0703" stdev="20.00" />
+                                <s-distance  to="96" val="8.9440" stdev="10.00" />
+                                <z-angle  to="96" val="123.9454" stdev="10.00" />
+                                <direction to="97" val="44.0583" stdev="20.00" />
+                                <s-distance  to="97" val="6.1460" stdev="10.00" />
+                                <z-angle  to="97" val="122.6761" stdev="10.00" />
+                                <direction to="98" val="42.6418" stdev="20.00" />
+                                <s-distance  to="98" val="2.5270" stdev="10.00" />
+                                <z-angle  to="98" val="111.1458" stdev="10.00" />
+                                <direction to="99" val="103.8275" stdev="20.00" />
+                                <s-distance  to="99" val="15.2380" stdev="10.00" />
+                                <z-angle  to="99" val="119.2399" stdev="10.00" />
+                                <direction to="100" val="112.8340" stdev="20.00" />
+                                <s-distance  to="100" val="12.7220" stdev="10.00" />
+                                <z-angle  to="100" val="117.6056" stdev="10.00" />
+                                <direction to="101" val="125.2550" stdev="20.00" />
+                                <s-distance  to="101" val="10.6370" stdev="10.00" />
+                                <z-angle  to="101" val="113.9865" stdev="10.00" />
+                                <direction to="102" val="140.8255" stdev="20.00" />
+                                <s-distance  to="102" val="9.1290" stdev="10.00" />
+                                <z-angle  to="102" val="106.2668" stdev="10.00" />
+                                <direction to="103" val="129.4471" stdev="20.00" />
+                                <s-distance  to="103" val="24.5170" stdev="10.00" />
+                                <z-angle  to="103" val="112.9155" stdev="10.00" />
+                                <direction to="104" val="137.8401" stdev="20.00" />
+                                <s-distance  to="104" val="22.9570" stdev="10.00" />
+                                <z-angle  to="104" val="110.5957" stdev="10.00" />
+                                <direction to="106" val="145.6446" stdev="20.00" />
+                                <s-distance  to="106" val="21.7940" stdev="10.00" />
+                                <z-angle  to="106" val="107.8428" stdev="10.00" />
+                                <direction to="107" val="152.4871" stdev="20.00" />
+                                <s-distance  to="107" val="21.2970" stdev="10.00" />
+                                <z-angle  to="107" val="104.1310" stdev="10.00" />
+                                <direction to="108" val="144.3650" stdev="20.00" />
+                                <s-distance  to="108" val="38.4270" stdev="10.00" />
+                                <z-angle  to="108" val="108.9041" stdev="10.00" />
+                                <direction to="109" val="149.9677" stdev="20.00" />
+                                <s-distance  to="109" val="37.3080" stdev="10.00" />
+                                <z-angle  to="109" val="106.9701" stdev="10.00" />
+                                <direction to="110" val="154.3057" stdev="20.00" />
+                                <s-distance  to="110" val="36.1510" stdev="10.00" />
+                                <z-angle  to="110" val="105.3481" stdev="10.00" />
+                                <direction to="111" val="158.7539" stdev="20.00" />
+                                <s-distance  to="111" val="35.9690" stdev="10.00" />
+                                <z-angle  to="111" val="102.9130" stdev="10.00" />
+                                <direction to="112" val="150.9194" stdev="20.00" />
+                                <s-distance  to="112" val="51.4270" stdev="10.00" />
+                                <z-angle  to="112" val="106.9805" stdev="10.00" />
+                                <direction to="113" val="155.3319" stdev="20.00" />
+                                <s-distance  to="113" val="50.1510" stdev="10.00" />
+                                <z-angle  to="113" val="105.5182" stdev="10.00" />
+                                <direction to="114" val="158.7241" stdev="20.00" />
+                                <s-distance  to="114" val="49.1040" stdev="10.00" />
+                                <z-angle  to="114" val="104.0043" stdev="10.00" />
+                                <direction to="115" val="161.7924" stdev="20.00" />
+                                <s-distance  to="115" val="49.0990" stdev="10.00" />
+                                <z-angle  to="115" val="102.3842" stdev="10.00" />
+                                <direction to="116" val="156.1783" stdev="20.00" />
+                                <s-distance  to="116" val="63.7630" stdev="10.00" />
+                                <z-angle  to="116" val="104.9294" stdev="10.00" />
+                                <direction to="117" val="159.6056" stdev="20.00" />
+                                <s-distance  to="117" val="62.5380" stdev="10.00" />
+                                <z-angle  to="117" val="103.8597" stdev="10.00" />
+                                <direction to="118" val="163.0113" stdev="20.00" />
+                                <s-distance  to="118" val="61.2400" stdev="10.00" />
+                                <z-angle  to="118" val="103.4173" stdev="10.00" />
+                                <direction to="119" val="165.6027" stdev="20.00" />
+                                <s-distance  to="119" val="60.5310" stdev="10.00" />
+                                <z-angle  to="119" val="101.9031" stdev="10.00" />
+                                <direction to="4002" val="180.4988" stdev="20.00" />
+                                <s-distance  to="4002" val="287.4170" stdev="10.00" />
+                                <z-angle  to="4002" val="100.2083" stdev="10.00" />
+
+                </obs>
+
+                <obs from="4002">
+                                <direction to="4001" val="383.2325" stdev="20.00" />
+                                <s-distance  to="4001" val="287.4190" stdev="10.00" />
+                                <z-angle  to="4001" val="99.8182" stdev="10.00" />
+                                <direction to="124" val="387.0577" stdev="20.00" />
+                                <s-distance  to="124" val="196.9040" stdev="10.00" />
+                                <z-angle  to="124" val="100.3018" stdev="10.00" />
+                                <direction to="125" val="388.0304" stdev="20.00" />
+                                <s-distance  to="125" val="196.7740" stdev="10.00" />
+                                <z-angle  to="125" val="100.7919" stdev="10.00" />
+                                <direction to="126" val="389.1255" stdev="20.00" />
+                                <s-distance  to="126" val="196.7960" stdev="10.00" />
+                                <z-angle  to="126" val="101.2518" stdev="10.00" />
+                                <direction to="127" val="390.3429" stdev="20.00" />
+                                <s-distance  to="127" val="196.9840" stdev="10.00" />
+                                <z-angle  to="127" val="101.6121" stdev="10.00" />
+                                <direction to="4003" val="185.9050" stdev="20.00" />
+                                <s-distance  to="4003" val="172.4760" stdev="10.00" />
+                                <z-angle  to="4003" val="99.8415" stdev="10.00" />
+
+                </obs>
+
+                <obs from="4003">
+                                <!--direction to="4002" val="386.9860" stdev="20.00"/-->
+                                <s-distance  to="4002" val="172.4780" stdev="10.00" />
+                                <z-angle  to="4002" val="100.2084" stdev="10.00" />
+                                <!--direction to="4004" val="187.2820" stdev="20.00" /-->
+                                <s-distance  to="4004" val="282.0880" stdev="10.00" />
+                                <z-angle  to="4004" val="98.4779" stdev="10.00" />
+
+                </obs>
+
+                <obs from="4004">
+                                <direction to="4003" val="388.7376" stdev="20.00" />
+                                <s-distance  to="4003" val="282.0900" stdev="10.00" />
+                                <z-angle  to="4003" val="101.5365" stdev="10.00" />
+                                <direction to="4005" val="180.9497" stdev="20.00" />
+                                <s-distance  to="4005" val="145.7040" stdev="10.00" />
+                                <z-angle  to="4005" val="101.6113" stdev="10.00" />
+                                <direction to="2160" val="174.4534" stdev="20.00" />
+                                <s-distance  to="2160" val="113.6420" stdev="10.00" />
+                                <z-angle  to="2160" val="104.4071" stdev="10.00" />
+                                <direction to="2161" val="176.5847" stdev="20.00" />
+                                <s-distance  to="2161" val="113.1650" stdev="10.00" />
+                                <z-angle  to="2161" val="103.5824" stdev="10.00" />
+                                <direction to="2162" val="178.9091" stdev="20.00" />
+                                <s-distance  to="2162" val="112.5370" stdev="10.00" />
+                                <z-angle  to="2162" val="102.5501" stdev="10.00" />
+                                <direction to="2163" val="180.6241" stdev="20.00" />
+                                <s-distance  to="2163" val="112.3550" stdev="10.00" />
+                                <z-angle  to="2163" val="101.4069" stdev="10.00" />
+                                <direction to="2164" val="181.1080" stdev="20.00" />
+                                <s-distance  to="2164" val="91.2830" stdev="10.00" />
+                                <z-angle  to="2164" val="101.2070" stdev="10.00" />
+                                <direction to="2165" val="179.0075" stdev="20.00" />
+                                <s-distance  to="2165" val="91.0990" stdev="10.00" />
+                                <z-angle  to="2165" val="102.6395" stdev="10.00" />
+                                <direction to="2166" val="176.5102" stdev="20.00" />
+                                <s-distance  to="2166" val="91.3850" stdev="10.00" />
+                                <z-angle  to="2166" val="104.0421" stdev="10.00" />
+                                <direction to="2167" val="173.8004" stdev="20.00" />
+                                <s-distance  to="2167" val="91.8780" stdev="10.00" />
+                                <z-angle  to="2167" val="105.1211" stdev="10.00" />
+                                <direction to="2168" val="173.4104" stdev="20.00" />
+                                <s-distance  to="2168" val="72.3440" stdev="10.00" />
+                                <z-angle  to="2168" val="106.0224" stdev="10.00" />
+                                <direction to="2169" val="177.2744" stdev="20.00" />
+                                <s-distance  to="2169" val="71.7150" stdev="10.00" />
+                                <z-angle  to="2169" val="104.4422" stdev="10.00" />
+                                <direction to="2170" val="180.3576" stdev="20.00" />
+                                <s-distance  to="2170" val="71.0740" stdev="10.00" />
+                                <z-angle  to="2170" val="102.7269" stdev="10.00" />
+                                <direction to="2171" val="183.0339" stdev="20.00" />
+                                <s-distance  to="2171" val="70.9430" stdev="10.00" />
+                                <z-angle  to="2171" val="101.0475" stdev="10.00" />
+                                <direction to="2172" val="184.5163" stdev="20.00" />
+                                <s-distance  to="2172" val="51.3230" stdev="10.00" />
+                                <z-angle  to="2172" val="100.8587" stdev="10.00" />
+                                <direction to="2173" val="181.0848" stdev="20.00" />
+                                <s-distance  to="2173" val="51.2000" stdev="10.00" />
+                                <z-angle  to="2173" val="103.1583" stdev="10.00" />
+                                <direction to="2174" val="177.6056" stdev="20.00" />
+                                <s-distance  to="2174" val="51.4960" stdev="10.00" />
+                                <z-angle  to="2174" val="105.1553" stdev="10.00" />
+                                <direction to="2175" val="172.2013" stdev="20.00" />
+                                <s-distance  to="2175" val="52.2340" stdev="10.00" />
+                                <z-angle  to="2175" val="107.2970" stdev="10.00" />
+                                <direction to="2176" val="163.0933" stdev="20.00" />
+                                <s-distance  to="2176" val="32.9560" stdev="10.00" />
+                                <z-angle  to="2176" val="111.2683" stdev="10.00" />
+                                <direction to="2177" val="170.5038" stdev="20.00" />
+                                <s-distance  to="2177" val="31.4160" stdev="10.00" />
+                                <z-angle  to="2177" val="109.1403" stdev="10.00" />
+                                <direction to="2178" val="178.2753" stdev="20.00" />
+                                <s-distance  to="2178" val="30.2860" stdev="10.00" />
+                                <z-angle  to="2178" val="105.2726" stdev="10.00" />
+                                <direction to="2179" val="185.3856" stdev="20.00" />
+                                <s-distance  to="2179" val="29.8470" stdev="10.00" />
+                                <z-angle  to="2179" val="100.3936" stdev="10.00" />
+                                <direction to="2180" val="179.4791" stdev="20.00" />
+                                <s-distance  to="2180" val="10.3940" stdev="10.00" />
+                                <z-angle  to="2180" val="100.4547" stdev="10.00" />
+                                <direction to="2181" val="160.9932" stdev="20.00" />
+                                <s-distance  to="2181" val="11.6600" stdev="10.00" />
+                                <z-angle  to="2181" val="112.4305" stdev="10.00" />
+                                <direction to="2182" val="147.3056" stdev="20.00" />
+                                <s-distance  to="2182" val="13.8440" stdev="10.00" />
+                                <z-angle  to="2182" val="118.7778" stdev="10.00" />
+                                <direction to="2183" val="135.9700" stdev="20.00" />
+                                <s-distance  to="2183" val="16.9570" stdev="10.00" />
+                                <z-angle  to="2183" val="121.1829" stdev="10.00" />
+
+                </obs>
+
+                <obs from="4005">
+                                <direction to="4004" val="381.9953" stdev="20.00" />
+                                <s-distance  to="4004" val="145.7110" stdev="10.00" />
+                                <z-angle  to="4004" val="98.3064" stdev="10.00" />
+
+                </obs>
+
+</points-observations>
+
+</network>
+</gama-local>

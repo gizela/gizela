@@ -1,0 +1,916 @@
+<?xml version="1.0" ?><!DOCTYPE gama-xml  SYSTEM 'http://www.gnu.org/software/gama/gama-xml.dtd'><gama-local>
+<network angles="right-handed" axes-xy="sw">
+<parameters conf-pr="0.95" sigma-act="apriori" sigma-apr="1.00" update-constrained-coordinates="no"/>
+<points-observations angle-stdev="10" direction-stdev="10" distance-stdev="2 2 1" zenith-angle-stdev="10">
+  <obs from="4002">
+    <direction to="4001" val="399.9761"/>
+    
+    
+    <direction to="4003" val="193.6264"/>
+    
+    
+    <direction to="1" val="5.2495"/>
+    
+    
+    <direction to="2" val="399.5145"/>
+    
+    
+    <direction to="3" val="392.3897"/>
+    
+    
+    <direction to="4" val="386.0521"/>
+    
+    
+    <direction to="5" val="387.9121"/>
+    
+    
+    <direction to="11" val="5.7684"/>
+    
+    
+    <direction to="12" val="398.5967"/>
+    
+    
+    <direction to="13" val="395.3808"/>
+    
+    
+    <direction to="14" val="392.6922"/>
+    
+    
+    <direction to="15" val="392.4663"/>
+    
+    
+    <direction to="16" val="389.8161"/>
+    
+    
+    <direction to="17" val="386.7043"/>
+    
+    
+    <direction to="21" val="6.6128"/>
+    
+    
+    <direction to="22" val="396.2724"/>
+    
+    
+    <direction to="23" val="392.9201"/>
+    
+    
+    <direction to="24" val="387.6167"/>
+    
+    
+    <direction to="25" val="379.6097"/>
+    
+    
+    <direction to="31" val="32.6083"/>
+    
+    
+    <direction to="32" val="379.3022"/>
+    
+    
+    <direction to="33" val="356.0945"/>
+    
+    
+    <direction to="34" val="333.1298"/>
+    
+    
+    <direction to="41" val="186.5427"/>
+    
+    
+    <direction to="42" val="206.5789"/>
+    
+    
+    <direction to="43" val="218.3800"/>
+    
+    
+    <direction to="51" val="191.9441"/>
+    
+    
+    <direction to="52" val="199.6701"/>
+    
+    
+    <direction to="53" val="204.3100"/>
+    
+    
+    <direction to="61" val="193.4393"/>
+    
+    
+    <direction to="62" val="197.2316"/>
+    
+    
+    <direction to="63" val="200.5808"/>
+    
+    
+    <direction to="71" val="193.3215"/>
+    
+    
+    <direction to="72" val="196.1814"/>
+    
+    
+    <direction to="73" val="198.1069"/>
+    
+    
+  <distance to="4001" val="72.41955"/><distance to="4003" val="118.82769"/><distance to="1" val="38.62295"/><distance to="2" val="38.38086"/><distance to="3" val="37.17312"/><distance to="4" val="37.06996"/><distance to="5" val="34.80572"/><distance to="11" val="30.44347"/><distance to="12" val="30.68403"/><distance to="13" val="30.83421"/><distance to="14" val="30.68754"/><distance to="15" val="30.68642"/><distance to="16" val="30.68410"/><distance to="17" val="30.41470"/><distance to="21" val="20.93500"/><distance to="22" val="21.04016"/><distance to="23" val="21.11624"/><distance to="24" val="21.45329"/><distance to="25" val="21.97867"/><distance to="31" val="4.89511"/><distance to="32" val="4.16831"/><distance to="33" val="5.06346"/><distance to="34" val="7.41399"/><distance to="41" val="17.99710"/><distance to="42" val="17.39992"/><distance to="43" val="18.37117"/><distance to="51" val="42.72909"/><distance to="52" val="42.69904"/><distance to="53" val="42.65306"/><distance to="61" val="70.21755"/><distance to="62" val="70.18228"/><distance to="63" val="70.45040"/><distance to="71" val="91.19632"/><distance to="72" val="90.43720"/><distance to="73" val="90.00189"/></obs>
+  <obs from="4003">
+    <direction to="4002" val="117.3745"/>
+    
+    
+    <direction to="4004" val="310.5436"/>
+    
+    
+    <direction to="81" val="119.5342"/>
+    
+    
+    <direction to="82" val="107.1073"/>
+    
+    
+    <direction to="83" val="97.1670"/>
+    
+    
+    <direction to="91" val="308.9673"/>
+    
+    
+    <direction to="92" val="322.9985"/>
+    
+    
+    <direction to="93" val="330.6820"/>
+    
+    
+    <direction to="94" val="337.2659"/>
+    
+    
+    <direction to="101" val="309.7428"/>
+    
+    
+    <direction to="102" val="313.5241"/>
+    
+    
+    <direction to="103" val="316.5193"/>
+    
+    
+    <direction to="104" val="318.9033"/>
+    
+    
+  <distance to="4002" val="118.82474"/><distance to="4004" val="53.45844"/><distance to="81" val="20.49231"/><distance to="82" val="20.30254"/><distance to="83" val="20.96277"/><distance to="91" val="15.38035"/><distance to="92" val="15.37841"/><distance to="93" val="15.28195"/><distance to="94" val="15.52986"/><distance to="101" val="40.26184"/><distance to="102" val="40.36124"/><distance to="103" val="40.20734"/><distance to="104" val="40.34111"/></obs>
+  <obs from="4004">
+    <direction to="4003" val="0.0051"/>
+    
+    
+    <direction to="4005" val="178.7945"/>
+    
+    
+    <direction to="9999" val="147.2324"/>
+    <z-angle to="9999" to_dh="0.000" val="96.1425 "/>
+    <direction to="111" val="24.8707"/>
+    
+    
+    <direction to="112" val="378.4495"/>
+    
+    
+    <direction to="113" val="365.9030"/>
+    
+    
+    <direction to="114" val="340.5021"/>
+    
+    
+    <direction to="121" val="179.3932"/>
+    
+    
+    <direction to="122" val="189.5804"/>
+    
+    
+    <direction to="123" val="191.3815"/>
+    
+    
+    <direction to="124" val="199.7099"/>
+    
+    
+    <direction to="131" val="178.3751"/>
+    
+    
+    <direction to="132" val="183.2504"/>
+    
+    
+    <direction to="133" val="185.1552"/>
+    
+    
+    <direction to="134" val="187.7765"/>
+    
+    
+  <distance to="4003" val="53.45878"/><distance to="4005" val="78.47053"/><distance to="111" val="3.69463"/><distance to="112" val="2.94803"/><distance to="113" val="2.97559"/><distance to="114" val="4.00682"/><distance to="121" val="15.26698"/><distance to="122" val="15.61100"/><distance to="123" val="15.45479"/><distance to="124" val="15.26840"/><distance to="131" val="45.05603"/><distance to="132" val="44.26374"/><distance to="133" val="44.17024"/><distance to="134" val="44.38832"/></obs>
+  <obs from="4005">
+    <direction to="4004" val="0.0044"/>
+    
+    
+    <direction to="40020140" val="140.2096"/>
+    <z-angle to="40020140" to_dh="0.000" val="93.5275 "/>
+    <direction to="4006" val="182.4915"/>
+    
+    
+    <direction to="141" val="7.4842"/>
+    
+    
+    <direction to="142" val="388.1212"/>
+    
+    
+    <direction to="143" val="373.0873"/>
+    
+    
+    <direction to="151" val="169.0696"/>
+    
+    
+    <direction to="152" val="193.3152"/>
+    
+    
+    <direction to="153" val="211.8526"/>
+    
+    
+    <direction to="161" val="179.0783"/>
+    
+    
+    <direction to="162" val="188.2012"/>
+    
+    
+    <direction to="163" val="196.3009"/>
+    
+    
+    <direction to="171" val="180.2884"/>
+    
+    
+    <direction to="172" val="185.5033"/>
+    
+    
+    <direction to="173" val="189.8386"/>
+    
+    
+    <direction to="181" val="180.6569"/>
+    
+    
+    <direction to="182" val="184.3666"/>
+    
+    
+    <direction to="183" val="187.8438"/>
+    
+    
+    <direction to="191" val="180.7553"/>
+    
+    
+    <direction to="192" val="183.2498"/>
+    
+    
+    <direction to="193" val="186.8174"/>
+    
+    
+    <direction to="40022440" val="184.0534"/>
+    
+    
+  <distance to="4004" val="78.46999"/><distance to="4006" val="99.06568"/><distance to="141" val="12.00253"/><distance to="142" val="11.77328"/><distance to="143" val="12.11769"/><distance to="151" val="9.75296"/><distance to="152" val="9.23021"/><distance to="153" val="10.05734"/><distance to="161" val="25.11462"/><distance to="162" val="25.23885"/><distance to="163" val="25.21435"/><distance to="171" val="44.05305"/><distance to="172" val="43.85268"/><distance to="173" val="43.86356"/><distance to="181" val="61.37019"/><distance to="182" val="61.10497"/><distance to="183" val="61.09521"/><distance to="191" val="76.14087"/><distance to="192" val="76.05917"/><distance to="193" val="76.29752"/><distance to="40022440" val="60.58796"/></obs>
+  <obs from="4006">
+    <direction to="4005" val="400.0000"/>
+    
+    
+    <direction to="40022440" val="397.5504"/>
+    
+    
+    <direction to="4007" val="222.3398"/>
+    
+    
+    <direction to="201" val="8.9223"/>
+    
+    
+    <direction to="202" val="396.4222"/>
+    
+    
+    <direction to="203" val="386.5181"/>
+    
+    
+    <direction to="204" val="381.7767"/>
+    
+    
+    <direction to="211" val="198.8781"/>
+    
+    
+    <direction to="212" val="217.1794"/>
+    
+    
+    <direction to="213" val="231.4060"/>
+    
+    
+    <direction to="214" val="241.5949"/>
+    
+    
+    <direction to="221" val="208.3567"/>
+    
+    
+    <direction to="222" val="215.7462"/>
+    
+    
+    <direction to="223" val="219.7407"/>
+    
+    
+    <direction to="224" val="224.2130"/>
+    
+    
+    <direction to="231" val="212.4178"/>
+    
+    
+    <direction to="232" val="216.5537"/>
+    
+    
+    <direction to="233" val="221.5441"/>
+    
+    
+    <direction to="241" val="215.7251"/>
+    
+    
+    <direction to="242" val="218.1394"/>
+    
+    
+    <direction to="243" val="219.8666"/>
+    
+    
+    <direction to="244" val="221.5210"/>
+    
+    
+    <direction to="251" val="218.1896"/>
+    
+    
+    <direction to="252" val="220.5520"/>
+    
+    
+    <direction to="253" val="222.5459"/>
+    
+    
+  <distance to="4005" val="99.06618"/><distance to="40022440" val="38.51605"/><distance to="4007" val="110.13405"/><distance to="201" val="16.26046"/><distance to="202" val="15.32634"/><distance to="203" val="15.81929"/><distance to="204" val="16.20985"/><distance to="211" val="10.51296"/><distance to="212" val="10.23784"/><distance to="213" val="10.97454"/><distance to="214" val="11.68369"/><distance to="221" val="26.29768"/><distance to="222" val="26.14779"/><distance to="223" val="26.09841"/><distance to="224" val="26.20323"/><distance to="231" val="44.62815"/><distance to="232" val="44.32330"/><distance to="233" val="44.18961"/><distance to="241" val="65.37685"/><distance to="242" val="64.92255"/><distance to="243" val="64.47988"/><distance to="244" val="64.28779"/><distance to="251" val="86.38969"/><distance to="252" val="85.39337"/><distance to="253" val="84.61876"/></obs>
+  <obs from="4007">
+    <direction to="4006" val="399.9996"/>
+    
+    
+    <direction to="4008" val="231.9475"/>
+    
+    
+    <direction to="261" val="18.0644"/>
+    
+    
+    <direction to="262" val="394.6422"/>
+    
+    
+    <direction to="263" val="372.0639"/>
+    
+    
+    <direction to="271" val="219.9693"/>
+    
+    
+    <direction to="272" val="232.2089"/>
+    
+    
+    <direction to="273" val="250.0340"/>
+    
+    
+    <direction to="281" val="223.0028"/>
+    
+    
+    <direction to="282" val="228.2161"/>
+    
+    
+    <direction to="283" val="236.5165"/>
+    
+    
+    <direction to="291" val="223.9579"/>
+    
+    
+    <direction to="292" val="228.4910"/>
+    
+    
+    <direction to="293" val="232.5182"/>
+    
+    
+    <direction to="301" val="226.4510"/>
+    
+    
+    <direction to="302" val="229.2631"/>
+    
+    
+    <direction to="303" val="232.6912"/>
+    
+    
+    <direction to="311" val="228.9322"/>
+    
+    
+    <direction to="312" val="230.7509"/>
+    
+    
+    <direction to="313" val="233.0946"/>
+    
+    
+  <distance to="4006" val="110.12967"/><distance to="4008" val="111.58613"/><distance to="261" val="8.23524"/><distance to="262" val="8.83586"/><distance to="263" val="10.98336"/><distance to="271" val="12.52543"/><distance to="272" val="12.61136"/><distance to="273" val="13.75920"/><distance to="281" val="29.01998"/><distance to="282" val="28.85574"/><distance to="283" val="29.60987"/><distance to="291" val="46.22186"/><distance to="292" val="46.13629"/><distance to="293" val="46.47774"/><distance to="301" val="65.57343"/><distance to="302" val="65.11308"/><distance to="303" val="65.18950"/><distance to="311" val="83.06445"/><distance to="312" val="82.72930"/><distance to="313" val="83.83899"/></obs>
+  <obs from="4008">
+    <direction to="4007" val="0.0005"/>
+    
+    
+    <direction to="4009" val="212.3662"/>
+    
+    
+    <direction to="321" val="10.1144"/>
+    
+    
+    <direction to="322" val="394.4360"/>
+    
+    
+    <direction to="323" val="378.8254"/>
+    
+    
+    <direction to="331" val="211.6384"/>
+    
+    
+    <direction to="332" val="244.7831"/>
+    
+    
+    <direction to="333" val="270.2946"/>
+    
+    
+    <direction to="341" val="212.1773"/>
+    
+    
+    <direction to="343" val="220.5917"/>
+    
+    
+    <direction to="344" val="228.3228"/>
+    
+    
+    <direction to="351" val="212.7547"/>
+    
+    
+    <direction to="352" val="216.7221"/>
+    
+    
+    <direction to="353" val="222.2670"/>
+    
+    
+    <direction to="361" val="212.6593"/>
+    
+    
+    <direction to="362" val="215.4865"/>
+    
+    
+    <direction to="363" val="219.4412"/>
+    
+    
+    <direction to="371" val="212.1225"/>
+    
+    
+    <direction to="372" val="214.2518"/>
+    
+    
+    <direction to="373" val="217.4623"/>
+    
+    
+  <distance to="4007" val="111.58330"/><distance to="4009" val="98.95286"/><distance to="321" val="11.89062"/><distance to="322" val="12.15314"/><distance to="323" val="13.22718"/><distance to="331" val="4.97556"/><distance to="332" val="5.74410"/><distance to="333" val="7.96817"/><distance to="341" val="23.41574"/><distance to="343" val="23.57127"/><distance to="344" val="23.98221"/><distance to="351" val="43.23575"/><distance to="352" val="43.26912"/><distance to="353" val="43.73477"/><distance to="361" val="62.63966"/><distance to="362" val="62.49731"/><distance to="363" val="62.36142"/><distance to="371" val="78.86184"/><distance to="372" val="79.06043"/><distance to="373" val="79.76743"/></obs>
+  <obs from="4009">
+    <direction to="4008" val="0.0005"/>
+    
+    
+    <direction to="4010" val="181.2113"/>
+    
+    
+    <direction to="381" val="28.7190"/>
+    
+    
+    <direction to="382" val="379.0023"/>
+    
+    
+    <direction to="383" val="356.7180"/>
+    
+    
+    <direction to="384" val="337.2892"/>
+    
+    
+    <direction to="391" val="170.8028"/>
+    
+    
+    <direction to="392" val="197.2518"/>
+    
+    
+    <direction to="393" val="234.0882"/>
+    
+    
+    <direction to="401" val="181.2952"/>
+    
+    
+    <direction to="402" val="190.6342"/>
+    
+    
+    <direction to="403" val="202.1978"/>
+    
+    
+    <direction to="411" val="181.9185"/>
+    
+    
+    <direction to="412" val="187.3341"/>
+    
+    
+    <direction to="413" val="193.2930"/>
+    
+    
+    <direction to="421" val="180.9375"/>
+    
+    
+    <direction to="422" val="184.6212"/>
+    
+    
+    <direction to="423" val="189.0628"/>
+    
+    
+    <direction to="9999" val="76.6021"/>
+    <z-angle to="9999" to_dh="0.000" val="94.4719 "/>
+  <distance to="4008" val="98.95473"/><distance to="4010" val="69.71043"/><distance to="381" val="4.11591"/><distance to="382" val="3.45343"/><distance to="383" val="4.02255"/><distance to="384" val="5.16313"/><distance to="391" val="6.83839"/><distance to="392" val="6.56805"/><distance to="393" val="8.11649"/><distance to="401" val="20.23135"/><distance to="402" val="19.99573"/><distance to="403" val="20.07494"/><distance to="411" val="35.83657"/><distance to="412" val="36.01141"/><distance to="413" val="36.02670"/><distance to="421" val="50.57944"/><distance to="422" val="50.74749"/><distance to="423" val="51.03005"/></obs>
+  <obs from="4010">
+    <direction to="4009" val="345.1020"/>
+    
+    
+    <direction to="4011" val="139.3106"/>
+    
+    
+    <direction to="431" val="356.5717"/>
+    
+    
+    <direction to="432" val="331.1321"/>
+    
+    
+    <direction to="433" val="312.9253"/>
+    
+    
+    <direction to="434" val="301.9607"/>
+    
+    
+    <direction to="441" val="118.4929"/>
+    
+    
+    <direction to="442" val="144.6996"/>
+    
+    
+    <direction to="443" val="152.6473"/>
+    
+    
+    <direction to="444" val="173.3005"/>
+    
+    
+    <direction to="451" val="127.6419"/>
+    
+    
+    <direction to="452" val="137.1876"/>
+    
+    
+    <direction to="453" val="140.3602"/>
+    
+    
+    <direction to="454" val="147.3241"/>
+    
+    
+    <direction to="455" val="151.1570"/>
+    
+    
+    <direction to="461" val="132.9024"/>
+    
+    
+    <direction to="462" val="138.2863"/>
+    
+    
+    <direction to="463" val="144.8250"/>
+    
+    
+    <direction to="471" val="134.6005"/>
+    
+    
+    <direction to="472" val="139.2265"/>
+    
+    
+    <direction to="473" val="144.7636"/>
+    
+    
+    <direction to="470" val="134.5588"/>
+    
+    
+  <distance to="4009" val="69.71326"/><distance to="4011" val="61.92553"/><distance to="431" val="7.83903"/><distance to="432" val="7.43898"/><distance to="433" val="7.69752"/><distance to="434" val="8.42073"/><distance to="441" val="7.08161"/><distance to="442" val="6.73050"/><distance to="443" val="6.98388"/><distance to="444" val="7.84550"/><distance to="451" val="23.01496"/><distance to="452" val="22.83217"/><distance to="453" val="22.90486"/><distance to="454" val="23.36936"/><distance to="455" val="23.56491"/><distance to="461" val="39.09856"/><distance to="462" val="38.82156"/><distance to="463" val="38.53728"/><distance to="471" val="46.06350"/><distance to="472" val="45.54574"/><distance to="473" val="44.70823"/><distance to="470" val="46.16218"/></obs>
+  <obs from="4011">
+    <direction to="4010" val="3.7954"/>
+    
+    
+    <direction to="4012" val="203.7087"/>
+    
+    
+    <direction to="481" val="166.4665"/>
+    
+    
+    <direction to="482" val="217.7474"/>
+    
+    
+    <direction to="483" val="246.0448"/>
+    
+    
+    <direction to="484" val="272.4852"/>
+    
+    
+    <direction to="480" val="164.3195"/>
+    
+    
+    <direction to="490" val="194.9138"/>
+    
+    
+    <direction to="491" val="195.4024"/>
+    
+    
+    <direction to="492" val="208.7959"/>
+    
+    
+    <direction to="493" val="233.2853"/>
+    
+    
+    <direction to="500" val="202.8807"/>
+    
+    
+    <direction to="501" val="203.0123"/>
+    
+    
+    <direction to="502" val="208.8211"/>
+    
+    
+  <distance to="4010" val="61.92489"/><distance to="4012" val="65.27890"/><distance to="481" val="4.50940"/><distance to="482" val="3.63934"/><distance to="483" val="4.09855"/><distance to="484" val="6.44887"/><distance to="480" val="4.48312"/><distance to="490" val="15.57725"/><distance to="491" val="15.67429"/><distance to="492" val="15.34694"/><distance to="493" val="16.87529"/><distance to="500" val="31.49458"/><distance to="501" val="31.54030"/><distance to="502" val="31.18009"/></obs>
+  <obs from="4012">
+    <direction to="4011" val="332.6895"/>
+    
+    
+    <direction to="510" val="333.1130"/>
+    
+    
+    <direction to="511" val="332.9292"/>
+    
+    
+    <direction to="512" val="326.1667"/>
+    
+    
+    <direction to="520" val="334.5819"/>
+    
+    
+    <direction to="521" val="334.3611"/>
+    
+    
+    <direction to="522" val="326.5415"/>
+    
+    
+    <direction to="531" val="338.1278"/>
+    
+    
+    <direction to="532" val="328.1220"/>
+    
+    
+    <direction to="533" val="324.9950"/>
+    
+    
+    <direction to="541" val="347.5991"/>
+    
+    
+    <direction to="542" val="307.8613"/>
+    
+    
+    <direction to="551" val="381.0625"/>
+    
+    
+    <direction to="552" val="268.5649"/>
+    
+    
+    <direction to="553" val="261.1335"/>
+    
+    
+    <direction to="554" val="259.2666"/>
+    
+    
+    <direction to="543" val="276.3009"/>
+    
+    
+  <distance to="4011" val="65.28038"/><distance to="510" val="29.86024"/><distance to="511" val="29.78922"/><distance to="512" val="29.97160"/><distance to="520" val="25.76760"/><distance to="521" val="25.78473"/><distance to="522" val="25.57780"/><distance to="531" val="16.72738"/><distance to="532" val="16.57812"/><distance to="533" val="16.44179"/><distance to="541" val="5.17544"/><distance to="542" val="5.48657"/><distance to="551" val="1.37130"/><distance to="552" val="3.08944"/><distance to="553" val="7.66180"/><distance to="554" val="12.26252"/><distance to="543" val="13.12040"/></obs>
+  <point adj="xy" id="4007"/>
+  <point adj="xy" id="201"/>
+  <point adj="xy" id="221"/>
+  <point adj="xy" id="202"/>
+  <point adj="xy" id="222"/>
+  <point adj="xy" id="203"/>
+  <point adj="xy" id="223"/>
+  <point adj="xy" id="204"/>
+  <point adj="xy" id="244"/>
+  <point adj="xy" id="224"/>
+  <point adj="xy" id="211"/>
+  <point adj="xy" id="251"/>
+  <point adj="xy" id="231"/>
+  <point adj="xy" id="212"/>
+  <point adj="xy" id="444"/>
+  <point adj="xy" id="252"/>
+  <point adj="xy" id="232"/>
+  <point adj="xy" id="213"/>
+  <point adj="xy" id="451"/>
+  <point adj="xy" id="253"/>
+  <point adj="xy" id="233"/>
+  <point adj="xy" id="214"/>
+  <point adj="xy" id="452"/>
+  <point adj="xy" id="263"/>
+  <point adj="xy" id="241"/>
+  <point adj="xy" id="472"/>
+  <point adj="xy" id="453"/>
+  <point adj="xy" id="271"/>
+  <point adj="xy" id="4007"/>
+  <point adj="xy" id="242"/>
+  <point adj="xy" id="473"/>
+  <point adj="xy" id="454"/>
+  <point adj="xy" id="272"/>
+  <point adj="xy" id="243"/>
+  <point adj="xy" id="470"/>
+  <point adj="xy" id="455"/>
+  <point adj="xy" id="301"/>
+  <point adj="xy" id="273"/>
+  <point adj="xy" id="484"/>
+  <point adj="xy" id="461"/>
+  <point adj="xy" id="302"/>
+  <point adj="xy" id="3"/>
+  <point adj="xy" id="281"/>
+  <point adj="xy" id="480"/>
+  <point adj="xy" id="4011"/>
+  <point adj="xy" id="462"/>
+  <point adj="xy" id="303"/>
+  <point adj="xy" id="4"/>
+  <point adj="xy" id="282"/>
+  <point adj="xy" id="261"/>
+  <point adj="xy" id="490"/>
+  <point adj="xy" id="321"/>
+  <point adj="xy" id="463"/>
+  <point adj="xy" id="311"/>
+  <point adj="xy" id="5"/>
+  <point adj="xy" id="283"/>
+  <point adj="xy" id="262"/>
+  <point adj="xy" id="4012"/>
+  <point adj="xy" id="491"/>
+  <point adj="xy" id="4012"/>
+  <point adj="xy" id="322"/>
+  <point adj="xy" id="21"/>
+  <point adj="xy" id="471"/>
+  <point adj="xy" id="312"/>
+  <point adj="xy" id="11"/>
+  <point adj="xy" id="291"/>
+  <point adj="xy" id="4011"/>
+  <point adj="xy" id="492"/>
+  <point adj="xy" id="481"/>
+  <point adj="xy" id="323"/>
+  <point adj="xy" id="22"/>
+  <point adj="xy" id="313"/>
+  <point adj="xy" id="12"/>
+  <point adj="xy" id="292"/>
+  <point adj="xy" id="510"/>
+  <point adj="xy" id="493"/>
+  <point adj="xy" id="352"/>
+  <point adj="xy" id="482"/>
+  <point adj="xy" id="331"/>
+  <point adj="xy" id="23"/>
+  <point adj="xy" id="13"/>
+  <point adj="xy" id="293"/>
+  <point adj="xy" id="533"/>
+  <point adj="xy" id="511"/>
+  <point adj="xy" id="500"/>
+  <point adj="xy" id="353"/>
+  <point adj="xy" id="42"/>
+  <point adj="xy" id="483"/>
+  <point adj="xy" id="332"/>
+  <point adj="xy" id="24"/>
+  <point adj="xy" id="14"/>
+  <point adj="xy" id="541"/>
+  <point adj="xy" id="512"/>
+  <point adj="xy" id="501"/>
+  <point adj="xy" id="361"/>
+  <point adj="xy" id="43"/>
+  <point adj="xy" id="333"/>
+  <point adj="xy" id="25"/>
+  <point adj="xy" id="4007"/>
+  <point adj="xy" id="15"/>
+  <point adj="xy" id="542"/>
+  <point adj="xy" id="520"/>
+  <point adj="xy" id="502"/>
+  <point adj="xy" id="362"/>
+  <point adj="xy" id="51"/>
+  <point adj="xy" id="341"/>
+  <point adj="xy" id="31"/>
+  <point adj="xy" id="16"/>
+  <point adj="xy" id="551"/>
+  <point adj="xy" id="521"/>
+  <point adj="xy" id="73"/>
+  <point adj="xy" id="363"/>
+  <point adj="xy" id="52"/>
+  <point adj="xy" id="343"/>
+  <point adj="xy" id="32"/>
+  <point adj="xy" id="17"/>
+  <point adj="xy" id="552"/>
+  <point adj="xy" id="522"/>
+  <point adj="xy" id="381"/>
+  <point adj="xy" id="371"/>
+  <point adj="xy" id="53"/>
+  <point adj="xy" id="344"/>
+  <point adj="xy" id="33"/>
+  <point adj="xy" id="553"/>
+  <point adj="xy" id="402"/>
+  <point adj="xy" id="531"/>
+  <point adj="xy" id="382"/>
+  <point adj="xy" id="372"/>
+  <point adj="xy" id="61"/>
+  <point adj="xy" id="351"/>
+  <point adj="xy" id="34"/>
+  <point adj="xy" id="554"/>
+  <point adj="xy" id="403"/>
+  <point adj="xy" id="93"/>
+  <point adj="xy" id="532"/>
+  <point adj="xy" id="383"/>
+  <point adj="xy" id="4003"/>
+  <point adj="xy" id="373"/>
+  <point adj="xy" id="62"/>
+  <point adj="xy" id="41"/>
+  <point adj="xy" id="543"/>
+  <point adj="xy" id="411"/>
+  <point adj="xy" id="94"/>
+  <point adj="xy" id="384"/>
+  <point adj="xy" id="4004"/>
+  <point adj="xy" id="63"/>
+  <point adj="xy" id="412"/>
+  <point adj="xy" id="101"/>
+  <point adj="xy" id="391"/>
+  <point adj="xy" id="81"/>
+  <point adj="xy" id="71"/>
+  <point adj="xy" id="9999"/>
+  <point adj="xy" id="413"/>
+  <point adj="xy" id="102"/>
+  <point adj="xy" id="392"/>
+  <point adj="xy" id="82"/>
+  <point adj="xy" id="72"/>
+  <point adj="xy" id="111"/>
+  <point adj="xy" id="421"/>
+  <point adj="xy" id="103"/>
+  <point adj="xy" id="393"/>
+  <point adj="xy" id="83"/>
+  <point adj="xy" id="4011"/>
+  <point adj="xy" id="112"/>
+  <point adj="xy" id="422"/>
+  <point adj="xy" id="104"/>
+  <point adj="xy" id="401"/>
+  <point adj="xy" id="91"/>
+  <point adj="xy" id="431"/>
+  <point adj="xy" id="113"/>
+  <point adj="xy" id="423"/>
+  <point adj="xy" id="92"/>
+  <point adj="xy" id="132"/>
+  <point adj="xy" id="432"/>
+  <point adj="xy" id="9999"/>
+  <point adj="xy" id="4004"/>
+  <point adj="xy" id="133"/>
+  <point adj="xy" id="433"/>
+  <point adj="xy" id="114"/>
+  <point adj="xy" id="4003"/>
+  <point adj="xy" id="134"/>
+  <point adj="xy" id="434"/>
+  <point adj="xy" id="121"/>
+  <point adj="xy" id="4005"/>
+  <point adj="xy" id="143"/>
+  <point adj="xy" id="441"/>
+  <point adj="xy" id="122"/>
+  <point adj="xy" id="151"/>
+  <point adj="xy" id="4005"/>
+  <point adj="xy" id="442"/>
+  <point adj="xy" id="123"/>
+  <point adj="xy" id="152"/>
+  <point adj="xy" id="4004"/>
+  <point adj="xy" id="443"/>
+  <point adj="xy" id="124"/>
+  <point adj="xy" id="181"/>
+  <point adj="xy" id="153"/>
+  <point adj="xy" id="131"/>
+  <point adj="xy" id="182"/>
+  <point adj="xy" id="161"/>
+  <point adj="xy" id="183"/>
+  <point adj="xy" id="162"/>
+  <point adj="xy" id="141"/>
+  <point adj="xy" id="191"/>
+  <point adj="xy" id="163"/>
+  <point adj="xy" id="142"/>
+  <point adj="xy" id="192"/>
+  <point adj="xy" id="171"/>
+  <point adj="xy" id="193"/>
+  <point adj="xy" id="172"/>
+  <point adj="xy" id="4005"/>
+  <point adj="xy" id="4001"/>
+  <point adj="xy" id="4003"/>
+  <point adj="xy" id="1"/>
+  <point adj="xy" id="2"/>
+  <point adj="xy" id="173"/>
+  
+  <point adj="Z" fix="xy" id="40022440" x="1167036.03" y="756558.80"/>
+  <point fix="xy" id="4002" x="1166771.154" y="756418.101"/>
+  <point adj="XY" id="40020140" x="1167416.01" y="756234.68"/>
+  <point adj="XY" id="4006" x="1167074.627" y="756558.835"/>
+  <point adj="XY" id="4008" x="1167246.958" y="756686.857"/>
+  <point adj="XY" id="4009" x="1167293.423" y="756774.144"/>
+  <point adj="XY" id="4010" x="1167342.660" y="756823.500"/>
+</points-observations>
+</network>
+</gama-local>

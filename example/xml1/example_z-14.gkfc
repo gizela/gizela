@@ -1,0 +1,116 @@
+<?xml version="1.0" ?>
+<!DOCTYPE gama-xml
+  SYSTEM 'http://www.gnu.org/software/gama/gama-xml.dtd'>
+<gama-local>
+<network axes-xy="sw" angles="right-handed">
+<!--
+axes-xy:
+S-JTSK x-ova souradnice smeruje k jihu (s) a
+y-ova smeruje k zapadu (w) 
+angles:
+smery se meri po smeru hodinovych rucicek
+
+Prikaz: gama-1.9.02/gama-local/gama-local out.xml 2-language cz 2-text adj.txt
+-->
+<description>
+Falkenstejn 2009
+Volna sit 1D Bpv
+od 8. 9. 2009
+do 11. 9. 2009
+</description>
+<parameters sigma-apr="1.00" conf-pr="0.95" sigma-act="aposteriori" update-constrained-coordinates="no"/>
+<points-observations direction-stdev="90">
+
+<point id="4013" z="233.63" adj="Z"/>
+<point id="214.3" z="253.47" adj="Z"/>
+
+
+<coordinates>
+<point id="4001" z="240.582"/>
+<point id="4002" z="241.518"/>
+<point id="4014" z="230.274"/>
+ <cov-mat dim="3" band="0">
+  7.84 7.06 16.26
+ </cov-mat>
+</coordinates>
+
+
+<point id="4003" adj="z"/>
+<point id="4004" adj="z"/>
+<point id="4005" adj="z"/>
+<point id="4006" adj="z"/>
+<point id="4007" adj="z"/>
+<point id="5001" adj="z"/>
+<point id="4008" adj="z"/>
+<point id="4009" adj="z"/>
+<point id="4010" adj="z"/>
+<point id="4011" adj="z"/>
+<point id="4012" adj="z"/>
+<point id="5002" adj="z"/>
+
+<height-differences>
+	<dh from="4002" to="4001" val="-0.9082053" stdev="5.407"/>
+	<dh from="4002" to="4003" val="2.495453" stdev="5.444"/>
+	<dh from="4003" to="4002" val="-2.517534" stdev="5.446"/>
+	<dh from="4003" to="4004" val="5.44619" stdev="5.601"/>
+	<dh from="4004" to="4003" val="-5.456171" stdev="5.61"/>
+	<dh from="4004" to="4005" val="9.949388" stdev="5.993"/>
+	<dh from="4005" to="4004" val="-9.961653" stdev="6.012"/>
+	<dh from="4005" to="4006" val="22.58992" stdev="6.093"/>
+	<dh from="4006" to="4005" val="-22.60562" stdev="6.095"/>
+	<dh from="4006" to="4007" val="9.908692" stdev="5.816"/>
+	<dh from="4006" to="5001" val="-14.87999" stdev="6.188"/>
+	<dh from="5001" to="4006" val="14.87558" stdev="6.19"/>
+	<dh from="4007" to="4006" val="-9.912399" stdev="5.826"/>
+	<dh from="4007" to="4008" val="-3.291314" stdev="5.5"/>
+	<dh from="4008" to="4007" val="3.283459" stdev="5.492"/>
+	<dh from="4008" to="4009" val="-10.02641" stdev="5.951"/>
+	<dh from="4009" to="4008" val="10.02814" stdev="5.96"/>
+	<dh from="4009" to="4010" val="-19.31372" stdev="6.363"/>
+	<dh from="4010" to="4009" val="19.31052" stdev="6.481"/>
+	<dh from="4010" to="4011" val="-15.15707" stdev="6.002"/>
+	<dh from="4011" to="4010" val="15.1434" stdev="5.989"/>
+	<dh from="4011" to="4012" val="-12.74306" stdev="5.721"/>
+	<dh from="4012" to="4011" val="12.7232" stdev="5.716"/>
+	<dh from="4012" to="4013" val="2.187168" stdev="5.624"/>
+	<dh from="4012" to="4011" val="12.7248" stdev="5.721"/>
+	<dh from="4012" to="4013" val="2.186083" stdev="5.624"/>
+	<dh from="4011" to="4010" val="15.15176" stdev="5.983"/>
+	<dh from="4011" to="4012" val="-12.73659" stdev="5.731"/>
+	<dh from="4010" to="4009" val="19.31163" stdev="6.478"/>
+	<dh from="4010" to="4011" val="-15.1502" stdev="6.004"/>
+	<dh from="4009" to="4008" val="10.01336" stdev="5.945"/>
+	<dh from="4009" to="4010" val="-19.3161" stdev="6.373"/>
+	<dh from="4008" to="4007" val="3.287039" stdev="5.495"/>
+	<dh from="4008" to="4009" val="-10.01572" stdev="5.917"/>
+	<dh from="4007" to="4006" val="-9.913385" stdev="5.822"/>
+	<dh from="4007" to="4008" val="-3.294099" stdev="5.498"/>
+	<dh from="4006" to="4005" val="-22.60811" stdev="6.096"/>
+	<dh from="4006" to="4007" val="9.903564" stdev="5.807"/>
+	<dh from="4006" to="5001" val="-14.89239" stdev="6.199"/>
+	<dh from="4006" to="5001" val="-14.89255" stdev="6.199"/>
+	<dh from="5001" to="4006" val="14.87774" stdev="6.171"/>
+	<dh from="4005" to="4004" val="-9.956805" stdev="5.994"/>
+	<dh from="4005" to="4006" val="22.59321" stdev="6.092"/>
+	<dh from="4004" to="4003" val="-5.455736" stdev="5.624"/>
+	<dh from="4004" to="4005" val="9.949371" stdev="5.976"/>
+	<dh from="4003" to="4002" val="-2.512199" stdev="5.447"/>
+	<dh from="4003" to="4004" val="5.44755" stdev="5.593"/>
+	<dh from="4003" to="4005" val="15.39893" stdev="5.833"/>
+	<dh from="4002" to="4001" val="-0.905855" stdev="5.409"/>
+	<dh from="4002" to="4003" val="2.499367" stdev="5.442"/>
+	<dh from="4012" to="4011" val="12.72605" stdev="5.717"/>
+	<dh from="4012" to="4013" val="2.186271" stdev="5.624"/>
+	<dh from="4012" to="4014" val="-1.176635" stdev="5.415"/>
+	<dh from="4014" to="4012" val="1.160184" stdev="5.412"/>
+	<dh from="4014" to="4013" val="3.333875" stdev="5.781"/>
+	<dh from="4008" to="4007" val="3.288351" stdev="5.488"/>
+	<dh from="4008" to="4009" val="-10.02027" stdev="5.975"/>
+	<dh from="4008" to="5002" val="0.3011839" stdev="5.395"/>
+	<dh from="5002" to="4007" val="2.97962" stdev="5.482"/>
+	<dh from="5002" to="4008" val="-0.3110896" stdev="5.395"/>
+</height-differences>
+
+</points-observations>
+</network>
+</gama-local>

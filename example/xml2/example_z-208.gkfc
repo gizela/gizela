@@ -1,0 +1,914 @@
+<?xml version="1.0" ?><!DOCTYPE gama-xml  SYSTEM 'http://www.gnu.org/software/gama/gama-xml.dtd'>
+<gama-local>
+<network angles="right-handed" axes-xy="sw">
+<parameters conf-pr="0.95" sigma-act="apriori" sigma-apr="1.00" update-constrained-coordinates="no"/>
+<points-observations angle-stdev="10" direction-stdev="10" distance-stdev="2 2 1" zenith-angle-stdev="10">
+  <obs from="4002" from_dh="1.535 ">
+    <direction to="4001" to_dh="0.400" val="399.9761"/>
+    <s-distance to="4001" to_dh="0.400" val="72.430"/>
+    <z-angle to="4001" to_dh="0.400" val="100.8247 "/>
+    <direction to="4003" to_dh="1.300" val="193.6264"/>
+    <s-distance to="4003" to_dh="1.300" val="118.835"/>
+    <z-angle to="4003" to_dh="1.300" val="100.0989 "/>
+    <direction to="1" to_dh="1.300" val="5.2495"/>
+    <s-distance to="1" to_dh="1.300" val="38.637"/>
+    <z-angle to="1" to_dh="1.300" val="101.5680 "/>
+    <direction to="2" to_dh="1.300" val="399.5145"/>
+    <s-distance to="2" to_dh="1.300" val="38.396"/>
+    <z-angle to="2" to_dh="1.300" val="101.6456 "/>
+    <direction to="3" to_dh="1.300" val="392.3897"/>
+    <s-distance to="3" to_dh="1.300" val="37.176"/>
+    <z-angle to="3" to_dh="1.300" val="100.3725 "/>
+    <direction to="4" to_dh="1.300" val="386.0521"/>
+    <s-distance to="4" to_dh="1.300" val="37.073"/>
+    <z-angle to="4" to_dh="1.300" val="99.5798 "/>
+    <direction to="5" to_dh="1.300" val="387.9121"/>
+    <s-distance to="5" to_dh="1.300" val="34.830"/>
+    <z-angle to="5" to_dh="1.300" val="102.2721 "/>
+    <direction to="11" to_dh="1.300" val="5.7684"/>
+    <s-distance to="11" to_dh="1.300" val="30.458"/>
+    <z-angle to="11" to_dh="1.300" val="101.8382 "/>
+    <direction to="12" to_dh="1.300" val="398.5967"/>
+    <s-distance to="12" to_dh="1.300" val="30.697"/>
+    <z-angle to="12" to_dh="1.300" val="101.7137 "/>
+    <direction to="13" to_dh="1.300" val="395.3808"/>
+    <s-distance to="13" to_dh="1.300" val="30.837"/>
+    <z-angle to="13" to_dh="1.300" val="100.4931 "/>
+    <direction to="14" to_dh="1.300" val="392.6922"/>
+    <s-distance to="14" to_dh="1.300" val="30.690"/>
+    <z-angle to="14" to_dh="1.300" val="100.4011 "/>
+    <direction to="15" to_dh="1.300" val="392.4663"/>
+    <s-distance to="15" to_dh="1.300" val="30.689"/>
+    <z-angle to="15" to_dh="1.300" val="99.5604 "/>
+    <direction to="16" to_dh="1.300" val="389.8161"/>
+    <s-distance to="16" to_dh="1.300" val="30.693"/>
+    <z-angle to="16" to_dh="1.300" val="101.3642 "/>
+    <direction to="17" to_dh="1.300" val="386.7043"/>
+    <s-distance to="17" to_dh="1.300" val="30.445"/>
+    <z-angle to="17" to_dh="1.300" val="102.7533 "/>
+    <direction to="21" to_dh="1.300" val="6.6128"/>
+    <s-distance to="21" to_dh="1.300" val="20.951"/>
+    <z-angle to="21" to_dh="1.300" val="102.3875 "/>
+    <direction to="22" to_dh="1.300" val="396.2724"/>
+    <s-distance to="22" to_dh="1.300" val="21.057"/>
+    <z-angle to="22" to_dh="1.300" val="102.4482 "/>
+    <direction to="23" to_dh="1.300" val="392.9201"/>
+    <s-distance to="23" to_dh="1.300" val="21.120"/>
+    <z-angle to="23" to_dh="1.300" val="100.9759 "/>
+    <direction to="24" to_dh="1.300" val="387.6167"/>
+    <s-distance to="24" to_dh="1.300" val="21.459"/>
+    <z-angle to="24" to_dh="1.300" val="101.2919 "/>
+    <direction to="25" to_dh="1.300" val="379.6097"/>
+    <s-distance to="25" to_dh="1.300" val="22.046"/>
+    <z-angle to="25" to_dh="1.300" val="104.9273 "/>
+    <direction to="31" to_dh="1.300" val="32.6083"/>
+    <s-distance to="31" to_dh="1.300" val="4.905"/>
+    <z-angle to="31" to_dh="1.300" val="103.9833 "/>
+    <direction to="32" to_dh="1.300" val="379.3022"/>
+    <s-distance to="32" to_dh="1.300" val="4.179"/>
+    <z-angle to="32" to_dh="1.300" val="104.5013 "/>
+    <direction to="33" to_dh="1.300" val="356.0945"/>
+    <s-distance to="33" to_dh="1.300" val="5.082"/>
+    <z-angle to="33" to_dh="1.300" val="105.3949 "/>
+    <direction to="34" to_dh="1.300" val="333.1298"/>
+    <s-distance to="34" to_dh="1.300" val="7.623"/>
+    <z-angle to="34" to_dh="1.300" val="114.9259 "/>
+    <direction to="41" to_dh="1.300" val="186.5427"/>
+    <s-distance to="41" to_dh="1.300" val="17.999"/>
+    <z-angle to="41" to_dh="1.300" val="100.6058 "/>
+    <direction to="42" to_dh="1.300" val="206.5789"/>
+    <s-distance to="42" to_dh="1.300" val="17.406"/>
+    <z-angle to="42" to_dh="1.300" val="101.5309 "/>
+    <direction to="43" to_dh="1.300" val="218.3800"/>
+    <s-distance to="43" to_dh="1.300" val="18.469"/>
+    <z-angle to="43" to_dh="1.300" val="106.5183 "/>
+    <direction to="51" to_dh="1.300" val="191.9441"/>
+    <s-distance to="51" to_dh="1.300" val="42.732"/>
+    <z-angle to="51" to_dh="1.300" val="100.2508 "/>
+    <direction to="52" to_dh="1.300" val="199.6701"/>
+    <s-distance to="52" to_dh="1.300" val="42.703"/>
+    <z-angle to="52" to_dh="1.300" val="100.5115 "/>
+    <direction to="53" to_dh="1.300" val="204.3100"/>
+    <s-distance to="53" to_dh="1.300" val="42.684"/>
+    <z-angle to="53" to_dh="1.300" val="102.3212 "/>
+    <direction to="61" to_dh="1.300" val="193.4393"/>
+    <s-distance to="61" to_dh="1.300" val="70.222"/>
+    <z-angle to="61" to_dh="1.300" val="100.1584 "/>
+    <direction to="62" to_dh="1.300" val="197.2316"/>
+    <s-distance to="62" to_dh="1.300" val="70.187"/>
+    <z-angle to="62" to_dh="1.300" val="100.2368 "/>
+    <direction to="63" to_dh="1.300" val="200.5808"/>
+    <s-distance to="63" to_dh="1.300" val="70.481"/>
+    <z-angle to="63" to_dh="1.300" val="101.7409 "/>
+    <direction to="71" to_dh="1.300" val="193.3215"/>
+    <s-distance to="71" to_dh="1.300" val="91.202"/>
+    <z-angle to="71" to_dh="1.300" val="100.1242 "/>
+    <direction to="72" to_dh="1.300" val="196.1814"/>
+    <s-distance to="72" to_dh="1.300" val="90.443"/>
+    <z-angle to="72" to_dh="1.300" val="100.1754 "/>
+    <direction to="73" to_dh="1.300" val="198.1069"/>
+    <s-distance to="73" to_dh="1.300" val="90.020"/>
+    <z-angle to="73" to_dh="1.300" val="101.0685 "/>
+  </obs>
+  <obs from="4003" from_dh="1.617 ">
+    <direction to="4002" to_dh="0.100" val="117.3745"/>
+    <s-distance to="4002" to_dh="0.100" val="118.842"/>
+    <z-angle to="4002" to_dh="0.100" val="100.8297 "/>
+    <direction to="4004" to_dh="0.100" val="310.5436"/>
+    <s-distance to="4004" to_dh="0.100" val="53.481"/>
+    <z-angle to="4004" to_dh="0.100" val="101.7117 "/>
+    <direction to="81" to_dh="1.300" val="119.5342"/>
+    <s-distance to="81" to_dh="1.300" val="20.496"/>
+    <z-angle to="81" to_dh="1.300" val="100.9849 "/>
+    <direction to="82" to_dh="1.300" val="107.1073"/>
+    <s-distance to="82" to_dh="1.300" val="20.307"/>
+    <z-angle to="82" to_dh="1.300" val="101.1366 "/>
+    <direction to="83" to_dh="1.300" val="97.1670"/>
+    <s-distance to="83" to_dh="1.300" val="21.046"/>
+    <z-angle to="83" to_dh="1.300" val="105.6205 "/>
+    <direction to="91" to_dh="1.300" val="308.9673"/>
+    <s-distance to="91" to_dh="1.300" val="15.384"/>
+    <z-angle to="91" to_dh="1.300" val="101.1986 "/>
+    <direction to="92" to_dh="1.300" val="322.9985"/>
+    <s-distance to="92" to_dh="1.300" val="15.384"/>
+    <z-angle to="92" to_dh="1.300" val="101.5667 "/>
+    <direction to="93" to_dh="1.300" val="330.6820"/>
+    <s-distance to="93" to_dh="1.300" val="15.341"/>
+    <z-angle to="93" to_dh="1.300" val="105.5436 "/>
+    <direction to="94" to_dh="1.300" val="337.2659"/>
+    <s-distance to="94" to_dh="1.300" val="15.664"/>
+    <z-angle to="94" to_dh="1.300" val="108.3083 "/>
+    <direction to="101" to_dh="1.300" val="309.7428"/>
+    <s-distance to="101" to_dh="1.300" val="40.265"/>
+    <z-angle to="101" to_dh="1.300" val="100.3841 "/>
+    <direction to="102" to_dh="1.300" val="313.5241"/>
+    <s-distance to="102" to_dh="1.300" val="40.365"/>
+    <z-angle to="102" to_dh="1.300" val="100.5158 "/>
+    <direction to="103" to_dh="1.300" val="316.5193"/>
+    <s-distance to="103" to_dh="1.300" val="40.237"/>
+    <z-angle to="103" to_dh="1.300" val="102.3423 "/>
+    <direction to="104" to_dh="1.300" val="318.9033"/>
+    <s-distance to="104" to_dh="1.300" val="40.398"/>
+    <z-angle to="104" to_dh="1.300" val="103.3060 "/>
+  </obs>
+  <obs from="4004" from_dh="1.587 ">
+    <direction to="4003" to_dh="0.100" val="0.0051"/>
+    <s-distance to="4003" to_dh="0.100" val="53.485"/>
+    <z-angle to="4003" to_dh="0.100" val="101.8668 "/>
+    <direction to="4005" to_dh="0.100" val="178.7945"/>
+    <s-distance to="4005" to_dh="0.100" val="78.487"/>
+    <z-angle to="4005" to_dh="0.100" val="101.1008 "/>
+    <direction to="9999" to_dh="0.000" val="147.2324"/>
+    <z-angle to="9999" to_dh="0.000" val="96.1425 "/>
+    <direction to="111" to_dh="1.300" val="24.8707"/>
+    <s-distance to="111" to_dh="1.300" val="3.705"/>
+    <z-angle to="111" to_dh="1.300" val="104.7121 "/>
+    <direction to="112" to_dh="1.300" val="378.4495"/>
+    <s-distance to="112" to_dh="1.300" val="2.966"/>
+    <z-angle to="112" to_dh="1.300" val="106.9774 "/>
+    <direction to="113" to_dh="1.300" val="365.9030"/>
+    <s-distance to="113" to_dh="1.300" val="3.125"/>
+    <z-angle to="113" to_dh="1.300" val="119.7536 "/>
+    <direction to="114" to_dh="1.300" val="340.5021"/>
+    <s-distance to="114" to_dh="1.300" val="4.404"/>
+    <z-angle to="114" to_dh="1.300" val="127.2364 "/>
+    <direction to="121" to_dh="1.300" val="179.3932"/>
+    <s-distance to="121" to_dh="1.300" val="15.269"/>
+    <z-angle to="121" to_dh="1.300" val="100.7625 "/>
+    <direction to="122" to_dh="1.300" val="189.5804"/>
+    <s-distance to="122" to_dh="1.300" val="15.614"/>
+    <z-angle to="122" to_dh="1.300" val="101.0327 "/>
+    <direction to="123" to_dh="1.300" val="191.3815"/>
+    <s-distance to="123" to_dh="1.300" val="15.469"/>
+    <z-angle to="123" to_dh="1.300" val="102.6379 "/>
+    <direction to="124" to_dh="1.300" val="199.7099"/>
+    <s-distance to="124" to_dh="1.300" val="15.378"/>
+    <z-angle to="124" to_dh="1.300" val="107.5731 "/>
+    <direction to="131" to_dh="1.300" val="178.3751"/>
+    <s-distance to="131" to_dh="1.300" val="45.059"/>
+    <z-angle to="131" to_dh="1.300" val="100.2115 "/>
+    <direction to="132" to_dh="1.300" val="183.2504"/>
+    <s-distance to="132" to_dh="1.300" val="44.267"/>
+    <z-angle to="132" to_dh="1.300" val="100.3277 "/>
+    <direction to="133" to_dh="1.300" val="185.1552"/>
+    <s-distance to="133" to_dh="1.300" val="44.184"/>
+    <z-angle to="133" to_dh="1.300" val="101.4264 "/>
+    <direction to="134" to_dh="1.300" val="187.7765"/>
+    <s-distance to="134" to_dh="1.300" val="44.432"/>
+    <z-angle to="134" to_dh="1.300" val="102.7353 "/>
+  </obs>
+  <obs from="4005" from_dh="1.576 ">
+    <direction to="4004" to_dh="0.100" val="0.0044"/>
+    <s-distance to="4004" to_dh="0.100" val="78.491"/>
+    <z-angle to="4004" to_dh="0.100" val="101.2963 "/>
+    <direction to="40020140" to_dh="0.000" val="140.2096"/>
+    <z-angle to="40020140" to_dh="0.000" val="93.5275 "/>
+    <direction to="4006" to_dh="0.100" val="182.4915"/>
+    <s-distance to="4006" to_dh="0.100" val="99.072"/>
+    <z-angle to="4006" to_dh="0.100" val="100.1662 "/>
+    <direction to="141" to_dh="1.300" val="7.4842"/>
+    <s-distance to="141" to_dh="1.300" val="12.007"/>
+    <z-angle to="141" to_dh="1.300" val="101.5898 "/>
+    <direction to="142" to_dh="1.300" val="388.1212"/>
+    <s-distance to="142" to_dh="1.300" val="11.778"/>
+    <z-angle to="142" to_dh="1.300" val="101.6614 "/>
+    <direction to="143" to_dh="1.300" val="373.0873"/>
+    <s-distance to="143" to_dh="1.300" val="12.270"/>
+    <z-angle to="143" to_dh="1.300" val="110.0171 "/>
+    <direction to="151" to_dh="1.300" val="169.0696"/>
+    <s-distance to="151" to_dh="1.300" val="9.757"/>
+    <z-angle to="151" to_dh="1.300" val="101.6928 "/>
+    <direction to="152" to_dh="1.300" val="193.3152"/>
+    <s-distance to="152" to_dh="1.300" val="9.235"/>
+    <z-angle to="152" to_dh="1.300" val="101.9276 "/>
+    <direction to="153" to_dh="1.300" val="211.8526"/>
+    <s-distance to="153" to_dh="1.300" val="10.241"/>
+    <z-angle to="153" to_dh="1.300" val="112.0550 "/>
+    <direction to="161" to_dh="1.300" val="179.0783"/>
+    <s-distance to="161" to_dh="1.300" val="25.117"/>
+    <z-angle to="161" to_dh="1.300" val="100.5290 "/>
+    <direction to="162" to_dh="1.300" val="188.2012"/>
+    <s-distance to="162" to_dh="1.300" val="25.242"/>
+    <z-angle to="162" to_dh="1.300" val="100.7233 "/>
+    <direction to="163" to_dh="1.300" val="196.3009"/>
+    <s-distance to="163" to_dh="1.300" val="25.295"/>
+    <z-angle to="163" to_dh="1.300" val="105.0368 "/>
+    <direction to="171" to_dh="1.300" val="180.2884"/>
+    <s-distance to="171" to_dh="1.300" val="44.056"/>
+    <z-angle to="171" to_dh="1.300" val="100.2318 "/>
+    <direction to="172" to_dh="1.300" val="185.5033"/>
+    <s-distance to="172" to_dh="1.300" val="43.856"/>
+    <z-angle to="172" to_dh="1.300" val="100.3516 "/>
+    <direction to="173" to_dh="1.300" val="189.8386"/>
+    <s-distance to="173" to_dh="1.300" val="43.905"/>
+    <z-angle to="173" to_dh="1.300" val="102.6764 "/>
+    <direction to="181" to_dh="1.300" val="180.6569"/>
+    <s-distance to="181" to_dh="1.300" val="61.374"/>
+    <z-angle to="181" to_dh="1.300" val="100.1183 "/>
+    <direction to="182" to_dh="1.300" val="184.3666"/>
+    <s-distance to="182" to_dh="1.300" val="61.109"/>
+    <z-angle to="182" to_dh="1.300" val="100.2130 "/>
+    <direction to="183" to_dh="1.300" val="187.8438"/>
+    <s-distance to="183" to_dh="1.300" val="61.126"/>
+    <z-angle to="183" to_dh="1.300" val="101.8960 "/>
+    <direction to="191" to_dh="1.300" val="180.7553"/>
+    <s-distance to="191" to_dh="1.300" val="76.146"/>
+    <z-angle to="191" to_dh="1.300" val="99.7610 "/>
+    <direction to="192" to_dh="1.300" val="183.2498"/>
+    <s-distance to="192" to_dh="1.300" val="76.064"/>
+    <z-angle to="192" to_dh="1.300" val="99.8395 "/>
+    <direction to="193" to_dh="1.300" val="186.8174"/>
+    <s-distance to="193" to_dh="1.300" val="76.321"/>
+    <z-angle to="193" to_dh="1.300" val="101.4158 "/>
+    <direction to="40022440" to_dh="0.100" val="184.0534"/>
+    <s-distance to="40022440" to_dh="0.100" val="60.608"/>
+    <z-angle to="40022440" to_dh="0.100" val="101.4801 "/>
+  </obs>
+  <obs from="4006" from_dh="1.614 ">
+    <direction to="4005" to_dh="0.100" val="400.0000"/>
+    <s-distance to="4005" to_dh="0.100" val="99.110"/>
+    <z-angle to="4005" to_dh="0.100" val="101.7592 "/>
+    <direction to="40022440" to_dh="0.100" val="397.5504"/>
+    <s-distance to="40022440" to_dh="0.100" val="38.610"/>
+    <z-angle to="40022440" to_dh="0.100" val="104.3868 "/>
+    <direction to="4007" to_dh="0.100" val="222.3398"/>
+    <s-distance to="4007" to_dh="0.100" val="110.164"/>
+    <z-angle to="4007" to_dh="0.100" val="101.3096 "/>
+    <direction to="201" to_dh="1.300" val="8.9223"/>
+    <s-distance to="201" to_dh="1.300" val="16.277"/>
+    <z-angle to="201" to_dh="1.300" val="102.7839 "/>
+    <direction to="202" to_dh="1.300" val="396.4222"/>
+    <s-distance to="202" to_dh="1.300" val="15.346"/>
+    <z-angle to="202" to_dh="1.300" val="103.1459 "/>
+    <direction to="203" to_dh="1.300" val="386.5181"/>
+    <s-distance to="203" to_dh="1.300" val="15.946"/>
+    <z-angle to="203" to_dh="1.300" val="108.0004 "/>
+    <direction to="204" to_dh="1.300" val="381.7767"/>
+    <s-distance to="204" to_dh="1.300" val="16.419"/>
+    <z-angle to="204" to_dh="1.300" val="110.1484 "/>
+    <direction to="211" to_dh="1.300" val="198.8781"/>
+    <s-distance to="211" to_dh="1.300" val="10.537"/>
+    <z-angle to="211" to_dh="1.300" val="104.2441 "/>
+    <direction to="212" to_dh="1.300" val="217.1794"/>
+    <s-distance to="212" to_dh="1.300" val="10.261"/>
+    <z-angle to="212" to_dh="1.300" val="104.2208 "/>
+    <direction to="213" to_dh="1.300" val="231.4060"/>
+    <s-distance to="213" to_dh="1.300" val="11.140"/>
+    <z-angle to="213" to_dh="1.300" val="110.9638 "/>
+    <direction to="214" to_dh="1.300" val="241.5949"/>
+    <s-distance to="214" to_dh="1.300" val="12.032"/>
+    <z-angle to="214" to_dh="1.300" val="115.3398 "/>
+    <direction to="221" to_dh="1.300" val="208.3567"/>
+    <s-distance to="221" to_dh="1.300" val="26.329"/>
+    <z-angle to="221" to_dh="1.300" val="103.0259 "/>
+    <direction to="222" to_dh="1.300" val="215.7462"/>
+    <s-distance to="222" to_dh="1.300" val="26.182"/>
+    <z-angle to="222" to_dh="1.300" val="103.1789 "/>
+    <direction to="223" to_dh="1.300" val="219.7407"/>
+    <s-distance to="223" to_dh="1.300" val="26.175"/>
+    <z-angle to="223" to_dh="1.300" val="104.8210 "/>
+    <direction to="224" to_dh="1.300" val="224.2130"/>
+    <s-distance to="224" to_dh="1.300" val="26.365"/>
+    <z-angle to="224" to_dh="1.300" val="107.0213 "/>
+    <direction to="231" to_dh="1.300" val="212.4178"/>
+    <s-distance to="231" to_dh="1.300" val="44.650"/>
+    <z-angle to="231" to_dh="1.300" val="101.8648 "/>
+    <direction to="232" to_dh="1.300" val="216.5537"/>
+    <s-distance to="232" to_dh="1.300" val="44.349"/>
+    <z-angle to="232" to_dh="1.300" val="102.0514 "/>
+    <direction to="233" to_dh="1.300" val="221.5441"/>
+    <s-distance to="233" to_dh="1.300" val="44.304"/>
+    <z-angle to="233" to_dh="1.300" val="104.5220 "/>
+    <direction to="241" to_dh="1.300" val="215.7251"/>
+    <s-distance to="241" to_dh="1.300" val="65.392"/>
+    <z-angle to="241" to_dh="1.300" val="101.1784 "/>
+    <direction to="242" to_dh="1.300" val="218.1394"/>
+    <s-distance to="242" to_dh="1.300" val="64.939"/>
+    <z-angle to="242" to_dh="1.300" val="101.2506 "/>
+    <direction to="243" to_dh="1.300" val="219.8666"/>
+    <s-distance to="243" to_dh="1.300" val="64.518"/>
+    <z-angle to="243" to_dh="1.300" val="102.0738 "/>
+    <direction to="244" to_dh="1.300" val="221.5210"/>
+    <s-distance to="244" to_dh="1.300" val="64.357"/>
+    <z-angle to="244" to_dh="1.300" val="102.8688 "/>
+    <direction to="251" to_dh="1.300" val="218.1896"/>
+    <s-distance to="251" to_dh="1.300" val="86.401"/>
+    <z-angle to="251" to_dh="1.300" val="100.7563 "/>
+    <direction to="252" to_dh="1.300" val="220.5520"/>
+    <s-distance to="252" to_dh="1.300" val="85.407"/>
+    <z-angle to="252" to_dh="1.300" val="100.8970 "/>
+    <direction to="253" to_dh="1.300" val="222.5459"/>
+    <s-distance to="253" to_dh="1.300" val="84.660"/>
+    <z-angle to="253" to_dh="1.300" val="101.8601 "/>
+  </obs>
+  <obs from="4007" from_dh="1.673 ">
+    <direction to="4006" to_dh="1.300" val="399.9996"/>
+    <s-distance to="4006" to_dh="1.300" val="110.137"/>
+    <z-angle to="4006" to_dh="1.300" val="99.7754 "/>
+    <direction to="4008" to_dh="1.300" val="231.9475"/>
+    <s-distance to="4008" to_dh="1.300" val="111.593"/>
+    <z-angle to="4008" to_dh="1.300" val="100.1000 "/>
+    <direction to="261" to_dh="1.300" val="18.0644"/>
+    <s-distance to="261" to_dh="1.300" val="8.245"/>
+    <z-angle to="261" to_dh="1.300" val="103.0180 "/>
+    <direction to="262" to_dh="1.300" val="394.6422"/>
+    <s-distance to="262" to_dh="1.300" val="8.849"/>
+    <z-angle to="262" to_dh="1.300" val="103.3987 "/>
+    <direction to="263" to_dh="1.300" val="372.0639"/>
+    <s-distance to="263" to_dh="1.300" val="11.258"/>
+    <z-angle to="263" to_dh="1.300" val="114.0736 "/>
+    <direction to="271" to_dh="1.300" val="219.9693"/>
+    <s-distance to="271" to_dh="1.300" val="12.534"/>
+    <z-angle to="271" to_dh="1.300" val="102.2488 "/>
+    <direction to="272" to_dh="1.300" val="232.2089"/>
+    <s-distance to="272" to_dh="1.300" val="12.622"/>
+    <z-angle to="272" to_dh="1.300" val="102.5184 "/>
+    <direction to="273" to_dh="1.300" val="250.0340"/>
+    <s-distance to="273" to_dh="1.300" val="13.917"/>
+    <z-angle to="273" to_dh="1.300" val="109.5706 "/>
+    <direction to="281" to_dh="1.300" val="223.0028"/>
+    <s-distance to="281" to_dh="1.300" val="29.024"/>
+    <z-angle to="281" to_dh="1.300" val="100.7953 "/>
+    <direction to="282" to_dh="1.300" val="228.2161"/>
+    <s-distance to="282" to_dh="1.300" val="28.861"/>
+    <z-angle to="282" to_dh="1.300" val="100.9945 "/>
+    <direction to="283" to_dh="1.300" val="236.5165"/>
+    <s-distance to="283" to_dh="1.300" val="29.685"/>
+    <z-angle to="283" to_dh="1.300" val="104.4761 "/>
+    <direction to="291" to_dh="1.300" val="223.9579"/>
+    <s-distance to="291" to_dh="1.300" val="46.226"/>
+    <z-angle to="291" to_dh="1.300" val="100.4874 "/>
+    <direction to="292" to_dh="1.300" val="228.4910"/>
+    <s-distance to="292" to_dh="1.300" val="46.142"/>
+    <z-angle to="292" to_dh="1.300" val="100.7164 "/>
+    <direction to="293" to_dh="1.300" val="232.5182"/>
+    <s-distance to="293" to_dh="1.300" val="46.521"/>
+    <z-angle to="293" to_dh="1.300" val="102.6551 "/>
+    <direction to="301" to_dh="1.300" val="226.4510"/>
+    <s-distance to="301" to_dh="1.300" val="65.578"/>
+    <z-angle to="301" to_dh="1.300" val="100.2741 "/>
+    <direction to="302" to_dh="1.300" val="229.2631"/>
+    <s-distance to="302" to_dh="1.300" val="65.118"/>
+    <z-angle to="302" to_dh="1.300" val="100.3514 "/>
+    <direction to="303" to_dh="1.300" val="232.6912"/>
+    <s-distance to="303" to_dh="1.300" val="65.223"/>
+    <z-angle to="303" to_dh="1.300" val="101.9169 "/>
+    <direction to="311" to_dh="1.300" val="228.9322"/>
+    <s-distance to="311" to_dh="1.300" val="83.070"/>
+    <z-angle to="311" to_dh="1.300" val="100.2295 "/>
+    <direction to="312" to_dh="1.300" val="230.7509"/>
+    <s-distance to="312" to_dh="1.300" val="82.735"/>
+    <z-angle to="312" to_dh="1.300" val="100.2632 "/>
+    <direction to="313" to_dh="1.300" val="233.0946"/>
+    <s-distance to="313" to_dh="1.300" val="83.856"/>
+    <z-angle to="313" to_dh="1.300" val="101.0749 "/>
+  </obs>
+  <obs from="4008" from_dh="1.629 ">
+    <direction to="4007" to_dh="0.100" val="0.0005"/>
+    <s-distance to="4007" to_dh="0.100" val="111.603"/>
+    <z-angle to="4007" to_dh="0.100" val="100.9705 "/>
+    <direction to="4009" to_dh="0.100" val="212.3662"/>
+    <s-distance to="4009" to_dh="0.100" val="98.970"/>
+    <z-angle to="4009" to_dh="0.100" val="100.9565 "/>
+    <direction to="321" to_dh="1.300" val="10.1144"/>
+    <s-distance to="321" to_dh="1.300" val="11.897"/>
+    <z-angle to="321" to_dh="1.300" val="101.9634 "/>
+    <direction to="322" to_dh="1.300" val="394.4360"/>
+    <s-distance to="322" to_dh="1.300" val="12.164"/>
+    <z-angle to="322" to_dh="1.300" val="102.5984 "/>
+    <direction to="323" to_dh="1.300" val="378.8254"/>
+    <s-distance to="323" to_dh="1.300" val="13.370"/>
+    <z-angle to="323" to_dh="1.300" val="109.2873 "/>
+    <direction to="331" to_dh="1.300" val="211.6384"/>
+    <s-distance to="331" to_dh="1.300" val="4.984"/>
+    <z-angle to="331" to_dh="1.300" val="103.6381 "/>
+    <direction to="332" to_dh="1.300" val="244.7831"/>
+    <s-distance to="332" to_dh="1.300" val="5.757"/>
+    <z-angle to="332" to_dh="1.300" val="104.2053 "/>
+    <direction to="333" to_dh="1.300" val="270.2946"/>
+    <s-distance to="333" to_dh="1.300" val="8.228"/>
+    <z-angle to="333" to_dh="1.300" val="116.0265 "/>
+    <direction to="341" to_dh="1.300" val="212.1773"/>
+    <s-distance to="341" to_dh="1.300" val="23.419"/>
+    <z-angle to="341" to_dh="1.300" val="100.7992 "/>
+    <direction to="343" to_dh="1.300" val="220.5917"/>
+    <s-distance to="343" to_dh="1.300" val="23.576"/>
+    <z-angle to="343" to_dh="1.300" val="101.0671 "/>
+    <direction to="344" to_dh="1.300" val="228.3228"/>
+    <s-distance to="344" to_dh="1.300" val="24.066"/>
+    <z-angle to="344" to_dh="1.300" val="105.2677 "/>
+    <direction to="351" to_dh="1.300" val="212.7547"/>
+    <s-distance to="351" to_dh="1.300" val="43.239"/>
+    <z-angle to="351" to_dh="1.300" val="100.3457 "/>
+    <direction to="352" to_dh="1.300" val="216.7221"/>
+    <s-distance to="352" to_dh="1.300" val="43.273"/>
+    <z-angle to="352" to_dh="1.300" val="100.4868 "/>
+    <direction to="353" to_dh="1.300" val="222.2670"/>
+    <s-distance to="353" to_dh="1.300" val="43.794"/>
+    <z-angle to="353" to_dh="1.300" val="103.2368 "/>
+    <direction to="361" to_dh="1.300" val="212.6593"/>
+    <s-distance to="361" to_dh="1.300" val="62.644"/>
+    <z-angle to="361" to_dh="1.300" val="100.2687 "/>
+    <direction to="362" to_dh="1.300" val="215.4865"/>
+    <s-distance to="362" to_dh="1.300" val="62.502"/>
+    <z-angle to="362" to_dh="1.300" val="100.3455 "/>
+    <direction to="363" to_dh="1.300" val="219.4412"/>
+    <s-distance to="363" to_dh="1.300" val="62.406"/>
+    <z-angle to="363" to_dh="1.300" val="102.3026 "/>
+    <direction to="371" to_dh="1.300" val="212.1225"/>
+    <s-distance to="371" to_dh="1.300" val="78.867"/>
+    <z-angle to="371" to_dh="1.300" val="100.2032 "/>
+    <direction to="372" to_dh="1.300" val="214.2518"/>
+    <s-distance to="372" to_dh="1.300" val="79.066"/>
+    <z-angle to="372" to_dh="1.300" val="100.2863 "/>
+    <direction to="373" to_dh="1.300" val="217.4623"/>
+    <s-distance to="373" to_dh="1.300" val="79.809"/>
+    <z-angle to="373" to_dh="1.300" val="101.9322 "/>
+  </obs>
+  <obs from="4009" from_dh="1.680 ">
+    <direction to="4008" to_dh="0.100" val="0.0005"/>
+    <s-distance to="4008" to_dh="0.100" val="98.974"/>
+    <z-angle to="4008" to_dh="0.100" val="101.0438 "/>
+    <direction to="4010" to_dh="0.100" val="181.2113"/>
+    <s-distance to="4010" to_dh="0.100" val="69.731"/>
+    <z-angle to="4010" to_dh="0.100" val="101.3793 "/>
+    <direction to="381" to_dh="1.300" val="28.7190"/>
+    <s-distance to="381" to_dh="1.300" val="4.132"/>
+    <z-angle to="381" to_dh="1.300" val="105.5766 "/>
+    <direction to="382" to_dh="1.300" val="379.0023"/>
+    <s-distance to="382" to_dh="1.300" val="3.478"/>
+    <z-angle to="382" to_dh="1.300" val="107.5395 "/>
+    <direction to="383" to_dh="1.300" val="356.7180"/>
+    <s-distance to="383" to_dh="1.300" val="4.144"/>
+    <z-angle to="383" to_dh="1.300" val="115.4355 "/>
+    <direction to="384" to_dh="1.300" val="337.2892"/>
+    <s-distance to="384" to_dh="1.300" val="5.606"/>
+    <z-angle to="384" to_dh="1.300" val="125.4655 "/>
+    <direction to="391" to_dh="1.300" val="170.8028"/>
+    <s-distance to="391" to_dh="1.300" val="6.847"/>
+    <z-angle to="391" to_dh="1.300" val="103.1152 "/>
+    <direction to="392" to_dh="1.300" val="197.2518"/>
+    <s-distance to="392" to_dh="1.300" val="6.582"/>
+    <z-angle to="392" to_dh="1.300" val="104.0868 "/>
+    <direction to="393" to_dh="1.300" val="234.0882"/>
+    <s-distance to="393" to_dh="1.300" val="8.554"/>
+    <z-angle to="393" to_dh="1.300" val="120.4376 "/>
+    <direction to="401" to_dh="1.300" val="181.2952"/>
+    <s-distance to="401" to_dh="1.300" val="20.236"/>
+    <z-angle to="401" to_dh="1.300" val="101.1715 "/>
+    <direction to="402" to_dh="1.300" val="190.6342"/>
+    <s-distance to="402" to_dh="1.300" val="20.002"/>
+    <z-angle to="402" to_dh="1.300" val="101.4323 "/>
+    <direction to="403" to_dh="1.300" val="202.1978"/>
+    <s-distance to="403" to_dh="1.300" val="20.218"/>
+    <z-angle to="403" to_dh="1.300" val="107.5456 "/>
+    <direction to="411" to_dh="1.300" val="181.9185"/>
+    <s-distance to="411" to_dh="1.300" val="35.841"/>
+    <z-angle to="411" to_dh="1.300" val="100.7164 "/>
+    <direction to="412" to_dh="1.300" val="187.3341"/>
+    <s-distance to="412" to_dh="1.300" val="36.017"/>
+    <z-angle to="412" to_dh="1.300" val="100.8775 "/>
+    <direction to="413" to_dh="1.300" val="193.2930"/>
+    <s-distance to="413" to_dh="1.300" val="36.106"/>
+    <z-angle to="413" to_dh="1.300" val="104.1617 "/>
+    <direction to="421" to_dh="1.300" val="180.9375"/>
+    <s-distance to="421" to_dh="1.300" val="50.584"/>
+    <z-angle to="421" to_dh="1.300" val="100.4913 "/>
+    <direction to="422" to_dh="1.300" val="184.6212"/>
+    <s-distance to="422" to_dh="1.300" val="50.753"/>
+    <z-angle to="422" to_dh="1.300" val="100.6249 "/>
+    <direction to="423" to_dh="1.300" val="189.0628"/>
+    <s-distance to="423" to_dh="1.300" val="51.083"/>
+    <z-angle to="423" to_dh="1.300" val="102.8132 "/>
+    <direction to="9999" to_dh="0.000" val="76.6021"/>
+    <z-angle to="9999" to_dh="0.000" val="94.4719 "/>
+  </obs>
+  <obs from="4010" from_dh="1.589 ">
+    <direction to="4009" to_dh="0.100" val="345.1020"/>
+    <s-distance to="4009" to_dh="0.100" val="69.735"/>
+    <z-angle to="4009" to_dh="0.100" val="101.4274 "/>
+    <direction to="4011" to_dh="0.100" val="139.3106"/>
+    <s-distance to="4011" to_dh="0.100" val="61.962"/>
+    <z-angle to="4011" to_dh="0.100" val="102.0693 "/>
+    <direction to="431" to_dh="1.300" val="356.5717"/>
+    <s-distance to="431" to_dh="1.300" val="7.846"/>
+    <z-angle to="431" to_dh="1.300" val="102.5903 "/>
+    <direction to="432" to_dh="1.300" val="331.1321"/>
+    <s-distance to="432" to_dh="1.300" val="7.449"/>
+    <z-angle to="432" to_dh="1.300" val="103.2269 "/>
+    <direction to="433" to_dh="1.300" val="312.9253"/>
+    <s-distance to="433" to_dh="1.300" val="7.838"/>
+    <z-angle to="433" to_dh="1.300" val="112.0512 "/>
+    <direction to="434" to_dh="1.300" val="301.9607"/>
+    <s-distance to="434" to_dh="1.300" val="8.738"/>
+    <z-angle to="434" to_dh="1.300" val="117.1941 "/>
+    <direction to="441" to_dh="1.300" val="118.4929"/>
+    <s-distance to="441" to_dh="1.300" val="7.085"/>
+    <z-angle to="441" to_dh="1.300" val="101.8401 "/>
+    <direction to="442" to_dh="1.300" val="144.6996"/>
+    <s-distance to="442" to_dh="1.300" val="6.736"/>
+    <z-angle to="442" to_dh="1.300" val="102.4763 "/>
+    <direction to="443" to_dh="1.300" val="152.6473"/>
+    <s-distance to="443" to_dh="1.300" val="7.011"/>
+    <z-angle to="443" to_dh="1.300" val="105.5577 "/>
+    <direction to="444" to_dh="1.300" val="173.3005"/>
+    <s-distance to="444" to_dh="1.300" val="8.105"/>
+    <z-angle to="444" to_dh="1.300" val="116.1382 "/>
+    <direction to="451" to_dh="1.300" val="127.6419"/>
+    <s-distance to="451" to_dh="1.300" val="23.018"/>
+    <z-angle to="451" to_dh="1.300" val="100.7624 "/>
+    <direction to="452" to_dh="1.300" val="137.1876"/>
+    <s-distance to="452" to_dh="1.300" val="22.836"/>
+    <z-angle to="452" to_dh="1.300" val="100.9322 "/>
+    <direction to="453" to_dh="1.300" val="140.3602"/>
+    <s-distance to="453" to_dh="1.300" val="22.910"/>
+    <z-angle to="453" to_dh="1.300" val="101.1525 "/>
+    <direction to="454" to_dh="1.300" val="147.3241"/>
+    <s-distance to="454" to_dh="1.300" val="23.428"/>
+    <z-angle to="454" to_dh="1.300" val="104.4507 "/>
+    <direction to="455" to_dh="1.300" val="151.1570"/>
+    <s-distance to="455" to_dh="1.300" val="23.675"/>
+    <z-angle to="455" to_dh="1.300" val="106.1019 "/>
+    <direction to="461" to_dh="1.300" val="132.9024"/>
+    <s-distance to="461" to_dh="1.300" val="39.105"/>
+    <z-angle to="461" to_dh="1.300" val="100.9196 "/>
+    <direction to="462" to_dh="1.300" val="138.2863"/>
+    <s-distance to="462" to_dh="1.300" val="38.829"/>
+    <z-angle to="462" to_dh="1.300" val="101.0320 "/>
+    <direction to="463" to_dh="1.300" val="144.8250"/>
+    <s-distance to="463" to_dh="1.300" val="38.609"/>
+    <z-angle to="463" to_dh="1.300" val="103.8174 "/>
+    <direction to="471" to_dh="1.300" val="134.6005"/>
+    <s-distance to="471" to_dh="1.300" val="46.072"/>
+    <z-angle to="471" to_dh="1.300" val="101.0029 "/>
+    <direction to="472" to_dh="1.300" val="139.2265"/>
+    <s-distance to="472" to_dh="1.300" val="45.556"/>
+    <z-angle to="472" to_dh="1.300" val="101.1560 "/>
+    <direction to="473" to_dh="1.300" val="144.7636"/>
+    <s-distance to="473" to_dh="1.300" val="44.778"/>
+    <z-angle to="473" to_dh="1.300" val="103.4849 "/>
+    <direction to="470" to_dh="0.050" val="134.5588"/>
+    <s-distance to="470" to_dh="0.050" val="46.165"/>
+    <z-angle to="470" to_dh="0.050" val="99.9225 "/>
+  </obs>
+  <obs from="4011" from_dh="1.670 ">
+    <direction to="4010" to_dh="0.400" val="3.7954"/>
+    <s-distance to="4010" to_dh="0.400" val="61.933"/>
+    <z-angle to="4010" to_dh="0.400" val="100.7566 "/>
+    <direction to="4012" to_dh="0.100" val="203.7087"/>
+    <s-distance to="4012" to_dh="0.100" val="65.292"/>
+    <z-angle to="4012" to_dh="0.100" val="98.9335 "/>
+    <direction to="481" to_dh="1.300" val="166.4665"/>
+    <s-distance to="481" to_dh="1.300" val="4.520"/>
+    <z-angle to="481" to_dh="1.300" val="104.3050 "/>
+    <direction to="482" to_dh="1.300" val="217.7474"/>
+    <s-distance to="482" to_dh="1.300" val="3.661"/>
+    <z-angle to="482" to_dh="1.300" val="106.8928 "/>
+    <direction to="483" to_dh="1.300" val="246.0448"/>
+    <s-distance to="483" to_dh="1.300" val="4.295"/>
+    <z-angle to="483" to_dh="1.300" val="119.3166 "/>
+    <direction to="484" to_dh="1.300" val="272.4852"/>
+    <s-distance to="484" to_dh="1.300" val="6.817"/>
+    <z-angle to="484" to_dh="1.300" val="121.0060 "/>
+    <direction to="480" to_dh="0.050" val="164.3195"/>
+    <s-distance to="480" to_dh="0.050" val="4.519"/>
+    <z-angle to="480" to_dh="0.050" val="92.0024 "/>
+    <direction to="490" to_dh="0.050" val="194.9138"/>
+    <s-distance to="490" to_dh="0.050" val="15.588"/>
+    <z-angle to="490" to_dh="0.050" val="97.7416 "/>
+    <direction to="491" to_dh="1.300" val="195.4024"/>
+    <s-distance to="491" to_dh="1.300" val="15.678"/>
+    <z-angle to="491" to_dh="1.300" val="101.1945 "/>
+    <direction to="492" to_dh="1.300" val="208.7959"/>
+    <s-distance to="492" to_dh="1.300" val="15.354"/>
+    <z-angle to="492" to_dh="1.300" val="101.7992 "/>
+    <direction to="493" to_dh="1.300" val="233.2853"/>
+    <s-distance to="493" to_dh="1.300" val="17.055"/>
+    <z-angle to="493" to_dh="1.300" val="109.2235 "/>
+    <direction to="500" to_dh="0.050" val="202.8807"/>
+    <s-distance to="500" to_dh="0.050" val="31.501"/>
+    <z-angle to="500" to_dh="0.050" val="98.9211 "/>
+    <direction to="501" to_dh="1.300" val="203.0123"/>
+    <s-distance to="501" to_dh="1.300" val="31.543"/>
+    <z-angle to="501" to_dh="1.300" val="100.4528 "/>
+    <direction to="502" to_dh="0.350" val="208.8211"/>
+    <s-distance to="502" to_dh="0.350" val="31.207"/>
+    <z-angle to="502" to_dh="0.350" val="102.5497 "/>
+  </obs>
+  <obs from="4012" from_dh="1.610 ">
+    <direction to="4011" to_dh="0.100" val="332.6895"/>
+    <s-distance to="4011" to_dh="0.100" val="65.417"/>
+    <z-angle to="4011" to_dh="0.100" val="104.0553 "/>
+    <direction to="510" to_dh="0.050" val="333.1130"/>
+    <s-distance to="510" to_dh="0.050" val="29.934"/>
+    <z-angle to="510" to_dh="0.050" val="104.4151 "/>
+    <direction to="511" to_dh="1.300" val="332.9292"/>
+    <s-distance to="511" to_dh="1.300" val="29.889"/>
+    <z-angle to="511" to_dh="1.300" val="105.1563 "/>
+    <direction to="512" to_dh="1.300" val="326.1667"/>
+    <s-distance to="512" to_dh="1.300" val="30.081"/>
+    <z-angle to="512" to_dh="1.300" val="105.3860 "/>
+    <direction to="520" to_dh="0.050" val="334.5819"/>
+    <s-distance to="520" to_dh="0.050" val="25.833"/>
+    <z-angle to="520" to_dh="0.050" val="104.4766 "/>
+    <direction to="521" to_dh="1.300" val="334.3611"/>
+    <s-distance to="521" to_dh="1.300" val="25.863"/>
+    <z-angle to="521" to_dh="1.300" val="104.9047 "/>
+    <direction to="522" to_dh="1.300" val="326.5415"/>
+    <s-distance to="522" to_dh="1.300" val="25.664"/>
+    <z-angle to="522" to_dh="1.300" val="105.1724 "/>
+    <direction to="531" to_dh="1.300" val="338.1278"/>
+    <s-distance to="531" to_dh="1.300" val="16.777"/>
+    <z-angle to="531" to_dh="1.300" val="104.8475 "/>
+    <direction to="532" to_dh="1.300" val="328.1220"/>
+    <s-distance to="532" to_dh="1.300" val="16.634"/>
+    <z-angle to="532" to_dh="1.300" val="105.1728 "/>
+    <direction to="533" to_dh="1.300" val="324.9950"/>
+    <s-distance to="533" to_dh="1.300" val="16.503"/>
+    <z-angle to="533" to_dh="1.300" val="105.4399 "/>
+    <direction to="541" to_dh="1.300" val="347.5991"/>
+    <s-distance to="541" to_dh="1.300" val="5.197"/>
+    <z-angle to="541" to_dh="1.300" val="105.7593 "/>
+    <direction to="542" to_dh="1.300" val="307.8613"/>
+    <s-distance to="542" to_dh="1.300" val="5.516"/>
+    <z-angle to="542" to_dh="1.300" val="106.5417 "/>
+    <direction to="551" to_dh="1.300" val="381.0625"/>
+    <s-distance to="551" to_dh="1.300" val="1.413"/>
+    <z-angle to="551" to_dh="1.300" val="115.4891 "/>
+    <direction to="552" to_dh="1.300" val="268.5649"/>
+    <s-distance to="552" to_dh="1.300" val="3.124"/>
+    <z-angle to="552" to_dh="1.300" val="109.4526 "/>
+    <direction to="553" to_dh="1.300" val="261.1335"/>
+    <s-distance to="553" to_dh="1.300" val="8.037"/>
+    <z-angle to="553" to_dh="1.300" val="119.5170 "/>
+    <direction to="554" to_dh="1.300" val="259.2666"/>
+    <s-distance to="554" to_dh="1.300" val="13.051"/>
+    <z-angle to="554" to_dh="1.300" val="122.2318 "/>
+    <direction to="543" to_dh="1.300" val="276.3009"/>
+    <s-distance to="543" to_dh="1.300" val="13.774"/>
+    <z-angle to="543" to_dh="1.300" val="119.6784 "/>
+  </obs>
+  <point adj="z" id="4007"/>
+  <point adj="z" id="201"/>
+  <point adj="z" id="221"/>
+  <point adj="z" id="202"/>
+  <point adj="z" id="222"/>
+  <point adj="z" id="203"/>
+  <point adj="z" id="223"/>
+  <point adj="z" id="204"/>
+  <point adj="z" id="244"/>
+  <point adj="z" id="224"/>
+  <point adj="z" id="211"/>
+  <point adj="z" id="251"/>
+  <point adj="z" id="231"/>
+  <point adj="z" id="212"/>
+  <point adj="z" id="444"/>
+  <point adj="z" id="252"/>
+  <point adj="z" id="232"/>
+  <point adj="z" id="213"/>
+  <point adj="z" id="451"/>
+  <point adj="z" id="253"/>
+  <point adj="z" id="233"/>
+  <point adj="z" id="214"/>
+  <point adj="z" id="452"/>
+  <point adj="z" id="263"/>
+  <point adj="z" id="241"/>
+  <point adj="z" id="472"/>
+  <point adj="z" id="453"/>
+  <point adj="z" id="271"/>
+  <point adj="z" id="4007"/>
+  <point adj="z" id="242"/>
+  <point adj="z" id="473"/>
+  <point adj="z" id="454"/>
+  <point adj="z" id="272"/>
+  <point adj="z" id="243"/>
+  <point adj="z" id="470"/>
+  <point adj="z" id="455"/>
+  <point adj="z" id="301"/>
+  <point adj="z" id="273"/>
+  <point adj="z" id="484"/>
+  <point adj="z" id="461"/>
+  <point adj="z" id="302"/>
+  <point adj="z" id="3"/>
+  <point adj="z" id="281"/>
+  <point adj="z" id="480"/>
+  <point adj="z" id="4011"/>
+  <point adj="z" id="462"/>
+  <point adj="z" id="303"/>
+  <point adj="z" id="4"/>
+  <point adj="z" id="282"/>
+  <point adj="z" id="261"/>
+  <point adj="z" id="490"/>
+  <point adj="z" id="321"/>
+  <point adj="z" id="463"/>
+  <point adj="z" id="311"/>
+  <point adj="z" id="5"/>
+  <point adj="z" id="283"/>
+  <point adj="z" id="262"/>
+  <point adj="z" id="4012"/>
+  <point adj="z" id="491"/>
+  <point adj="z" id="4012"/>
+  <point adj="z" id="322"/>
+  <point adj="z" id="21"/>
+  <point adj="z" id="471"/>
+  <point adj="z" id="312"/>
+  <point adj="z" id="11"/>
+  <point adj="z" id="291"/>
+  <point adj="z" id="4011"/>
+  <point adj="z" id="492"/>
+  <point adj="z" id="481"/>
+  <point adj="z" id="323"/>
+  <point adj="z" id="22"/>
+  <point adj="z" id="313"/>
+  <point adj="z" id="12"/>
+  <point adj="z" id="292"/>
+  <point adj="z" id="510"/>
+  <point adj="z" id="493"/>
+  <point adj="z" id="352"/>
+  <point adj="z" id="482"/>
+  <point adj="z" id="331"/>
+  <point adj="z" id="23"/>
+  <point adj="z" id="13"/>
+  <point adj="z" id="293"/>
+  <point adj="z" id="533"/>
+  <point adj="z" id="511"/>
+  <point adj="z" id="500"/>
+  <point adj="z" id="353"/>
+  <point adj="z" id="42"/>
+  <point adj="z" id="483"/>
+  <point adj="z" id="332"/>
+  <point adj="z" id="24"/>
+  <point adj="z" id="14"/>
+  <point adj="z" id="541"/>
+  <point adj="z" id="512"/>
+  <point adj="z" id="501"/>
+  <point adj="z" id="361"/>
+  <point adj="z" id="43"/>
+  <point adj="z" id="333"/>
+  <point adj="z" id="25"/>
+  <point adj="z" id="4007"/>
+  <point adj="z" id="15"/>
+  <point adj="z" id="542"/>
+  <point adj="z" id="520"/>
+  <point adj="z" id="502"/>
+  <point adj="z" id="362"/>
+  <point adj="z" id="51"/>
+  <point adj="z" id="341"/>
+  <point adj="z" id="31"/>
+  <point adj="z" id="16"/>
+  <point adj="z" id="551"/>
+  <point adj="z" id="521"/>
+  <point adj="z" id="73"/>
+  <point adj="z" id="363"/>
+  <point adj="z" id="52"/>
+  <point adj="z" id="343"/>
+  <point adj="z" id="32"/>
+  <point adj="z" id="17"/>
+  <point adj="z" id="552"/>
+  <point adj="z" id="522"/>
+  <point adj="z" id="381"/>
+  <point adj="z" id="371"/>
+  <point adj="z" id="53"/>
+  <point adj="z" id="344"/>
+  <point adj="z" id="33"/>
+  <point adj="z" id="553"/>
+  <point adj="z" id="402"/>
+  <point adj="z" id="531"/>
+  <point adj="z" id="382"/>
+  <point adj="z" id="372"/>
+  <point adj="z" id="61"/>
+  <point adj="z" id="351"/>
+  <point adj="z" id="34"/>
+  <point adj="z" id="554"/>
+  <point adj="z" id="403"/>
+  <point adj="z" id="93"/>
+  <point adj="z" id="532"/>
+  <point adj="z" id="383"/>
+  <point adj="z" id="4003"/>
+  <point adj="z" id="373"/>
+  <point adj="z" id="62"/>
+  <point adj="z" id="41"/>
+  <point adj="z" id="543"/>
+  <point adj="z" id="411"/>
+  <point adj="z" id="94"/>
+  <point adj="z" id="384"/>
+  <point adj="z" id="4004"/>
+  <point adj="z" id="63"/>
+  <point adj="z" id="412"/>
+  <point adj="z" id="101"/>
+  <point adj="z" id="391"/>
+  <point adj="z" id="81"/>
+  <point adj="z" id="71"/>
+  <point adj="z" id="413"/>
+  <point adj="z" id="102"/>
+  <point adj="z" id="392"/>
+  <point adj="z" id="82"/>
+  <point adj="z" id="72"/>
+  <point adj="z" id="111"/>
+  <point adj="z" id="421"/>
+  <point adj="z" id="103"/>
+  <point adj="z" id="393"/>
+  <point adj="z" id="83"/>
+  <point adj="z" id="4011"/>
+  <point adj="z" id="112"/>
+  <point adj="z" id="422"/>
+  <point adj="z" id="104"/>
+  <point adj="z" id="401"/>
+  <point adj="z" id="91"/>
+  <point adj="z" id="431"/>
+  <point adj="z" id="113"/>
+  <point adj="z" id="423"/>
+  <point adj="z" id="92"/>
+  <point adj="z" id="132"/>
+  <point adj="z" id="432"/>
+  <point adj="z" id="4004"/>
+  <point adj="z" id="133"/>
+  <point adj="z" id="433"/>
+  <point adj="z" id="114"/>
+  <point adj="z" id="4003"/>
+  <point adj="z" id="134"/>
+  <point adj="z" id="434"/>
+  <point adj="z" id="121"/>
+  <point adj="z" id="4005"/>
+  <point adj="z" id="143"/>
+  <point adj="z" id="441"/>
+  <point adj="z" id="122"/>
+  <point adj="z" id="151"/>
+  <point adj="z" id="4005"/>
+  <point adj="z" id="442"/>
+  <point adj="z" id="123"/>
+  <point adj="z" id="152"/>
+  <point adj="z" id="4004"/>
+  <point adj="z" id="443"/>
+  <point adj="z" id="124"/>
+  <point adj="z" id="181"/>
+  <point adj="z" id="153"/>
+  <point adj="z" id="131"/>
+  <point adj="z" id="182"/>
+  <point adj="z" id="161"/>
+  <point adj="z" id="183"/>
+  <point adj="z" id="162"/>
+  <point adj="z" id="141"/>
+  <point adj="z" id="191"/>
+  <point adj="z" id="163"/>
+  <point adj="z" id="142"/>
+  <point adj="z" id="192"/>
+  <point adj="z" id="171"/>
+  <point adj="z" id="193"/>
+  <point adj="z" id="172"/>
+  <point adj="z" id="4005"/>
+  <point adj="z" id="4001"/>
+  <point adj="z" id="4003"/>
+  <point adj="z" id="1"/>
+  <point adj="z" id="2"/>
+  <point adj="z" id="173"/>
+  
+  <point adj="Z" id="40022440" x="1167036.03" y="756558.80" z="386.49"/>
+  <point fix="Z" id="4002" x="1166771.154" y="756418.101" z="385.997"/>
+  <point adj="z" id="4006" x="1167074.627" y="756558.835" z="387.404"/>
+  <point adj="z" id="4008" x="1167246.958" y="756686.857" z="386.490"/>
+  <point adj="Z" id="4009" x="1167293.423" y="756774.144" z="387.053"/>
+  <point adj="Z" id="4010" x="1167342.660" y="756823.500" z="387.103"/>
+</points-observations>
+</network>
+</gama-local>

@@ -1,0 +1,289 @@
+<gama-local>
+<description>
+[epoch]
+date: 2010.7.2
+job: hrad 2008j 080423
+job: hrad 2008j 080424
+</description>
+<points-observations>
+
+<point id="501" adj="xyz"/>
+<point id="524" adj="xyz"/>
+
+<vectors>
+	<vec from="501" to="524" dx="241.9437" dy="-178.8616" dz="-136.7395"/>
+	<cov-mat dim="3" band="0">
+		1.1	0.9	1.3
+	</cov-mat>
+</vectors>
+<!--
+test vector
+-->
+<vectors>
+	<vec from="GOPE" to="TV01" dx="-8650.7273" dy="-31712.0516" dz="13296.1697"/>
+	<cov-mat dim="3" band="2">
+		0.0000049585e+6 0.0000017678e+6 0.0000032404e+6
+		0.0000021389e+6 0.0000010643e+6
+		0.0000051359e+6
+	</cov-mat>
+<!--
+Duration:    8:02:45
+Number of satelites: 5 - 9
+Antena height: from=0.1114 to=0.0353
+Antena name: from=TPSCR3_GGD      CONE to=  TPSHIPER_PLUS
+-->
+</vectors>
+<vectors>
+	<vec from="TV01" to="1011" dx="  964.3398" dy="  984.4870" dz=" -938.0809"/>
+	<cov-mat dim="3" band="2">
+		0.0000004900e+6 0.0000001753e+6 0.0000003464e+6
+		0.0000002137e+6 0.0000001021e+6
+		0.0000006671e+6
+	</cov-mat>
+<!--
+Duration:    4:03:00
+Number of satelites: 8 - 12
+Antena height: from=0.0353 to=0.0277
+Antena name: from=  TPSHIPER_PLUS to=  TPSHIPER_PLUS
+-->
+</vectors>
+<vectors>
+	<vec from="TV01" to="1012" dx="  609.5507" dy=" 1450.2954" dz=" -773.9928"/>
+	<cov-mat dim="3" band="2">
+		0.0000002762e+6 0.0000001161e+6 0.0000001909e+6
+		0.0000001321e+6 0.0000000745e+6
+		0.0000003638e+6
+	</cov-mat>
+<!--
+Duration:    3:20:45
+Number of satelites: 8 - 12
+Antena height: from=0.0353 to=1.6235
+Antena name: from=  TPSHIPER_PLUS to=  TPSHIPER_PLUS
+-->
+</vectors>
+<vectors>
+	<vec from="TV01" to="501" dx="  527.8288" dy=" 1405.4180" dz=" -694.1519"/>
+	<cov-mat dim="3" band="2">
+		0.0000003466e+6 0.0000001532e+6 0.0000002072e+6
+		0.0000001746e+6 0.0000000721e+6
+		0.0000003860e+6
+	</cov-mat>
+<!--
+Duration:    2:41:00
+Number of satelites: 8 - 12
+Antena height: from=0.0353 to=0.1656
+Antena name: from=  TPSHIPER_PLUS to=  TPSHIPER_PLUS
+-->
+</vectors>
+<vectors>
+	<vec from="TV01" to="501" dx="  527.8370" dy=" 1405.4213" dz=" -694.1485"/>
+	<cov-mat dim="3" band="2">
+		0.0000003469e+6 0.0000000725e+6 0.0000002111e+6
+		0.0000000909e+6 0.0000000368e+6
+		0.0000002893e+6
+	</cov-mat>
+<!--
+Duration:    3:12:15
+Number of satelites: 9 - 13
+Antena height: from=0.0353 to=0.1656
+Antena name: from=  TPSHIPER_PLUS to=  TPSHIPER_PLUS
+-->
+</vectors>
+<vectors>
+	<vec from="TV01" to="1012" dx="  609.5500" dy=" 1450.2923" dz=" -773.9959"/>
+	<cov-mat dim="3" band="2">
+		0.0000003079e+6 0.0000000694e+6 0.0000001990e+6
+		0.0000000922e+6 0.0000000418e+6
+		0.0000003058e+6
+	</cov-mat>
+<!--
+Duration:    3:11:45
+Number of satelites: 9 - 13
+Antena height: from=0.0353 to=1.6235
+Antena name: from=  TPSHIPER_PLUS to=  TPSHIPER_PLUS
+-->
+</vectors>
+<vectors>
+	<vec from="1011" to="1012" dx=" -354.7943" dy="  465.8070" dz="  164.0804"/>
+	<cov-mat dim="3" band="2">
+		0.0000005612e+6 0.0000002023e+6 0.0000004452e+6
+		0.0000002283e+6 0.0000001478e+6
+		0.0000009468e+6
+	</cov-mat>
+<!--
+Duration:    3:20:30
+Number of satelites: 0 - 9
+Antena height: from=0.0277 to=1.6235
+Antena name: from=  TPSHIPER_PLUS to=  TPSHIPER_PLUS
+-->
+</vectors>
+<vectors>
+	<vec from="1011" to="501" dx=" -436.5109" dy="  420.9328" dz="  243.9240"/>
+	<cov-mat dim="3" band="2">
+		0.0000007154e+6 0.0000002883e+6 0.0000004693e+6
+		0.0000003153e+6 0.0000001370e+6
+		0.0000012337e+6
+	</cov-mat>
+<!--
+Duration:    2:39:45
+Number of satelites: 0 - 8
+Antena height: from=0.0277 to=0.1656
+Antena name: from=  TPSHIPER_PLUS to=  TPSHIPER_PLUS
+-->
+</vectors>
+<vectors>
+	<vec from="1012" to="501" dx="  -81.7212" dy="  -44.8788" dz="   79.8396"/>
+	<cov-mat dim="3" band="2">
+		0.0000002435e+6 0.0000000889e+6 0.0000001885e+6
+		0.0000001140e+6 0.0000000526e+6
+		0.0000004497e+6
+	</cov-mat>
+<!--
+Duration:    2:40:00
+Number of satelites: 10 - 14
+Antena height: from=1.6235 to=0.1656
+Antena name: from=  TPSHIPER_PLUS to=  TPSHIPER_PLUS
+-->
+</vectors>
+<vectors>
+	<vec from="501" to="1012" dx="   81.7147" dy="   44.8725" dz="  -79.8469"/>
+	<cov-mat dim="3" band="2">
+		0.0000002972e+6 0.0000000450e+6 0.0000001980e+6
+		0.0000000783e+6 0.0000000312e+6
+		0.0000003086e+6
+	</cov-mat>
+<!--
+Duration:    3:10:15
+Number of satelites: 10 - 14
+Antena height: from=0.1656 to=1.6235
+Antena name: from=  TPSHIPER_PLUS to=  TPSHIPER_PLUS
+-->
+</vectors>
+<vectors>
+	<vec from="1011" to="501" dx=" -436.5075" dy="  420.9383" dz="  243.9301"/>
+	<cov-mat dim="3" band="2">
+		0.0000007025e+6 0.0000002604e+6 0.0000004905e+6
+		0.0000002916e+6 0.0000001507e+6
+		0.0000009026e+6
+	</cov-mat>
+<!--
+Duration:    2:59:00
+Number of satelites: 0 - 8
+Antena height: from=0.0277 to=0.1680
+Antena name: from=  TPSHIPER_PLUS to=  TPSHIPER_PLUS
+-->
+</vectors>
+<vectors>
+	<vec from="524" to="501" dx=" -241.9027" dy="  178.8796" dz="  136.7918"/>
+	<cov-mat dim="3" band="2">
+		0.0000003625e+6 0.0000001300e+6 0.0000003065e+6
+		0.0000001514e+6 0.0000001070e+6
+		0.0000007088e+6
+	</cov-mat>
+<!--
+Duration:    2:44:45
+Number of satelites: 9 - 11
+Antena height: from=0.1626 to=0.1680
+Antena name: from=  TPSHIPER_PLUS to=  TPSHIPER_PLUS
+-->
+</vectors>
+<vectors>
+	<vec from="524" to="1011" dx="  194.6092" dy=" -242.0557" dz=" -107.1346"/>
+	<cov-mat dim="3" band="2">
+		0.0000009634e+6 0.0000003804e+6 0.0000007998e+6
+		0.0000004068e+6 0.0000003079e+6
+		0.0000016139e+6
+	</cov-mat>
+<!--
+Duration:    2:33:30
+Number of satelites: 9 - 11
+Antena height: from=0.1626 to=0.0277
+Antena name: from=  TPSHIPER_PLUS to=  TPSHIPER_PLUS
+-->
+</vectors>
+<vectors>
+	<vec from="524" to="1011" dx="  194.6140" dy=" -242.0570" dz=" -107.1351"/>
+	<cov-mat dim="3" band="2">
+		0.0000008470e+6 0.0000001949e+6 0.0000005634e+6
+		0.0000002305e+6 0.0000001692e+6
+		0.0000008844e+6
+	</cov-mat>
+<!--
+Duration:    3:16:30
+Number of satelites: 6 - 13
+Antena height: from=0.1626 to=0.0277
+Antena name: from=  TPSHIPER_PLUS to=  TPSHIPER_PLUS
+-->
+</vectors>
+<vectors>
+	<vec from="524" to="1002" dx="   98.6030" dy=" -280.9845" dz="  -19.1748"/>
+	<cov-mat dim="3" band="2">
+		0.0000002757e+6 0.0000000509e+6 0.0000002087e+6
+		0.0000000832e+6 0.0000000552e+6
+		0.0000003932e+6
+	</cov-mat>
+<!--
+Duration:    3:28:15
+Number of satelites: 6 - 13
+Antena height: from=0.1626 to=0.1687
+Antena name: from=  TPSHIPER_PLUS to=  TPSHIPER_PLUS
+-->
+</vectors>
+<vectors>
+	<vec from="524" to="501" dx=" -241.8973" dy="  178.8779" dz="  136.7937"/>
+	<cov-mat dim="3" band="2">
+		0.0000002736e+6 0.0000000533e+6 0.0000001958e+6
+		0.0000000816e+6 0.0000000513e+6
+		0.0000003244e+6
+	</cov-mat>
+<!--
+Duration:    3:30:00
+Number of satelites: 6 - 13
+Antena height: from=0.1626 to=0.1680
+Antena name: from=  TPSHIPER_PLUS to=  TPSHIPER_PLUS
+-->
+</vectors>
+<vectors>
+	<vec from="1011" to="1002" dx="  -96.0125" dy="  -38.9279" dz="   87.9602"/>
+	<cov-mat dim="3" band="2">
+		0.0000006958e+6 0.0000001437e+6 0.0000004232e+6
+		0.0000001920e+6 0.0000000960e+6
+		0.0000007044e+6
+	</cov-mat>
+<!--
+Duration:    3:15:45
+Number of satelites: 6 - 8
+Antena height: from=0.0277 to=0.1687
+Antena name: from=  TPSHIPER_PLUS to=  TPSHIPER_PLUS
+-->
+</vectors>
+<vectors>
+	<vec from="1011" to="501" dx=" -436.5179" dy="  420.9314" dz="  243.9245"/>
+	<cov-mat dim="3" band="2">
+		0.0000006865e+6 0.0000001518e+6 0.0000004265e+6
+		0.0000002020e+6 0.0000001085e+6
+		0.0000006859e+6
+	</cov-mat>
+<!--
+Duration:    3:05:45
+Number of satelites: 6 - 8
+Antena height: from=0.0277 to=0.1680
+Antena name: from=  TPSHIPER_PLUS to=  TPSHIPER_PLUS
+-->
+</vectors>
+<vectors>
+	<vec from="1002" to="501" dx=" -340.5027" dy="  459.8621" dz="  155.9655"/>
+	<cov-mat dim="3" band="2">
+		0.0000002411e+6 0.0000000387e+6 0.0000001610e+6
+		0.0000000758e+6 0.0000000360e+6
+		0.0000002838e+6
+	</cov-mat>
+<!--
+Duration:    3:18:15
+Number of satelites: 9 - 14
+Antena height: from=0.1687 to=0.1680
+Antena name: from=  TPSHIPER_PLUS to=  TPSHIPER_PLUS
+-->
+</vectors>
+</points-observations>
+</gama-local>

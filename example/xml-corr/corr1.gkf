@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gama-local SYSTEM "../../../gama/xml/gama-local.dtd" >
+<gama-local>
+<network angles="left-handed" axes-xy="en">
+<description>corrections of direction in 3D network with xy points</description>
+<parameters conf-pr="0.95" sigma-act="apriori" sigma-apr="1.00"
+    update-constrained-coordinates="no" />
+<points-observations direction-stdev="10" distance-stdev="10" zenith-angle-stdev="10">
+<!-- points are 2D - xy -->
+<point id="1" x="0" y="0" fix="xy" />
+<point id="2" x="0" y="1000" adj="XY" />
+<point id="3" x="1000" y="0" z="500" adj="xy" />
+
+<obs from="1">
+  <direction to="2" val="0"/>
+  <direction to="3" val="300"/>
+  <distance to="2" val="1000"/>
+  <distance to="3" val="1000"/>
+  <!-- For correction of direction set z-angle and s-distance.
+       These two observations are used for correction but not in adjustment.
+       Zenith angle is used for correction of direction.
+       Without slope distance is zenith angle inactive (not used for correction).
+       Slope distance may be omitted in modified gama-local.
+    -->
+  <z-angle to="2" val="50"/>
+  <s-distance to="2" val="1500"/>
+  <z-angle to="3" val="50"/>
+</obs>
+
+<obs from="2">
+  <direction to="1" val="0"/>
+  <direction to="3" val="50"/>
+  <!-- For correction of direction set z-angle and s-distance.
+       These two observations are used for correction but not in adjustment.
+       Zenith angle is used for correction of direction.
+       Without slope distance is zenith angle inactive (not used for correction).
+       Slope distance may be omitted in modified gama-local.
+    -->
+  <z-angle to="1" val="50"/>
+  <z-angle to="3" val="50"/>
+</obs>
+</points-observations>
+</network>
+</gama-local>

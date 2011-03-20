@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gama-local SYSTEM "../../../gama-1.9.07/xml/gama-local.dtd" >
+<gama-local>
+  <network angles="left-handed" axes-xy="en">
+    <description>Correction testing network - the cube</description>
+    <parameters conf-pr="0.95" sigma-act="apriori" sigma-apr="1.00"
+      update-constrained-coordinates="no" />
+    <points-observations direction-stdev="10" 
+	                 distance-stdev="10"
+			 zenith-angle-stdev="10">
+      <point id="222" x="2000" y="2000" z="2000" fix="xyz" />
+
+      <point id="111" x="1000" y="1000" z="1000" adj="xyz" />
+      <point id="121" x="1000" y="2000" z="1000" adj="xyz" />
+      <point id="131" x="1000" y="3000" z="1000" adj="xyz" />
+      <point id="211" x="2000" y="1000" z="1000" adj="xyz" />
+      <point id="231" x="2000" y="3000" z="1000" adj="xyz" />
+      <point id="311" x="3000" y="1000" z="1000" adj="xyz" />
+      <point id="321" x="3000" y="2000" z="1000" adj="xyz" />
+      <point id="331" x="3000" y="3000" z="1000" adj="xyz" />
+
+      <point id="112" x="1000" y="1000" z="2000" adj="XYZ" />
+      <point id="122" x="1000" y="2000" z="2000" adj="xyz" />
+      <point id="132" x="1000" y="3000" z="2000" adj="xyz" />
+      <point id="212" x="2000" y="1000" z="2000" adj="xyz" />
+      <point id="232" x="2000" y="3000" z="2000" adj="xyz" />
+      <point id="312" x="3000" y="1000" z="2000" adj="xyz" />
+      <point id="322" x="3000" y="2000" z="2000" adj="xyz" />
+      <point id="332" x="3000" y="3000" z="2000" adj="xyz" />
+
+      <point id="113" x="1000" y="1000" z="3000" adj="xyz" />
+      <point id="123" x="1000" y="2000" z="3000" adj="xyz" />
+      <point id="133" x="1000" y="3000" z="3000" adj="xyz" />
+      <point id="213" x="2000" y="1000" z="3000" adj="xyz" />
+      <point id="233" x="2000" y="3000" z="3000" adj="xyz" />
+      <point id="313" x="3000" y="1000" z="3000" adj="xyz" />
+      <point id="323" x="3000" y="2000" z="3000" adj="xyz" />
+      <point id="333" x="3000" y="3000" z="3000" adj="xyz" />
+
+      <obs from="222">
+        <direction to="111" val="0" />
+        <direction to="211" val="50" />
+        <direction to="311" val="100" />
+        <direction to="321" val="150" />
+        <direction to="331" val="200" />
+        <direction to="231" val="250" />
+        <direction to="131" val="300" />
+        <direction to="121" val="350" />
+
+	<z-angle to="111" val="139.19"/>
+	<z-angle to="131" val="139.19"/>
+	<z-angle to="311" val="139.19"/>
+	<z-angle to="331" val="139.19"/>
+	<z-angle to="211" val="150"/>
+	<z-angle to="321" val="150"/>
+	<z-angle to="231" val="150"/>
+	<z-angle to="121" val="150"/>
+
+        <s-distance to="111" val="1732" />
+        <s-distance to="311" val="1732" />
+        <s-distance to="331" val="1732" />
+        <s-distance to="131" val="1732" />
+        <s-distance to="211" val="1414" />
+        <s-distance to="321" val="1414" />
+        <s-distance to="231" val="1414" />
+        <s-distance to="121" val="1414" />
+
+        <direction to="112" val="0" />
+        <direction to="212" val="50" />
+        <direction to="312" val="100" />
+        <direction to="322" val="150" />
+        <direction to="332" val="200" />
+        <direction to="232" val="250" />
+        <direction to="132" val="300" />
+        <direction to="122" val="350" />
+
+	<z-angle to="112" val="100"/>
+	<z-angle to="212" val="100"/>
+	<z-angle to="312" val="100"/>
+	<z-angle to="322" val="100"/>
+	<z-angle to="332" val="100"/>
+	<z-angle to="232" val="100"/>
+	<z-angle to="132" val="100"/>
+	<z-angle to="122" val="100"/>
+
+        <s-distance to="112" val="1414" />
+        <s-distance to="312" val="1414" />
+        <s-distance to="332" val="1414" />
+        <s-distance to="132" val="1414" />
+        <s-distance to="212" val="1000" />
+        <s-distance to="322" val="1000" />
+        <s-distance to="232" val="1000" />
+        <s-distance to="122" val="1000" />
+
+        <direction to="113" val="0" />
+        <direction to="213" val="50" />
+        <direction to="313" val="100" />
+        <direction to="323" val="150" />
+        <direction to="333" val="200" />
+        <direction to="233" val="250" />
+        <direction to="133" val="300" />
+        <direction to="123" val="350" />
+
+	<z-angle to="113" val="60.81"/>
+	<z-angle to="133" val="60.81"/>
+	<z-angle to="313" val="60.81"/>
+	<z-angle to="333" val="60.81"/>
+	<z-angle to="213" val="50"/>
+	<z-angle to="323" val="50"/>
+	<z-angle to="233" val="50"/>
+	<z-angle to="123" val="50"/>
+
+        <s-distance to="113" val="1732" />
+        <s-distance to="313" val="1732" />
+        <s-distance to="333" val="1732" />
+        <s-distance to="133" val="1732" />
+        <s-distance to="213" val="1414" />
+        <s-distance to="323" val="1414" />
+        <s-distance to="233" val="1414" />
+        <s-distance to="123" val="1414" />
+
+      </obs>
+    </points-observations>
+  </network>
+</gama-local>

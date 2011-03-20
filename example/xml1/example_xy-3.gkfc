@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<!DOCTYPE gama-xml
+  SYSTEM 'http://www.gnu.org/software/gama/gama-xml.dtd'>
+<gama-local>
+<network angles="right-handed" axes-xy="sw">
+<parameters conf-pr="0.95" sigma-act="apriori" sigma-apr="1.00" update-constrained-coordinates="no"/>
+<description>
+	ukazkovy soubor mereni
+</description>
+<points-observations direction-stdev="10" distance-stdev="2 2" zenith-angle-stdev="10">
+  <obs from="4001">
+    <direction to="ABC" val="53.3784"/>
+    <direction to="4002" val="259.4313"/>
+    <distance to="4002" val="95.47262"/>
+  </obs>
+  <obs from="4002">
+    <direction to="4001" val="53.3784"/>
+    <direction to="16" val="374.4768"/>
+    <direction to="116" val="374.0097"/>
+    <distance to="4001" val="95.47159"/>
+    <distance to="16" val="27.24321"/>
+    <distance to="116" val="35.29460"/>
+  </obs>
+  <point fix="xy" id="4001" x="1100100.02" y="680100.01"/>
+  <point adj="xy" id="4002"/>
+  <point fix="xy" id="ABC" x="1100100.04" y="680633.30"/>
+  <point adj="xy" id="16"/>
+  <point adj="xy" id="116"/>
+</points-observations>
+</network>
+</gama-local>

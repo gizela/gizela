@@ -1,0 +1,127 @@
+<?xml version="1.0" ?>
+<!DOCTYPE gama-xml
+  SYSTEM 'http://www.gnu.org/software/gama/gama-local.dtd'>
+<gama-local>
+<network angles="right-handed" axes-xy="ne" epoch="0.0000">
+<description>
+[epoch]	
+date: 2008.04.24
+job: Hrad 2008j
+used: vec2gkf.awk ver. 1.0</description>
+<parameters conf-pr="0.950" sigma-act="aposteriori" sigma-apr="1.000" tol-abs="1000.0" update-constrained-coordinates="no"/>
+<points-observations>
+
+<point adj="xyz" id="TV01"/>
+<point adj="xyz" id="1011"/>
+<point adj="xyz" id="501"/>
+<point fix="xyz" id="524" x="3971435.419" y="1019826.749" z="4869532.099"/>
+<point adj="xyz" id="1012"/>
+<point adj="xyz" id="1002"/>
+<point adj="xyz" id="GOPE"/>
+<vectors>
+	<vec dx="21007.7472" dy="-28563.8900" dz="-236.9209" from="GOPE" to="TV01"/>
+<cov-mat band="2" dim="3">
+ 2.3506440e-01  -5.9796358e-02  -5.9796358e-02
+ 1.7312072e-01   7.4323869e-02
+ 9.8533169e-01
+</cov-mat>
+</vectors>
+<vectors>
+	<vec dx="-279.9992" dy="-539.4152" dz="20.2779" from="1012" to="1011"/>
+<cov-mat band="2" dim="3">
+ 1.8884203e-01  -3.4531973e-02  -3.4531973e-02
+ 9.3487008e-02   6.5433379e-02
+ 7.6405556e-01
+</cov-mat>
+</vectors>
+<vectors>
+	<vec dx="120.5002" dy="-23.1406" dz="3.3060" from="1012" to="501"/>
+<cov-mat band="2" dim="3">
+ 4.4474093e-02  -5.7557024e-03  -5.7557024e-03
+ 2.5890801e-02   3.0196212e-03
+ 1.7942507e-01
+</cov-mat>
+</vectors>
+<vectors>
+	<vec dx="-1506.1363" dy="713.6989" dz="36.7737" from="TV01" to="1011"/>
+<cov-mat band="2" dim="3">
+ 1.0435691e-01  -2.4547876e-02  -2.4547876e-02
+ 6.2545665e-02   2.5789057e-02
+ 4.1946142e-01
+</cov-mat>
+</vectors>
+<vectors>
+	<vec dx="-1226.1399" dy="1253.1136" dz="16.4992" from="TV01" to="1012"/>
+<cov-mat band="2" dim="3">
+ 3.4079486e-02  -6.8890434e-03  -6.8890434e-03
+ 2.0859942e-02   9.0336080e-03
+ 1.3460136e-01
+</cov-mat>
+</vectors>
+<vectors>
+	<vec dx="-1105.6399" dy="1229.9746" dz="19.8045" from="TV01" to="501"/>
+<cov-mat band="2" dim="3">
+ 3.6580696e-02  -7.7535587e-03  -7.7535587e-03
+ 2.1571268e-02   6.2935385e-03
+ 1.3558308e-01
+</cov-mat>
+</vectors>
+<vectors>
+	<vec dx="-400.4974" dy="-516.2753" dz="16.9750" from="501" to="1011"/>
+<cov-mat band="2" dim="3">
+ 2.7979980e-01  -5.9809117e-02  -5.9809117e-02
+ 1.1045291e-01   5.7009800e-02
+ 8.5391930e-01
+</cov-mat>
+</vectors>
+<vectors>
+	<vec dx="-400.5008" dy="-516.2769" dz="16.9739" from="501" to="1011"/>
+<cov-mat band="2" dim="3">
+ 9.9174982e-02  -1.5230218e-02  -1.5230218e-02
+ 5.6609524e-02   1.9160656e-02
+ 4.0128820e-01
+</cov-mat>
+</vectors>
+<vectors>
+	<vec dx="-233.3571" dy="-233.4234" dz="16.8451" from="501" to="524"/>
+<cov-mat band="2" dim="3">
+ 5.8835944e-02  -4.0943563e-03  -4.0943563e-03
+ 3.4288885e-02   1.0000521e-02
+ 2.7111057e-01
+</cov-mat>
+</vectors>
+<vectors>
+	<vec dx="-265.3075" dy="-530.1023" dz="18.5739" from="501" to="1002"/>
+<cov-mat band="2" dim="3">
+ 7.7138558e-02  -3.7325169e-04  -3.7325169e-04
+ 5.1232369e-02  -4.9297091e-03
+ 3.2182507e-01
+</cov-mat>
+</vectors>
+<vectors>
+	<vec dx="135.1932" dy="-13.8243" dz="1.5966" from="1011" to="1002"/>
+<cov-mat band="2" dim="3">
+ 1.9834300e-01  -7.7347367e-03  -7.7347367e-03
+ 1.0344729e-01  -5.1480312e-03
+ 7.6397210e-01
+</cov-mat>
+</vectors>
+<vectors>
+	<vec dx="-167.1426" dy="-282.8539" dz="0.1284" from="524" to="1011"/>
+<cov-mat band="2" dim="3">
+ 1.2114630e-01  -1.2785645e-02  -1.2785645e-02
+ 6.8011139e-02   3.3546340e-02
+ 5.6164531e-01
+</cov-mat>
+</vectors>
+<vectors>
+	<vec dx="-31.9524" dy="-296.6800" dz="1.7267" from="524" to="1002"/>
+<cov-mat band="2" dim="3">
+ 6.1733319e-02   1.2179236e-03   1.2179236e-03
+ 3.6602870e-02   5.0851886e-05
+ 2.9174920e-01
+</cov-mat>
+</vectors>
+</points-observations>
+</network>
+</gama-local>

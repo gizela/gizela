@@ -1,0 +1,13 @@
+#
+# comment
+#
+
+501 adj_xyz # comment
+502 adj_XYZ  ## comm
+503 con_xyz
+
+504 0 0 fix_xy
+505 100 100 100 con_xyz
+506 200 200 adj_XY
+507 100 fix_z
+508 200 con_z
