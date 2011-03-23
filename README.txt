@@ -15,3 +15,5 @@ For coordinate displacement testing use script:
 For executing some examples without installing gizela type:
 
 	export PYTHONPATH=$PYTHONPATH:/path/to/gizela/trunk/gizela
+
+Some comments
