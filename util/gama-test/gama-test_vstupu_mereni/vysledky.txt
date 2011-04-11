@@ -1,0 +1,29 @@
+mereni		dim	typ	defekt	poc.rov.  poznamka	
+-------------------------------------------------------------------------
+!vod-zen	z	fix,adj	0	1 	s delkou nepocita
+!vod-zen	z	fix,con	0	1	s delkou nepocita
+*vod-zen	xyz	fix,adj	nepripojena sit - nelze vyrovnat
+*vod-zen	xyz	fix,con	1	2	OK
+
+!sikma-zen	z	fix,adj	0	1	s delkou nepocita
+!sikma-zen	z	fix,con	0	1	s delkou nepocita
+*sikma-zen	xyz	fix,adj	0	1	vyrovnava jen vysky, s delkou nepocita
+*sikma-zen	xyz	fix,con	0	1	vyrovnava jen vysky, s delkou nepocita
+
+!vod-zen-smer	z	fix,fix,adj 0	1	s delkou nepocita
+vod-zen-smer	xyz	fix,fix,adj 0	4	OK
+
+!sikma-zen-smer  z	fix,fix,adj 0	1	s delkou nepocita
+sikma-zen-smer  xyz	fix,fix,adj 0	4	OK
+
+vod-zen-dh	xyz	fix,con	0	3	neprovádí korekce převýšení do kart. syst.
+
+vod-zen-coord-xyz xyz	adj,adj	0	8	pseudoměření pro připojení sítě
+
+
+
+=============
+! ... při výpočtu z-ové souřadnice nebere v úvahu vodorovnou ani šikmou délku
+* ... při výpočtu bodu xyz počítá s vodorvnou a šikmou délkou jiným způsobem
+	vodorovná - nepřipojená síť (chyba) nebo výpočet body xyz
+	šikmá     - vždy vyrovnání výšky jen se zenitkou

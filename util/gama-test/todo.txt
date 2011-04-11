@@ -1,0 +1,13 @@
+Test gama-local
+1) vymyslet testovaci sit
+    - ze souradnic vypocitat opravene merene hodnoty
+    - z nich inverzni korekci urcit merene hodnoty na elipsoidu
+
+2) s temito hodnotami provest vyrovnani v gama-local
+
+3) dalsi dotazy
+    - jak je to s redukci (plati to o zadani latitude/ elipsoid?)
+        tedy ze pokud nezadane redukce se neprovadeji
+    - jsou provadene redukce zenit a vod uhlu spravne
+    - jaka je logika prace s vodorovnymi delkami
+    - jak doplnit redukci prevyseni

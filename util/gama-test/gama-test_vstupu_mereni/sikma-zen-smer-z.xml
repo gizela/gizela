@@ -1,0 +1,30 @@
+<gama-local>
+<network axes-xy="sw" angles="right-handed">
+<description>
+	sikma delka
+	zenitovy uhel
+	vodorovny smer
+</description>
+<parameters sigma-apr="1.00" 
+	conf-pr="0.95" 
+	sigma-act="aposteriori" 
+	update-constrained-coordinates="no"/>
+
+<points-observations direction-stdev="10" 
+	distance-stdev="2 2" 
+	zenith-angle-stdev="10">
+
+<point id="0" y="1000" x="5100" z="0" fix="XYZ"/>
+<point id="1" y="1000" x="5000" z="0" fix="XYZ"/>
+<point id="2" y="1100" x="5000" z="100" adj="z"/>
+
+<obs from="1">
+	<s-distance to="2" val="141.42"/>
+	<z-angle   to="2" val="50.01"/>
+	<direction to="0" val="0"/>
+	<direction to="2" val="100.01"/>
+</obs>
+
+</points-observations>
+</network>
+</gama-local>

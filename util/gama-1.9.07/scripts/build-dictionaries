@@ -1,0 +1,28 @@
+#
+# builds dictionaris for GaMaLib
+# 
+# $Id: build-dictionaries,v 1.9 2006/08/26 16:02:43 cepek Exp $
+
+
+if pwd | grep /scripts$; then cd ..; fi
+
+echo
+echo "Building dictionaries"
+echo
+
+cd lib/gamalib
+
+FILES=$(find ../.. -name *.lang)
+
+echo input files: $FILES
+echo $FILES | ../../scripts/slovnikar
+
+
+# ------------------------------------------------------------------------
+
+
+
+
+
+
+

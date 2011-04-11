@@ -1,0 +1,185 @@
+\input texinfo   @c -*-texinfo-*-
+@comment $Id: gama.texi,v 1.23 2009/01/20 14:33:18 cepek Exp $
+
+@c ./gendocs.sh --email cepek@gnu.org gama "GNU Gama manual"
+
+@comment Part 1 : Header
+
+@c %**start of header
+@setfilename gama.info
+@include     version.texi
+@settitle    GNU Gama @value{VERSION}
+@setchapternewpage odd
+@syncodeindex vr cp
+@syncodeindex fn cp
+@syncodeindex ky cp
+@c %**end of header
+
+@include gama-local-macros.texi
+
+@iftex
+@comment exampleindent 0
+@end iftex
+
+@comment Part 2: Summary Description and Copyright
+
+@ifinfo
+This is a documentation version of GNU Gama @value{VERSION}.
+
+Copyright @copyright{} 2003 Ales Cepek.
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1 or
+any later version published by the Free Software Foundation; with no
+Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
+Texts. A copy of the license is included in the section entitled ``GNU
+Free Documentation License''.
+@end ifinfo
+
+
+
+@comment Part 3: Titlepage and Copyright
+
+@titlepage
+@title GNU Gama @value{VERSION}
+@subtitle Adjustment of geodetic networks
+@subtitle Edition @value{EDITION} (@value{UPDATED})
+@author   Ale@v{s} @v{C}epek
+
+@c The following two commands start the copyright page.
+@page
+@vskip 0pt plus 1filll
+Copyright @copyright{} 2003 Ales Cepek.
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1 or
+any later version published by the Free Software Foundation; with no
+Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
+Texts. A copy of the license is included in the section entitled ``GNU
+Free Documentation License''.
+@end titlepage
+@contents
+
+
+
+@comment Part 4: `Top' Node and Master Menu
+
+@ifnottex
+@node Top
+@top GNU Gama @value{VERSION}
+@end ifnottex
+
+@menu
+* Introduction::                
+* XML input data format for gama-local::
+* Network adjustment with gama-local::
+* Data structures and algorithms::  
+
+* Copying This Manual::
+* Concept Index::               
+@end menu
+
+
+
+@comment Part 5:  The Body of the Document
+
+@node    Introduction
+@chapter Introduction
+@include gama-introduction.texi
+
+@c Program gama-g3:: 
+
+@menu
+* Download::
+* Install::
+* Program gama-local::
+* Contributors::                
+* Reporting bugs::              
+@end menu
+
+
+@node    Download
+@section Download
+@cindex  download
+@include gama-download.texi
+
+
+@node    Install
+@section Install
+@cindex  install
+@include gama-install.texi
+
+
+@node    Program gama-local
+@section Program @code{gama-local}
+@cindex  @code{gama-local}
+@include gama-local.texi
+
+
+@c @node    Program gama-g3
+@c @section Program @code{gama-g3}
+@c @cindex  @code{gama-g3}
+@c @include gama-g3.texi
+
+
+@node     Contributors
+@section  Contributors
+@cindex   contributors
+
+
+The following persons (in chronological order) have made contributions
+to GNU Gama project: 
+@c
+Ales Cepek, Jiri Vesely, Petr Doubrava, Jan Pytel, Chuck Ghilani, Dan
+Haggman, Mauri Vaisanen, John Dedrum, Jim Sutherland, Zoltan Faludi,
+Diego Berge, Boris Pihtin, Stephane Kaloustian, Anton Horpynich and
+Claudio Fontana.
+
+
+@node     Reporting bugs
+@section  Reporting bugs
+@cindex   Reporting bugs
+
+
+Undoubtedly there are numerous bugs remaining, both in the C++
+source code and in the documentation.  If you find a bug in either,
+please send a bug report to
+
+@center @uref{mailto:bug-gama@@gnu.org, bug-gama@@gnu.org}  
+
+@noindent
+We will try to be as quick as possible in fixing the bugs and
+redistributing the fixes. If you prefere, you can always write
+directly to @uref{mailto:cepek@@gnu.org, Ales Cepek}.
+
+@c ----------------------------------------------------------------------
+
+
+@node    XML input data format for gama-local
+@chapter XML input data format for @code{gama-local}
+@include gama-local-input.texi
+
+@node    Network adjustment with gama-local
+@chapter Network adjustment with @code{gama-local}
+@include gama-local-adj.texi
+
+@node    Data structures and algorithms
+@chapter Data structures and algorithms
+@include algorithms.texi
+
+
+@node     Copying This Manual
+@appendix Copying This Manual
+
+@menu
+* GNU Free Documentation License::  License for copying this manual.
+@end menu
+
+@include fdl.texi
+
+@node       Concept Index
+@unnumbered Concept Index
+
+@printindex cp
+     
+@bye

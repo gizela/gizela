@@ -1,0 +1,29 @@
+<gama-local>
+<network axes-xy="sw" angles="right-handed">
+<description>
+	vodorovna delka
+	vektor
+</description>
+<parameters sigma-apr="1.00" 
+	conf-pr="0.95" 
+	sigma-act="aposteriori" 
+	update-constrained-coordinates="no"/>
+
+<points-observations direction-stdev="10" distance-stdev="2 2">
+
+<point id="1" y="1000" x="5000" z="0" adj="XYZ"/>
+<point id="2" y="1100" x="5000" z="100" adj="XYZ"/>
+
+<obs from="1">
+	<distance to="2" val="100.01"/>
+</obs>
+
+<vectors>
+	<vec from="1" to="2" dx="0" dy="100.02" dz="100.02"/>
+	<cov-mat dim="3" band="0">
+		1	1	1
+	</cov-mat>
+</vectors>
+</points-observations>
+</network>
+</gama-local>
