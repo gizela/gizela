@@ -1,4 +1,4 @@
-gama=../../../gama/gama-local/gama-local
+gama=../../util/gama/gama-local/gama-local
 gama_opt=--ellipsoid wgs84 --latitude 50 --cpoint-x 500 --cpoint-y 500 --cpoint-z 500
 
 gkf=$(wildcard *.gkf)
