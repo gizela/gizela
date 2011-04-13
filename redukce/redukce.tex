@@ -1,0 +1,47 @@
+\documentclass[czech, 12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{babel}
+\usepackage{geometry}
+\geometry{verbose,a4paper,tmargin=2cm,bmargin=2cm,lmargin=2cm,rmargin=2cm}
+\pagestyle{empty}
+\usepackage{booktabs}
+\usepackage{draftwatermark}
+\usepackage{amsmath}
+\DeclareMathOperator{\cotg}{cotg}
+
+\begin{document}
+\SetWatermarkScale{4}
+
+\title{Praktický výpočet redukcí terestrických měření v prostorové síti}
+\date{\today}
+\author{Michal Seidl, Tomáš Kubín\\Fakulta stavební, ČVUT v Praze}
+
+\maketitle
+
+\tableofcontents
+
+\section{Úvod}
+Před vyrovnáním prostorové sítě v kartézském souřadnicové systému E3, je nutné 
+provést redukci měřených zenitových úhlů a vodorovných směrů. Oprava se provádí
+z důvodu sbíhavosti tížnic. Při měření v různých místech sítě je vertikální osa
+přistroje urovnávána ve směru tížnice, které nejsou rovnoběžné. Z toho plyne, že
+zenitové úhly nejsou zpravidla měřené od směru osy $z$ lokálního sytému a
+vodorovné úhly nejsou zpravidla v rovině $xy$. Korekce provádí nápravu tohoto
+nesouladu.
+
+\section{Přibližný výpočet}
+Výrazy pro přibližný výpočet redukce zenitového úhlu $\Delta z_{ij}$ a směru
+$\Delta\psi_{ij}$ (Hradilek) jsou:
+\begin{align*}
+\Delta z_{ij} &= \varphi_{ci} \cos \Delta\sigma_{ij},\\
+\Delta \psi_{ij} &= - \varphi_{ci} \cotg z_{ij} \sin \Delta\sigma_{ij},
+\end{align*}
+kde $z_{ij}$ je zenitový úhel měřený z bodu $i$ na bod $j$, $\Delta\sigma_{ij}
+=\sigma_{ij} - \sigma_{ci}$ je rozdíl směrníků a $\varphi_{ci}$ je geocentrický
+úhel normál (ke kouli), které procházejí bodem $i$ a bodem centrálním $c$. 
+
+
+
+
+\end{document}

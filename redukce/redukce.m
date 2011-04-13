@@ -2,9 +2,10 @@
 
 % vypocet redukci pomoci vektoru
 
-R = 6378e3 % polomer nahradni koule
+R = 6356752.31425 % polomer nahradni koule
 
 % stanovisko
+cb_stn = 222;
 x_stn = 2e3; y_stn = 2e3; z_stn = 2e3 + R;
 
 % cilove body
@@ -41,8 +42,8 @@ end
 dz= zr - zm;
 
 fprintf('Redukce zenitoveho uhlu\n')
-fprintf('%5s %8s %8s %8s\n', 'cb.', 'zenit m', 'zenit r', 'redukce')
-fprintf('%5i %8.4f %8.4f %8.4f\n', [cb; zm*200/pi; zr*200/pi; dz*200/pi])
+fprintf('%5s %8s %8s %9s\n', 'cb.', 'zenit m', 'zenit r', 'redukce cc')
+fprintf('%5i %8.4f %8.4f %9.4f\n', [cb; zm*200/pi; zr*200/pi; dz*200/pi*1e4])
 
 % redukce vodorovneho smeru
 % normaly rovin
@@ -66,11 +67,26 @@ for i=1:length(x)
 	            psir(i) - psim(i) + pi/2
 	            psir(i) - psim(i) - pi
 	            psir(i) - psim(i) - pi/2];
-	[absmin, imin] = min(abs(dpsi_pom))
+	[absmin, imin] = min(abs(dpsi_pom)); 
 	dpsi(i) = dpsi_pom(imin);
 end
 %dpsi = psir - psim;
 
 fprintf('Redukce vodorovneho smeru\n')
-fprintf('%5s %8s %8s %8s\n', 'cb.', 'smer m', 'smer r', 'redukce')
-fprintf('%5i %8.4f %8.4f %8.4f\n', [cb; psim*200/pi; psir*200/pi; dpsi*200/pi])
+fprintf('%5s %8s %8s %9s\n', 'cb.', 'smer m', 'smer r', 'redukce cc')
+fprintf('%5i %8.4f %8.4f %9.4f\n', [cb; psim*200/pi; psir*200/pi; dpsi*200/pi*1e4])
+
+% vytvoreni tabulky latexu
+fprintf('\\begin{tabular}{|c|r|r|r|}')
+
+% vytvoreni vstupni davky pro gama
+%outf = 'theCube.gkf';
+%%fid = fopen(outf,'wt');
+%fid = 1;
+%fprintf(fid,'<gama-local>\n<network angles="left-handed" axes-xy="en">\n<description>The Cube - from vectors</description>\n<points-observations direction-stdev="10" distance-stdev="10" zenith-angle-stdev="10">\n')
+%fprintf(fid, '  <point id="%i" x="%.5f" y="%.5f" z="%.5f" fix="xyz">\n', [cb_stn; x_stn; y_stn; z_stn-R])
+%fprintf(fid, '  <point id="%i" x="%.5f" y="%.5f" z="%.5f" adj="xyz">\n', [cb; x; y; z-R])
+%
+%
+%fprintf(fid, '</points-observations>\n</network>\n</gama-local>')
+%fclose(fid)

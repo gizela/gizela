@@ -424,6 +424,7 @@ int GaMa_Main(int argc, char **argv)
           {
             cout << T_GaMa_inconsistent_coordinates_and_angles << "\n\n\n";
           }
+	// approximate coordinates
         Acord acord(IS->PD, IS->OD); //point data, observation data
 	/*
 	 * lib/gamalib/local/network.h
@@ -436,12 +437,14 @@ int GaMa_Main(int argc, char **argv)
         acord.execute();
 	//ReducedObservationsText(IS,&(acord.RO), cout);
 
+	// correction to ellipsoid
         if (correction_to_ellipsoid)
         {
             ReduceToEllipsoid reduce_to_el(IS->PD, IS->OD, el, latitude, cpoint);
             LocalPoint lp = reduce_to_el.execute();
 	    cout << "\nCentral point: x=" << lp.x() << " y=" << lp.y() << " z=" << lp.z() << "\n\n";
 	    std::cerr<< "Central point: x=" << lp.x() << " y=" << lp.y() << " z=" << lp.z() << endl;
+
             ReducedObservationsToEllipsoidText(IS, reduce_to_el.getMap(), cout);
 	    //LocalPoint lp = reduce_to_el.EllipsoidFunction.getCentralPoint();
         }

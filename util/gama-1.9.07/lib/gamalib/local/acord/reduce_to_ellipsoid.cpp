@@ -156,6 +156,9 @@ bool ReduceToEllipsoid::reduce_z_angle_to_ellipsoid(Z_Angle* obs)
 	      << "  bearing      (gon) = " << bearing * 200 / M_PI << endl
 	      << "  correction   (gon) = " << correction * 200 / M_PI << endl;
     */
+    //std::cerr << "R = " << EF.getR() << endl;
+    std::printf("R = %.5f\n", EF.getR());
+
     return true;
 }
 
