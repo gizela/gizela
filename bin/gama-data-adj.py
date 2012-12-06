@@ -4,19 +4,15 @@
 Script: work with gama-local adjustment
 '''
 
-# $Id: gama-data-adj.py 119 2011-01-11 23:44:34Z tomaskubin $
-
 import sys
 import datetime
+import gizela
 
 # Gizela signature
-revStr = "$Revision: 119 $"
-revStr = revStr.split()
-revision = revStr[1]
 dateTime = datetime.datetime.now()
 gizelaSignature = "\n".join(["",
-                             ">-- Gizela rev%s -->" % revision,
-                             ">-- Created: %i.%i.%i  %i:%i:%i -->" % (
+                             ">-- Gizela project ver. %s -->" % gizela.__version__,
+                             ">-- Created: %i.%i.%i  %2i:%2i:%2i -->" % (
                                  dateTime.day, 
                                  dateTime.month,
                                  dateTime.year,
@@ -39,11 +35,11 @@ parser.add_option("", "--test-z", action="store_true", default=False,
 
 
 # plotting
-parser.add_option("", "--plot-xy", action="store_true", dest="xy", 
+parser.add_option("", "--plot-xy", action="store_true", dest="plot_xy", 
                   default=False,
                   help="draw 2D graph of xy coordinates") 
 
-parser.add_option("", "--plot-z", action="store_true", dest="z", default=False,
+parser.add_option("", "--plot-z", action="store_true", dest="plot_z", default=False,
                   help="draw 1D graph of z coordinates") 
 
 parser.add_option("", "--config-fig", action="store", type="string",
@@ -331,7 +327,7 @@ if opt.testXY:
 
 # print text outputs
 if opt.printDisplFile or opt.printCoordFile or opt.printTestFile:
-    print epochList
+    print >>sys.stderr, epochList
     print >>filePrint, epochList
     print >>filePrint, epochList.get_epoch_table()
     print >>filePrint, gizelaSignature
@@ -341,7 +337,7 @@ if opt.printDisplFile or opt.printCoordFile or opt.printTestFile:
 # create figure
 #
 # plot position and displacements of xy points with error ellipses
-if opt.xy:
+if opt.plot_xy:
     if opt.testXY:
         from gizela.pyplot.FigureLayoutEpochList2DTest import FigureLayoutEpochList2DTest
         figXY = FigureLayoutEpochList2DTest(figScale=opt.figScale,
@@ -366,7 +362,7 @@ if opt.xy:
                       plotTest=opt.testXY)
 
 # plot z coordinates and displacements of points with error interval
-if opt.z:
+if opt.plot_z:
     figZList = [] # list of figures with graph of z coordinate
 
     zTestId = opt.testId
@@ -398,15 +394,15 @@ if opt.z:
             figZList.append(figZ)
 
 # show figure
-if opt.xy:
+if opt.plot_xy:
     figXY.show_(mainloop=opt.showFigure)
-if opt.z:
+if opt.plot_z:
     figZ.show_(mainloop=opt.showFigure)
 
 # save figure
-if opt.saveXY is not None and opt.xy:
+if opt.saveXY is not None and opt.plot_xy:
     figXY.save_as(opt.saveXY)
-if opt.saveZ is not None and opt.z:
+if opt.saveZ is not None and opt.plot_z:
     saveZ = opt.saveZ.split(".")
 
     if len(saveZ) == 1:

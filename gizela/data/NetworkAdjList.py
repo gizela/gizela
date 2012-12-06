@@ -117,7 +117,8 @@ class NetworkAdjList(NetworkList):
         for pp in net.pointListAdjCovMat:
             # change type of point
             p = PointLocalGamaDisplTest(pp)
-            p.epochIndex = len(self)# - 1
+            #p.epochIndex = len(self)# - 1
+            p.epochIndex = len(self) - 1
 
             #import sys
             #from gizela.data.point_text_table import gama_coor_stdev_table
@@ -514,7 +515,9 @@ class NetworkAdjList(NetworkList):
                 covmat = p.get_point_cov_mat()
             ps = (p - point0)*figure.errScale + point0
             ps.covmat = covmat
-            #print "epl:", type(ps)
+            #import sys
+            #print >>sys.stderr, "Point: %s" % ps.id
+            #print >>sys.stderr, "epl: %s" % type(ps)
             pointScaled.append(ps)
 
         # plot points and error ellipses

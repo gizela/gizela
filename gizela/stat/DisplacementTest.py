@@ -46,10 +46,12 @@ class DisplacementTest(object):
             pointId = epochPointList.iter_id()
 
         for id in pointId:
+    	    #import sys
+	    #print >>sys.stderr, ">> TEST Point: %s" % id
+
             for point in epochPointList.iter_point(id, withNone=False):
-                #print type(point)
-                #print point.id
-                #print point
+		#import sys
+		#print >>sys.stderr, ">> Epoch %i:" % point.epochIndex
 
                 if not isinstance(point, PointLocalGamaDisplTest):
                     import sys
@@ -71,8 +73,9 @@ class DisplacementTest(object):
                         self._make_test(point)
                    
                     else:
-                        import sys
-                        print >>sys.stderr, "Point id='%s' is not tested" % id
+                        pass
+                        #import sys
+                        #print >>sys.stderr, "Point id='%s' is not tested" % id
 
                 else:
                     if testType is DisplacementTestType.xyz and\
@@ -93,18 +96,19 @@ class DisplacementTest(object):
                         point.testType = DisplacementTestType.z
                         self._make_test(point)
                     else:
-                        import sys
-                        #print >>sys.stderr, "epoch=%s" % point.epochIndex
-                        #print >>sys.stderr, point
+			pass
+                        #import sys
                         #print >>sys.stderr, "is point set xy:",\
                         #    point.is_set_xy()
                         #print >>sys.stderr, "is displ. set xy:",\
                         #    point.displ.is_set_xy()
-                        print >>sys.stderr, \
-                            "Point id='%s' epoch=%s not tested with test %s" % \
-                                (id, 
-                                 point.epochIndex,
-                                 DisplacementTestType.get_string(testType)) 
+                        #print >>sys.stderr, point
+			#print >>sys.stderr, point.displ
+                        #print >>sys.stderr, \
+                        #    "Point id='%s' epoch=%s not tested with test %s" % \
+                        #        (id, 
+                        #         point.epochIndex,
+                        #         DisplacementTestType.get_string(testType)) 
 
 
     def _compute_test_stat(self, point):
@@ -141,10 +145,13 @@ class DisplacementTest(object):
 
             det = sxx*syy - sxy*sxy # determinant
 
+   	    #import sys
+	    #print >>sys.stderr, 'Test xy: Point "%s" in epoch %i' % (point.id, point.epochIndex)
+	    #print >>sys.stderr, "    var: %f %f, cov: %f" % (point.displ.var[0], point.displ.var[1], point.displ.cov[0])
             if abs(det) < self.detTol:
                 import sys
-                print >>sys.stderr, "Test xy: Point", point.id, \
-                        "not tested. Covariance matrix close to singular."
+                print >>sys.stderr, 'Test xy: Point "%s" in epoch %i not tested. Covariance matrix close to singular. Det = %.5e' % (point.id, point.epochIndex, det)
+		print >>sys.stderr, "    var: %f %f, cov: %f" % (point.displ.var[0], point.displ.var[1], point.displ.cov[0])
                 return
 
             dx = point.displ.x # x displacement

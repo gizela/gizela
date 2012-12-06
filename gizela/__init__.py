@@ -27,7 +27,7 @@ The Gizela package contains the following subpackages and modules:
 
 __docformat__ = 'restructuredtext en'
 
-__version__ = '0.1.0'
+__version__ = '0.2.0'
 """The version of gizela"""
 
 __author__ = 'Michal Seidl <michal.seidl@fsv.cvut.cz>, Tomas Kubin <tomas.kubin@fsv.cvut.cz>'

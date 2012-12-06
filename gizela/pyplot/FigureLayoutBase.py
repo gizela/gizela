@@ -8,6 +8,7 @@
 
 
 import matplotlib
+import gizela
 from gizela.util.Error import Error
 from gizela.pyplot.PlotPoint import PlotPoint
 from gizela.pyplot.BackendSingleton import BackendSingleton
@@ -63,16 +64,23 @@ class FigureLayoutBase(object):
         
         # first of all set backend
         # call the BackendSingleton class
-        self.backend = BackendSingleton(self.config["backend"]["name"])
+        if "backend" in self.config and "name" in self.config["backend"]:
+            self.backend = BackendSingleton(self.config["backend"]["name"])
+        else:
+            self.backend = BackendSingleton("GTK") # implicit backend
         
         # set figure
         import matplotlib.pyplot
         self.figure = matplotlib.pyplot.figure() #figure instance
         
         # set size of figure
-        self.figSize = [float(s) 
-                  for s in self.config["figure"]["size"].split(",")]
-            # figure size in milimeters
+        if "figure" in self.config and "size" in self.config["figure"]:
+            self.figSize = [float(s) 
+                      for s in self.config["figure"]["size"].split(",")]
+        else:
+            # default value A4
+            self.figSize = [297, 210]
+        # figure size in milimeters
         self.figWidth = self.figSize[0]
         self.figHeight = self.figSize[1]
         sizei = [i / 25.4 for i in self.figSize]
@@ -81,10 +89,13 @@ class FigureLayoutBase(object):
             # works just for GTK* and WX* backends
 
         # compute sizes
-        self.border = self.config["figure"]["border"]
-        tickSpace = self.config["axes"]["tickLabelSpace"]
-        tickSpace = [float(i) 
+        if "figure" in self.config and "border" in self.config["figure"]:
+            self.border = self.config["figure"]["border"]
+        else: self.border = 5 # implicit value
+        if "axes" in self.config and "tickLabelSpace" in self.config["axes"]:
+            tickSpace = [float(i) 
                      for i in self.config["axes"]["tickLabelSpace"].split(",")]
+        else: tickSpace = [7.0, 10.0] # implicit value
         self.tickSpaceX = tickSpace[0]
         self.tickSpaceY = tickSpace[1]
         
@@ -122,11 +133,9 @@ class FigureLayoutBase(object):
             self.figScale = figScale
         
         # sets logo
-        rev = "$Revision: 117 $"
-        revi = rev[11:-2]
         self.logo = self.figure.text(1 - self.border/2/self.figWidth,
                                      self.border/2/self.figHeight,
-                                     ">--Gizela-rev%s-->" % revi,
+                                     ">--Gizela-%s-->" % gizela.__version__,
                                      fontsize=6,
                                      verticalalignment="center",
                                      horizontalalignment="right")
@@ -244,10 +253,16 @@ class FigureLayoutBase(object):
 
         # set ticks label properties
         for l in ax.xaxis.get_ticklabels():
-            l.set_fontsize(self.config["axes"]["tickFontSize"])
+            if "axes" in self.config and "tickFontSize" in self.config["axes"]:
+                l.set_fontsize(self.config["axes"]["tickFontSize"])
+            else:
+                l.set_fontsize(6)
 
         for l in ax.yaxis.get_ticklabels():
-            l.set_fontsize(self.config["axes"]["tickFontSize"])
+            if "axes" in self.config and "tickFontSize" in self.config["axes"]:
+                l.set_fontsize(self.config["axes"]["tickFontSize"])
+            else:
+                l.set_fontsize(6)
 
         # set swapXY
         if axesOri == "ne" or axesOri == "nw" \
@@ -588,8 +603,8 @@ if __name__ == "__main__":
 
     fig.set_axes("sw")
     
-    fig.plot_xy([1e6, 1.001e6, 1.001e6, 1e6, 1e6],
-                [0.5e6, 0.5e6, 0.501e6, 0.501e6, 0.5e6])
+    fig.plot_xy([1e3, 1.001e3, 1.001e3, 1e3, 1e3],
+                [0.5e3, 0.5e3, 0.501e3, 0.501e3, 0.5e3])
 
     scalex, scaley = fig.get_scale_ratio()
     print 1/scalex, 1/scaley

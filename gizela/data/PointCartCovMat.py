@@ -264,7 +264,7 @@ class PointCartCovMat(PointCart):
                     % self.id
         
         # test of positive definity
-        det = vx*vy - 2*cxy*cxy
+        det = vx*vy - cxy*cxy
         if det < -1e-4:
             raise PointCartCovMatError, "Covariance matrix is not positive definite: det = %e" % det
 

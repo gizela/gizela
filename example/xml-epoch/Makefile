@@ -4,7 +4,8 @@ GKFC=$(wildcard epoch*.gkfc)
 PROJS=$(GKFC:.gkfc=.adj.xml)
 joined=joined.gkfc
 PROJS+=$(joined:.gkfc=.adj.xml)
-GAMA=../../../gama/gama-local/gama-local
+#GAMA=../../../gama/gama-local/gama-local
+GAMA=gama-local
 
 %.adj.xml: %.gkfc
 	$(GAMA) $(GAMA_OPT) $< --text $(@:.xml=.txt) --xml $@

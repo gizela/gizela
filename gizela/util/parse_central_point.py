@@ -42,5 +42,5 @@ def parse_central_point(cpoint):
     else:
         height = 0.0
 
-    csl = CoordSystemLocal(
+    #csl = CoordSystemLocal(
     return lat, lon, height

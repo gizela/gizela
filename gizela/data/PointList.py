@@ -29,7 +29,7 @@ class PointListError(Error): pass
 class PointList(object):
     """List of geodetic points CoordBase"""
 
-    __slots__ = ["index", "list", "duplicateId", "_textTable", "sortOutput"]
+    #__slots__ = ["index", "list", "duplicateId", "_textTable", "sortOutput"]
 
     def __init__(self, textTable=None, duplicateId=DUPLICATE_ID.error, sort=False):
         '''

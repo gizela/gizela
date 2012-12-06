@@ -17,7 +17,7 @@ class BackendSingleton(object):
 
     __instance = None
 
-    def __new__(cls, backend):
+    def __new__(cls, backend="GTKAgg"):
 
         if BackendSingleton.__instance is None:
             BackendSingleton.__instance = object.__new__(cls)

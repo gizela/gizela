@@ -93,7 +93,7 @@ class EpochPointList(object):
 
         for point in epoch.pointListFix:
             grp = patt.search(point.id)  
-            if grp not None:
+            if grp is not None:
                 if len(grp) == 2:
                     id = grp[pointIndex]
                     ei = grp[epochIndex]
