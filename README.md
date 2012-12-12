@@ -2,15 +2,21 @@
 
 [Homepage] (https://github.com/tomaskubin/gizela/wiki)
 
-## Gizela provides:
+## Gizela provides
 * reading adjustment of geodetic network from program 
   gama-local v. 1.9 (xml results) with covariance matrix
 * computing statistical quantities for coordinate displacement
   test
 
-## Installing
-Use python egg from directory dist.
+## Install from source
+Git clone:
+    git://github.com/tomaskubin/gizela.git
 
+Build Python package:
+    cd gizela
+    python setup.py sdist
+
+Install package:
     easy_install dist/Gizela-_version_-tar.gz
 
 ## For coordinate displacement testing use script:
