@@ -16,7 +16,7 @@ setup(
         'gizela.corr',
 	    'gizela.test'],
     scripts=['bin/gama-data-obs.py', 'bin/gama-data-adj.py'],
-    url='https://github.com/tomaskubin/gizela/wiki/',
+    url='http://pypi.python.org/pypi/Gizela',
     license='LICENSE.txt',
     description='archiving, managing, testing of geodetic networks',
     long_description=open('README.txt').read(),
