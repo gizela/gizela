@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name='Gizela',
-    version='0.4.1',
+    version='0.4.3',
     author='Michal Seidl, Tomas Kubin',
     author_email='michal.seidl@fsv.cvut.cz, tomas.kubin@fsv.cvut.cz',
     packages=['gizela',
