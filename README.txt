@@ -42,4 +42,5 @@ Or simply use ``easy_install`` without previous download: ::
 For coordinate displacement testing use script
 ==============================================
 ::
+
     bin/gama-data-adj.py
