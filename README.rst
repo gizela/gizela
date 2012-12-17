@@ -23,22 +23,23 @@ Build Python package: ::
     cd gizela
     python setup.py sdist
 
-Install package::
+Install package: ::
 
     easy_install dist/Gizela-_version_-tar.gz
 
 
 Install with ``easy_install``
 =============================
-Go to `Gizela project page <http://pypi.python.org/pypi/Gizela/>`_. Download tarball and install::
+Go to `Gizela project page <http://pypi.python.org/pypi/Gizela/>`_. Download tarball and install: ::
 
     easy_install Gizela-_version_.tar.gz
 
-Or simply use ``easy_install`` without previous download::
+Or simply use ``easy_install`` without previous download: ::
 
     easy_install Gizela
 
 
-For coordinate displacement testing use script::
-================================================
+For coordinate displacement testing use script
+==============================================
+::
     bin/gama-data-adj.py
