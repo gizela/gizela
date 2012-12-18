@@ -16,7 +16,7 @@ Install from source
 ===================
 Git clone: ::
 
-    git://github.com/tomaskubin/gizela.git
+    git://github.com/gizela/gizela.git
 
 Build Python package: ::
 
