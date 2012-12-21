@@ -98,14 +98,14 @@ class PlotPoint(object):
         abom[0] *= ellScale
         abom[1] *= ellScale
 
-        #import sys
-        #print >>sys.stderr, point.id, ":s_x s_y:", point.stdevx, point.stdevy
-        #print >>sys.stderr, point.id, ":xi,yi,zi:", point.xi, point.yi, point.zi
-        #print >>sys.stderr, point.id, ":covmat:", point.covmat
-        #print >>sys.stderr, point.id, ":covmat:", point.covmat.data
-        #print >>sys.stderr, point.id, ":ell:", point.errEll
-        #print >>sys.stderr, point.id, ":scale:", ellScale
-        #print >>sys.stderr, point.id, ":ell_scaled:", abom
+        import sys
+        print >>sys.stderr, point.id, ":s_x s_y:", point.stdevx, point.stdevy
+        print >>sys.stderr, point.id, ":xi,yi,zi:", point.xi, point.yi, point.zi
+        print >>sys.stderr, point.id, ":covmat:", point.covmat
+        print >>sys.stderr, point.id, ":covmat:", point.covmat.data
+        print >>sys.stderr, point.id, ":ell:", point.errEll
+        print >>sys.stderr, point.id, ":scale:", ellScale
+        print >>sys.stderr, point.id, ":ell_scaled:", abom
 
         cls.plot_error_ellipse_xy(figure, point.x, point.y, abom, style)
 

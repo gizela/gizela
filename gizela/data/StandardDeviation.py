@@ -4,7 +4,6 @@
 # Author: Tomas Kubin <tomas.kubin@fsv.cvut.cz> 
 # URL: <http://slon.fsv.cvut.cz/gizela> 
 # 
-#$Id$
 
 from gizela.util.Error import Error
 from gizela.stat.ConfidenceScale import ConfidenceScale
@@ -26,9 +25,12 @@ class StandardDeviation(object):
                  df=0):
 
         self.apriori = apriori
-        self.aposteriori = aposteriori
+        if isinstance(aposteriori, float) or aposteriori is None:
+            self.aposteriori = aposteriori
+        else:
+            raise StandardDeviationError('aposteriori is not float')
         self.useApriori = useApriori
-        self.df = df # degrees of freedom of aposteriori standart deviation
+        self.df = df # degrees of freedom of aposteriori standard deviation
 
         # confidence
         self.confProb = confProb

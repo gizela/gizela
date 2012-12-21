@@ -94,7 +94,7 @@ class NetworkList(object):
 
     def join(self):
         """
-        joins all abservations and points to the
+        joins all observations and points to the
         first object GamaLocalDataObs in self.list
         """
 

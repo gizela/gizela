@@ -33,6 +33,9 @@ parser.add_option("", "--test-xy", action="store_true", default=False,
 parser.add_option("", "--test-z", action="store_true", default=False,
                   dest="testZ", help="test z displacements with 1D test")
 
+parser.add_option("", "--conf-prob", action="store", default=0.95, type="float",
+                  dest="confProb", help="Set confidence probability for testing")
+
 
 # plotting
 parser.add_option("", "--plot-xy", action="store_true", dest="plot_xy", 
@@ -244,8 +247,11 @@ configDict, localSystem = read_configuration_file(opt.configFile,
 from gizela.data.NetworkAdjList import NetworkAdjList
 epochList = NetworkAdjList(coordSystemLocal=localSystem,
                            stdevUseApriori=opt.useApriori,
+                           confProb=opt.confProb,
                            textTable=textTable,
                            testId=opt.testId)
+
+# confProb works only in class NetworkAdjList !!!
 
 from gizela.data.Network import Network
 
@@ -344,6 +350,7 @@ if opt.plot_xy:
                                             displScale=opt.displScale2D,
                                             title=opt.title,
                                             subtitle=opt.subtitle,
+                                            #confProb=opt.confProb, this does not work
                                             configFileName=opt.configFig)
 
     else:
@@ -352,6 +359,7 @@ if opt.plot_xy:
                                         displScale=opt.displScale2D,
                                         title=opt.title,
                                         subtitle=opt.subtitle,
+                                        #confProb=3.93469340287366e-01, this does not work
                                         configFileName=opt.configFig)
 
     
@@ -376,6 +384,7 @@ if opt.plot_z:
             figZ = FigureLayoutEpochList1DTest(displScale=opt.displScale1D,
                                                title=opt.title,
                                                subtitle=subtitle,
+                                               #confProb=opt.confProb, this does not work
                                                configFileName=opt.configFig)
             # plot points
             epochList.plot_z(figZ, id=id)
@@ -388,6 +397,7 @@ if opt.plot_z:
             figZ = FigureLayoutEpochList1D(displScale=opt.displScale1D,
                                            title=opt.title,
                                            subtitle=subtitle,
+                                           #confProb=opt.confProb, this does not work
                                            configFileName=opt.configFig)
             # plot points
             epochList.plot_z(figZ, id=id)
