@@ -1,7 +1,7 @@
 Gizela
 ******
 
-`Homepage <https://pypi.python.org/pypi/Gizela/>`_
+`Homepage <http://geo.fsv.cvut.cz/gwiki/Gizela>`_
 
 Gizela provides
 ===============
@@ -30,7 +30,7 @@ Install package: ::
 
 Install with ``easy_install``
 =============================
-Go to `Gizela project page <http://pypi.python.org/pypi/Gizela/>`_. Download tarball and install: ::
+Go to `Gizela download page <http://pypi.python.org/pypi/Gizela/>`_. Download tarball and install: ::
 
     easy_install Gizela-_version_.tar.gz
 
