@@ -1,9 +1,9 @@
-# gizela 
-# 
-# Copyright (C) 2010 Michal Seidl, Tomas Kubin 
+# gizela
+#
+# Copyright (C) 2010 Michal Seidl, Tomas Kubin
 # Author: Michal Seidl <michal.seidl@fsv.cvut.cz>
-# URL: <http://slon.fsv.cvut.cz/gizela> 
-# 
+# URL: <http://slon.fsv.cvut.cz/gizela>
+#
 # $Id: Ellipsoid.py 81 2010-10-30 20:42:11Z michal $
 
 """
@@ -23,28 +23,30 @@ class Ellipsoid(object):
     """
     Instance of Ellipsoid Class offers basic calculation on ellipsoid
     """
-    
+
     ELLIPSOID = {
         'wgs84':  (6378137.0,     298.257223563, 'World Geodetic System 1984'),
         'WGS84':  (6378137.0,     298.257223563, 'World Geodetic System 1984'),
         'bessel': (6377397.15508, 299.15281282917516, 'Bessel ellipsoid 1841')
+        'Bessel': (6377397.15508, 299.15281282917516, 'Bessel ellipsoid 1841')
+        'BESSEL': (6377397.15508, 299.15281282917516, 'Bessel ellipsoid 1841')
                      }
     def __init__(self, code="wgs84"):
         """
-        
-        @param code: Code of ellipsoid. Used to choose ellipsoid parameters. 
+
+        @param code: Code of ellipsoid. Used to choose ellipsoid parameters.
         @type code: string
         """
 
         """
         @ivar: Dictionary of supported ellipsoid
         @type: dictionary
-        """ 
+        """
 
         if not code in self.ELLIPSOID:
             raise EllipsoidError, "Unknown ellipsoid \"%s\"" % code
 
-        self._code = code #: code of ellipsoid 
+        self._code = code #: code of ellipsoid
         self._a = self.ELLIPSOID[code][0] #: major axis
         self._fInv = self.ELLIPSOID[code][1] #: inverse flattening
         self._desc = self.ELLIPSOID[code][2] #: description
@@ -60,7 +62,7 @@ class Ellipsoid(object):
         @rtype: float
         """
         return (1-self._firstEccen2*math.sin(lat)**2)**0.5
-        
+
     def get_M(self, lat):
         """
         Meridional curvature
@@ -71,7 +73,7 @@ class Ellipsoid(object):
         """
         W = self.get_W(lat)
         return self._a*(1-self._firstEccen2)/W**3
-    
+
     def get_N(self, lat):
         """
         Normal curvature
@@ -79,9 +81,9 @@ class Ellipsoid(object):
         @type lat: float
         @return: Normal curvature
         @rtype: float
-        """        
+        """
         return self._a/self.get_W(lat)
-        
+
     def get_R(self, lat):
         """
         Gaussian curvature
@@ -91,7 +93,7 @@ class Ellipsoid(object):
         @rtype: float
         """
         return self._a*(1-self._firstEccen2)**0.5/(1-self._firstEccen2*(math.sin(lat)**2))
-    
+
     def llh2xyz_ (self, lat, lon, height):
         """
         Converts ellipsoidal coordinates to cartesian
@@ -104,13 +106,13 @@ class Ellipsoid(object):
         @return: Geocentric cooridantes X,Y,Z
         @rtype: tuple
         """
-        
+
         N = self.get_N(lat)
         x = (N+height)*math.cos(lat)*math.cos(lon)
         y = (N+height)*math.cos(lat)*math.sin(lon)
         z = (N*(1-self._firstEccen2)+height)*math.sin(lat)
         return (x, y, z)
-    
+
     def xyz2llh_ (self, x, y, z):
         """
         Convert cartesian coordinates to ellipsoidal
@@ -121,27 +123,27 @@ class Ellipsoid(object):
         @param z: X
         @type z: float
         @return: Returns Lat, Lon, Height, diffLat, IterNum)
-        @rtype: tuple        
+        @rtype: tuple
         """
         dif = 0.01e-3 #: accuracy of computed coordinates in meters
         difRad = dif/((self._a+self._b)/2) #: aproximate accuracy of computed coordinates in radians
         maxIter = 30
-        
+
         # Loop computes latitude coordinate
-        iterNum = 0 #: Inicialization of iterNum 
+        iterNum = 0 #: Inicialization of iterNum
         difLat = 1 #: Inicialization of difLat
         latI = math.atan(z/((x**2+y**2)**0.5*(1-self._firstEccen2)))
-        
+
         while (iterNum < maxIter and difLat > difRad):
             N = self.get_N(latI)
             latJ = math.atan((z+N*self._firstEccen2*math.sin(latI))/(x**2+y**2)**0.5)
             iterNum += 1
             difLat = math.fabs(latI-latJ)
             latI = latJ
-            
+
 #        if (difLat > difRad) :
 #            raise Exception ("With 30 iteration difference is still too big")
-            
+
         lon = math.atan2(y, x)
         N = self.get_N(latI)
         height = x/(math.cos(latI)*math.cos(lon))-N
@@ -149,7 +151,7 @@ class Ellipsoid(object):
         #return (latI, lon, height, difLat, iterNum)
 
     def get_code(self): return self._code
-    
+
     def __str__(self):
         return "%s: %s" % (self._code, self._desc)
 
@@ -162,13 +164,13 @@ class Ellipsoid(object):
             return False
         else:
             raise EllipsoidError, "Unknown type of instance %s" % type(other)
-            return False    
+            return False
 
 if __name__ == "__main__":
     """
     Main module doc
     """
-    
+
     roGon = 200/math.pi
     roDeg = 180/math.pi
     print "This is Ellipsoid class instance"
@@ -193,11 +195,11 @@ if __name__ == "__main__":
 #    llh.height = 500
     lat = 50/roDeg
     lon = 14/roDeg
-    height = 500 
-    
+    height = 500
+
     xyz = ellipsoid.llh2xyz_(lat, lon, height)
     print xyz
-    
+
     llh = ellipsoid.xyz2llh_(xyz[0],xyz[1],xyz[2])
     print llh
     print [v*roDeg for v in llh[0:2]]
