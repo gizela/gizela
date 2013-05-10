@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<!DOCTYPE gama-xml
+  SYSTEM 'http://www.gnu.org/software/gama/gama-xml.dtd'>
+<gama-local>
+<network angles="left-handed" axes-xy="sw" epoch="1.1">
+<parameters sigma-act="apriori"/>
+<description>
+[epoch]
+date: 1998.08.01
+description: coordinates from file "SS_1998.txt", format "['id', 'y', 'x', 'sx']"
+</description>
+<points-observations>
+<coordinates>
+<point id="117" y="3066.89375361155" x="5114.48277634777"/>
+<point id="118" y="2748.8438424607" x="5175.29124106227"/>
+<point id="120" y="1514.74450967378" x="3578.73604424855"/>
+<point id="121" y="2247.02523412246" x="6127.74297428893"/>
+<point id="201" y="1892.94436086214" x="4845.68649164817"/>
+<point id="202" y="1893.05756761739" x="4987.18949148291"/>
+<point id="206" y="2064.81531790892" x="4816.28924052115"/>
+<cov-mat dim="14" band="1">
+5.290000  0.000000  5.290000  0.000000  5.290000  0.000000  5.290000  0.000000  5.290000  0.000000  5.290000  0.000000  5.290000  0.000000  5.290000  0.000000  5.290000  0.000000  5.290000  0.000000  5.290000  0.000000  5.290000  0.000000  5.290000  0.000000  5.290000
+</cov-mat>
+</coordinates>
+<point id="117" adj="xy"/>
+<point id="118" adj="xy"/>
+<point id="120" adj="xy"/>
+<point id="121" adj="xy"/>
+<point id="201" adj="xy"/>
+<point id="202" adj="xy"/>
+<point id="206" adj="xy"/>
+</points-observations>
+</network>
+</gama-local>

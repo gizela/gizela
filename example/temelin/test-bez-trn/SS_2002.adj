@@ -1,0 +1,117 @@
+Adjustment of local geodetic network        version: 1.13-svd / GNU g++
+************************************
+http://www.gnu.org/software/gama/
+
+
+Warning: network is not connected
+
+
+Network description
+*******************
+
+[epoch]
+date: 2002.01.01
+description: coordinates from file "SS_2002.txt", format "['id', 'y', 'x', 'sx']"
+
+
+General parameters of the adjustment
+************************************
+
+Coordinates           xyz     xy       z
+
+Adjusted       :       0       7       0
+Constrained  * :       0       0       0
+Fixed          :       0       0       0
+-----------------------------------------
+Total          :       0       7       0
+
+Coordinates                :    14
+
+Number of project equations:    14            Number of unknowns:    14
+Degrees of freedom         :     0            Network defect    :     0
+
+m0  apriori    :    10.00
+m0' aposteriori:     0.00         [pvv] : 0.00000e+00
+
+During statistical analysis we work
+
+- with apriori standard deviation 10.00
+- with confidence level 95 %
+
+
+
+Adjusted coordinates
+********************
+
+  i        point    approximate  correction  adjusted    std.dev conf.i.
+====================== value ====== [m] ====== value ========== [mm] ===
+
+             117
+  1            x      5114.49800   0.00000    5114.49800     4.0     7.8
+  2            y      3066.87500   0.00000    3066.87500     4.0     7.8
+
+             118
+  3            x      5175.30700   0.00000    5175.30700     4.0     7.8
+  4            y      2748.83600   0.00000    2748.83600     4.0     7.8
+
+             120
+  5            x      3578.74400   0.00000    3578.74400     4.0     7.8
+  6            y      1514.72900   0.00000    1514.72900     4.0     7.8
+
+             121
+  7            x      6127.75900   0.00000    6127.75900     4.0     7.8
+  8            y      2247.01000   0.00000    2247.01000     4.0     7.8
+
+             201
+  9            x      4845.69800   0.00000    4845.69800     4.0     7.8
+ 10            y      1892.92600   0.00000    1892.92600     4.0     7.8
+
+             202
+ 11            x      4987.20000   0.00000    4987.20000     4.0     7.8
+ 12            y      1893.04900   0.00000    1893.04900     4.0     7.8
+
+             206
+ 13            x      4816.29400   0.00000    4816.29400     4.0     7.8
+ 14            y      2064.80000   0.00000    2064.80000     4.0     7.8
+
+
+Mean errors and parameters of error ellipses
+********************************************
+
+       point     mp      mxy      mean error ellipse  conf.err. ellipse   g
+=============== [mm] == [mm] ==== a [mm] b  alpha[g] ==== a' [mm] b' ========
+
+         117     5.7     4.0     4.0     4.0     0.0     9.8     9.8     0.0
+         118     5.7     4.0     4.0     4.0     0.0     9.8     9.8     0.0
+         120     5.7     4.0     4.0     4.0     0.0     9.8     9.8     0.0
+         121     5.7     4.0     4.0     4.0     0.0     9.8     9.8     0.0
+         201     5.7     4.0     4.0     4.0     0.0     9.8     9.8     0.0
+         202     5.7     4.0     4.0     4.0     0.0     9.8     9.8     0.0
+         206     5.7     4.0     4.0     4.0     0.0     9.8     9.8     0.0
+
+Maximal mean position error is 5.7 mm on point 117
+Average mean position error is 5.7 mm
+
+
+Adjusted observations
+*********************
+
+   i   standpoint       target           observed     adjusted std.dev conf.i.
+=========================================== value ==== [m|g] ====== [mm|cc] ==
+
+   1          117              x       5114.49800   5114.49800     4.0     7.8
+   2                           y       3066.87500   3066.87500     4.0     7.8
+   3          118              x       5175.30700   5175.30700     4.0     7.8
+   4                           y       2748.83600   2748.83600     4.0     7.8
+   5          120              x       3578.74400   3578.74400     4.0     7.8
+   6                           y       1514.72900   1514.72900     4.0     7.8
+   7          121              x       6127.75900   6127.75900     4.0     7.8
+   8                           y       2247.01000   2247.01000     4.0     7.8
+   9          201              x       4845.69800   4845.69800     4.0     7.8
+  10                           y       1892.92600   1892.92600     4.0     7.8
+  11          202              x       4987.20000   4987.20000     4.0     7.8
+  12                           y       1893.04900   1893.04900     4.0     7.8
+  13          206              x       4816.29400   4816.29400     4.0     7.8
+  14                           y       2064.80000   2064.80000     4.0     7.8
+
+
