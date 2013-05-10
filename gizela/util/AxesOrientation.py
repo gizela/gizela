@@ -1,15 +1,16 @@
-# gizela 
-# 
-# Copyright (C) 2010 Michal Seidl, Tomas Kubin 
-# Author: Tomas Kubin <tomas.kubin@fsv.cvut.cz> 
-# URL: <http://slon.fsv.cvut.cz/gizela> 
-# 
+# gizela
+#
+# Copyright (C) 2010 Michal Seidl, Tomas Kubin
+# Author: Tomas Kubin <tomas.kubin@fsv.cvut.cz>
+# URL: <http://slon.fsv.cvut.cz/gizela>
+#
 # $Id$
 
 from gizela.util.Error import Error
 
 
-class AxesOrientationError(Error): pass
+class AxesOrientationError(Error):
+    pass
 
 
 class AxesOrientation(object):
@@ -18,19 +19,20 @@ class AxesOrientation(object):
     # names of orientation of axes
     __axesName = ["ne", "sw", "wn", "es", "nw", "se", "en", "ws"]
     __axesIndex = {"ne": 0,
-                  "sw": 1,
-                  "wn": 2,
-                  "es": 3,
-                  "nw": 4,
-                  "se": 5,
-                  "en": 6,
-                  "ws": 7}
+                   "sw": 1,
+                   "wn": 2,
+                   "es": 3,
+                   "nw": 4,
+                   "se": 5,
+                   "en": 6,
+                   "ws": 7}
 
     # names of orientation of axes
     __axesOriName = ["right-handed", "left-handed"]
 
     # orientation of axes
-    __axesOri = [0, 0, 0, 0, 1, 1, 1, 1]
+    #__axesOri = [0, 0, 0, 0, 1, 1, 1, 1]
+    __axesOri = [1, 1, 1, 1, 0, 0, 0, 0]
 
     # names of bearing orientation
     __bearingOriName = ["right-handed", "left-handed"]
@@ -43,10 +45,11 @@ class AxesOrientation(object):
         """
 
         self.axesOri = axesOri
-        self.bearingOri =bearingOri
+        self.bearingOri = bearingOri
 
+    def _get_axes_ori(self):
+        return self.__axesName[self._axesOri]
 
-    def _get_axes_ori(self): return self.__axesName[self._axesOri]
     def _set_axes_ori(self, ori):
         try:
             self._axesOri = self.__axesIndex[ori]
@@ -55,7 +58,9 @@ class AxesOrientation(object):
 
     axesOri = property(_get_axes_ori, _set_axes_ori)
 
-    def _get_bearing_ori(self): return self.__bearingOriName[self._bearingOri]
+    def _get_bearing_ori(self):
+        return self.__bearingOriName[self._bearingOri]
+
     def _set_bearing_ori(self, bearing):
         try:
             self._bearingOri = self.__bearingOriIndex[bearing]
@@ -76,15 +81,15 @@ class AxesOrientation(object):
 
     def __str__(self):
         str = ["Axes: %s" % self.axesOri,
-               "Axes orientation: %s" %\
-                   self.__axesOriName[self.__axesOri[self._axesOri]],
+               "Axes orientation: %s" %
+               self.__axesOriName[self.__axesOri[self._axesOri]],
                "Bearing orientation: %s" % self.bearingOri]
-        
+
         return "\n".join(str)
 
 
 if __name__ == "__main__":
-    ax = AxesOrientation("ne","left-handed")
+    ax = AxesOrientation("ne", "left-handed")
     print ax
     print "Is", ax.is_consistent() and "consistent" or "inconsistent"
 
