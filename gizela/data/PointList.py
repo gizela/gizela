@@ -1,17 +1,15 @@
-# gizela 
-# 
-# Copyright (C) 2010 Michal Seidl, Tomas Kubin 
-# Author: Tomas Kubin <tomas.kubin@fsv.cvut.cz> 
-# URL: <http://slon.fsv.cvut.cz/gizela> 
-# 
-# $Id: PointList.py 118 2011-01-06 15:29:07Z kubin $
+# gizela
+#
+# Copyright (C) 2010 Michal Seidl, Tomas Kubin
+# Author: Tomas Kubin <tomas.kubin@fsv.cvut.cz>
+# URL: <http://slon.fsv.cvut.cz/gizela>
 
 '''
 class for list of points with dictionary for searching by point id
 
 PointList.list = [<Point id="A", x, y, z>,
                   <Point id="B", x, y, z>,
-                  <Point id="C", x, y, z>, <--o 
+                  <Point id="C", x, y, z>, <--o
                   ...]       |_______     ____|
                                      |   |
 PointList.index = { "A": 0, "B": 1, "C": 2, ...}
@@ -19,9 +17,9 @@ PointList.index = { "A": 0, "B": 1, "C": 2, ...}
 
 
 from gizela.util.Error     import Error
-from gizela.text.TextTable import TextTable
-from gizela.data.PointBase import PointBase
-from gizela.data.point_text_table import coor_table
+# ne from gizela.text.TextTable import TextTable
+# ne from gizela.data.PointBase import PointBase
+# ne from gizela.data.point_text_table import coor_table
 from gizela.data.DUPLICATE_ID import DUPLICATE_ID
 
 class PointListError(Error): pass
@@ -61,19 +59,19 @@ class PointList(object):
     def set_sort(self): self.sortOutput = True
     def unset_sort(self): self.sortOutput = False
 
-    
+
     def add_point(self, point):
         '''adds PointBase instance into list'''
         if not isinstance(point,PointBase):
             #import sys
             #print >>sys.stderr, type(point)
             raise PointListError("Requires PointBase or its inheritance")
-        
+
         # handle duplicateId
         id = point.id
         if id in self.index:
-            
-            if self.duplicateId == DUPLICATE_ID.hold: 
+
+            if self.duplicateId == DUPLICATE_ID.hold:
                 "hold old point"
                 pass
 
@@ -116,8 +114,8 @@ class PointList(object):
 
         ind = self.index[point.id]
         self.list[ind] = point
-        
-    
+
+
     def get_point(self, id):
         '''returns PointBase instance'''
         try:
@@ -145,7 +143,7 @@ class PointList(object):
         '''number of points in dictionary'''
         len = 0
         for i in self.list:
-            if i is not None: 
+            if i is not None:
                 len += 1
         return len
 
@@ -169,10 +167,10 @@ class PointList(object):
 
         for point in other:
             self.add_point(point)
-    
+
     def make_table(self):
         """makes text table of points in dictionary"""
-        
+
         if not self.list:
             return "Empty pointList"
 
@@ -192,18 +190,18 @@ class PointList(object):
 
     def __add__(self, other):
             "addition of two lists of points"
-            
+
             if not isinstance(other, PointList):
                     raise PointListError, "PointList instance expected"
-            
+
             import copy
             pl = copy.deepcopy(self)
-            
+
             for point in other.list:
                     pl.add_point(point)
 
             return pl
-                
+
 
     def __str__(self):
         return self.make_table()
@@ -214,12 +212,12 @@ class PointList(object):
 
     def plot_(self, figure):
         for point in self.list:
-            if point is not None: 
+            if point is not None:
                 point.plot_(figure)
 
     def proj_xy(self, coordSystemLocal):
         for point in self.list:
-            if point.is_set_xyz(): 
+            if point.is_set_xyz():
                 point.proj_xy(coordSystemLocal)
 
     #def change_id(self, idDict):
@@ -229,7 +227,7 @@ class PointList(object):
 
     def update_point(self, point):
         """
-        update point if point exists 
+        update point if point exists
         otherwise add new point
         """
         if point.id in self.iter_id():
@@ -252,13 +250,13 @@ class PointList(object):
 
 
 if __name__ == "__main__":
-    
+
     from gizela.data.PointCart import PointCart
-    
+
     c1 = PointCart(id="C",x=1,y=2,z=3)
     c2 = PointCart(id="B",x=4,y=5,z=6)
 
-    pd=PointList() 
+    pd=PointList()
 
     print pd
 
@@ -266,7 +264,7 @@ if __name__ == "__main__":
     pd.add_point(c2)
     pd.add_point(PointCart(id="A",x=7,y=8,z=9))
     pd.add_point(PointCart(id="AA",x=7,y=8,z=9))
-    
+
     print pd
     print pd.get_point("A")
     print "C" in pd
@@ -301,7 +299,7 @@ if __name__ == "__main__":
 
     # adding
     print "adding"
-    pd2=PointList() 
+    pd2=PointList()
     pd2.add_point(PointCart(id="AB",x=0,y=5,z=30))
     pd2.add_point(PointCart(id="BB",x=10,y=10,z=30))
     pd2.extend(pd)
