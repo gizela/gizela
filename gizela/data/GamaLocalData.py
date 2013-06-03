@@ -1,10 +1,9 @@
-# gizela 
-# 
-# Copyright (C) 2010 Michal Seidl, Tomas Kubin 
-# Author: Tomas Kubin <tomas.kubin@fsv.cvut.cz> 
-# URL: <http://slon.fsv.cvut.cz/gizela> 
-# 
-# $Id: GamaLocalData.py 103 2010-11-29 00:06:19Z tomaskubin $
+# gizela
+#
+# Copyright (C) 2010 Michal Seidl, Tomas Kubin
+# Author: Tomas Kubin <tomas.kubin@fsv.cvut.cz>
+# URL: <http://geo.fsv.cvut.cz/gwiki/gizela>
+#
 
 
 from gizela.data.PointList         import PointList
@@ -33,7 +32,7 @@ class GamaLocalData(object):
     local geodetic network data suitable for gama-local
     base class
     """
-    
+
     slots = ["description",
              #"dateTimeList",
              #"coordSystemLocal",
@@ -51,7 +50,7 @@ class GamaLocalData(object):
             ]
 
     def __init__(self):
-        
+
         self.dateTimeList = []
             # list of date and time of observations
             # joined epoch has more than one value
@@ -59,11 +58,11 @@ class GamaLocalData(object):
         self.description = ""
         #self.description = ConfigParser.SafeConfigParser()
             # description as config parser
-        #self.description.optionxform = str 
+        #self.description.optionxform = str
             # to make options case sensitive
 
         #self.fileName = "" # name of file with data
-        #self.coordSystemLocal = CoordSystemLocal3D() 
+        #self.coordSystemLocal = CoordSystemLocal3D()
             # implicit 3D local geodetic coordinates system
 
         #self.stdev = StandardDeviation(apriori=1.0, useApriori=True)
@@ -105,20 +104,20 @@ class GamaLocalData(object):
                                               textTable=gama_coor_stdev_table())
         # list of OBSERVATIONS
         self.obsClusterList = ObsClusterList()
-        
+
 
     def parse_file(self, file):
         "parse XML file"
-        
+
         raise NotImplementedError, "method parse_file not implemented"
-        
-    
-    def __str__(self): 
-        return "\n".join(["%s: %s" % 
+
+
+    def __str__(self):
+        return "\n".join(["%s: %s" %
                     (self.slots[i], self.__getattribute__(self.slots[i]))
                     for i in xrange(len(self.slots))])
 
-        
+
 
 if __name__ == "__main__":
 

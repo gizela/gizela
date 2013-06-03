@@ -1,15 +1,14 @@
-# gizela 
-# 
-# Copyright (C) 2010 Michal Seidl, Tomas Kubin 
-# Author: Tomas Kubin <tomas.kubin@fsv.cvut.cz> 
-# URL: <http://slon.fsv.cvut.cz/gizela> 
-# 
-# $Id$
+# gizela
+#
+# Copyright (C) 2010 Michal Seidl, Tomas Kubin
+# Author: Tomas Kubin <tomas.kubin@fsv.cvut.cz>
+# URL: <http://geo.fsv.cvut.cz/gwiki/gizela>
+#
 
 from gizela.util.Ellipsoid import Ellipsoid
 from gizela.data.PointGeodetic import PointGeodetic
 from gizela.data.PointCart import PointCart
-from gizela.data.AxesOrientation import AxesOrientation
+#from gizela.data.AxesOrientation import AxesOrientation
 
 
 class CoordSystemLocal(AxesOrientation):
@@ -69,13 +68,13 @@ class CoordSystemLocal(AxesOrientation):
             return None # not implemented
 
 
-    #def get_proj_local_e2(self, inverse=False): 
-    def get_proj_local_e2(self): 
+    #def get_proj_local_e2(self, inverse=False):
+    def get_proj_local_e2(self):
         """
-        returns projection instance from geodetic coordinate system 
+        returns projection instance from geodetic coordinate system
         lon, lat in degrees to local E2 system xy in meters
 
-        This transformation is set from projDict dictionary of parameters 
+        This transformation is set from projDict dictionary of parameters
         for pyproj.Proj projection
 
         Warning: parameters radians, errcheck and inverse do not work
@@ -87,9 +86,9 @@ class CoordSystemLocal(AxesOrientation):
         return Proj(self.proj4String)
 
 
-    def get_tran_llh(self, inverse=False): 
+    def get_tran_llh(self, inverse=False):
         """
-        returns transfomations from geocentric XYZ to 
+        returns transfomations from geocentric XYZ to
         latitude, longitude and height on ellipsoid specified by
         ellipsoidCode attribute
         """
@@ -102,11 +101,11 @@ class CoordSystemLocal(AxesOrientation):
     def get_tran_ne(self, inverse=False):
         """
         returns transformation from xyz geocetric system to local system
-        
+
         local system is set: x - geodetic north
                              y - east
                              z - ellipsoidal normal
-                             origin - self.centralPointGeo 
+                             origin - self.centralPointGeo
                                     - latitude, longitude and height
                                       on self.ellipsoid
 
@@ -116,14 +115,14 @@ class CoordSystemLocal(AxesOrientation):
         from gizela.tran.Tran3D import Tran3D
 
         tran = Tran3D()
-        
+
         from math import pi
-        
-        tran.rotation_xyz(alpha=0.0, 
+
+        tran.rotation_xyz(alpha=0.0,
                           beta=(self.centralPointGeo.lat - pi/2),
                           gamma=(self.centralPointGeo.lon - pi))
         tran.mirror_y()
-        
+
         if inverse:
             tran.set_inverse()
 
@@ -170,7 +169,7 @@ class CoordSystemLocal(AxesOrientation):
 
 if __name__ == "__main__":
 
-    cs = CoordSystemLocal(name="system 1", ellipsoidCode="wgs84", 
+    cs = CoordSystemLocal(name="system 1", ellipsoidCode="wgs84",
                           lat=1, lon=2, height=250, axesOri="ne",
                           bearingOri="right-handed",
                           proj4String="+proj=lcc +ellps=WGS84 +lat_1=50.09")
