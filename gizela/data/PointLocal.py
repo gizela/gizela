@@ -7,7 +7,6 @@
 
 from gizela.util.Error import Error
 from gizela.data.PointBase import PointBase
-#from gizela.data.point_text_table import coor_table
 #from gizela.tran.Tran2D import Tran2D
 #from gizela.tran.Tran3D import Tran3D
 
@@ -46,7 +45,7 @@ class PointLocal(PointBase):
         return self.status is not None
 
     def __str__(self):
-        return self.make_gama_xml()
+        return self.formatGamaXML()
 
     def __add__(self, other):
         "returns self + other"
@@ -137,14 +136,14 @@ class PointLocal(PointBase):
     def __ne__(self, other):
         return not self.__eq__(other)
 
-    def make_gama_xml(self):
-        str = ['<point id="%s"' % self.id]
+    def formatGamaXML(self):
+        str = ['<point id="{self.id}"'.format(self=self)]
         if self.x is not None:
-            str.append('x="%.4f"' % self.x)
+            str.append('x="{self.x:.4f}"'.format(self=self))
         if self.y is not None:
-            str.append('y="%.4f"' % self.y)
+            str.append('y="{self.y:.4f}"'.format(self=self))
         if self.z is not None:
-            str.append('z="%.4f"' % self.z)
+            str.append('z="{self.z:.4f}"'.format(self=self))
         if self.status is not None:
             from gizela.data.POINT_LOCAL_STATUS import gamaLocalXmlAttribute
             str.append(gamaLocalXmlAttribute(self))
@@ -208,7 +207,7 @@ if __name__ == "__main__":
     c2 = PointLocal(id="B", x=30, y=40, z=50, status=POINT_LOCAL_STATUS.con_xy)
     c2.z = 100
     print(c1)
-    print(c2.make_gama_xml())
+    print(c2.formatGamaXML())
 
     # isSet
     print(c1.isSetXY())
