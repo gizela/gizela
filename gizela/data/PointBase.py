@@ -22,7 +22,7 @@ class PointBase(object):
         self.id = id
 
     def __str__(self):
-        return "Point id=%s" % self.id
+        return 'PointBase id="{0}"'.format(self.id)
 
     def __eq__(self, other):
         if isinstance(other, PointBase):
@@ -34,9 +34,9 @@ if __name__ == "__main__":
 
     p = PointBase("A")
     p2 = PointBase("B")
-    print p
+    print(p)
 
-    print p == p
-    print p == "A"
-    print p == p2
-    print p == "B"
+    print(p == p)
+    print(p == "A")
+    print(p == p2)
+    print(p == "B")
