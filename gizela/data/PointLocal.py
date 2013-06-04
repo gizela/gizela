@@ -7,8 +7,6 @@
 
 from gizela.util.Error import Error
 from gizela.data.PointBase import PointBase
-#from gizela.tran.Tran2D import Tran2D
-#from gizela.tran.Tran3D import Tran3D
 
 
 class PointLocalError(Error):
@@ -48,7 +46,18 @@ class PointLocal(PointBase):
         return sum([1 for i in (self.x, self.y, self.z) if i is not None])
 
     def __str__(self):
-        return self.formatGamaXML()
+        str = ['<point id="{self.id}"'.format(self=self)]
+        if self.x is not None:
+            str.append('x="{self.x:.4f}"'.format(self=self))
+        if self.y is not None:
+            str.append('y="{self.y:.4f}"'.format(self=self))
+        if self.z is not None:
+            str.append('z="{self.z:.4f}"'.format(self=self))
+        if self.status is not None:
+            from gizela.data.POINT_LOCAL_STATUS import gamaLocalXmlAttribute
+            str.append(gamaLocalXmlAttribute(self))
+        str.append('/>')
+        return " ".join(str)
 
     def __add__(self, other):
         "returns self + other"
@@ -139,20 +148,6 @@ class PointLocal(PointBase):
     def __ne__(self, other):
         return not self.__eq__(other)
 
-    def formatGamaXML(self):
-        str = ['<point id="{self.id}"'.format(self=self)]
-        if self.x is not None:
-            str.append('x="{self.x:.4f}"'.format(self=self))
-        if self.y is not None:
-            str.append('y="{self.y:.4f}"'.format(self=self))
-        if self.z is not None:
-            str.append('z="{self.z:.4f}"'.format(self=self))
-        if self.status is not None:
-            from gizela.data.POINT_LOCAL_STATUS import gamaLocalXmlAttribute
-            str.append(gamaLocalXmlAttribute(self))
-        str.append('/>')
-        return " ".join(str)
-
     def update(self, other):
         """
         updates parameters of self from other
@@ -167,42 +162,6 @@ class PointLocal(PointBase):
         self.z = other.z
         self.status = other.status
 
-    #def proj_xy(self, coordSystemLocal2D):
-    #    """
-    #    converts xyz geocentric coordinates
-    #    to xy throught projection from proj4String
-    #    """
-
-    #    if not self.is_set_xyz():
-    #        raise PointLocalError("Geocentric coordinates not set")
-
-    #    coordSystemLocal2D.proj_pointCart(self)
-
-    #def tran_(self, tran):
-    #    """
-    #    transforms point with given transformation
-    #    """
-
-    #    if isinstance(tran, Tran2D):
-    #        for point in self:
-    #            if point.is_set_xy():
-    #                point.x, point.y = tran.transform_xy(point.x, point.y)
-    #            else:
-    #                import sys
-    #                print >>sys.stderr, "Point id=%s not transformed" % point.id
-
-    #    elif isinstance(tran, Tran3D):
-    #        for point in self:
-    #            if point.is_set_xyz():
-    #                point.x, point.y, point.z = \
-    #                        tran.transform_xy(point.x, point.y, point.z)
-    #            else:
-    #                import sys
-    #                print >>sys.stderr, "Point id=%s not transformed" % point.id
-
-    #    else:
-    #        raise PointListError, "Tran2D or Tran3D instance expected"
-
 
 if __name__ == "__main__":
     from gizela.data.POINT_LOCAL_STATUS import POINT_LOCAL_STATUS
@@ -210,7 +169,7 @@ if __name__ == "__main__":
     c2 = PointLocal(id="B", x=30, y=40, z=50, status=POINT_LOCAL_STATUS.con_xy)
     c2.z = 100
     print(c1)
-    print(c2.formatGamaXML())
+    print(c2)
 
     # isSet
     print(c1.isSetXY())
@@ -238,15 +197,3 @@ if __name__ == "__main__":
     print(c1 == "A")
     print(c1 != "A")
     print("A" == c1)
-
-    ## graph
-    #from gizela.pyplot.FigureLayoutBase import FigureLayoutBase
-    #fig = FigureLayoutBase()
-    #c1.plot_(fig)
-    #c2.plot_(fig)
-    #c2.plot_x(fig, 5)
-    #c2.plot_y(fig, 5)
-    #c2.plot_z(fig, 5)
-    #fig.set_free_space()
-    #fig.set_aspect_equal()
-    #fig.show_()

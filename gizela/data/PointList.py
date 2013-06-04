@@ -132,30 +132,8 @@ class PointList(object):
         for point in other:
             self.addPoint(point)
 
-    #def __add__(self, other):
-    #        "addition of two lists of points"
-
-    #        if not isinstance(other, PointList):
-    #                raise PointListError, "PointList instance expected"
-
-    #        import copy
-    #        pl = copy.deepcopy(self)
-
-    #        for point in other.list:
-    #                pl.addPoint(point)
-
-    #        return pl
-
     def __str__(self):
-        return self.formatGamaXML()
-
-    def formatGamaXML(self):
-        return "\n".join([point.formatGamaXML() for point in self])
-
-    #def proj_xy(self, coordSystemLocal):
-    #    for point in self.list:
-    #        if point.is_set_xyz():
-    #            point.proj_xy(coordSystemLocal)
+        return "\n".join(["{0}".format(point) for point in self])
 
     def updatePoint(self, point):
         """
@@ -167,16 +145,6 @@ class PointList(object):
             p.update(point)
         else:
             self.addPoint(point)
-
-
-    #def tran_point(self, tran):
-    #    """
-    #    transforms points with given transformation
-    #    tran: instance Tran2D or Tran3D
-    #    """
-
-    #    for point in self:
-    #        point.tran_(tran)
 
 
 if __name__ == "__main__":
@@ -206,7 +174,6 @@ if __name__ == "__main__":
     print("delete point A")
     pd.del_point("A")
     print(pd)
-    print(pd.formatGamaXML())
     for id in pd.iterId():
         print(id)
     for p in pd:
