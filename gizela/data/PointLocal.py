@@ -44,6 +44,9 @@ class PointLocal(PointBase):
     def isSetStatus(self):
         return self.status is not None
 
+    def dim(self):
+        return sum([1 for i in (self.x, self.y, self.z) if i is not None])
+
     def __str__(self):
         return self.formatGamaXML()
 
