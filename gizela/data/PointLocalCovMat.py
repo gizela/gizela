@@ -1,64 +1,56 @@
-# gizela 
-# 
-# Copyright (C) 2010 Michal Seidl, Tomas Kubin 
-# Author: Tomas Kubin <tomas.kubin@fsv.cvut.cz> 
-# URL: <http://slon.fsv.cvut.cz/gizela> 
-# 
-# $Id: PointCartCovMat.py 119 2011-01-11 23:44:34Z tomaskubin $
+# gizela
+#
+# Copyright (C) 2010 Michal Seidl, Tomas Kubin
+# Author: Tomas Kubin <tomas.kubin@fsv.cvut.cz>
+# URL: <http://geo.fsv.cvut.cz/gwiki/gizela>
+#
+
+from gizela.data.PointLocal import PointLocal
+#from gizela.data.CovMat     import CovMat
+from gizela.util.Error import Error
+#from gizela.tran.Tran2D import Tran2D
+#from gizela.tran.Tran3D import Tran3D
+import numpy
 
 
-from gizela.data.PointCart  import PointCart
-from gizela.data.CovMat     import CovMat
-from gizela.text.TextTable  import TextTable
-from gizela.util.Error      import Error
-from gizela.data.point_text_table import coor_var_table
-from gizela.tran.Tran2D import Tran2D
-from gizela.tran.Tran3D import Tran3D
+class PointLocalCovMatError(Error):
+    pass
 
-class PointCartCovMatError(Error): pass
 
-class PointCartCovMat(PointCart): 
-    """class for geodetic coordinates x, y, z 
-    and its covariance matrix"""
-    
-    __slots__ = ["covmat", "xi", "yi", "zi"]
-    
-    def __init__(self, id, 
-                 x=None, y=None, z=None, 
-                 covmat=None, 
-                 index=None,
-                 textTable=None):
+class PointLocalCovMat(PointLocal):
+    """
+    class for geodetic coordinates x, y, z
+    and its covariance matrix
+
+    covariance matrix is numpy array
+        upper triangular part is used only
+    """
+
+    def __init__(self, id, x=None, y=None, z=None, covmat=None, index=None):
         """x, y, z ... coordinates
         covmat ... covariance matrix
         index  ... (xi, yi, zi) indexes of rows in covariance matrix
-        textTable ... TextTable instance
         """
-        
-        if not textTable:
-            textTable = coor_var_table()
 
-        super(PointCartCovMat, self).__init__(id, x, y, z, textTable=textTable)
-            
+        super().__init__(id, x, y, z)
+
         if covmat == None:
-            self.covmat = CovMat(3, 2)
+            # implicit covariance matrix
+            self.covmat = numpy.zeros((3, 3))
         else:
             self.covmat = covmat
-        
-        i = 0
-        if index == None:
-            if x == None: self.xi = None
-            else: self.xi = i; i += 1
-            if y == None: self.yi = None
-            else: self.yi = i; i += 1
-            if z == None: self.zi = None
-            else: self.zi = i
-            #self.xi, self.yi, self.zi = 0, 1, 2
-        else:
-            self.index = index
-    
-    def _get_index(self): return [self.xi, self.yi, self.zi]
+
+        # indexes of rows/columns in covariance matrix
+        self.xi, self.yi, self.zi = 0, 1, 2
+        try:
+            self.xi, self.yi, self.zi = index[0], index[1], index[2]
+        except IndexError:
+            raise PointLocalCovMatError("expected len(index) == 3")
+
+    def _get_index(self):
+        return [self.xi, self.yi, self.zi]
+
     def _set_index(self, index):
-        if index == None: self.xi = None; self.yi = None; self.zi = None
         if len(index) == 3:
             self.xi = index[0]; self.yi = index[1];
             self.zi = index[2]
@@ -81,45 +73,45 @@ class PointCartCovMat(PointCart):
         return dim
 
     # setting of variance and covariance throught managed attributes
-    def _set_var_x(self, vx): 
-        if self.xi == None: 
+    def _set_var_x(self, vx):
+        if self.xi == None:
             raise PointCartCovMatError, "Variance index of x coordinate not defined"
         self.covmat.set_var(self.xi, vx)
-    def _set_var_y(self, vy): 
-        if self.yi == None: 
+    def _set_var_y(self, vy):
+        if self.yi == None:
             raise PointCartCovMatError, "Variance index of y coordinate not defined"
         self.covmat.set_var(self.yi, vy)
-    def _set_var_z(self, vz): 
-        if self.zi == None: 
+    def _set_var_z(self, vz):
+        if self.zi == None:
             raise PointCartCovMatError, "Variance index of z coordinate not defined"
         self.covmat.set_var(self.zi, vz)
-    def _set_cov_xy(self, cxy): 
-        if self.xi == None or self.yi == None: 
+    def _set_cov_xy(self, cxy):
+        if self.xi == None or self.yi == None:
             raise PointCartCovMatError, "Covariance index of coordinate x and y not defined"
         self.covmat.set_cov(self.xi, self.yi, cxy)
-    def _set_cov_xz(self, cxz): 
-        if self.xi == None or self.zi == None: 
+    def _set_cov_xz(self, cxz):
+        if self.xi == None or self.zi == None:
             raise PointCartCovMatError, "Covariance index of coordinate x and z not defined"
         self.covmat.set_cov(self.xi, self.zi, cxz)
-    def _set_cov_yz(self, cyz): 
-        if self.yi == None or self.zi == None: 
+    def _set_cov_yz(self, cyz):
+        if self.yi == None or self.zi == None:
             raise PointCartCovMatError, "Covariance index of coordinate y and z not defined"
         self.covmat.set_cov(self.yi, self.zi, cyz)
-    
-    def _get_var_x(self):    
-        if self.xi == None: 
+
+    def _get_var_x(self):
+        if self.xi == None:
             #raise PointCartCovMatError, "Variance of x coordinate not defined"
             return None
         return self.covmat.get_var(self.xi)
 
     def _get_var_y(self):
-        if self.yi == None: 
+        if self.yi == None:
             #raise PointCartCovMatError, "Variance of y coordinate not defined"
             return None
         return self.covmat.get_var(self.yi)
 
     def _get_var_z(self):
-        if self.zi == None: 
+        if self.zi == None:
             #raise PointCartCovMatError, "Variance of z coordinate not defined"
             return None
         return self.covmat.get_var(self.zi)
@@ -131,13 +123,13 @@ class PointCartCovMat(PointCart):
         return self.covmat.get_cov(self.xi, self.yi)
 
     def _get_cov_xz(self):
-        if self.xi == None or self.zi == None: 
+        if self.xi == None or self.zi == None:
             return None
             #raise PointCartCovMatError, "Covariance of coordinate x and z not defined"
         return self.covmat.get_cov(self.xi, self.zi)
 
     def _get_cov_yz(self):
-        if self.yi == None or self.zi == None: 
+        if self.yi == None or self.zi == None:
             return None
             #raise PointCartCovMatError, "Covariance of coordinate y and z not defined"
         return self.covmat.get_cov(self.yi, self.zi)
@@ -150,30 +142,30 @@ class PointCartCovMat(PointCart):
         or
         var = (varx, vary)
         """
-        
+
         for i, v in zip((self.xi, self.yi, self.zi), var):
             if i == None:
                 raise PointCartCovMatError, "Index for var %e not set" % v
             else:
                 self.covmat.set_var(i, v)
-    
+
     def _set_cov(self, cov):
         """sets all covariances in covariance matrix
         cov = (cov_xy, cov_xz, cov_yz)
         """
-        
-        if type(cov) != tuple and type(cov) != list: 
+
+        if type(cov) != tuple and type(cov) != list:
             cov = (cov,)
-        
-        for i, j, c in zip((self.xi, self.xi, self.yi), 
+
+        for i, j, c in zip((self.xi, self.xi, self.yi),
                 (self.yi, self.zi, self.zi), cov):
             if i == None or j == None:
                 raise PointCartCovMatError, "Index for cov %e not set" % c
             else:
                 self.covmat.set_cov(i, j, c)
-    
+
     def _get_var(self):
-        """returns list with all variances var_x, var_y, var_z""" 
+        """returns list with all variances var_x, var_y, var_z"""
         var = []
         for i in (self.xi, self.yi, self.zi):
             if i == None:
@@ -184,7 +176,7 @@ class PointCartCovMat(PointCart):
         return var
 
     def _get_stdev(self):
-        """returns list with all standard deviations  - sqrt(var)""" 
+        """returns list with all standard deviations  - sqrt(var)"""
         from math import sqrt
         return [(var==None and [None] or [sqrt(var)])[0] for var in self._get_var()]
 
@@ -195,7 +187,7 @@ class PointCartCovMat(PointCart):
         else:
             from math import sqrt
             return sqrt(var)
-    
+
 
     def _get_stdev_y(self):
         var = self._get_var_y()
@@ -204,8 +196,8 @@ class PointCartCovMat(PointCart):
         else:
             from math import sqrt
             return sqrt(var)
-            
-    
+
+
     def _get_stdev_z(self):
         var = self._get_var_z()
         if var == None:
@@ -241,7 +233,7 @@ class PointCartCovMat(PointCart):
     stdevx = property(_get_stdev_x)
     stdevy = property(_get_stdev_y)
     stdevz = property(_get_stdev_z)
-    
+
     def _get_err_ell(self):
         """
         returns parameters of standard error ellipse
@@ -262,7 +254,7 @@ class PointCartCovMat(PointCart):
         if cxy == None:
             raise PointCartCovMatError, "Point id=%s: No covariance xy set" \
                     % self.id
-        
+
         # test of positive definity
         det = vx*vy - cxy*cxy
         if det < -1e-4:
@@ -276,33 +268,33 @@ class PointCartCovMat(PointCart):
         else:
             b = math.sqrt((vx + vy - c)/2.0)
         omega = math.atan2(2.0*cxy, vx - vy)/2.0
-        
+
         return [a, b, omega]
 
     errEll = property(_get_err_ell)
-    
+
 
     def get_point_cov_mat(self, dim=3):
         '''
-        returns covariance matrix 
+        returns covariance matrix
         selection of covariance matrix of point from large covariance matrix
-        
-        dim: dimension of covariance matrix to be returned 
+
+        dim: dimension of covariance matrix to be returned
         '''
 
         if dim > 3 or dim < 1:
             raise PointCartCovMatError, "Wrong dimension of covariance matrix."
-        
+
         if self.covmat.dim == dim:
             return self.covmat
-        
+
         lcm = self.covmat.empty_copy()
         lcm.dim = dim
         lcm.band = dim - 1 < self.covmat.band and dim - 1 or self.covmat.band
-        
+
         var = self.var; cov = self.cov
-        
-        for i,v in enumerate(var[:dim]): 
+
+        for i,v in enumerate(var[:dim]):
             if v != None: lcm.set_var(i,v)
 
         if dim > 1:
@@ -315,8 +307,8 @@ class PointCartCovMat(PointCart):
         #print >>sys.stderr, "get_point_cov_mat:", self.covmat, lcm
 
         return lcm
-    
-    # old version 
+
+    # old version
     #def set_point_cov_mat(self, covmat=None):
     #    """
     #    sets point covariance matrix to covmat
@@ -364,7 +356,7 @@ class PointCartCovMat(PointCart):
         else: self.zi = i
 
         self.covmat = covmat
-        
+
 
     def tran_(self, tran):
         """
@@ -414,7 +406,7 @@ class PointCartCovMat(PointCart):
 
     def __add__(self, other):
         '''addition of two points with covariance matrix'''
-        
+
         if not isinstance(other, PointCartCovMat):
             raise PointCartCovMatError, \
                 "Addition of two PointCartCovMat instances supported"
@@ -423,7 +415,7 @@ class PointCartCovMat(PointCart):
         if self.x != None and other.x != None: x = self.x + other.x
         if self.y != None and other.y != None: y = self.y + other.y
         if self.z != None and other.z != None: z = self.z + other.z
-        
+
         #id = " ".join([self.id, "+", other.id])
         #co = PointCartCovMat(id=self.id, x=x, y=y, z=z, textTable=self.textTable)
 
@@ -432,7 +424,7 @@ class PointCartCovMat(PointCart):
             lcm = self.covmat
         else:
             lcm = self.get_point_cov_mat()
-        
+
         if other.covmat.dim == 3:
             ocm = other.covmat
         else:
@@ -448,19 +440,19 @@ class PointCartCovMat(PointCart):
         if z == None: p.zi = None
         else: p.zi = 2
         return p
-    
+
     def __sub__(self, other):
         '''subtraction of two points with covariance matrix'''
-        
+
         if not isinstance(other, PointCartCovMat):
             raise PointCartCovMatError, \
                 "Subtraction of two PointCartCovMat instances supported"
-        
+
         x, y, z = None, None, None
         if self.x != None and other.x != None: x = self.x - other.x
         if self.y != None and other.y != None: y = self.y - other.y
         if self.z != None and other.z != None: z = self.z - other.z
-        
+
         # covariance matrix
         if self.covmat.dim == 3:
             lcm = self.covmat
@@ -482,12 +474,12 @@ class PointCartCovMat(PointCart):
         if z == None: p.zi = None
         else: p.zi = 2
         return p
-    
+
     def __mul__(self, scalar):
         """
         returns multiplication of point coordinates with scalar
         """
-        
+
         return super(PointCartCovMat, self).__mul__(scalar)
 
         # multiplication of variances and covariances
@@ -500,9 +492,9 @@ class PointCartCovMat(PointCart):
                 cov[i] *= scalar*scalar
         self.var = var
         self.cov = cov
-    
 
-    def make_table_row(self): 
+
+    def make_table_row(self):
         row = [self.id, self.x, self.y, self.z]
         ncols = self.textTable.get_num_of_col()
         #print ncols
@@ -533,7 +525,7 @@ class PointCartCovMat(PointCart):
 
     def plot_x_stdev(self, figure, x):
         """
-        plots interval of standard deviation of x coordinate 
+        plots interval of standard deviation of x coordinate
         along vertical axis
 
         x: horizontal coordinate
@@ -543,13 +535,13 @@ class PointCartCovMat(PointCart):
         if self.x != None:
             figure.plot_point_x_stdev(self, x)
 
-    
+
     def plot_y_stdev(self, figure, x):
 
         if self.y != None:
             figure.plot_point_y_stdev(self, x)
-    
-    
+
+
     def plot_z_stdev(self, figure, x):
 
         if self.z != None:
@@ -586,10 +578,10 @@ if __name__ == "__main__":
     from gizela.data.point_text_table import *
     c1.textTable = coor_table()
     print c1
-    
+
     c1.textTable = coor_stdev_table()
     print c1
-    
+
     c1.textTable = coor_var_table()
     print c1
 
@@ -601,7 +593,7 @@ if __name__ == "__main__":
     # error ellipse
     print c1.errEll
     print c1.stdevz
-    
+
     # graph
     from gizela.pyplot.FigureLayoutErrEll import FigureLayoutErrEll
     fig = FigureLayoutErrEll()
@@ -615,13 +607,13 @@ if __name__ == "__main__":
     c2 = PointCartCovMat("Q", x=10, y=20, z=30)
     c2.var = (1, 1, 1)
     c2.cov = (-1, -1, -1)
-    
+
     add = c1 + c2
     sub = c1 - c2
-    
+
     add.textTable = coor_cov_table()
     sub.textTable = coor_cov_table()
-    
+
     print add
     print sub
 

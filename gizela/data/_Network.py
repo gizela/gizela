@@ -1,32 +1,32 @@
-# gizela 
-# 
-# Copyright (C) 2010 Michal Seidl, Tomas Kubin 
-# Author: Tomas Kubin <tomas.kubin@fsv.cvut.cz> 
-# URL: <http://slon.fsv.cvut.cz/gizela> 
-# 
-# $Id$
+# gizela
+#
+# Copyright (C) 2010 Michal Seidl, Tomas Kubin
+# Author: Tomas Kubin <tomas.kubin@fsv.cvut.cz>
+# URL: <http://slon.fsv.cvut.cz/gizela>
+#
 
-from gizela.util.CoordSystemLocal2D import CoordSystemLocal2D
-from gizela.util.CoordSystemLocal3D import CoordSystemLocal3D
-from gizela.data.point_text_table import gama_coor_stdev_table
-from gizela.data.GamaLocalData import GamaLocalData
-from gizela.data.GamaLocalDataObs import GamaLocalDataObs
-from gizela.data.StandardDeviation import StandardDeviation
-from gizela.data.PointList         import PointList
-from gizela.data.PointListCovMat import PointListCovMat
-from gizela.data.ObsClusterList    import ObsClusterList
-from gizela.data.point_text_table import gama_coor_table
+# volitelne from gizela.util.CoordSystemLocal2D import CoordSystemLocal2D
+# volitelne from gizela.util.CoordSystemLocal3D import CoordSystemLocal3D
+# ne from gizela.data.point_text_table import gama_coor_stdev_table
+# ? from gizela.data.GamaLocalData import GamaLocalData
+# ? from gizela.data.GamaLocalDataObs import GamaLocalDataObs
+# ? from gizela.data.StandardDeviation import StandardDeviation
+# ? from gizela.data.PointList         import PointList
+# ? from gizela.data.PointListCovMat import PointListCovMat
+# ? from gizela.data.ObsClusterList    import ObsClusterList
+# ne from gizela.data.point_text_table import gama_coor_table
 from gizela.util.Error import Error
 from gizela.data.DUPLICATE_ID import DUPLICATE_ID
 from gizela.data.CovMatApri import CovMatApri
 from gizela.util.AxesOrientation import AxesOrientation
-from gizela.data.GamaCoordStatus import GamaCoordStatus
+# nepouzit from gizela.data.GamaCoordStatus import GamaCoordStatus
 from gizela.util.Unit import Unit
 
 import ConfigParser
 
 
-class NetworkError(Error): pass
+class NetworkError(Error):
+    pass
 
 
 class Network(object):
@@ -61,7 +61,7 @@ class Network(object):
             # joined epoch has more than one value
 
         self.configParser = ConfigParser.SafeConfigParser()
-        self.configParser.optionxform = str 
+        self.configParser.optionxform = str
             # to make options case sensitive
 
         self._useApriori = useApriori
@@ -184,7 +184,7 @@ class Network(object):
             try:
                 # one date in the form yyyy.mm.dd.hh.mm.ss.microseconds
                 date = [int(i) for i in date]
-            except: 
+            except:
                 raise NetworkError, "Wrong date: %s" % date
 
             if len(date) == 1:
@@ -294,8 +294,8 @@ class Network(object):
     def set_conf_prob(self, confidence):
         self.stdev.set_conf_prob(confidence)
 
-                
-    def extend(self, other, 
+
+    def extend(self, other,
                #duplicateIdFix=DUPLICATE_ID.compare,
                duplicateIdAdj=DUPLICATE_ID.overwrite,
                duplicateIdAdjCovMat=DUPLICATE_ID.hold):
@@ -330,7 +330,7 @@ class Network(object):
             for option in other.configParser.options(section):
                 value = other.configParser.get(section, option)
                 if self.configParser.has_option(section, option):
-                    self.configParser.set(section, option, 
+                    self.configParser.set(section, option,
                                      self.configParser.get(section, option)\
                                      + " " + value)
                 else:
@@ -357,32 +357,32 @@ class Network(object):
                                       sort=self.pointListAdj.sortOutput)
         for point in adj.pointListAdjCovMat:
             self.pointListAdj.add_point(point)
-       
+
 
     def set_axes_ori(self, axesXY):
         "sets axes orientation"
         self.coordSystemLocal.axesOri = axesXY
 
-    
+
     def get_axes_ori(self):
         return self.coordSystemLocal.axesOri
-    
+
 
     def plot_point_fix(self, figure):
         #self.pointListFix.plot_(figure)
         pass
 
-   
+
     def plot_point_adj(self, figure):
         self.pointListAdj.plot_(figure)
-    
-    
+
+
     def plot_point_adj_cov_mat(self, figure):
-        
+
         self.pointListAdjCovMat.plot_(figure)
         self.pointListAdjCovMat.plot_error_ellipse(figure)
 
-    
+
     def plot_point(self, figure):
         "plot all points"
         figure.update_(self) # sets figure stdev and axesOri
@@ -405,7 +405,7 @@ class Network(object):
         @param corrected: return corrected measurements or not
         @type corrected: bool
         """
-        
+
         # header
         str = ['<?xml version="1.0" ?>',
                '<!DOCTYPE gama-xml',
@@ -419,7 +419,7 @@ class Network(object):
         #
         # set description epoch date according to dateTimeList
         self.set_description_date_time()
-        
+
         # write ConfigParser instance
         import StringIO
         f = StringIO.StringIO()
@@ -448,7 +448,7 @@ class Network(object):
                     (self.obsStdev["zenith-angle"] * Unit.angleStdev)
         pobs += ">"
         str.append(pobs)
-            
+
         # points
         #str.append(self.pointListFix.make_gama_xml())
         str.append(self.pointListAdj.make_gama_xml())
@@ -462,8 +462,8 @@ class Network(object):
         str.append("</gama-local>")
 
         return "\n".join(str)
-    
-    
+
+
     def set_file_name(self, fname):
         """
         sets the file name of data
@@ -473,7 +473,7 @@ class Network(object):
 
         self.configParser.set("epoch", "obsFileName", fname)
 
-    
+
     def compute_corr(self):
         """
         Computes corrections for all observation
@@ -490,7 +490,7 @@ class Network(object):
                              self.obsClusterList)
 
         self.obsClusterList.compute_corr(corr)
-        
+
     def compute_obs(self):
         """
         Computes observation values for all observations
@@ -500,7 +500,7 @@ class Network(object):
                              self.centralPointLoc,
                              #self.pointListFix + self.pointListAdj
                              self.pointListAdj)
-        self.obsClusterList.compute_obs(corr)        
+        self.obsClusterList.compute_obs(corr)
 
 
     #def add_adj(self, other):
@@ -534,7 +534,7 @@ class Network(object):
         #lat, lon = self.centralPointGeo.get_latlon()
         #tr.rotation_xyz(0, lat - pi/2, lon - pi)
         #tr.trmat[:,1] *= -1.0 # changing y-axis orientation
-        
+
         self.obsClusterList.tran_vec_3d(self.coordSystemLocal)
 
 
@@ -545,7 +545,7 @@ class Network(object):
         Covariance matrix transforms to neu directions
         """
 
-        self.obsClusterList.tran_vec_2d(self.coordSystemLocal, 
+        self.obsClusterList.tran_vec_2d(self.coordSystemLocal,
                                         self.pointListAdj) #+ self.pointListFix)
 
     def scale_vec_cov_mat(self, factor):
