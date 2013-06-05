@@ -33,6 +33,10 @@ class PointBase(object):
     def formatGamaXML(self):
         return '<point id="{self.id}" />'.format(self=self)
 
+    def dim(self):
+        'dimesion of point'
+        return 0
+
 if __name__ == "__main__":
 
     p = PointBase("A")

@@ -6,7 +6,6 @@
 #
 
 from gizela.util.Error import Error
-import datetime
 
 
 class NetworkAdjError(Error):
@@ -27,6 +26,7 @@ class NetworkAdj(object):
                             "description": "default coordinate system"}
 
         # date and time of measurement
+        import datetime
         self.dateTime = datetime.datetime(1900, 1, 1)
 
         #import ConfigParser
@@ -50,7 +50,10 @@ class NetworkAdj(object):
         #                        textTable=gama_coor_stdev_table())
         self.pointListAdj = None
 
-
+    def parse_gama_local_xml_file(self, file):
+        from gizela.xml.GamaLocalAdjParser import GamaLocalAdjParser
+        parser = GamaLocalAdjParser(self)
+        parser.parse_file(file)
 
             # try to parse description string
             #import StringIO
@@ -93,7 +96,6 @@ class NetworkAdj(object):
             #if not ax.is_consistent():
             #    raise NetworkError, \
             #            "Coordinate system of data is not consistent"
-
 
 
     #def set_date_time_string(self, dateTimeStr):
@@ -151,6 +153,7 @@ class NetworkAdj(object):
     #                                               microsecond=date[6]))
     #        else:
     #            raise NetworkError, "Wrong date: %s" % date
+
 
 if __name__ == "__main__":
     pass
