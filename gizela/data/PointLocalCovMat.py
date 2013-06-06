@@ -34,6 +34,7 @@ class PointLocalCovMat(PointLocal):
 
         super().__init__(id, x, y, z)
 
+<<<<<<< HEAD
         self.covmat = covmat
 
         # indexes of rows/columns in covariance matrix
@@ -44,6 +45,20 @@ class PointLocalCovMat(PointLocal):
                 self.xi, self.yi, self.zi = index[0], index[1], index[2]
             except IndexError:
                 raise PointLocalCovMatError("expected len(index) == 3")
+=======
+        if covmat == None:
+            # implicit covariance matrix
+            self.covmat = numpy.zeros((3, 3))
+        else:
+            self.covmat = covmat
+
+        # indexes of rows/columns in covariance matrix
+        self.xi, self.yi, self.zi = 0, 1, 2
+        try:
+            self.xi, self.yi, self.zi = index[0], index[1], index[2]
+        except IndexError:
+            raise PointLocalCovMatError("expected len(index) == 3")
+>>>>>>> f1b8426b9d256556d2dc4e08e1d7d11db9c780f2
 
     def _get_index(self):
         return [self.xi, self.yi, self.zi]
@@ -134,6 +149,7 @@ class PointLocalCovMat(PointLocal):
     #    var = (varx, vary)
     #    """
 
+<<<<<<< HEAD
     #    for i, v in zip((self.xi, self.yi, self.zi), var):
     #        if i == None:
     #            raise PointCartCovMatError, "Index for var %e not set" % v
@@ -225,6 +241,170 @@ class PointLocalCovMat(PointLocal):
     #stdevy = property(_get_stdev_y)
     #stdevz = property(_get_stdev_z)
 
+=======
+    # setting of variance and covariance throught managed attributes
+    def _set_var_x(self, vx):
+        if self.xi == None:
+            raise PointCartCovMatError, "Variance index of x coordinate not defined"
+        self.covmat.set_var(self.xi, vx)
+    def _set_var_y(self, vy):
+        if self.yi == None:
+            raise PointCartCovMatError, "Variance index of y coordinate not defined"
+        self.covmat.set_var(self.yi, vy)
+    def _set_var_z(self, vz):
+        if self.zi == None:
+            raise PointCartCovMatError, "Variance index of z coordinate not defined"
+        self.covmat.set_var(self.zi, vz)
+    def _set_cov_xy(self, cxy):
+        if self.xi == None or self.yi == None:
+            raise PointCartCovMatError, "Covariance index of coordinate x and y not defined"
+        self.covmat.set_cov(self.xi, self.yi, cxy)
+    def _set_cov_xz(self, cxz):
+        if self.xi == None or self.zi == None:
+            raise PointCartCovMatError, "Covariance index of coordinate x and z not defined"
+        self.covmat.set_cov(self.xi, self.zi, cxz)
+    def _set_cov_yz(self, cyz):
+        if self.yi == None or self.zi == None:
+            raise PointCartCovMatError, "Covariance index of coordinate y and z not defined"
+        self.covmat.set_cov(self.yi, self.zi, cyz)
+
+    def _get_var_x(self):
+        if self.xi == None:
+            #raise PointCartCovMatError, "Variance of x coordinate not defined"
+            return None
+        return self.covmat.get_var(self.xi)
+
+    def _get_var_y(self):
+        if self.yi == None:
+            #raise PointCartCovMatError, "Variance of y coordinate not defined"
+            return None
+        return self.covmat.get_var(self.yi)
+
+    def _get_var_z(self):
+        if self.zi == None:
+            #raise PointCartCovMatError, "Variance of z coordinate not defined"
+            return None
+        return self.covmat.get_var(self.zi)
+
+    def _get_cov_xy(self):
+        if self.xi == None or self.yi == None:
+            return None
+            #raise PointCartCovMatError, "Covariance of coordinate x and y not defined"
+        return self.covmat.get_cov(self.xi, self.yi)
+
+    def _get_cov_xz(self):
+        if self.xi == None or self.zi == None:
+            return None
+            #raise PointCartCovMatError, "Covariance of coordinate x and z not defined"
+        return self.covmat.get_cov(self.xi, self.zi)
+
+    def _get_cov_yz(self):
+        if self.yi == None or self.zi == None:
+            return None
+            #raise PointCartCovMatError, "Covariance of coordinate y and z not defined"
+        return self.covmat.get_cov(self.yi, self.zi)
+
+    def _set_var(self, var):
+        """
+        sets all variances in covariance matrix
+
+        var = (varx, vary, varz)
+        or
+        var = (varx, vary)
+        """
+
+        for i, v in zip((self.xi, self.yi, self.zi), var):
+            if i == None:
+                raise PointCartCovMatError, "Index for var %e not set" % v
+            else:
+                self.covmat.set_var(i, v)
+
+    def _set_cov(self, cov):
+        """sets all covariances in covariance matrix
+        cov = (cov_xy, cov_xz, cov_yz)
+        """
+
+        if type(cov) != tuple and type(cov) != list:
+            cov = (cov,)
+
+        for i, j, c in zip((self.xi, self.xi, self.yi),
+                (self.yi, self.zi, self.zi), cov):
+            if i == None or j == None:
+                raise PointCartCovMatError, "Index for cov %e not set" % c
+            else:
+                self.covmat.set_cov(i, j, c)
+
+    def _get_var(self):
+        """returns list with all variances var_x, var_y, var_z"""
+        var = []
+        for i in (self.xi, self.yi, self.zi):
+            if i == None:
+                #raise PointCartCovMatError, "variance not set"
+                var.append(None)
+            else:
+                var.append(self.covmat.get_var(i))
+        return var
+
+    def _get_stdev(self):
+        """returns list with all standard deviations  - sqrt(var)"""
+        from math import sqrt
+        return [(var==None and [None] or [sqrt(var)])[0] for var in self._get_var()]
+
+    def _get_stdev_x(self):
+        var = self._get_var_x()
+        if var == None:
+            return None
+        else:
+            from math import sqrt
+            return sqrt(var)
+
+
+    def _get_stdev_y(self):
+        var = self._get_var_y()
+        if var == None:
+            return None
+        else:
+            from math import sqrt
+            return sqrt(var)
+
+
+    def _get_stdev_z(self):
+        var = self._get_var_z()
+        if var == None:
+            return None
+        else:
+            from math import sqrt
+            return sqrt(var)
+
+
+    def _get_cov(self):
+        cov = []
+        for i,j in ((self.xi, self.yi),\
+                (self.xi, self.zi),\
+                (self.yi, self.zi)):
+            if i == None or j == None:
+                #raise PointCartCovMatError, "covariance not set"
+                cov.append(None)
+            else:
+                #print "i:%i j:%i" %(i,j)
+                #yield self.covmat.get_cov(i,j)
+                cov.append(self.covmat.get_cov(i,j))
+        return cov
+
+    var    = property(_get_var,    _set_var)
+    cov    = property(_get_cov,    _set_cov)
+    stdev  = property(_get_stdev)
+    varx  = property(_get_var_x,  _set_var_x)
+    vary  = property(_get_var_y,  _set_var_y)
+    varz  = property(_get_var_z,  _set_var_z)
+    covxy = property(_get_cov_xy, _set_cov_xy)
+    covxz = property(_get_cov_xz, _set_cov_xz)
+    covyz = property(_get_cov_yz, _set_cov_yz)
+    stdevx = property(_get_stdev_x)
+    stdevy = property(_get_stdev_y)
+    stdevz = property(_get_stdev_z)
+
+>>>>>>> f1b8426b9d256556d2dc4e08e1d7d11db9c780f2
     def _get_err_ell(self):
         """
         returns parameters of standard error ellipse
@@ -298,6 +478,36 @@ class PointLocalCovMat(PointLocal):
         #print >>sys.stderr, "get_point_cov_mat:", self.covmat, lcm
 
         return lcm
+<<<<<<< HEAD
+=======
+
+    # old version
+    #def set_point_cov_mat(self, covmat=None):
+    #    """
+    #    sets point covariance matrix to covmat
+    #    if covmat is None
+    #    sets CovMat(dim=3, band=2) and makes local copy from large
+    #    covariance matrix
+    #    """
+    #    if covmat is None:
+    #        self.covmat = self.get_point_cov_mat()
+    #    else:
+    #        if covmat.dim == 3:
+    #            self.covmat = covmat
+    #        else:
+    #            raise PointCartCovMatError, \
+    #                    "CovMat instance with dim=3 expected"
+
+    #def slice_cov_mat(self):
+    #    """
+    #    sets covariance matrix just for this one point
+    #    makes local copy from larg covariance matrix if needed
+    #    """
+
+    #    if self.covmat.dim != self.get_dim():
+    #        self.covmat = self.get_point_cov_mat(dim=self.get_dim())
+
+>>>>>>> f1b8426b9d256556d2dc4e08e1d7d11db9c780f2
 
     def set_point_cov_mat(self, covmat):
         """
@@ -320,6 +530,56 @@ class PointLocalCovMat(PointLocal):
         else: self.zi = i
 
         self.covmat = covmat
+<<<<<<< HEAD
+=======
+
+
+    def tran_(self, tran):
+        """
+        transforms point with its covariance matrix
+
+        tran: Tran2D or Tran3D instance
+
+        Tran2D transforms points xyz and xy. Covariances xz and yz of xyz point
+        are left unchanged with this transform. Is this Correct?
+        Tran3D transforms only points xyz.
+        """
+
+        if isinstance(tran, Tran2D):
+            if self.is_set_xyz():
+                # transform xyz point with 2D transformation
+                self.x, self.y = tran.transform_xy(self.x, self.y)
+                cm3 = self.get_point_cov_mat(dim=3)
+                cm2 = self.get_point_cov_mat(dim=2)
+                cm2.transform_(tran)
+                cm3.set_var(0, cm2.get_var(0))
+                cm3.set_var(1, cm2.get_var(1))
+                cm3.set_cov(0, 1, cm2.get_cov(0, 1))
+                self.set_point_cov_mat(cm3)
+            elif self.is_set_xy():
+                self.x, self.y = tran.transform_xy(self.x, self.y)
+                cm = self.get_point_cov_mat(dim=2)
+                cm.transform_(tran)
+                self.set_point_cov_mat(cm)
+            else:
+                import sys
+                print >>sys.stderr, "point id=%s not transformed" % self.id
+
+        elif isinstance(tran, Tran3D):
+            if self.is_set_xyz():
+                self.x, self.y, self.z = \
+                        tran.transform_xyz(self.x, self.y, self.z)
+                cm = self.get_point_cov_mat(dim=3)
+                cm.transform_(tran)
+                self.set_point_cov_mat(cm)
+            else:
+                import sys
+                print >>sys.stderr, "point id=%s not transformed" % self.id
+
+        else:
+            raise PointListError, "Tran2D or Tran3D instance expected"
+
+>>>>>>> f1b8426b9d256556d2dc4e08e1d7d11db9c780f2
 
     def __add__(self, other):
         '''addition of two points with covariance matrix'''
@@ -409,6 +669,64 @@ class PointLocalCovMat(PointLocal):
                 cov[i] *= scalar*scalar
         self.var = var
         self.cov = cov
+<<<<<<< HEAD
+=======
+
+
+    def make_table_row(self):
+        row = [self.id, self.x, self.y, self.z]
+        ncols = self.textTable.get_num_of_col()
+        #print ncols
+        if ncols > 4:
+            row.extend(self.var)
+        if ncols > 4 + 3:
+            row.extend(self.cov)
+
+        return self.textTable.make_table_row(row)
+
+
+    def plot_error_ellipse(self, figure):
+        "plots error ellipse from covariance matrix of point"
+
+        if self.x != None and self.y != None:
+            figure.plot_point_error_ellipse(self)
+
+
+    def plot_error_z(self, figure):
+        """
+        plots confidence interval of z coordinate
+        at coordinates x, y
+        """
+
+        if self.x is not None and self.y is not None and self.z is not None:
+            figure.plot_point_error_z(self)
+
+
+    def plot_x_stdev(self, figure, x):
+        """
+        plots interval of standard deviation of x coordinate
+        along vertical axis
+
+        x: horizontal coordinate
+        confScale: confidence scale factor
+        """
+
+        if self.x != None:
+            figure.plot_point_x_stdev(self, x)
+
+
+    def plot_y_stdev(self, figure, x):
+
+        if self.y != None:
+            figure.plot_point_y_stdev(self, x)
+
+
+    def plot_z_stdev(self, figure, x):
+
+        if self.z != None:
+            figure.plot_point_z_stdev(self, x)
+
+>>>>>>> f1b8426b9d256556d2dc4e08e1d7d11db9c780f2
 
 
 if __name__ == "__main__":
