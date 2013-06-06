@@ -34,10 +34,6 @@ class PointBase(object):
         'dimesion of point'
         return 0
 
-    def dim(self):
-        'dimesion of point'
-        return 0
-
 if __name__ == "__main__":
 
     p = PointBase("A")
