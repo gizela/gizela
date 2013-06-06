@@ -17,8 +17,8 @@ PointList.index = { "A": 0, "B": 1, "C": 2, ...}
 
 
 from gizela.util.Error import Error
-from gizela.data.PointBase import PointBase
-from gizela.data.DUPLICATE_ID import DUPLICATE_ID
+from gizela.adj.local.PointBase import PointBase
+from gizela.adj.local.DUPLICATE_ID import DUPLICATE_ID
 
 
 class PointListError(Error):
@@ -95,7 +95,7 @@ class PointList(object):
         except KeyError:
             raise PointListError("Unknown point id='{0}'".format(id))
 
-    def del_point(self, id):
+    def delPoint(self, id):
         """deltes point from poitList"""
 
         # delete: 1. remove key from self.index dictionary
@@ -133,7 +133,12 @@ class PointList(object):
             self.addPoint(point)
 
     def __str__(self):
-        return "\n".join(["{0}".format(point) for point in self])
+        if self.sortOutput:
+            ids = [id for id in self.index.keys()]
+            ids.sort()
+            return "\n".join(["{0}".format(self.getPoint(id)) for id in ids])
+        else:
+            return "\n".join(["{0}".format(point) for point in self])
 
     def updatePoint(self, point):
         """
@@ -149,15 +154,15 @@ class PointList(object):
 
 if __name__ == "__main__":
 
-    from gizela.data.PointLocal import PointLocal
+    from gizela.adj.local.PointLocal import PointLocal
 
     c1 = PointLocal(id="C", x=1, y=2, z=3)
     c2 = PointLocal(id="B", x=4, y=5, z=6)
 
     pd = PointList()
-
     print(pd)
 
+    print("addPoint")
     pd.addPoint(c1)
     pd.addPoint(c2)
     pd.addPoint(PointLocal(id="A", x=7, y=8, z=9))
@@ -170,29 +175,26 @@ if __name__ == "__main__":
     for point in pd:
         print(point)
 
-    #delete
     print("delete point A")
-    pd.del_point("A")
+    pd.delPoint("A")
     print(pd)
     for id in pd.iterId():
         print(id)
     for p in pd:
         print(p)
 
-    # sort
     print("sort")
     pd.setSort()
     print(pd)
     pd.unsetSort()
 
-    # duplicateId
+    print("duplicate id")
     pd.duplicateId = DUPLICATE_ID.overwrite
     pd.addPoint(PointLocal(id="C", x=10, y=20, z=30))
     pd.duplicateId = DUPLICATE_ID.hold
     pd.addPoint(PointLocal(id="AA", x=70, y=80, z=90))
     print(pd)
 
-    # adding
     print("adding")
     pd2 = PointList()
     pd2.addPoint(PointLocal(id="AB", x=0, y=5, z=30))
@@ -201,8 +203,8 @@ if __name__ == "__main__":
     print(pd)
     print(pd2)
 
-    # test of coordinates update
-    from gizela.data.POINT_LOCAL_STATUS import POINT_LOCAL_STATUS
+    print("test of coordinates update")
+    from gizela.adj.local.POINT_LOCAL_STATUS import POINT_LOCAL_STATUS
     point1 = PointLocal(id="A", x=1, y=2, status=POINT_LOCAL_STATUS.fix)
     point2 = PointLocal(id="B", x=100, y=200, status=POINT_LOCAL_STATUS.adj)
     point3 = PointLocal(id="A", x=10, y=20, status=POINT_LOCAL_STATUS.adj)
@@ -211,7 +213,6 @@ if __name__ == "__main__":
     p = pl.getPoint(id="A")
     p.x = 10
     print(pl)
-
     pl.updatePoint(point2)
     print(pl)
     pl.updatePoint(point3)

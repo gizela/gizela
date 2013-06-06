@@ -6,7 +6,8 @@
 #
 
 from gizela.util.Error import Error
-from gizela.data.PointBase import PointBase
+from gizela.adj.local.PointBase import PointBase
+from gizela.adj.local.POINT_LOCAL_STATUS import xmlAttribute
 
 
 class PointLocalError(Error):
@@ -54,8 +55,7 @@ class PointLocal(PointBase):
         if self.z is not None:
             str.append('z="{self.z:.4f}"'.format(self=self))
         if self.status is not None:
-            from gizela.data.POINT_LOCAL_STATUS import gamaLocalXmlAttribute
-            str.append(gamaLocalXmlAttribute(self))
+            str.append(xmlAttribute(self))
         str.append('/>')
         return " ".join(str)
 
@@ -164,7 +164,7 @@ class PointLocal(PointBase):
 
 
 if __name__ == "__main__":
-    from gizela.data.POINT_LOCAL_STATUS import POINT_LOCAL_STATUS
+    from gizela.adj.local.POINT_LOCAL_STATUS import POINT_LOCAL_STATUS
     c1 = PointLocal(id="A", x=10, y=20, status=POINT_LOCAL_STATUS.fix)
     c2 = PointLocal(id="B", x=30, y=40, z=50, status=POINT_LOCAL_STATUS.con_xy)
     c2.z = 100

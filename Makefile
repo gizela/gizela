@@ -1,12 +1,14 @@
+export PYTHONPATH=/home/kubin/git/gizela
 actual=gizela/data/NetworkAdj.py
-actual=gizela/data/POINT_LOCAL_STATUS.py
-actual=gizela/data/PointBase.py
-actual=gizela/data/PointLocal.py
-actual=gizela/data/PointList.py
+actual=gizela/adj/local/PointBase.py
+actual=gizela/adj/local/POINT_LOCAL_STATUS.py
+actual=gizela/adj/local/PointLocal.py
+actual=gizela/adj/local/PointList.py
 
 .PHONY: tags
 
 actual:
+	echo $(PYTHONPATH)
 	python3 $(actual)
 
 tags:
