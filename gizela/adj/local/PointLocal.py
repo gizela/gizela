@@ -63,6 +63,9 @@ class PointLocal(PointBase):
         "returns self + other"
         if not isinstance(other, PointLocal):
             raise PointLocalError("addition of two points is not supported")
+        if self.dim() != other.dim():
+            raise PointLocalError("Dimension of points are not equal {0}!={1}".
+                                  format(self.dim(), other.dim()))
 
         x, y, z = None, None, None
         if self.x is not None and other.x is not None:
