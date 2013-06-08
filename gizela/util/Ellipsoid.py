@@ -27,8 +27,8 @@ class Ellipsoid(object):
     ELLIPSOID = {
         'wgs84':  (6378137.0,     298.257223563, 'World Geodetic System 1984'),
         'WGS84':  (6378137.0,     298.257223563, 'World Geodetic System 1984'),
-        'bessel': (6377397.15508, 299.15281282917516, 'Bessel ellipsoid 1841')
-        'Bessel': (6377397.15508, 299.15281282917516, 'Bessel ellipsoid 1841')
+        'bessel': (6377397.15508, 299.15281282917516, 'Bessel ellipsoid 1841'),
+        'Bessel': (6377397.15508, 299.15281282917516, 'Bessel ellipsoid 1841'),
         'BESSEL': (6377397.15508, 299.15281282917516, 'Bessel ellipsoid 1841')
                      }
     def __init__(self, code="wgs84"):
