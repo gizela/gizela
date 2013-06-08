@@ -1,0 +1,5 @@
+Directory for results of adjustment. If gama-local used, apropriate confuguration file *.cfg should exist to be able rerun adjustment.
+
+Data should be organised in the same manner as in directory obs.
+
+

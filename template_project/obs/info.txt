@@ -1,0 +1,1 @@
+In case Gizela is also used to performe adjustment this the place where observation data shlould be placed. Gizela uses filters to change/select original data set prior adjustment.

@@ -1,1 +1,0 @@
-Gizela txt format of XML analysis result file.
