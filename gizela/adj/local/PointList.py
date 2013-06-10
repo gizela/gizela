@@ -26,7 +26,9 @@ class PointListError(Error):
 
 
 class PointList(object):
-    """List of geodetic points CoordBase"""
+    """
+    List of geodetic points
+    """
 
     def __init__(self, duplicateId=DUPLICATE_ID.error, sort=False):
         '''

@@ -39,11 +39,19 @@ class PointLocalCovMat(PointLocal):
 
         super().__init__(id=id, x=x, y=y, z=z, status=status)
 
-        self.covmat = covmat
+        self._covmat = covmat
         if index is not None:
             self.setCovMatIndex(index)
         else:
             self._index = None
+
+    def setCovMat(self, covmat):
+        "sets covariance matrix"
+        self._covmat = covmat
+
+    def getCovMat(self):
+        "gets covariance matrix"
+        return self._covmat
 
     def getCovMatIndex(self):
         'returns covariance matrix index'
@@ -55,14 +63,9 @@ class PointLocalCovMat(PointLocal):
         return self._index
 
     def setCovMatIndex(self, index):
-        if self.covmat is None:
-            raise PointLocalCovMatError("No covariance matrix set", self)
         if self.dim() != len(index):
             raise PointLocalCovMatError("Dimension of point {0} is different than lenght of index {1}".
                                         format(self.dim(), len(index)), self)
-        shape = self.covmat.shape
-        if max(index) > shape[0]:
-            raise PointLocalCovMatError("Index exceeds covariance matrix dimension", self)
         self._index = index
 
     def getPointCovMatList(self):
@@ -70,7 +73,7 @@ class PointLocalCovMat(PointLocal):
         return covariances and variances of point in list
         format: upper triangular part by rows
         '''
-        if self.covmat is None:
+        if self._covmat is None:
             raise PointLocalCovMatError("Covariance matrix is not defined", self)
 
         index = self.getCovMatIndex()
@@ -78,20 +81,20 @@ class PointLocalCovMat(PointLocal):
         cmList = []
         if  cmDim == 1:
             zi = index[0]
-            cmList.append(self.covmat[zi, zi])
+            cmList.append(self._covmat[zi, zi])
         elif cmDim == 2:
             xi, yi = index[0], index[1]
-            cmList.append(self.covmat[xi, xi])
-            cmList.append(self.covmat[xi, yi])
-            cmList.append(self.covmat[yi, yi])
+            cmList.append(self._covmat[xi, xi])
+            cmList.append(self._covmat[xi, yi])
+            cmList.append(self._covmat[yi, yi])
         elif cmDim == 3:
             xi, yi, zi = index[0], index[1], index[2]
-            cmList.append(self.covmat[xi, xi])
-            cmList.append(self.covmat[xi, yi])
-            cmList.append(self.covmat[xi, zi])
-            cmList.append(self.covmat[yi, yi])
-            cmList.append(self.covmat[yi, zi])
-            cmList.append(self.covmat[zi, zi])
+            cmList.append(self._covmat[xi, xi])
+            cmList.append(self._covmat[xi, yi])
+            cmList.append(self._covmat[xi, zi])
+            cmList.append(self._covmat[yi, yi])
+            cmList.append(self._covmat[yi, zi])
+            cmList.append(self._covmat[zi, zi])
         return cmList
 
     def getPointCovMat(self):
@@ -99,7 +102,7 @@ class PointLocalCovMat(PointLocal):
         returns a copy of covariance matrix
         selection of covariance matrix from large covariance matrix is supported
         '''
-        if self.covmat is None:
+        if self._covmat is None:
             raise PointLocalCovMatError("Covariance matrix is not defined", self)
 
         index = self.getCovMatIndex()
@@ -107,20 +110,20 @@ class PointLocalCovMat(PointLocal):
         cm = numpy.zeros((cmDim, cmDim))
         if  cmDim == 1:
             zi = index[0]
-            cm[0, 0] = self.covmat[zi, zi]
+            cm[0, 0] = self._covmat[zi, zi]
         elif cmDim == 2:
             xi, yi = index[0], index[1]
-            cm[0, 0] = self.covmat[xi, xi]
-            cm[0, 1] = self.covmat[xi, yi]
-            cm[1, 1] = self.covmat[yi, yi]
+            cm[0, 0] = self._covmat[xi, xi]
+            cm[0, 1] = self._covmat[xi, yi]
+            cm[1, 1] = self._covmat[yi, yi]
         elif cmDim == 3:
             xi, yi, zi = index[0], index[1], index[2]
-            cm[0, 0] = self.covmat[xi, xi]
-            cm[1, 1] = self.covmat[yi, yi]
-            cm[2, 2] = self.covmat[zi, zi]
-            cm[0, 1] = self.covmat[xi, yi]
-            cm[0, 2] = self.covmat[xi, zi]
-            cm[1, 2] = self.covmat[yi, zi]
+            cm[0, 0] = self._covmat[xi, xi]
+            cm[1, 1] = self._covmat[yi, yi]
+            cm[2, 2] = self._covmat[zi, zi]
+            cm[0, 1] = self._covmat[xi, yi]
+            cm[0, 2] = self._covmat[xi, zi]
+            cm[1, 2] = self._covmat[yi, zi]
         return cm
 
     def setPointCovmat(self, covmat):
@@ -143,20 +146,20 @@ class PointLocalCovMat(PointLocal):
         # set variances and covariances
         if dim == 1:
             zi = index[0]
-            self.covmat[zi, zi] = covmat[0, 0]
+            self._covmat[zi, zi] = covmat[0, 0]
         elif dim == 2:
             xi, yi = index[0], index[1]
-            self.covmat[xi, xi] = covmat[0, 0]
-            self.covmat[yi, yi] = covmat[1, 1]
-            self.covmat[xi, yi] = covmat[0, 1]
+            self._covmat[xi, xi] = covmat[0, 0]
+            self._covmat[yi, yi] = covmat[1, 1]
+            self._covmat[xi, yi] = covmat[0, 1]
         elif dim == 3:
             xi, yi, zi = index[0], index[1], index[2]
-            self.covmat[xi, xi] = covmat[0, 0]
-            self.covmat[yi, yi] = covmat[1, 1]
-            self.covmat[zi, zi] = covmat[2, 2]
-            self.covmat[xi, yi] = covmat[0, 1]
-            self.covmat[xi, zi] = covmat[0, 2]
-            self.covmat[yi, zi] = covmat[1, 2]
+            self._covmat[xi, xi] = covmat[0, 0]
+            self._covmat[yi, yi] = covmat[1, 1]
+            self._covmat[zi, zi] = covmat[2, 2]
+            self._covmat[xi, yi] = covmat[0, 1]
+            self._covmat[xi, zi] = covmat[0, 2]
+            self._covmat[yi, zi] = covmat[1, 2]
 
     def getErrorEllipseParam(self):
         """
@@ -168,9 +171,9 @@ class PointLocalCovMat(PointLocal):
             raise PointLocalCovMatError("No x or y coordinates set", self)
         index = self.getCovMatIndex()
         xi, yi = index[0], index[1]
-        vx = self.covmat[xi, xi]
-        vy = self.covmat[yi, yi]
-        cxy = self.covmat[xi, yi]
+        vx = self._covmat[xi, xi]
+        vy = self._covmat[yi, yi]
+        cxy = self._covmat[xi, yi]
 
         # test of positive definity
         det = vx * vy - cxy * cxy
@@ -207,12 +210,12 @@ class PointLocalCovMat(PointLocal):
             co = super().__sub__(other)
 
         # covariance matrix
-        if self.covmat is None and other.covmat is None:
-            co.covmat = None
+        if self._covmat is None and other.getCovMat() is None:
+            co.setCovMat(None)
         else:
-            if self.covmat is None:
+            if self._covmat is None:
                 raise PointLocalCovMatError("Covariance matrix is not set", self)
-            if other.covmat is None:
+            if other.getCovMat() is None:
                 raise PointLocalCovMatError("Covariance matrix is not set", other)
 
         cm1 = self.getPointCovMat()
@@ -220,8 +223,8 @@ class PointLocalCovMat(PointLocal):
         if cm1.size != cm2.size:
             raise PointLocalCovMatError("Dimensions of covariance matrices are not same {0}!={1}".
                                         format(cm1.shape[0], cm2.shape[0]), self)
-        co.covmat = cm1 + cm2
-        co.index = tuple(i for i in range(self.dim()))
+        co._covmat = cm1 + cm2
+        co._index = tuple(i for i in range(self.dim()))
         return co
 
     def __add__(self, other):
@@ -231,16 +234,19 @@ class PointLocalCovMat(PointLocal):
         return self.__add__sub__(other, False)
 
     def __str__(self):
-        if self.covmat is None:
+        if self._covmat is None:
             cmStr = "CovMat(None)"
         else:
-            cmStr = "CovMat({shape[0]}, {shape[1]})".format(shape=self.covmat.shape)
+            cmStr = "CovMat({shape[0]}, {shape[1]})".format(shape=self._covmat.shape)
         if self._index is None:
             ixStr = "Index(None)"
             valStr = ""
         else:
             ixStr = "Index(" + ", ".join(["{0}".format(i) for i in self._index]) + ")"
-            valStr = "\nValues(" + ", ".join(["{0}".format(i) for i in self.getPointCovMatList()]) + ")"
+            if self._covmat is not None:
+                valStr = "Values(" + ", ".join(["{0}".format(i) for i in self.getPointCovMatList()]) + ")"
+            else:
+                valStr = ""
         return "  ".join([super().__str__(),
                           cmStr,
                           ixStr,
@@ -257,7 +263,7 @@ if __name__ == "__main__":
     from gizela.adj.local.POINT_LOCAL_STATUS import POINT_LOCAL_STATUS
     c1 = PointLocalCovMat("P1", x=10, y=20, z=30, status=POINT_LOCAL_STATUS.adj)
     cm = numpy.array([[1, 0, 0.1], [0, 2, 0.2], [0, 0, 2.5]])
-    c1.covmat = cm
+    c1.setCovMat(cm)
     c1.setCovMatIndex((0, 1, 2))
     print(c1)
 
@@ -268,7 +274,7 @@ if __name__ == "__main__":
         print(c1.getPointCovMat())
     except Exception as e:
         print(e.message)
-    c2.covmat = cm
+    c2.setCovMat(cm)
     c2.setCovMatIndex((1, 2))
     print(c2)
     pcm = c2.getPointCovMat()
@@ -284,8 +290,9 @@ if __name__ == "__main__":
     print('addition and subtraction of points')
     c3 = PointLocalCovMat("P3", x=10, y=20, z=30, status=POINT_LOCAL_STATUS.adj)
     cm = numpy.array([[1, 0, 0.1], [0, 2, 0.2], [0, 0, 2.5]])
-    c3.covmat = cm
+    c3.setCovMat(cm)
     c3.setCovMatIndex((0, 1, 2))
+    print(c3)
 
     add = c1 + c3
     sub = c1 - c3
@@ -293,60 +300,3 @@ if __name__ == "__main__":
     print(add)
     print(sub)
     print(c1)
-    print(c3)
-    #sub = c1 - c2
-
-    #add.textTable = coor_cov_table()
-    #sub.textTable = coor_cov_table()
-
-    #print add
-    #print sub
-
-    ## multiplication with scalar
-    #print "multiplication"
-    #print c2 * 2.0
-
-    ## xy and z points
-    #c3 = PointCartCovMat("XY", x=10, y=20)
-    #c3.var = (1, 2)
-    #c3.cov = (0.5)
-    #print c3
-    #print c3.make_gama_xml()
-
-    #c4 = PointCartCovMat("Z", z=30)
-    #c4.varz = 1
-    #print c4
-    #print c4.make_gama_xml()
-
-    ## transforms
-    #print "Transformation"
-    #from gizela.tran.Tran2D import Tran2D
-    #tr = Tran2D()
-
-    #import math
-    #om = 30 * math.pi / 180
-    #tr.rotation_(om)
-    #c4 = PointCartCovMat("C4", x=2, y=0)
-    #c4.var = (0.2,0.1)
-    #print c4
-    #print c4.covmat.data
-    #ellipse = c4.errEll
-    #print "a=", ellipse[0], "b=", ellipse[1], "om=", ellipse[2]*180/math.pi
-
-    #fig = FigureLayoutErrEll(figScale=0.05)
-    #c4.plot_(fig)
-    #c4.plot_error_ellipse(fig)
-    #fig.set_aspect_equal()
-
-    #c4.tran_(tr)
-    #c4.id = c4.id + " tran"
-
-    #print c4
-    #print c4.covmat.data
-    #ellipse = c4.errEll
-    #print "a=", ellipse[0], "b=", ellipse[1], "om=", ellipse[2]*180/math.pi
-
-    #c4.plot_(fig)
-    #c4.plot_error_ellipse(fig)
-
-    #fig.show_()
