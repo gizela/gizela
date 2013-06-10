@@ -6,6 +6,7 @@ actual=gizela/adj/local/PointLocal.py
 actual=gizela/adj/local/PointList.py
 actual=gizela/adj/local/PointLocalCovMat.py
 actual=gizela/adj/local/PointListCovMat.py
+actual=gizela/adj/local/PointListEpoch.py
 
 .PHONY: tags
 
