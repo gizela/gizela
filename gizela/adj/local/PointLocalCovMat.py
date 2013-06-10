@@ -39,67 +39,88 @@ class PointLocalCovMat(PointLocal):
 
         super().__init__(id=id, x=x, y=y, z=z, status=status)
 
-        if index is None:
-            if self.dim() == 0:
-                self.index = None
-            else:
-                self.index = tuple(None for i in range(self.dim()))
-        elif self.dim() != len(index):
-            raise PointLocalCovMatError("Dimension of point {0} is different than lenght of index {1}".
-                                        format(self.dim(), len(index)), self)
-        else:
-            self.index = index
-        if covmat is None and index is not None:
-            raise PointLocalCovMatError("Covariance matrix expected", self)
-        if covmat is not None and index is None:
-            raise PointLocalCovMatError("Indexes of rows in covariance matrix expected", self)
         self.covmat = covmat
+        if index is not None:
+            self.setCovMatIndex(index)
+        else:
+            self._index = None
 
     def getCovMatIndex(self):
         'returns covariance matrix index'
-        return self.index
+        if self._index is None:
+            raise PointLocalCovMatError("Index is not set")
+        if self.dim() != len(self._index):
+            raise PointLocalCovMatError("Dimension of point {0} is different than lenght of index {1}".
+                                        format(self.dim(), len(self._index)), self)
+        return self._index
 
     def setCovMatIndex(self, index):
         if self.covmat is None:
             raise PointLocalCovMatError("No covariance matrix set", self)
         if self.dim() != len(index):
-            raise PointLocalCovMatError("Dimension of point is not equal to dimension of index", self)
-        self.index = index
+            raise PointLocalCovMatError("Dimension of point {0} is different than lenght of index {1}".
+                                        format(self.dim(), len(index)), self)
+        shape = self.covmat.shape
+        if max(index) > shape[0]:
+            raise PointLocalCovMatError("Index exceeds covariance matrix dimension", self)
+        self._index = index
+
+    def getPointCovMatList(self):
+        '''
+        return covariances and variances of point in list
+        format: upper triangular part by rows
+        '''
+        if self.covmat is None:
+            raise PointLocalCovMatError("Covariance matrix is not defined", self)
+
+        index = self.getCovMatIndex()
+        cmDim = len(index)
+        cmList = []
+        if  cmDim == 1:
+            zi = index[0]
+            cmList.append(self.covmat[zi, zi])
+        elif cmDim == 2:
+            xi, yi = index[0], index[1]
+            cmList.append(self.covmat[xi, xi])
+            cmList.append(self.covmat[xi, yi])
+            cmList.append(self.covmat[yi, yi])
+        elif cmDim == 3:
+            xi, yi, zi = index[0], index[1], index[2]
+            cmList.append(self.covmat[xi, xi])
+            cmList.append(self.covmat[xi, yi])
+            cmList.append(self.covmat[xi, zi])
+            cmList.append(self.covmat[yi, yi])
+            cmList.append(self.covmat[yi, zi])
+            cmList.append(self.covmat[zi, zi])
+        return cmList
 
     def getPointCovMat(self):
         '''
         returns a copy of covariance matrix
         selection of covariance matrix from large covariance matrix is supported
         '''
-
         if self.covmat is None:
             raise PointLocalCovMatError("Covariance matrix is not defined", self)
 
-        if self.dim() == 0:
-            raise PointLocalCovMatError("Point id='{self.id}' has no coordinates".
-                                        format(self=self), self)
-        # dimension of covariance matrix
-        cmDim = len(self.index)
-        if cmDim == 0:
-            raise PointLocalCovMatError("Point has no covariance matrix", self)
+        index = self.getCovMatIndex()
+        cmDim = len(index)
         cm = numpy.zeros((cmDim, cmDim))
         if  cmDim == 1:
-            zi = self.index[0]
+            zi = index[0]
             cm[0, 0] = self.covmat[zi, zi]
         elif cmDim == 2:
-            xi, yi = self.index[0], self.index[1]
+            xi, yi = index[0], index[1]
             cm[0, 0] = self.covmat[xi, xi]
-            cm[1, 1] = self.covmat[yi, yi]
             cm[0, 1] = self.covmat[xi, yi]
+            cm[1, 1] = self.covmat[yi, yi]
         elif cmDim == 3:
-            xi, yi, zi = self.index[0], self.index[1], self.index[2]
+            xi, yi, zi = index[0], index[1], index[2]
             cm[0, 0] = self.covmat[xi, xi]
             cm[1, 1] = self.covmat[yi, yi]
             cm[2, 2] = self.covmat[zi, zi]
             cm[0, 1] = self.covmat[xi, yi]
             cm[0, 2] = self.covmat[xi, zi]
             cm[1, 2] = self.covmat[yi, zi]
-
         return cm
 
     def setPointCovmat(self, covmat):
@@ -109,38 +130,27 @@ class PointLocalCovMat(PointLocal):
         covmat: numpy array with proper dimension
             upper triangular part of the matrix is used
         """
+        index = self.getCovMatIndex()
         dim = self.dim()
-        if dim == 0:
-            raise PointLocalCovMatError("Point has no coordinates", self)
-        dimIdx = len(self.index)
-        if dimIdx == 0:
-            if self.covmat is None:
-                # set up covariance matrix
-                self.covmat = numpy.zeros((dim, dim))
-                self.setIindex([i for i in range(dim)])
-            else:
-                raise PointLocalCovMatError("Point has no (xi, yi, zi)", self)
-        elif dimIdx != dim:
-            raise PointLocalCovMatError("Dimension of point is not equal to dimension of index", self)
 
         shape = covmat.shape
         if shape[0] != shape[1]:
             raise PointLocalCovMatError("Covariance matrix is not square", self)
         if dim != shape[0]:
-            raise PointLocalCovMatError("Wrong dimension of covariance matrix (%i != %i)".
+            raise PointLocalCovMatError("Dimension of covariance matrix ({0}) is not equal to dimension of point ({1})".
                                         format(dim, shape[0]), self)
 
         # set variances and covariances
         if dim == 1:
-            zi = self.index[0]
+            zi = index[0]
             self.covmat[zi, zi] = covmat[0, 0]
         elif dim == 2:
-            xi, yi = self.index[0], self.index[1]
+            xi, yi = index[0], index[1]
             self.covmat[xi, xi] = covmat[0, 0]
             self.covmat[yi, yi] = covmat[1, 1]
             self.covmat[xi, yi] = covmat[0, 1]
         elif dim == 3:
-            xi, yi, zi = self.index[0], self.index[1], self.index[2]
+            xi, yi, zi = index[0], index[1], index[2]
             self.covmat[xi, xi] = covmat[0, 0]
             self.covmat[yi, yi] = covmat[1, 1]
             self.covmat[zi, zi] = covmat[2, 2]
@@ -156,7 +166,8 @@ class PointLocalCovMat(PointLocal):
         """
         if self.x is None or self.y is None:
             raise PointLocalCovMatError("No x or y coordinates set", self)
-        xi, yi = self.index[0], self.index[1]
+        index = self.getCovMatIndex()
+        xi, yi = index[0], index[1]
         vx = self.covmat[xi, xi]
         vy = self.covmat[yi, yi]
         cxy = self.covmat[xi, yi]
@@ -177,9 +188,11 @@ class PointLocalCovMat(PointLocal):
 
         return [a, b, omega]
 
-    def __add__(self, other):
+    def __add__sub__(self, other, add):
         '''
-        addition of two points with covariance matrix
+        addition or subtraction of two points with covariance matrix
+
+        add: True of False
 
         returns a new point with his own covariance matrix
         id and status is from self instance
@@ -188,7 +201,10 @@ class PointLocalCovMat(PointLocal):
         if not isinstance(other, PointLocalCovMat):
             raise PointLocalCovMatError("Addition of two PointLocalCovMat instances supported", self)
 
-        co = super().__add__(other)
+        if add:
+            co = super().__add__(other)
+        else:
+            co = super().__sub__(other)
 
         # covariance matrix
         if self.covmat is None and other.covmat is None:
@@ -208,69 +224,27 @@ class PointLocalCovMat(PointLocal):
         co.index = tuple(i for i in range(self.dim()))
         return co
 
-    #def __sub__(self, other):
-    #    '''subtraction of two points with covariance matrix'''
+    def __add__(self, other):
+        return self.__add__sub__(other, True)
 
-    #    if not isinstance(other, PointCartCovMat):
-    #        raise PointLocalCovMatError("Subtraction of two PointCartCovMat instances supported")
-
-    #    x, y, z = None, None, None
-    #    if self.x != None and other.x != None: x = self.x - other.x
-    #    if self.y != None and other.y != None: y = self.y - other.y
-    #    if self.z != None and other.z != None: z = self.z - other.z
-
-    #    # covariance matrix
-    #    if self.covmat.dim == 3:
-    #        lcm = self.covmat
-    #    else:
-    #        lcm = self.get_point_cov_mat()
-
-    #    if other.covmat.dim == 3:
-    #        ocm = other.covmat
-    #    else:
-    #        ocm = other.get_point_cov_mat()
-
-    #    import copy
-    #    p = copy.deepcopy(self)
-    #    p.x = x; p.y = y; p.z = z; p.covmat = lcm + ocm
-    #    if x == None: p.xi = None
-    #    else: p.xi = 0
-    #    if y == None: p.yi = None
-    #    else: p.yi = 1
-    #    if z == None: p.zi = None
-    #    else: p.zi = 2
-    #    return p
-
-    #def __mul__(self, scalar):
-    #    """
-    #    returns multiplication of point coordinates with scalar
-    #    """
-
-    #    return super(PointCartCovMat, self).__mul__(scalar)
-
-    #    # multiplication of variances and covariances
-    #    var = self.var
-    #    cov = self.cov
-    #    for i in xrange(3):
-    #        if var[i] is not None:
-    #            var[i] *= scalar*scalar
-    #        if cov[i] is not None:
-    #            cov[i] *= scalar*scalar
-    #    self.var = var
-    #    self.cov = cov
+    def __sub__(self, other):
+        return self.__add__sub__(other, False)
 
     def __str__(self):
         if self.covmat is None:
             cmStr = "CovMat(None)"
         else:
             cmStr = "CovMat({shape[0]}, {shape[1]})".format(shape=self.covmat.shape)
-        if self.index is None:
+        if self._index is None:
             ixStr = "Index(None)"
+            valStr = ""
         else:
-            ixStr = "Index(" + ", ".join(["{0}".format(i) for i in self.index]) + ")"
+            ixStr = "Index(" + ", ".join(["{0}".format(i) for i in self._index]) + ")"
+            valStr = "\nValues(" + ", ".join(["{0}".format(i) for i in self.getPointCovMatList()]) + ")"
         return "  ".join([super().__str__(),
                           cmStr,
-                          ixStr])
+                          ixStr,
+                          valStr])
 
 
 if __name__ == "__main__":
@@ -314,8 +288,10 @@ if __name__ == "__main__":
     c3.setCovMatIndex((0, 1, 2))
 
     add = c1 + c3
+    sub = c1 - c3
     add.id = "add"
     print(add)
+    print(sub)
     print(c1)
     print(c3)
     #sub = c1 - c2
