@@ -59,6 +59,13 @@ class PointLocal(PointBase):
         str.append('/>')
         return " ".join(str)
 
+    def getType(self):
+        """
+        returns type of point
+        returns string
+        """
+        return xmlAttribute(self)
+
     def __add__(self, other):
         "returns self + other"
         if not isinstance(other, PointLocal):

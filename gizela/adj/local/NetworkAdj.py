@@ -3,9 +3,14 @@
 # Copyright (C) 2010 Michal Seidl, Tomas Kubin
 # Author: Tomas Kubin <tomas.kubin@fsv.cvut.cz>
 # URL: <http://geo.fsv.cvut.cz/gwiki/gizela>
-#
 
 from gizela.util.Error import Error
+from gizela.adj.local.PointList import PointList
+from gizela.adj.local.PointListCovMat import PointListCovMat
+import configparser
+#from gizela.adj.local.PointLocal import PointLocal
+#from gizela.adj.geodetic.PointGeodetic import PointGeodetic
+#import datetime
 
 
 class NetworkAdjError(Error):
@@ -19,95 +24,98 @@ class NetworkAdj(object):
     """
 
     def __init__(self):
-        self.coordSystem = {"ellipsoid": "wgs84",
-                            "axesOri": "en",
-                            "bearingOri": "right-handed",
-                            "name": "default",
-                            "description": "default coordinate system"}
+        # coordinate system
 
-        # date and time of measurement
-        import datetime
-        self.dateTime = datetime.datetime(1900, 1, 1)
-
-        #import ConfigParser
-        #self.configParser = ConfigParser.SafeConfigParser()
-        #self.configParser.optionxform = str
-            # to make options case sensitive
-
-        self.stdev = {"apriori": None,
-                      "aposteriori": None,
-                      "used": "apriori",
-                      "probability": 0.95}
+        self.config = configparser.ConfigParser()  # configuration parameters of network
+        #self._setDateTime()
+        #self._setCentralPoint()
 
         # point list of FIXED POINTS
-        #self.pointListFix = PointList()
-        self.pointListFix = None
+        self.pointListFix = PointList()
 
         # point list of ADJUSTED POINTS
-        # point list of adjusted/constrained points with covariance matrix
-        #self.pointListAdjCovMat =\
-        #        PointListCovMat(covmat=CovMatApri(useApriori=self._useApriori),
-        #                        textTable=gama_coor_stdev_table())
-        self.pointListAdj = None
+        self.pointListAdj = PointListCovMat()
 
-    def parse_gama_local_xml_file(self, file):
-        from gizela.xml.GamaLocalAdjParser import GamaLocalAdjParser
-        parser = GamaLocalAdjParser(self)
-        parser.parse_file(file)
+    def parseConfigFile(self, file):
+        """
+        parses configuration from file with ConfigParser
+        file: file like object
+        """
+        self.config = configparser.ConfigParser()
+        try:
+            self.config.read_file(file)
+        except Exception as e:
+            raise NetworkAdjError("Error: configparser: {0}".format(e.message))
 
-            # try to parse description string
-            #import StringIO
-            #try:
-            #    # handle character % in description
-            #    data.description = data.description.replace("%","%%")
-            #    #import sys
-            #    #print >>sys.stderr, "Description:", data.description
-            #    self.configParser.readfp(StringIO.StringIO(data.description))
-            #except Exception, e:
-            #    import sys
-            #    print >>sys.stderr, "Warning: Description not parsed"
-            #    print >>sys.stderr, "Description: %s" % data.description
-            #    print >>sys.stderr, "Error: %s" % e
+    def parseConfigString(self, string):
+        "parses string with configuration"
+        self.config = configparser.ConfigParser()
+        try:
+            self.config.read_string(string)
+        except Exception as e:
+            raise NetworkAdjError("Error: configparser: {0}".format(e.message))
 
-            #    # create section epoch
-            #    self.configParser.add_section("epoch")
-            #    # set option description
-            #    self.configParser.set("epoch", "description", data.description)
+    def info(self):
+        str = ["Adjusted Local Network",
+               "----------------------"]
+        try:
+            str.append("Epoch:")
+            str.append("  date: {0}".format(self.config['epoch']['date']))
+            str.append("  time: {0}".format(self.config['epoch']['time']))
+            str.append("  description: {0}".format(self.config['epoch']['description']))
+            str.append("Local Coordinate System:")
+            str.append("  name: {0}".format(self.config['local-coordinate-sytem']['name']))
+            str.append("  description: {0}".format(self.config['local-coordinate-sytem']['description']))
+            str.append("  ellipsoid code: {0}".format(self.config['local-coordinate-sytem']['ellipsoid-code']))
+            str.append("  axes orientation: {0}".format(self.config['local-coordinate-sytem']['axes-ori']))
+            str.append("  bearing orientation: {0}".format(self.config['local-coordinate-sytem']['bearing-ori']))
+            str.append("  Central Point:")
+            str.append("    x        : {0}".format(self.config['local-coordinate-sytem']['central-point-x']))
+            str.append("    y        : {0}".format(self.config['local-coordinate-sytem']['central-point-y']))
+            str.append("    z        : {0}".format(self.config['local-coordinate-sytem']['central-point-z']))
+            str.append("    latitude : {0}".format(self.config['local-coordinate-sytem']['central-point-lat']))
+            str.append("    longitude: {0}".format(self.config['local-coordinate-sytem']['central-point-lon']))
+            str.append("    height   : {0}".format(self.config['local-coordinate-sytem']['central-point-height']))
+            str.append("    elevation: {0}".format(self.config['local-coordinate-sytem']['central-point-elevation']))
+            str.append("Statistic:")
+            str.append("  confidence probability : {0}".format(self.config['statistic']['confidence-probability']))
+            str.append("  standard deviation used: {0}".format(self.config['statistic']['stdev-use']))
 
-            #else:
-            #    self.set_date_time_list()
-            #        # sets date and time according to configParser
+            def idStr(pointList):
+                pointIdStrList = []
+                strTmp = ""
+                for point in pointList:
+                    idString = "'{}'({})".format(point.id, point.getType())
+                    if len(strTmp) + len(idString) > 80:
+                        if len(strTmp) > 0:
+                            pointIdStrList.append(strTmp)
+                            strTmp = ""
+                    if len(strTmp) != 0:
+                        strTmp += ', '
+                    strTmp += idString
+                pointIdStrList.append(strTmp)
+                print(pointIdStrList)
+                return "\n".join(pointIdStrList)
 
-            # set stdev
-
-            # check axes and bearing orientation
-            #if self.coordSystemLocal.axesOri != data.param["axes-xy"]:
-            #    import sys
-            #    print >>sys.stderr, "Axes orientation is different (%s, %s)"\
-            #        % (self.coordSystemLocal.axesOri, data.param["axes-xy"])
-
-            #if self.coordSystemLocal.bearingOri != data.param["angles"]:
-            #    import sys
-            #    print >>sys.stderr, "Bearing orientation is different (%s, %s)"\
-            #        % (self.coordSystemLocal.bearingOri, data.param["angles"])
-
-            #ax = AxesOrientation(axesOri=data.param["axes-xy"],
-            #                     bearingOri=data.param["angles"])
-            #if not ax.is_consistent():
-            #    raise NetworkError, \
-            #            "Coordinate system of data is not consistent"
+            str.append("Points Fixed:")
+            str.append(idStr(self.pointListFix))
+            str.append("Points Adjusted:")
+            str.append(idStr(self.pointListAdj))
+        except Exception as e:
+            print(e.message)
+            pass
+        return "\n".join(str)
 
 
-    #def set_date_time_string(self, dateTimeStr):
+
+
+    #def set_date_time_string(self, dateStr, timeStr=None):
     #    """
-    #    sets dateTimeList according to dateTimeStr
-
-    #    dateTimeStr: string: string with date and time in format
-    #                         yyyy.mm.dd.hh.mm.ss.microseconds
+    #    sets date and time according to dateStr ant timeStr
+    #    dateStr: yyyy.mm.dd
+    #    timeStr: hh.mm.ss
     #    """
-
-    #    import datetime
-
+    #    to rewrite
     #    for date in dateTimeStr.split(" "):
     #        date = date.split(".")
     #        try:
@@ -154,6 +162,49 @@ class NetworkAdj(object):
     #        else:
     #            raise NetworkError, "Wrong date: %s" % date
 
-
 if __name__ == "__main__":
-    pass
+    net = NetworkAdj()
+    iniString = """
+[epoch]
+date=1990.1.1
+time=0.0
+description=description of epoch
+
+[local-coordinate-sytem]
+name=default
+description=default local coordinate system
+ellipsoid-code=wgs84
+axes-ori=en
+bearing-ori=right-handed
+central-point-x=0.0
+central-point-y=0.0
+central-point-z=0.0
+central-point-lat=0.0
+central-point-lon=0.0
+central-point-height=0.0
+central-point-elevation=0.0
+
+[statistic]
+confidence-probability=0.95
+stdev-use=apriori
+"""
+    net.parseConfigString(iniString)
+
+    # point lists
+    from gizela.adj.local.PointLocal import PointLocal
+    from gizela.adj.local.PointLocalCovMat import PointLocalCovMat
+    from gizela.adj.local.POINT_LOCAL_STATUS import POINT_LOCAL_STATUS
+    p1 = PointLocal(id="Point 1", z=10, status=POINT_LOCAL_STATUS.fix)
+    p2 = PointLocal(id="Point 2", x=10, y=10, status=POINT_LOCAL_STATUS.fix)
+    p3 = PointLocal(id="Point 3", x=10, y=10, z=10, status=POINT_LOCAL_STATUS.fix)
+    p4 = PointLocalCovMat(id="Point 4", z=10, status=POINT_LOCAL_STATUS.adj)
+    p5 = PointLocalCovMat(id="Point 5", x=10, y=10, status=POINT_LOCAL_STATUS.con)
+    p6 = PointLocalCovMat(id="Point 6", x=10, y=10, z=10, status=POINT_LOCAL_STATUS.con_z)
+    net.pointListFix.addPoint(p1)
+    net.pointListFix.addPoint(p2)
+    net.pointListFix.addPoint(p3)
+    net.pointListAdj.addPoint(p4)
+    net.pointListAdj.addPoint(p5)
+    net.pointListAdj.addPoint(p6)
+
+    print(net.info())
