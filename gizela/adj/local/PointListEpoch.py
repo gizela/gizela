@@ -23,6 +23,8 @@ PointListEpoch.list = [ PointList instance:
                                                |  |
                                                v  v
 PointListEpoch.index = { "A": [0, None], "B": [1, 0], "C": [2, 1], ...}
+
+PointListEpoch.index = { "A": [True, False], "B": [True, True], "C": [True, True], ...}
 '''
 
 
@@ -48,7 +50,11 @@ class PointListEpoch(object):
         #self.sortOutput = sortOutput  # sort points by id in text output?
 
     def addEpoch(self, epoch):
-        '''adds PointList instance into list of epoch'''
+        '''
+        @param epoch: list of points in one epoch
+        @type epoch: L{PointList}
+
+        adds PointList instance into list of epoch'''
         if not isinstance(epoch, PointList):
             raise PointListEpochError("Requires PointList instance")
 
@@ -57,15 +63,15 @@ class PointListEpoch(object):
 
         # add None to all point in index
         for id in self.index:
-            self.index[id].append(None)
+            self.index[id].append(False)
 
         # add indexes to points
-        for id in epoch.index:
+        for id in epoch.iterId():
             if id in self.index:
-                self.index[id][-1] = epoch.index[id]
+                self.index[id][-1] = True
             else:
-                self.index[id] = [None for i in range(len(self.list))]
-                self.index[id][-1] = epoch.index[id]
+                self.index[id] = [False for i in range(len(self.list))]
+                self.index[id][-1] = True
 
     #def add_multiple_epoch(self, mepoch, reString, epochIndex, pointIndex):
     #    """
@@ -101,16 +107,21 @@ class PointListEpoch(object):
         except IndexError:
             raise PointListEpochError("Unknown epoch {0}".format(index))
 
-    def iterPoint(self, id):
-        "returns point instance generator through epochs"
+    def iterPoint(self, id, withNone=True):
+        """
+        @param id: id of point
+        @type id: C{str}
+        @param withNone: if point is not measured return None?
+        @type within: C{bool}
+
+        returns point instance generator through epochs
+        """
         if id in self.index:
-            for i in range(len(self.list)):
-                ind = self.index[id][i]
-                if ind is None:
-                    #yield self.list[i].list[0].__class__(None)
+            for isPresent, pointList in zip(self.index[id], self.list):
+                if isPresent:
+                    yield pointList.getPoint(id)
+                elif withNone:
                     yield None
-                else:
-                    yield self.list[i].list[ind]
 
         else:
             raise PointListEpochError("Unknown point id='{0}'".format(id))
@@ -119,6 +130,12 @@ class PointListEpoch(object):
         "iterator for epoch - return PointList instances"
         for e in self.list:
             yield e
+
+    def iterPointId(self):
+        """
+        returns key-iterator of ids of points
+        """
+        return iter(self.index)
 
     def __iter__(self):
         """
@@ -129,12 +146,6 @@ class PointListEpoch(object):
         #return iter(self.index)
         for id in self.index:
             yield self.iterPoint(id)
-
-    def iterPointId(self):
-        """
-        returns key-iterator of ids of points
-        """
-        return iter(self.index)
 
     def getNumPoint(self):
         "returns the number of points"
@@ -185,3 +196,16 @@ if __name__ == "__main__":
     print("Iter Point within epochs")
     for point in ple.iterPoint('C2'):
         print(point)
+
+    print("Iter Epoch")
+    for epoch in ple.iterEpoch():
+        print(epoch)
+
+    print("Iter PointId")
+    for id in ple.iterPointId():
+        print(id)
+
+    print("Iter points through epochs")
+    for epochGenerator in ple:
+        for point in epochGenerator:
+            print(point)

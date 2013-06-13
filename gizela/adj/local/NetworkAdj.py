@@ -55,59 +55,51 @@ class NetworkAdj(object):
         except Exception as e:
             raise NetworkAdjError("Error: configparser: {0}".format(e.message))
 
-    def info(self):
+    def __str__(self):
         str = ["Adjusted Local Network",
                "----------------------"]
-        try:
-            str.append("Epoch:")
-            str.append("  date: {0}".format(self.config['epoch']['date']))
-            str.append("  time: {0}".format(self.config['epoch']['time']))
-            str.append("  description: {0}".format(self.config['epoch']['description']))
-            str.append("Local Coordinate System:")
-            str.append("  name: {0}".format(self.config['local-coordinate-sytem']['name']))
-            str.append("  description: {0}".format(self.config['local-coordinate-sytem']['description']))
-            str.append("  ellipsoid code: {0}".format(self.config['local-coordinate-sytem']['ellipsoid-code']))
-            str.append("  axes orientation: {0}".format(self.config['local-coordinate-sytem']['axes-ori']))
-            str.append("  bearing orientation: {0}".format(self.config['local-coordinate-sytem']['bearing-ori']))
-            str.append("  Central Point:")
-            str.append("    x        : {0}".format(self.config['local-coordinate-sytem']['central-point-x']))
-            str.append("    y        : {0}".format(self.config['local-coordinate-sytem']['central-point-y']))
-            str.append("    z        : {0}".format(self.config['local-coordinate-sytem']['central-point-z']))
-            str.append("    latitude : {0}".format(self.config['local-coordinate-sytem']['central-point-lat']))
-            str.append("    longitude: {0}".format(self.config['local-coordinate-sytem']['central-point-lon']))
-            str.append("    height   : {0}".format(self.config['local-coordinate-sytem']['central-point-height']))
-            str.append("    elevation: {0}".format(self.config['local-coordinate-sytem']['central-point-elevation']))
-            str.append("Statistic:")
-            str.append("  confidence probability : {0}".format(self.config['statistic']['confidence-probability']))
-            str.append("  standard deviation used: {0}".format(self.config['statistic']['stdev-use']))
+        str.append("Epoch:")
+        str.append("  date: {0}".format(self.config.get('epoch', 'date', fallback="")))
+        str.append("  time: {0}".format(self.config.get('epoch', 'time', fallback="")))
+        str.append("  description: {0}".format(self.config.get('epoch', 'description', fallback="")))
+        str.append("Local Coordinate System:")
+        str.append("  name: {0}".format(self.config.get('local-coordinate-sytem', 'name', fallback="")))
+        str.append("  description: {0}".format(self.config.get('local-coordinate-sytem', 'description', fallback="")))
+        str.append("  ellipsoid code: {0}".format(self.config.get('local-coordinate-sytem', 'ellipsoid-code', fallback="")))
+        str.append("  axes orientation: {0}".format(self.config.get('local-coordinate-sytem', 'axes-ori', fallback="")))
+        str.append("  bearing orientation: {0}".format(self.config.get('local-coordinate-sytem', 'bearing-ori', fallback="")))
+        str.append("  Central Point:")
+        str.append("    x        : {0}".format(self.config.get('local-coordinate-sytem', 'central-point-x', fallback="")))
+        str.append("    y        : {0}".format(self.config.get('local-coordinate-sytem', 'central-point-y', fallback="")))
+        str.append("    z        : {0}".format(self.config.get('local-coordinate-sytem', 'central-point-z', fallback="")))
+        str.append("    latitude : {0}".format(self.config.get('local-coordinate-sytem', 'central-point-lat', fallback="")))
+        str.append("    longitude: {0}".format(self.config.get('local-coordinate-sytem', 'central-point-lon', fallback="")))
+        str.append("    height   : {0}".format(self.config.get('local-coordinate-sytem', 'central-point-height', fallback="")))
+        str.append("    elevation: {0}".format(self.config.get('local-coordinate-sytem', 'central-point-elevation', fallback="")))
+        str.append("Statistic:")
+        str.append("  confidence probability : {0}".format(self.config.get('statistic', 'confidence-probability', fallback="")))
+        str.append("  standard deviation used: {0}".format(self.config.get('statistic', 'stdev-use', fallback="")))
 
-            def idStr(pointList):
-                pointIdStrList = []
-                strTmp = ""
-                for point in pointList:
-                    idString = "'{}'({})".format(point.id, point.getType())
-                    if len(strTmp) + len(idString) > 80:
-                        if len(strTmp) > 0:
-                            pointIdStrList.append(strTmp)
-                            strTmp = ""
-                    if len(strTmp) != 0:
-                        strTmp += ', '
-                    strTmp += idString
-                pointIdStrList.append(strTmp)
-                print(pointIdStrList)
-                return "\n".join(pointIdStrList)
+        def idStr(pointList):
+            pointIdStrList = []
+            strTmp = ""
+            for point in pointList:
+                idString = "'{}'({})".format(point.id, point.getType())
+                if len(strTmp) + len(idString) > 80:
+                    if len(strTmp) > 0:
+                        pointIdStrList.append(strTmp)
+                        strTmp = ""
+                if len(strTmp) != 0:
+                    strTmp += ', '
+                strTmp += idString
+            pointIdStrList.append(strTmp)
+            return "\n".join(pointIdStrList)
 
-            str.append("Points Fixed:")
-            str.append(idStr(self.pointListFix))
-            str.append("Points Adjusted:")
-            str.append(idStr(self.pointListAdj))
-        except Exception as e:
-            print(e.message)
-            pass
+        str.append("Points Fixed:")
+        str.append(idStr(self.pointListFix))
+        str.append("Points Adjusted:")
+        str.append(idStr(self.pointListAdj))
         return "\n".join(str)
-
-
-
 
     #def set_date_time_string(self, dateStr, timeStr=None):
     #    """
@@ -207,4 +199,4 @@ stdev-use=apriori
     net.pointListAdj.addPoint(p5)
     net.pointListAdj.addPoint(p6)
 
-    print(net.info())
+    print(net)
