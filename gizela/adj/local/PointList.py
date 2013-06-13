@@ -5,20 +5,16 @@
 # URL: <http://geo.fsv.cvut.cz/gwiki/gizela>
 
 '''
-class for list of points with dictionary for searching by point id
-
-PointList.list = [<Point id="A", x, y, z>,
-                  <Point id="B", x, y, z>,
-                  <Point id="C", x, y, z>, <--o
-                  ...]       |_______     ____|
-                                     |   |
-PointList.index = { "A": 0, "B": 1, "C": 2, ...}
+class for list of points - Ordered Dictionary
+   key: id of point
+   value: instance of point
 '''
 
 
 from gizela.util.Error import Error
 from gizela.adj.local.PointBase import PointBase
 from gizela.adj.local.DUPLICATE_ID import DUPLICATE_ID
+from collections import OrderedDict
 
 
 class PointListError(Error):
@@ -36,8 +32,7 @@ class PointList(object):
         sort   ... sort output by id?
         '''
 
-        self.index = {}         # dictionary id: list index
-        self.list = []          # list of points
+        self.list = OrderedDict()   # list of points
         self.duplicateId = duplicateId
         self.sortOutput = sort  # sort output?
 
@@ -56,73 +51,65 @@ class PointList(object):
 
         # handle duplicateId
         id = point.id
-        if id in self.index:
+        if id in self.list:
             if self.duplicateId == DUPLICATE_ID.hold:
                 "hold old point"
                 pass
             elif self.duplicateId == DUPLICATE_ID.overwrite:
                 "owerwrite old poitn with the new one"
-                self.list[self.index[id]] = point
+                self.list[point.id] = point
             elif self.duplicateId == DUPLICATE_ID.error:
                 "raise exception"
                 raise PointListError("Duplicit point id '{0}'".format(id))
 
             elif self.duplicateId == DUPLICATE_ID.compare:
                 "compare coordinates: raise error when differs"
-                p = self.list[self.index[id]]
+                p = self.list[point.id]
                 if p != point:
                     raise PointListError("Point '{0}' differs with point allready in list".format(id))
             else:
                 raise PointListError("Unsupported DUPLICATE_ID value '{0}'".format(self.duplicateId))
 
         else:
-            index = len(self.list)
-            self.index[id] = index
-            point.lindex = index
-            self.list.append(point)
+            #point.lindex = index
+            self.list[point.id] = point
 
     def replacePoint(self, point):
         """
         replace existing point with new point
         """
-        if point.id not in self.index:
+        if point.id not in self.list:
             raise PointListError("Error replacing point id='{0}'".format(point.id))
-        ind = self.index[point.id]
-        self.list[ind] = point
+        self.list[point.id] = point
 
     def getPoint(self, id):
         '''returns PointBase instance'''
         try:
-            return self.list[self.index[id]]
+            return self.list[id]
         except KeyError:
             raise PointListError("Unknown point id='{0}'".format(id))
 
     def delPoint(self, id):
         """deltes point from poitList"""
 
-        # delete: 1. remove key from self.index dictionary
-        #         2. replace point in self.list list with None
-
         try:
-            ind = self.index.pop(id)
-            #self.list[ind] = self.list[ind].__class__(id=None)
-            self.list[ind] = None
+            self.list.pop(id)
         except KeyError:
             raise PointListError("Point id='{0}' does not exist".format(id))
 
     def __len__(self):
         '''number of points in dictionary'''
-        return sum([1 for i in self.list if i is not None])
+        return len(self.linst)
 
     def __iter__(self):
         """point generator"""
-        for p in self.list:
-            if p is not None:
-                yield p
+        for point in self.list.values():
+            yield point
 
     def iterId(self):
         """iterator throught id"""
-        return iter(self.index)
+        for id in self.list.keys():
+            yield id
 
     def extend(self, other):
         """
@@ -136,7 +123,7 @@ class PointList(object):
 
     def __str__(self):
         if self.sortOutput:
-            ids = [id for id in self.index.keys()]
+            ids = [id for id in self.list.keys()]
             ids.sort()
             return "\n".join(["{0}".format(self.getPoint(id)) for id in ids])
         else:
@@ -147,7 +134,7 @@ class PointList(object):
         update point if point exists
         otherwise add new point
         """
-        if point.id in self.iterId():
+        if point.id in self.list:
             p = self.getPoint(point.id)
             p.update(point)
         else:
