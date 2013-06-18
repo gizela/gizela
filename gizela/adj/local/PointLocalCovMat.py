@@ -97,6 +97,36 @@ class PointLocalCovMat(PointLocal):
             cmList.append(self._covmat[zi, zi])
         return cmList
 
+    def getPointCovMatListWithNones(self):
+        '''
+        return covariances and variances of point in list
+        format: upper triangular part by rows
+        the length of list returned is also 6
+        '''
+        if self._covmat is None:
+            raise PointLocalCovMatError("Covariance matrix is not defined", self)
+
+        index = self.getCovMatIndex()
+        cmDim = len(index)
+        cmList = [None for i in range(6)]
+        if  cmDim == 1:
+            zi = index[0]
+            cmList[5] = self._covmat[zi, zi]
+        elif cmDim == 2:
+            xi, yi = index[0], index[1]
+            cmList[0] = self._covmat[xi, xi]
+            cmList[1] = self._covmat[xi, yi]
+            cmList[2] = self._covmat[yi, yi]
+        elif cmDim == 3:
+            xi, yi, zi = index[0], index[1], index[2]
+            cmList[0] = self._covmat[xi, xi]
+            cmList[1] = self._covmat[xi, yi]
+            cmList[2] = self._covmat[xi, zi]
+            cmList[3] = self._covmat[yi, yi]
+            cmList[4] = self._covmat[yi, zi]
+            cmList[5] = self._covmat[zi, zi]
+        return cmList
+
     def getPointCovMat(self):
         '''
         returns a copy of covariance matrix
@@ -115,6 +145,7 @@ class PointLocalCovMat(PointLocal):
             xi, yi = index[0], index[1]
             cm[0, 0] = self._covmat[xi, xi]
             cm[0, 1] = self._covmat[xi, yi]
+            cm[1, 0] = self._covmat[xi, yi]
             cm[1, 1] = self._covmat[yi, yi]
         elif cmDim == 3:
             xi, yi, zi = index[0], index[1], index[2]
@@ -122,8 +153,11 @@ class PointLocalCovMat(PointLocal):
             cm[1, 1] = self._covmat[yi, yi]
             cm[2, 2] = self._covmat[zi, zi]
             cm[0, 1] = self._covmat[xi, yi]
+            cm[1, 0] = self._covmat[xi, yi]
             cm[0, 2] = self._covmat[xi, zi]
+            cm[2, 0] = self._covmat[xi, zi]
             cm[1, 2] = self._covmat[yi, zi]
+            cm[2, 1] = self._covmat[yi, zi]
         return cm
 
     def setPointCovmat(self, covmat):
