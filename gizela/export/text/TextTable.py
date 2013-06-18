@@ -33,60 +33,8 @@ class TextTable(object):
 
         self._instance = instance
 
-        if type == "border":
-            '''+------+------+
-               | lab1 | lab2 |
-               +------+------+
-               | val1 | val2 |
-               | val1 | val2 |
-               +------+------+
-            '''
-            self.corner_left = "+-"
-            self.corner_right = "-+"
-            self.corner_middle = "-+-"
-            self.border_left = "| "
-            self.border_right = " |"
-            self.border_middle = " | "
-            self.line_top = "-"
-            self.line_second = "-"
-            self.line_bottom = "-"
-        elif type == "plain":
-            ''' lab1 | lab2
-               ------+------
-                val1 | val2
-                val1 | val2
-            '''
-            self.corner_left = "-"
-            self.corner_right = "-"
-            self.corner_middle = "-+-"
-            self.border_left = " "
-            self.border_right = " "
-            self.border_middle = " | "
-            self.line_top = None
-            self.line_second = "-"
-            self.line_bottom = None
-        elif type == "noborder":
-            ''' lab1   lab2
-               -------------
-                val1   val2
-                val1   val2
-            '''
-            self.corner_left = " "
-            self.corner_right = " "
-            #self.corner_middle = "-+-"
-            self.corner_middle = "---"
-            self.border_left = " "
-            self.border_right = " "
-            self.border_middle = "   "
-            self.line_top = None
-            self.line_second = "-"
-            self.line_bottom = None
-        else:
-            raise TextTableError("Unknown type of text table ({})".format(type))
-        self._type = type
-
     def __str__(self):
-        return "TextTable instance: border = '{}'\n".format(self._type)
+        return "TextTable for instance: '{}'\n".format(self._instance.__class__)
 
     def __iterData_PointList_default(self):
         '''
@@ -153,7 +101,7 @@ class TextTable(object):
                      ('sigma_z', '{:.4f}', 'right'),
                      ('status', '{}', 'left')])
 
-    def write(self, file=sys.stdout, style='default'):
+    def write(self, file=sys.stdout, border='border', style='default'):
         '''
         generates output text
 
@@ -173,6 +121,58 @@ class TextTable(object):
             dataIterator = getattr(self, '_TextTable__iterData_' + cls + '_' + style)()
         except Exception:
             raise TextTableError("__iterData method for type '{}' is not defined".format(cls))
+
+        # borders
+        if border == "border":
+            '''+------+------+
+               | lab1 | lab2 |
+               +------+------+
+               | val1 | val2 |
+               | val1 | val2 |
+               +------+------+
+            '''
+            self.corner_left = "+-"
+            self.corner_right = "-+"
+            self.corner_middle = "-+-"
+            self.border_left = "| "
+            self.border_right = " |"
+            self.border_middle = " | "
+            self.line_top = "-"
+            self.line_second = "-"
+            self.line_bottom = "-"
+        elif border == "plain":
+            ''' lab1 | lab2
+               ------+------
+                val1 | val2
+                val1 | val2
+            '''
+            self.corner_left = "-"
+            self.corner_right = "-"
+            self.corner_middle = "-+-"
+            self.border_left = " "
+            self.border_right = " "
+            self.border_middle = " | "
+            self.line_top = None
+            self.line_second = "-"
+            self.line_bottom = None
+        elif border == "noborder":
+            ''' lab1   lab2
+               -------------
+                val1   val2
+                val1   val2
+            '''
+            self.corner_left = " "
+            self.corner_right = " "
+            #self.corner_middle = "-+-"
+            self.corner_middle = "--"
+            self.border_left = " "
+            self.border_right = " "
+            self.border_middle = "  "
+            self.line_top = None
+            self.line_second = "-"
+            self.line_bottom = None
+        else:
+            raise TextTableError("Unknown type of text table ({})".format(type))
 
         # read all data through iterator with format
         row = 0  # index of table row
@@ -249,12 +249,10 @@ if __name__ == "__main__":
     pl.addPoint(PointLocal(id="AAAA", z=1, status=POINT_LOCAL_STATUS.fix))
     pl.addPoint(PointLocal(id="AAAAAAAAAA", x=1, y=10000, status=POINT_LOCAL_STATUS.adj))
     print(pl)
-    tt = TextTable(pl, type="border")
-    tt.write()
-    tt = TextTable(pl, type="plain")
-    tt.write()
-    tt = TextTable(pl, type="noborder")
-    tt.write()
+    tt = TextTable(pl)
+    tt.write(border="border")
+    tt.write(border="plain")
+    tt.write(border="noborder")
 
     # PointListCovMat instance
     from gizela.adj.local.PointLocalCovMat import PointLocalCovMat
@@ -275,9 +273,7 @@ if __name__ == "__main__":
                       [0, 0,   0,   0,   0,   6]])
     pl.setCovMat(cm)
     print(pl)
-    tt = TextTable(pl, type="border")
-    tt.write()
-    tt = TextTable(pl, type="plain")
-    tt.write()
-    tt = TextTable(pl, type="noborder")
-    tt.write()
+    tt = TextTable(pl)
+    tt.write(border="border")
+    tt.write(border="plain")
+    tt.write(border="noborder")
