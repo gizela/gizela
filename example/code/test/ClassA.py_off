@@ -55,8 +55,9 @@ class ClassA(object):
 
 	def __init__(self,b=None,c=3):
 		"""Class inicialization function"""
+
 		#Data or instance atributes
-		self.writableAtribute = 'w'
+		self.writableAtribute = 'w' #:tohle je atribut#
 		
 		#self.PUBLIC_CONSTANT = 3
 		#self.readonlyAtribute = 'r'

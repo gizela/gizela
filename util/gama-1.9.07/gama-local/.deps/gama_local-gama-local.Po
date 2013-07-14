@@ -1,0 +1,735 @@
+gama_local-gama-local.o: gama-local.cpp gama-local-main.h \
+ ../lib/gnu_gama/outstream.h /usr/include/c++/4.6/iostream \
+ /usr/include/c++/4.6/x86_64-linux-gnu/./bits/c++config.h \
+ /usr/include/c++/4.6/x86_64-linux-gnu/./bits/os_defines.h \
+ /usr/include/features.h /usr/include/x86_64-linux-gnu/bits/predefs.h \
+ /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+ /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+ /usr/include/c++/4.6/x86_64-linux-gnu/./bits/cpu_defines.h \
+ /usr/include/c++/4.6/ostream /usr/include/c++/4.6/ios \
+ /usr/include/c++/4.6/iosfwd /usr/include/c++/4.6/bits/stringfwd.h \
+ /usr/include/c++/4.6/bits/postypes.h /usr/include/c++/4.6/cwchar \
+ /usr/include/wchar.h /usr/include/stdio.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.6/include/stdarg.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.6/include/stddef.h \
+ /usr/include/xlocale.h /usr/include/x86_64-linux-gnu/bits/wchar2.h \
+ /usr/include/c++/4.6/exception /usr/include/c++/4.6/bits/char_traits.h \
+ /usr/include/c++/4.6/bits/stl_algobase.h \
+ /usr/include/c++/4.6/bits/functexcept.h \
+ /usr/include/c++/4.6/bits/exception_defines.h \
+ /usr/include/c++/4.6/bits/cpp_type_traits.h \
+ /usr/include/c++/4.6/ext/type_traits.h \
+ /usr/include/c++/4.6/ext/numeric_traits.h \
+ /usr/include/c++/4.6/bits/stl_pair.h /usr/include/c++/4.6/bits/move.h \
+ /usr/include/c++/4.6/bits/concept_check.h \
+ /usr/include/c++/4.6/bits/stl_iterator_base_types.h \
+ /usr/include/c++/4.6/bits/stl_iterator_base_funcs.h \
+ /usr/include/c++/4.6/bits/stl_iterator.h \
+ /usr/include/c++/4.6/debug/debug.h /usr/include/c++/4.6/bits/localefwd.h \
+ /usr/include/c++/4.6/x86_64-linux-gnu/./bits/c++locale.h \
+ /usr/include/c++/4.6/clocale /usr/include/locale.h \
+ /usr/include/x86_64-linux-gnu/bits/locale.h /usr/include/c++/4.6/cctype \
+ /usr/include/ctype.h /usr/include/x86_64-linux-gnu/bits/types.h \
+ /usr/include/x86_64-linux-gnu/bits/typesizes.h /usr/include/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+ /usr/include/c++/4.6/bits/ios_base.h \
+ /usr/include/c++/4.6/ext/atomicity.h \
+ /usr/include/c++/4.6/x86_64-linux-gnu/./bits/gthr.h \
+ /usr/include/c++/4.6/x86_64-linux-gnu/./bits/gthr-default.h \
+ /usr/include/pthread.h /usr/include/sched.h /usr/include/time.h \
+ /usr/include/x86_64-linux-gnu/bits/sched.h \
+ /usr/include/x86_64-linux-gnu/bits/time.h \
+ /usr/include/x86_64-linux-gnu/bits/timex.h \
+ /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
+ /usr/include/x86_64-linux-gnu/bits/setjmp.h /usr/include/unistd.h \
+ /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+ /usr/include/x86_64-linux-gnu/bits/environments.h \
+ /usr/include/x86_64-linux-gnu/bits/confname.h /usr/include/getopt.h \
+ /usr/include/x86_64-linux-gnu/bits/unistd.h \
+ /usr/include/c++/4.6/x86_64-linux-gnu/./bits/atomic_word.h \
+ /usr/include/c++/4.6/bits/locale_classes.h /usr/include/c++/4.6/string \
+ /usr/include/c++/4.6/bits/allocator.h \
+ /usr/include/c++/4.6/x86_64-linux-gnu/./bits/c++allocator.h \
+ /usr/include/c++/4.6/ext/new_allocator.h /usr/include/c++/4.6/new \
+ /usr/include/c++/4.6/bits/ostream_insert.h \
+ /usr/include/c++/4.6/bits/cxxabi_forced.h \
+ /usr/include/c++/4.6/bits/stl_function.h \
+ /usr/include/c++/4.6/backward/binders.h \
+ /usr/include/c++/4.6/bits/range_access.h \
+ /usr/include/c++/4.6/bits/basic_string.h \
+ /usr/include/c++/4.6/initializer_list \
+ /usr/include/c++/4.6/bits/basic_string.tcc \
+ /usr/include/c++/4.6/bits/locale_classes.tcc \
+ /usr/include/c++/4.6/streambuf /usr/include/c++/4.6/bits/streambuf.tcc \
+ /usr/include/c++/4.6/bits/basic_ios.h \
+ /usr/include/c++/4.6/bits/locale_facets.h /usr/include/c++/4.6/cwctype \
+ /usr/include/wctype.h \
+ /usr/include/c++/4.6/x86_64-linux-gnu/./bits/ctype_base.h \
+ /usr/include/c++/4.6/bits/streambuf_iterator.h \
+ /usr/include/c++/4.6/x86_64-linux-gnu/./bits/ctype_inline.h \
+ /usr/include/c++/4.6/bits/locale_facets.tcc \
+ /usr/include/c++/4.6/bits/basic_ios.tcc \
+ /usr/include/c++/4.6/bits/ostream.tcc /usr/include/c++/4.6/istream \
+ /usr/include/c++/4.6/bits/istream.tcc ../lib/gnu_gama/xml_expat.h \
+ /usr/include/expat.h /usr/include/stdlib.h \
+ /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+ /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
+ /usr/include/x86_64-linux-gnu/sys/types.h \
+ /usr/include/x86_64-linux-gnu/sys/select.h \
+ /usr/include/x86_64-linux-gnu/bits/select.h \
+ /usr/include/x86_64-linux-gnu/bits/sigset.h \
+ /usr/include/x86_64-linux-gnu/bits/select2.h \
+ /usr/include/x86_64-linux-gnu/sys/sysmacros.h /usr/include/alloca.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib.h \
+ /usr/include/expat_external.h ../lib/gnu_gama/xml/encoding.h \
+ /usr/include/c++/4.6/cstring /usr/include/string.h \
+ /usr/include/x86_64-linux-gnu/bits/string3.h ../lib/gnu_gama/version.h \
+ ../lib/gnu_gama/intfloat.h ../lib/gnu_gama/xml/localnetwork.h \
+ ../lib/gamalib/local/gamadata.h ../lib/gnu_gama/obsdata.h \
+ ../lib/gnu_gama/list.h /usr/include/c++/4.6/vector \
+ /usr/include/c++/4.6/bits/stl_construct.h \
+ /usr/include/c++/4.6/bits/stl_uninitialized.h \
+ /usr/include/c++/4.6/bits/stl_vector.h \
+ /usr/include/c++/4.6/bits/stl_bvector.h \
+ /usr/include/c++/4.6/bits/vector.tcc /usr/include/c++/4.6/iterator \
+ /usr/include/c++/4.6/bits/stream_iterator.h ../lib/gamalib/pointid.h \
+ /usr/include/c++/4.6/cstddef ../lib/gamalib/local/lpoint.h \
+ ../lib/gamalib/bpoint.h ../lib/gamalib/float.h \
+ /usr/include/c++/4.6/cmath /usr/include/math.h \
+ /usr/include/x86_64-linux-gnu/bits/huge_val.h \
+ /usr/include/x86_64-linux-gnu/bits/huge_valf.h \
+ /usr/include/x86_64-linux-gnu/bits/huge_vall.h \
+ /usr/include/x86_64-linux-gnu/bits/inf.h \
+ /usr/include/x86_64-linux-gnu/bits/nan.h \
+ /usr/include/x86_64-linux-gnu/bits/mathdef.h \
+ /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
+ /usr/include/x86_64-linux-gnu/bits/mathinline.h \
+ ../lib/gamalib/exception.h ../lib/gamalib/language.h \
+ ../lib/gamalib/observation.h ../lib/gamalib/revision.h \
+ ../lib/gamalib/linearization.h ../lib/gamalib/matvec.h \
+ ../lib/matvec/svd.h ../lib/matvec/matvec.h ../lib/matvec/mat.h \
+ /usr/include/c++/4.6/cstdarg ../lib/matvec/matbase.h \
+ ../lib/matvec/matvecbase.h ../lib/matvec/memrep.h ../lib/matvec/inderr.h \
+ ../lib/matvec/array.h ../lib/matvec/transmat.h ../lib/matvec/vec.h \
+ ../lib/matvec/vecbase.h ../lib/matvec/transvec.h ../lib/matvec/covmat.h \
+ ../lib/matvec/choldec.h /usr/include/c++/4.6/algorithm \
+ /usr/include/c++/4.6/utility /usr/include/c++/4.6/bits/stl_relops.h \
+ /usr/include/c++/4.6/bits/stl_algo.h /usr/include/c++/4.6/cstdlib \
+ /usr/include/c++/4.6/bits/algorithmfwd.h \
+ /usr/include/c++/4.6/bits/stl_heap.h \
+ /usr/include/c++/4.6/bits/stl_tempbuf.h ../lib/gamalib/cluster.h \
+ ../lib/gamalib/angobs.h ../lib/gamalib/local/lcoords.h \
+ /usr/include/c++/4.6/map /usr/include/c++/4.6/bits/stl_tree.h \
+ /usr/include/c++/4.6/bits/stl_map.h \
+ /usr/include/c++/4.6/bits/stl_multimap.h /usr/include/c++/4.6/list \
+ /usr/include/c++/4.6/bits/stl_list.h /usr/include/c++/4.6/bits/list.tcc \
+ ../lib/gamalib/local/network.h /usr/include/c++/4.6/fstream \
+ /usr/include/c++/4.6/bits/codecvt.h /usr/include/c++/4.6/cstdio \
+ /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio2.h \
+ /usr/include/c++/4.6/x86_64-linux-gnu/./bits/basic_file.h \
+ /usr/include/c++/4.6/x86_64-linux-gnu/./bits/c++io.h \
+ /usr/include/c++/4.6/bits/fstream.tcc /usr/include/c++/4.6/iomanip \
+ ../lib/gnu_gama/adj/adj_basefull.h ../lib/gnu_gama/adj/adj_base.h \
+ ../lib/gnu_gama/adj/adj_basesparse.h ../lib/gamalib/local/revision.h \
+ ../lib/gnu_gama/sparse/smatrix.h ../lib/gnu_gama/adj/adj.h \
+ ../lib/gnu_gama/sparse/sbdiagonal.h ../lib/gnu_gama/sparse/intlist.h \
+ ../lib/gnu_gama/adj/adj_envelope.h ../lib/gnu_gama/adj/envelope.h \
+ /usr/include/c++/4.6/limits ../lib/gnu_gama/sparse/smatrix_graph.h \
+ /usr/include/c++/4.6/set /usr/include/c++/4.6/bits/stl_set.h \
+ /usr/include/c++/4.6/bits/stl_multiset.h \
+ ../lib/gnu_gama/sparse/smatrix_graph_connected.h \
+ /usr/include/c++/4.6/stack /usr/include/c++/4.6/deque \
+ /usr/include/c++/4.6/bits/stl_deque.h \
+ /usr/include/c++/4.6/bits/deque.tcc \
+ /usr/include/c++/4.6/bits/stl_stack.h \
+ ../lib/gnu_gama/sparse/smatrix_ordering.h ../lib/matvec/symmat.h \
+ ../lib/gnu_gama/adj/homogenization.h ../lib/gnu_gama/adj/adj_svd.h \
+ ../lib/gnu_gama/adj/adj_gso.h ../lib/matvec/gso.h \
+ ../lib/gnu_gama/adj/adj_chol.h ../lib/gnu_gama/exception.h \
+ ../lib/gnu_gama/adj/adj_chol_implementation.h \
+ ../lib/gnu_gama/movetofront.h \
+ ../lib/gnu_gama/adj/adj_envelope_implementation.h \
+ ../lib/gamalib/xml/gkfparser.h ../lib/gnu_gama/xml/baseparser.h \
+ ../lib/gnu_gama/xml/dataobject.h /usr/include/c++/4.6/sstream \
+ /usr/include/c++/4.6/bits/sstream.tcc ../lib/gnu_gama/g3/g3_model.h \
+ ../lib/gnu_gama/model.h ../lib/gnu_gama/pointbase.h \
+ ../lib/gnu_gama/ellipsoids.h ../lib/gnu_gama/ellipsoid.h \
+ ../lib/gnu_gama/g3/g3_point.h ../lib/gnu_gama/g3/g3_parameter.h \
+ ../lib/gnu_gama/radian.h ../lib/gnu_gama/g3/g3_observation.h \
+ ../lib/gnu_gama/e3.h ../lib/gnu_gama/g3/g3_adjres.h \
+ ../lib/gamalib/local/network_svd.h ../lib/gamalib/local/network_gso.h \
+ ../lib/gamalib/local/network_chol.h ../lib/gamalib/local/network_env.h \
+ ../lib/gamalib/local/acord.h \
+ ../lib/gamalib/local/acord/reduce_observations.h \
+ ../lib/gamalib/local/acord/reduce_to_ellipsoid.h \
+ ../lib/gamalib/local/results/text/approximate_coordinates.h \
+ ../lib/gamalib/local/results/text/underline.h \
+ ../lib/gamalib/local/results/text/network_description.h \
+ ../lib/gamalib/local/results/text/general_parameters.h \
+ ../lib/gamalib/local/pobs/format.h ../lib/gnu_gama/statan.h \
+ /usr/include/c++/4.6/typeinfo \
+ ../lib/gamalib/local/results/text/fixed_points.h \
+ ../lib/gamalib/local/results/text/adjusted_observations.h \
+ ../lib/gnu_gama/gon2deg.h \
+ ../lib/gamalib/local/results/text/adjusted_unknowns.h \
+ ../lib/gamalib/local/results/text/outlying_abs_terms.h \
+ ../lib/gamalib/local/results/text/reduced_observations.h \
+ ../lib/gamalib/local/results/text/reduced_observations_to_ellipsoid.h \
+ ../lib/gamalib/local/results/text/residuals_observations.h \
+ ../lib/gamalib/local/results/text/error_ellipses.h \
+ ../lib/gamalib/local/results/text/test_linearization.h \
+ ../lib/gamalib/local/pobs/bearing.h
+
+gama-local-main.h:
+
+../lib/gnu_gama/outstream.h:
+
+/usr/include/c++/4.6/iostream:
+
+/usr/include/c++/4.6/x86_64-linux-gnu/./bits/c++config.h:
+
+/usr/include/c++/4.6/x86_64-linux-gnu/./bits/os_defines.h:
+
+/usr/include/features.h:
+
+/usr/include/x86_64-linux-gnu/bits/predefs.h:
+
+/usr/include/x86_64-linux-gnu/sys/cdefs.h:
+
+/usr/include/x86_64-linux-gnu/bits/wordsize.h:
+
+/usr/include/x86_64-linux-gnu/gnu/stubs.h:
+
+/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
+
+/usr/include/c++/4.6/x86_64-linux-gnu/./bits/cpu_defines.h:
+
+/usr/include/c++/4.6/ostream:
+
+/usr/include/c++/4.6/ios:
+
+/usr/include/c++/4.6/iosfwd:
+
+/usr/include/c++/4.6/bits/stringfwd.h:
+
+/usr/include/c++/4.6/bits/postypes.h:
+
+/usr/include/c++/4.6/cwchar:
+
+/usr/include/wchar.h:
+
+/usr/include/stdio.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.6/include/stdarg.h:
+
+/usr/include/x86_64-linux-gnu/bits/wchar.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.6/include/stddef.h:
+
+/usr/include/xlocale.h:
+
+/usr/include/x86_64-linux-gnu/bits/wchar2.h:
+
+/usr/include/c++/4.6/exception:
+
+/usr/include/c++/4.6/bits/char_traits.h:
+
+/usr/include/c++/4.6/bits/stl_algobase.h:
+
+/usr/include/c++/4.6/bits/functexcept.h:
+
+/usr/include/c++/4.6/bits/exception_defines.h:
+
+/usr/include/c++/4.6/bits/cpp_type_traits.h:
+
+/usr/include/c++/4.6/ext/type_traits.h:
+
+/usr/include/c++/4.6/ext/numeric_traits.h:
+
+/usr/include/c++/4.6/bits/stl_pair.h:
+
+/usr/include/c++/4.6/bits/move.h:
+
+/usr/include/c++/4.6/bits/concept_check.h:
+
+/usr/include/c++/4.6/bits/stl_iterator_base_types.h:
+
+/usr/include/c++/4.6/bits/stl_iterator_base_funcs.h:
+
+/usr/include/c++/4.6/bits/stl_iterator.h:
+
+/usr/include/c++/4.6/debug/debug.h:
+
+/usr/include/c++/4.6/bits/localefwd.h:
+
+/usr/include/c++/4.6/x86_64-linux-gnu/./bits/c++locale.h:
+
+/usr/include/c++/4.6/clocale:
+
+/usr/include/locale.h:
+
+/usr/include/x86_64-linux-gnu/bits/locale.h:
+
+/usr/include/c++/4.6/cctype:
+
+/usr/include/ctype.h:
+
+/usr/include/x86_64-linux-gnu/bits/types.h:
+
+/usr/include/x86_64-linux-gnu/bits/typesizes.h:
+
+/usr/include/endian.h:
+
+/usr/include/x86_64-linux-gnu/bits/endian.h:
+
+/usr/include/x86_64-linux-gnu/bits/byteswap.h:
+
+/usr/include/c++/4.6/bits/ios_base.h:
+
+/usr/include/c++/4.6/ext/atomicity.h:
+
+/usr/include/c++/4.6/x86_64-linux-gnu/./bits/gthr.h:
+
+/usr/include/c++/4.6/x86_64-linux-gnu/./bits/gthr-default.h:
+
+/usr/include/pthread.h:
+
+/usr/include/sched.h:
+
+/usr/include/time.h:
+
+/usr/include/x86_64-linux-gnu/bits/sched.h:
+
+/usr/include/x86_64-linux-gnu/bits/time.h:
+
+/usr/include/x86_64-linux-gnu/bits/timex.h:
+
+/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/setjmp.h:
+
+/usr/include/unistd.h:
+
+/usr/include/x86_64-linux-gnu/bits/posix_opt.h:
+
+/usr/include/x86_64-linux-gnu/bits/environments.h:
+
+/usr/include/x86_64-linux-gnu/bits/confname.h:
+
+/usr/include/getopt.h:
+
+/usr/include/x86_64-linux-gnu/bits/unistd.h:
+
+/usr/include/c++/4.6/x86_64-linux-gnu/./bits/atomic_word.h:
+
+/usr/include/c++/4.6/bits/locale_classes.h:
+
+/usr/include/c++/4.6/string:
+
+/usr/include/c++/4.6/bits/allocator.h:
+
+/usr/include/c++/4.6/x86_64-linux-gnu/./bits/c++allocator.h:
+
+/usr/include/c++/4.6/ext/new_allocator.h:
+
+/usr/include/c++/4.6/new:
+
+/usr/include/c++/4.6/bits/ostream_insert.h:
+
+/usr/include/c++/4.6/bits/cxxabi_forced.h:
+
+/usr/include/c++/4.6/bits/stl_function.h:
+
+/usr/include/c++/4.6/backward/binders.h:
+
+/usr/include/c++/4.6/bits/range_access.h:
+
+/usr/include/c++/4.6/bits/basic_string.h:
+
+/usr/include/c++/4.6/initializer_list:
+
+/usr/include/c++/4.6/bits/basic_string.tcc:
+
+/usr/include/c++/4.6/bits/locale_classes.tcc:
+
+/usr/include/c++/4.6/streambuf:
+
+/usr/include/c++/4.6/bits/streambuf.tcc:
+
+/usr/include/c++/4.6/bits/basic_ios.h:
+
+/usr/include/c++/4.6/bits/locale_facets.h:
+
+/usr/include/c++/4.6/cwctype:
+
+/usr/include/wctype.h:
+
+/usr/include/c++/4.6/x86_64-linux-gnu/./bits/ctype_base.h:
+
+/usr/include/c++/4.6/bits/streambuf_iterator.h:
+
+/usr/include/c++/4.6/x86_64-linux-gnu/./bits/ctype_inline.h:
+
+/usr/include/c++/4.6/bits/locale_facets.tcc:
+
+/usr/include/c++/4.6/bits/basic_ios.tcc:
+
+/usr/include/c++/4.6/bits/ostream.tcc:
+
+/usr/include/c++/4.6/istream:
+
+/usr/include/c++/4.6/bits/istream.tcc:
+
+../lib/gnu_gama/xml_expat.h:
+
+/usr/include/expat.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/x86_64-linux-gnu/bits/waitflags.h:
+
+/usr/include/x86_64-linux-gnu/bits/waitstatus.h:
+
+/usr/include/x86_64-linux-gnu/sys/types.h:
+
+/usr/include/x86_64-linux-gnu/sys/select.h:
+
+/usr/include/x86_64-linux-gnu/bits/select.h:
+
+/usr/include/x86_64-linux-gnu/bits/sigset.h:
+
+/usr/include/x86_64-linux-gnu/bits/select2.h:
+
+/usr/include/x86_64-linux-gnu/sys/sysmacros.h:
+
+/usr/include/alloca.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdlib.h:
+
+/usr/include/expat_external.h:
+
+../lib/gnu_gama/xml/encoding.h:
+
+/usr/include/c++/4.6/cstring:
+
+/usr/include/string.h:
+
+/usr/include/x86_64-linux-gnu/bits/string3.h:
+
+../lib/gnu_gama/version.h:
+
+../lib/gnu_gama/intfloat.h:
+
+../lib/gnu_gama/xml/localnetwork.h:
+
+../lib/gamalib/local/gamadata.h:
+
+../lib/gnu_gama/obsdata.h:
+
+../lib/gnu_gama/list.h:
+
+/usr/include/c++/4.6/vector:
+
+/usr/include/c++/4.6/bits/stl_construct.h:
+
+/usr/include/c++/4.6/bits/stl_uninitialized.h:
+
+/usr/include/c++/4.6/bits/stl_vector.h:
+
+/usr/include/c++/4.6/bits/stl_bvector.h:
+
+/usr/include/c++/4.6/bits/vector.tcc:
+
+/usr/include/c++/4.6/iterator:
+
+/usr/include/c++/4.6/bits/stream_iterator.h:
+
+../lib/gamalib/pointid.h:
+
+/usr/include/c++/4.6/cstddef:
+
+../lib/gamalib/local/lpoint.h:
+
+../lib/gamalib/bpoint.h:
+
+../lib/gamalib/float.h:
+
+/usr/include/c++/4.6/cmath:
+
+/usr/include/math.h:
+
+/usr/include/x86_64-linux-gnu/bits/huge_val.h:
+
+/usr/include/x86_64-linux-gnu/bits/huge_valf.h:
+
+/usr/include/x86_64-linux-gnu/bits/huge_vall.h:
+
+/usr/include/x86_64-linux-gnu/bits/inf.h:
+
+/usr/include/x86_64-linux-gnu/bits/nan.h:
+
+/usr/include/x86_64-linux-gnu/bits/mathdef.h:
+
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:
+
+/usr/include/x86_64-linux-gnu/bits/mathinline.h:
+
+../lib/gamalib/exception.h:
+
+../lib/gamalib/language.h:
+
+../lib/gamalib/observation.h:
+
+../lib/gamalib/revision.h:
+
+../lib/gamalib/linearization.h:
+
+../lib/gamalib/matvec.h:
+
+../lib/matvec/svd.h:
+
+../lib/matvec/matvec.h:
+
+../lib/matvec/mat.h:
+
+/usr/include/c++/4.6/cstdarg:
+
+../lib/matvec/matbase.h:
+
+../lib/matvec/matvecbase.h:
+
+../lib/matvec/memrep.h:
+
+../lib/matvec/inderr.h:
+
+../lib/matvec/array.h:
+
+../lib/matvec/transmat.h:
+
+../lib/matvec/vec.h:
+
+../lib/matvec/vecbase.h:
+
+../lib/matvec/transvec.h:
+
+../lib/matvec/covmat.h:
+
+../lib/matvec/choldec.h:
+
+/usr/include/c++/4.6/algorithm:
+
+/usr/include/c++/4.6/utility:
+
+/usr/include/c++/4.6/bits/stl_relops.h:
+
+/usr/include/c++/4.6/bits/stl_algo.h:
+
+/usr/include/c++/4.6/cstdlib:
+
+/usr/include/c++/4.6/bits/algorithmfwd.h:
+
+/usr/include/c++/4.6/bits/stl_heap.h:
+
+/usr/include/c++/4.6/bits/stl_tempbuf.h:
+
+../lib/gamalib/cluster.h:
+
+../lib/gamalib/angobs.h:
+
+../lib/gamalib/local/lcoords.h:
+
+/usr/include/c++/4.6/map:
+
+/usr/include/c++/4.6/bits/stl_tree.h:
+
+/usr/include/c++/4.6/bits/stl_map.h:
+
+/usr/include/c++/4.6/bits/stl_multimap.h:
+
+/usr/include/c++/4.6/list:
+
+/usr/include/c++/4.6/bits/stl_list.h:
+
+/usr/include/c++/4.6/bits/list.tcc:
+
+../lib/gamalib/local/network.h:
+
+/usr/include/c++/4.6/fstream:
+
+/usr/include/c++/4.6/bits/codecvt.h:
+
+/usr/include/c++/4.6/cstdio:
+
+/usr/include/libio.h:
+
+/usr/include/_G_config.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
+
+/usr/include/x86_64-linux-gnu/bits/sys_errlist.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdio.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:
+
+/usr/include/c++/4.6/x86_64-linux-gnu/./bits/basic_file.h:
+
+/usr/include/c++/4.6/x86_64-linux-gnu/./bits/c++io.h:
+
+/usr/include/c++/4.6/bits/fstream.tcc:
+
+/usr/include/c++/4.6/iomanip:
+
+../lib/gnu_gama/adj/adj_basefull.h:
+
+../lib/gnu_gama/adj/adj_base.h:
+
+../lib/gnu_gama/adj/adj_basesparse.h:
+
+../lib/gamalib/local/revision.h:
+
+../lib/gnu_gama/sparse/smatrix.h:
+
+../lib/gnu_gama/adj/adj.h:
+
+../lib/gnu_gama/sparse/sbdiagonal.h:
+
+../lib/gnu_gama/sparse/intlist.h:
+
+../lib/gnu_gama/adj/adj_envelope.h:
+
+../lib/gnu_gama/adj/envelope.h:
+
+/usr/include/c++/4.6/limits:
+
+../lib/gnu_gama/sparse/smatrix_graph.h:
+
+/usr/include/c++/4.6/set:
+
+/usr/include/c++/4.6/bits/stl_set.h:
+
+/usr/include/c++/4.6/bits/stl_multiset.h:
+
+../lib/gnu_gama/sparse/smatrix_graph_connected.h:
+
+/usr/include/c++/4.6/stack:
+
+/usr/include/c++/4.6/deque:
+
+/usr/include/c++/4.6/bits/stl_deque.h:
+
+/usr/include/c++/4.6/bits/deque.tcc:
+
+/usr/include/c++/4.6/bits/stl_stack.h:
+
+../lib/gnu_gama/sparse/smatrix_ordering.h:
+
+../lib/matvec/symmat.h:
+
+../lib/gnu_gama/adj/homogenization.h:
+
+../lib/gnu_gama/adj/adj_svd.h:
+
+../lib/gnu_gama/adj/adj_gso.h:
+
+../lib/matvec/gso.h:
+
+../lib/gnu_gama/adj/adj_chol.h:
+
+../lib/gnu_gama/exception.h:
+
+../lib/gnu_gama/adj/adj_chol_implementation.h:
+
+../lib/gnu_gama/movetofront.h:
+
+../lib/gnu_gama/adj/adj_envelope_implementation.h:
+
+../lib/gamalib/xml/gkfparser.h:
+
+../lib/gnu_gama/xml/baseparser.h:
+
+../lib/gnu_gama/xml/dataobject.h:
+
+/usr/include/c++/4.6/sstream:
+
+/usr/include/c++/4.6/bits/sstream.tcc:
+
+../lib/gnu_gama/g3/g3_model.h:
+
+../lib/gnu_gama/model.h:
+
+../lib/gnu_gama/pointbase.h:
+
+../lib/gnu_gama/ellipsoids.h:
+
+../lib/gnu_gama/ellipsoid.h:
+
+../lib/gnu_gama/g3/g3_point.h:
+
+../lib/gnu_gama/g3/g3_parameter.h:
+
+../lib/gnu_gama/radian.h:
+
+../lib/gnu_gama/g3/g3_observation.h:
+
+../lib/gnu_gama/e3.h:
+
+../lib/gnu_gama/g3/g3_adjres.h:
+
+../lib/gamalib/local/network_svd.h:
+
+../lib/gamalib/local/network_gso.h:
+
+../lib/gamalib/local/network_chol.h:
+
+../lib/gamalib/local/network_env.h:
+
+../lib/gamalib/local/acord.h:
+
+../lib/gamalib/local/acord/reduce_observations.h:
+
+../lib/gamalib/local/acord/reduce_to_ellipsoid.h:
+
+../lib/gamalib/local/results/text/approximate_coordinates.h:
+
+../lib/gamalib/local/results/text/underline.h:
+
+../lib/gamalib/local/results/text/network_description.h:
+
+../lib/gamalib/local/results/text/general_parameters.h:
+
+../lib/gamalib/local/pobs/format.h:
+
+../lib/gnu_gama/statan.h:
+
+/usr/include/c++/4.6/typeinfo:
+
+../lib/gamalib/local/results/text/fixed_points.h:
+
+../lib/gamalib/local/results/text/adjusted_observations.h:
+
+../lib/gnu_gama/gon2deg.h:
+
+../lib/gamalib/local/results/text/adjusted_unknowns.h:
+
+../lib/gamalib/local/results/text/outlying_abs_terms.h:
+
+../lib/gamalib/local/results/text/reduced_observations.h:
+
+../lib/gamalib/local/results/text/reduced_observations_to_ellipsoid.h:
+
+../lib/gamalib/local/results/text/residuals_observations.h:
+
+../lib/gamalib/local/results/text/error_ellipses.h:
+
+../lib/gamalib/local/results/text/test_linearization.h:
+
+../lib/gamalib/local/pobs/bearing.h:

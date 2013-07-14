@@ -1,0 +1,8 @@
+- seznam zavislosti na externich knohovnach numpy,scipy,matplotlib ...
+- xml parser, mal jsem nejaky rychly parser na prevod zemetreseni
+- xml gama format gama-local nebo gama-xml? lze pozuit DTD?
+- nejaky system unit testingu jak a co, to mel tomas jiz vymyslene
+- jako to s temi parametry se mi to libi ale nemyslim ze bych ji melo byt tolik.respektive bych asi napsal skript pro crdspl, trans1-3d, atd. Navic moznost mit vse zapsane v konf souboru takze syntaxe prog conf file1 file2 ...
+- licence dualni? jako GPL je hroznej opruz pro komerci
+
+- Jak jsme se dohodli? Kam se budou ukladat data napriklad o etape? Do gama-local xml nebo do naseho cfg?

@@ -1,18 +1,19 @@
-cfg=epydoc.cfg
-cfg_local= epydoc-local.cfg
-
 all:
-	epydoc --config $(cfg)
+	@echo "Generate Sphinx"
+	@echo
+	#$(MAKE) -C sphinx/ html
+	cd ./sphinx; make html
+	
+	@echo
+	@echo "Generate Epydoc"
+	cd ./epydoc; make
 
-check:
-	epydoc --check --config $(cfg)
-
-verb:
-	epydoc -v --config $(cfg)
-
-sync:
-	make all
-	rsync -av html/ slon:/var/www/gizela/html
-
-local:
-	epydoc --config $(cfg_local)
+test:
+	@echo "Generate Sphinx"
+	@echo
+	#$(MAKE) -C sphinx/ html
+	cd ./sphinx; make html-test
+	
+	@echo
+	@echo "Generate Epydoc"
+	cd ./epydoc; make test

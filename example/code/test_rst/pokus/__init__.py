@@ -1,0 +1,3 @@
+"""
+Modul s nazvem pokus
+"""

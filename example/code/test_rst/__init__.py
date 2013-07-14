@@ -7,7 +7,7 @@
 #
 # $Id: __init__.py 33 2010-05-19 14:53:26Z tomaskubin $
 
-'''
+"""
 ==============
 Gizela project
 ==============
@@ -20,7 +20,7 @@ Package Organization
 The Gizela package contains the following subpackages and modules: 
   
 .. packagetree:: 
-	:style: UML 
+    :style: UML 
 
 
-'''
+"""

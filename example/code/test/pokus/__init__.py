@@ -1,0 +1,3 @@
+"""
+Pokus modul
+"""
