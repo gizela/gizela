@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name='Gizela',
-    version='1.0.1',
+    version='1.0.18',
     author='Michal Seidl, Tomas Kubin',
     author_email='michal.seidl@fsv.cvut.cz, tomas.kubin@fsv.cvut.cz',
     packages=['gizela',
@@ -15,9 +15,13 @@ setup(
               'gizela.tran',
               'gizela.corr',
               'gizela.test'],
-    scripts=['bin/gama-data-obs.py', 'bin/gama-data-adj.py'],
+    package_dir={'gizela': 'gizela'},
+    package_data={'gizela': ['doc/*', 'example/hrad/*', 'example/text-coordinates/*']},
+    #data_files=[('gizela/doc', ['gizela/doc/*']),
+    #            ('gizela/doc/examples', ['gizela/doc/examples/*'])],
+    scripts=['bin/gama-data-obs.py', 'bin/gama-data-adj.py', 'bin/coord2gamaObs.py'],
     url='http://geo.fsv.cvut.cz/gwiki/Gizela',
     license='LICENSE.txt',
-    description='archiving, managing, testing of geodetic networks',
+    description='managing of geodetic networks, statistical tests of point displacement',
     long_description=open('README.txt').read(),
 )

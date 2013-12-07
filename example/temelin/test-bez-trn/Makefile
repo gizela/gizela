@@ -1,6 +1,6 @@
 proj=$(wildcard SS*.txt)
 # local file
-coord2gamaObs= ../../../util/coord2gamaObs.py
+coord2gamaObs=coord2gamaObs.py
 gizela=gama-data-adj.py
 # id testovanych bodu
 id_test=117,118
