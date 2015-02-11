@@ -1,1 +1,7 @@
 This directory should be used to save result of statistical analysis.
+
+Each analysis will be saved into its directory with given name. The analysis
+will be grouped in directories by analysis module.
+
+The results of analysis will be saved into XML file with coresponding
+configuration file to allow recomputation.
