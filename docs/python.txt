@@ -1,0 +1,15 @@
+How to with Python
+- value and reference, thin of variables as labels
+- data types, string is immutable, sets, frozenset, tuples, list, dictionaries
+- copy and deep copy difference
+
+  http://www.python-course.eu/deep_copy.php
+  
+  difference between asign new value or modify x = [1,2] v x[2] = 3
+
+- function and * and ** keywords
+- function call by object reference for mutable objects
+  
+  again difference if you asign or modify, you can modify/change global
+  variable in fuction!!!
+  

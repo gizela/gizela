@@ -1,3 +1,14 @@
+2015.02.12
+==========
+- oprasit unit testing
+- oprasit dokumentaci uz jsme asi zacaly prechazet na sphinx a RTS co readthedocs?
+- oprasit syntax, tridy asi uz opravdu verze 3.x
+- zacit pekne pomalu a psat to ce je potreba
+
+
+
+Old
+==========
 - seznam zavislosti na externich knohovnach numpy,scipy,matplotlib ...
 - xml parser, mal jsem nejaky rychly parser na prevod zemetreseni
 - xml gama format gama-local nebo gama-xml? lze pozuit DTD?
